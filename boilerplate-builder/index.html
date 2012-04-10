@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+<head>
+	<title>A Builder Boilerplate for Three.js</title>
+	<base target=”_blank” />
+	<meta charset='utf-8'>
+	<script src='slides.js'></script>
+</head>
+  
+<body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      
+	<article>
+		<h1>
+			A Boilerplate <span style="color: orange">Builder</span><br/>for Three.js
+			<br/>&nbsp;
+		</h1>
+		<h3>
+			Fast Bootstrap + Good Pratices + <span style="color: orange">Flexibility</span>
+		</h3>
+		<p>
+			Jerome Etienne
+		</p>
+	</article>
+	<article>
+		<h2>
+			Hue ? A boilerplate for three.js ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Boilerplate for Three.js
+		</h3>
+		<ul>
+			<li>
+				Template to start a three.js project
+			</li>
+			<li>
+				Made to to ease your first contact with three.js
+			</li>
+			<li>
+				inpired by <a href="html5boilerplate.com">html5 boilerplate</a> excelent work
+			</li>
+			<li>
+				Fast BootStrap + Good Practices
+			</li>
+		</ul>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Show, Don't tell.
+			<a target="_blank" href="http://jeromeetienne.github.com/threejsboilerplate/">link</a>
+		</h3>
+		<iframe src='http://jeromeetienne.github.com/threejsboilerplate/'
+		allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+	<article>
+		<h3>
+			Fast Bootstrap
+		</h3>
+		<ul>
+			<li>
+				Step 1: download the files <a href="https://github.com/jeromeetienne/threejsboilerplate">here</a>
+			</li>
+			<li>
+				Step 2: Point your web browser to them
+			</li>
+			<li>
+				Step 3: You are <em>done</em>.
+			</li>
+			<li>
+				Total time: less than 1min
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Good Practices
+		</h3>
+		<ul>
+			<li>
+				Cross Plateform: important to run everywhere
+			</li>
+			<ul>
+				<li>
+					fallback on canvas2d if webgl isn't available
+				</li>
+				<li>
+					Support mobile with canvas and touch event
+				</li>
+			</ul>
+			<li>
+				Fullscreen: enjoy your 3D on a large display
+			</li>
+			<li>
+				Screenshot: Share nice images with friends
+			</li>
+			<li>
+				Window Resize: required not to loose centering/scaling
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Flexibility ?
+		</h3>
+		<ul>
+			<li>
+				none, only static files with good defaults
+			</li>
+			<li>
+				What if you got specific requirements ?
+			</li>
+			<li>
+				How to start your project then ???
+			</li>
+			<li>
+				a builder would be cool.
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			Good thing we got one :)
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Boilerplate builder for three.js
+		</h3>
+		<ul>
+			<li>
+				Done to provide more flexibility
+			</li>
+			<li>
+				Avoid the default battle
+			</li>
+			<ul>
+				<li>
+					what goes <em>in</em> ?
+				</li>
+				<li>
+					what stays <em>out</em> ?
+				</li>
+			</ul>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Show, don't tell
+		</h3>
+		<ul>
+			<li>
+				Let's use it to customize our boilerplate
+			</li>
+			<li>
+				Play with the options and customize your own boilerplate
+			</li>
+			<li>
+				<strong>Do it now</strong>. builder is <a href="http://jeromeetienne.github.com/threejsboilerplatebuilder/">here</a>
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Demo Time
+		</h3>
+	</article>
+	<article>
+		<h2>
+			All is said... what about a making of ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Making-of the builder
+		</h3>
+		<ul>
+			<li>
+				Designed as <strong>pure browser webapp</strong>
+				<ul>
+					<li>
+						no need to run a server
+					</li>
+					<li>
+						jerome happy
+					</li>
+				</ul>
+			</li>
+			<li>
+				Use various modern web tech
+			</li>
+			<li>
+				To build the builder was fun in itself
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Pure-browser File Download
+		</h3>
+		<ul>
+			<li>
+				tricky due to pure-browser
+			</li>
+		</ul>
+		<h4>Step 1: pack the files</h4>
+		<ul>
+			<li>
+				use <a href="http://jszip.stuartk.co.uk/">jszip</a> to build in a .zip
+			</li>
+			<li>
+				jszip alone gives bad filenames
+				<ul>
+					<li>
+						<strong>default.zip</strong>, <strong>Unknown</strong>
+						or even <strong>afhvfkjf1234lfkdf.part</strong>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h4>Step 2: fix filenames</h4>
+		<ul>
+			<li>
+				workaround with <a href="https://github.com/dcneiner/Downloadify">downloadify</a>.
+				Use flash tho.
+			</li>
+			<li>
+				Alternative: <code>window.URL.createObjectURL()</code>
+				<a href="http://html5-demos.appspot.com/static/a.download.html">demo</a>
+			</li>
+			<li>
+				i learn about it after coding
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Visual Appearance: twitter boilerplate
+		</h3>
+		<ul>
+			<li>
+				a .css and a few .js
+			</li>
+			<li>
+				Looks good on the screen
+			</li>
+			<li>
+				Available <a href="http://twitter.github.com/bootstrap/">here</a> (2.0 soon)
+			</li>
+			<li>
+				Ideal for css-impaired personns like me.
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			All is said... for real this time :) 
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Conclusion
+		</h3>
+		<ul>
+			<li>
+				<a href="http://jeromeetienne.github.com/threejsboilerplatebuilder/">boilerplate builder for three.js</a>
+				is available
+			</li>
+			<li>
+				Made to to ease your first contact with three.js.
+			</li>
+			<li>
+				People seems to like it
+			</li>
+			<li>
+				i learned cool html techs while building it
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h1>
+			That's all folks.
+		</h1>
+		<h3>
+			Question ?
+		</h3>
+		<p>
+			Jerome Etienne
+		</p>
+	</article>
+</body>
+</html>
