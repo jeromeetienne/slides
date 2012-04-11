@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Augmented Gestures</title>
+	<title>Web Audio API</title>
 	<base target=”_blank” />
 	<meta charset='utf-8'/>
 	<script src='slides.js'></script>
@@ -92,13 +92,13 @@
 		</h3>
 		<ul>
 			<li>
-				quicktime or flash
+				quicktime or flash: but mostly flash
 			</li>
 			<li>
-				performance arent top
+				Performance arent top
 			</li>
 			<li>
-				no interopebility
+				no interoperability, issue with search indexing
 			</li>
 		</ul>
 	</article>
@@ -108,10 +108,7 @@
 		</h3>
 		<ul>
 			<li>
-				quite basic
-			</li>
-			<li>
-				enougth for basic fx
+				quite basic: volume, play, stop
 			</li>
 			<li>
 				but no fine tuning not possible
@@ -128,16 +125,21 @@
 		<h4>Web Audio API</h4>
 		<ul>
 			<li>
-				
+				some <a href="">spec</a> in progress
 			</li>
 			<li>
+				Aimed at games. based on openAL
 			</li>
 		</ul>
 		<h4>Mozilla Audio API</h4>
 		<ul>
 			<li>
+				status unclear:
+				<a href="https://wiki.mozilla.org/Audio_Data_API">Audio Data API</a> works
 			</li>
 			<li>
+				Soon depreciated for <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/streams/StreamProcessing.html">StreamProcessing</a>?
+				Follow this <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=664918'>bug</a>
 			</li>
 		</ul>
 		<h4>Compatibility</h4>
@@ -145,9 +147,165 @@
 			<li>
 				still incompatible :(
 			</li>
-			<li>
-				TODO ask dmose
-			</li>
+		</ul>
+	</article>
+<!-- ****************************************************************************
+		Web Audio API
+********************************************************************************* -->
+	<article>
+		<h2>
+			so what about Web Audio API
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Web Audio API in a few word
+		</h3>
+		<ul>
+			<li>Aimed for game</li>
+			<li>Based on OpenAL</li>
+		</ul>
+		<h4>Availability</h4>
+		<ul>
+			<li>Webkit browser</li>
+			<li>so Safari</li>
+			<li>and Chrome with all its flavors</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			Sure but how to play a sound ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			First, Init It!
+		</h3>
+		<h4>Feature Detection</h4>
+		<ul>
+			<li>Check it is available</li>
+		</ul>
+		<pre>
+var hasWebkitAudio = typeof(webkitAudioContext) === "function";
+</pre>
+		<h4>Initialisation</h4>
+		<ul>
+			<li>a bit like a canvas 2D or WebGL context</li>
+		</ul>
+		<pre>
+var context = new webkitAudioContext();
+</pre>
+	</article>
+	<article>
+		<h3>
+			Load a sound to get a buffer
+		</h3>
+		<pre>
+function loadSound(url, ctx, onSuccess, onError) {
+    // init request
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.responseType = 'arraybuffer'; // <= here secret sauce!
+
+    // function called once data is loaded
+    request.onload = function(){
+        // request.response === encoded... so decode it now
+        ctx.decodeAudioData(request.response, function(buffer) {
+            onSuccess && onSuccess(buffer);
+	}, function(){
+            onError && onError();
+        });
+    }
+
+    request.send();	// Start the request
+}</pre>
+	</article>
+	<article>
+		<h3>
+			Basic sound playing
+		</h3>
+		<ul>
+			<li>Plain playing it. No fx whatsoever</li>
+		</ul>
+		<pre>
+function playSound(ctx, buffer) {
+    // create a 'bufferSource' node
+    var source = ctx.createBufferSource();
+    // setup the buffer
+    source.buffer = buffer;
+    // connect it to context destination
+    source.connect(ctx.destination);
+    // play immediatly
+    source.noteOn(0);
+}
+</pre>
+	</article>
+	<article>
+		<h3>
+			Steps for Basic sound playing
+		</h3>
+		<ol>
+			<li>Create a audio context</li>
+			<ul>
+				<li>new webkitAudioContext()</li>
+			</ul>
+			<li>Load the audio buffer</li>
+			<ul>
+				<li>request.responseType = 'arraybuffer';</li>
+			</ul>
+			<li>Connect a buffer source to the context destination</li>
+			<ul>
+				<li>src.connect(ctx.destination);</li>
+			</ul>
+			<li>Trigger a play</li>
+			<ul>
+				<li>source.noteOn(0);</li>
+			</ul>
+		</ol>
+	</article>
+	<article>
+		<h2>
+			Ok we got basic code...
+			<br/>
+			<br/>
+			What about those nodes ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Nodes and Routing
+		</h3>
+		<h4>What is routing ?</h4>
+		<ul>
+			<li>audio processing is a chain of nodes</li>
+			<li>nodes connected to each other act as "route for sound"</li>
+			<li>Sound follows this route</li>
+		</ul>
+		<h4>Most basic route</h4>
+		<img src="images/modular-routing1.png" width="50%"/>
+	</article>
+	<article>
+		<h3>
+			a More Complex Route :)
+		</h3>
+		<img src="images/modular-routing2.png" width="100%"/>
+	</article>
+
+	<article>
+		<h3>
+			Ressource
+		</h3>
+		<ul>
+			<li><a href='http://www.slideshare.net/gawd/game-development-with-html5'>Game Development With HTML5</a></li>
+			<li><a href='http://www.html5rocks.com/en/tutorials/#technology:multimedia'>html5 rocks multimedia</a></li>
+		</ul>
+		<h4>html5rocks</h4>
+		<ul>
+			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/intro'>Getting Started with Web Audio</a></li>
+			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/positional_audio/'>position sound and webgl</a></li>
+			<li><a href='http://www.html5rocks.com/en/tutorials/getusermedia/intro/'>Capturing audio and video in HTML5</a></li>
+			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/games/'>Developing game and video in HTML5</a></li>
+			<li><a href='http://www.html5rocks.com/en/tutorials/casestudies/technitone/'>Case Study: buiding technitone.com</a></li>
 		</ul>
 	</article>
 
