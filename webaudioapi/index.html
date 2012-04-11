@@ -275,13 +275,13 @@ function playSound(ctx, buffer) {
 		<h3>
 			Nodes and Routing
 		</h3>
-		<h4>What is routing ?</h4>
+		<h4>What is Routing ?</h4>
 		<ul>
 			<li>audio processing is a chain of nodes</li>
 			<li>nodes connected to each other act as "route for sound"</li>
 			<li>Sound follows this route</li>
 		</ul>
-		<h4>Most basic route</h4>
+		<h4>a Simple Route</h4>
 		<img src="images/modular-routing1.png" width="50%"/>
 	</article>
 	<article>
@@ -290,21 +290,93 @@ function playSound(ctx, buffer) {
 		</h3>
 		<img src="images/modular-routing2.png" width="100%"/>
 	</article>
+	<article>
+		<h3>
+			AudioPannerNode: positions/spatializes in 3D
+		</h3>
+		<p>the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioPannerNode-section">spec</a></p>
+		<h4>Position</h4>
+		<pre>
+void setPosition(in float x, in float y, in float z);
+void setOrientation(in float x, in float y, in float z);// in degree
+void setVelocity(in float x, in float y, in float z);
+</pre>
+		<h4>Gain for directional</h4>
+		<pre>
+attribute float coneInnerAngle;	// gain 1.0 in InnerAngle
+attribute float coneOuterAngle;	// linear gain decrease
+attribute float coneOuterGain;	// gain when in OutterGain
+</pre>
+	</article>
+	<article>
+		<h3>
+			JavaScriptAudioNode: real time processing in js
+		</h3>
+		<p>the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#JavaScriptAudioNode-section">spec</a></p>
+		<h4>Flexible</h4>
+		<ul>
+			<li>Able to generate/process/analyse sound</li>
+			<li>All in js, a language you know</li>
+		</ul>
+		<h4>Performance</h4>
+		<ul>
+			<li>Slow... js isnt fast enougth</li>
+			<li>Real time sound processing is often in assembly</li>
+			<li>You may hear "clicks" in the sound</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			AudioGainNode: change the gain/volume
+		</h3>
+		<ul>
+			<li>
+				the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioGainNode-section">spec</a>
+			</li>
+			<li>
+				base for coding mixers
+			</li>
+		</ul>
+			
+		<pre>
+var gainNode = ctx.createGainNode();
+gainNode.gain = 2.0;
+</pre>
+	</article>
+	<article>
+		<h3>
+			BiquadFilterNode: common low-order filters
+		</h3>
+		<h4>
+			the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#BiquadFilterNode-section">spec</a>
+		</h4>
+		<h4>Implemented filters</h4>
+		<ul>
+			<li>lowpass / highpass</li>
+			<li>bandpass</li>
+			<li>lowshelf / highshelf</li>
+			<li>peaking</li>
+			<li>notch</li>
+			<li>allpass</li>
+		</ul>
+	</article>
 
 	<article>
 		<h3>
-			Ressource
+			Ressource (mainly on html5rocks)
 		</h3>
-		<ul>
-			<li><a href='http://www.slideshare.net/gawd/game-development-with-html5'>Game Development With HTML5</a></li>
-			<li><a href='http://www.html5rocks.com/en/tutorials/#technology:multimedia'>html5 rocks multimedia</a></li>
-		</ul>
-		<h4>html5rocks</h4>
+		<h4>Intro</h4>
 		<ul>
 			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/intro'>Getting Started with Web Audio</a></li>
-			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/positional_audio/'>position sound and webgl</a></li>
-			<li><a href='http://www.html5rocks.com/en/tutorials/getusermedia/intro/'>Capturing audio and video in HTML5</a></li>
+		</ul>
+		<h4>Advanced</h4>
+		<ul>
+			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/positional_audio/'>Mixing Positional Audio and WebGL</a></li>
 			<li><a href='http://www.html5rocks.com/en/tutorials/webaudio/games/'>Developing game and video in HTML5</a></li>
+		</ul>
+		<h4>Misc</h4>
+		<ul>
+			<li><a href='http://www.html5rocks.com/en/tutorials/getusermedia/intro/'>Capturing audio and video in HTML5</a></li>
 			<li><a href='http://www.html5rocks.com/en/tutorials/casestudies/technitone/'>Case Study: buiding technitone.com</a></li>
 		</ul>
 	</article>
