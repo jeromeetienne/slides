@@ -364,7 +364,10 @@ function playSound(ctx, buffer) {
 		<h3>
 			AudioPannerNode: positions/spatializes in 3D
 		</h3>
-		<p>the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioPannerNode-section">spec</a></p>
+		<p>
+			the <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioPannerNode-section">spec</a>
+			/
+			the <a href="http://www.html5rocks.com/en/tutorials/webaudio/games/#toc-3d">demo</a></p>
 		<h4>Source Position</h4>
 		<pre>
 void setPosition(in float x, in float y, in float z);
@@ -475,7 +478,30 @@ gainNode.gain = 2.0;
 	</article>
 	<article>
 		<h3>
-			Clipping
+			Recipe per sound
+		</h3>
+		<img src="images/background.png" />
+		<h4>Explaination</h4>
+		<ul>
+			<li>
+				<span class="orange">Source</span>: the sound data to play
+			</li>
+			<li>
+				<span class="orange">Gain</span>: to setup the volume
+			</li>
+			<li>
+				<span class="orange">Panner</span>: (optional) if you are in 3D
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			End of route ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Clipping: what is it
 		</h3>
 		<p>
 			<span class="orange">Definition</span>:
@@ -488,6 +514,63 @@ gainNode.gain = 2.0;
 		<audio controls loop>
 			<source src="sounds/clipping.mp3">
 		</audio>
+	</article>
+	<article>
+		<h3>
+			Clipping: how to detect and avoid it
+		</h3>
+		<h4>Detection</h4>
+		<ul>
+			<li>Setup a JavaScriptNode</li>
+			<li>Monitor buffer values</li>
+		</ul>
+		<pre>
+if( Math.abs(buffer[i]) >= 1 )	clipping	 = true;
+</pre>
+		<h4>Avoidance</h4>
+		<ul>
+			<li>Tune your levels</li>
+			<li>I dunno any magical way</li>
+			<li>the <a href="http://www.html5rocks.com/en/tutorials/webaudio/games/#toc-clip-prevent">demo</a></li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Dynamic Compressor
+		</h3>
+		<h4>What is it</h4>
+		<ul>
+			<li>reduce the volume of loud sounds</li>
+			<li>amplify quiet sounds</li>
+			<li>Wikipedia <a href="http://en.wikipedia.org/wiki/Dynamic_range_compression">article</a></li>
+		</ul>
+		<h4>Usage</h4>
+		<ul>
+			Smooth your sounds
+		</ul>
+		<pre>
+var compressor = context.createDynamicsCompressor();
+mix.connect(compressor);
+compressor.connect(context.destination);
+</pre>
+	</article>
+	<article>
+		<h3>
+			a Good End of the Route?
+		</h3>
+		<img src="images/final.png" width="80%"/>
+		<h4>Explaination</h4>
+		<ul>
+			<li>
+				<span class="orange">Master Gain</span>: for gain and clipping prevention
+			</li>
+			<li>
+				<span class="orange">Dynamic Compressor</span>: to smooth peaks
+			</li>
+			<li>
+				<span class="orange">Destination</span>: well to be heard :)
+			</li>
+		</ul>
 	</article>
 <!-- ****************************************************************************
 		Conclusion
