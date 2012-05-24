@@ -109,15 +109,75 @@
 		tQuery 5min Presentation
 ********************************************************************************* -->
 	<article>
+		<h1>
+			What is <span style="font-size: 120%; color: orange;">tQuery</span> ?
+		</h1>
+	</article>
+	<article>
+		<h3>tQuery in a few word</h3>
+		<h4><span class="orange">Thin layer</span> on top of three.js</h4>
+		<ul>
+			<li>
+				three.js : 100k min+gzip
+			</li>
+			<li>
+				tQuery.js : 8k min+gzip
+			</li>
+		</ul>
+		<h4><span class="orange">Dumb library</span></h4>
+		<ul>
+			<li>
+				Different API
+			</li>
+			<li>
+				Different default values
+			</li>
+			<li>
+				Same Semantic
+			</li>
+		</ul>
+	</article>
+	<article>
 		<h2>
-			tQuery in all that ?
+			and more preciselly ?
 		</h2>
 	</article>
 	<article>
 		<h3>
-			tQuery Started as a Dream :)
+			Key Principles of Tquery
 		</h3>
-		<h4>Wishes - ala car salesman :)</h4>
+		<h4>Technical</h4>
+		<ol>
+			<li>
+				Extension system for three.js
+			</li>
+			<li>
+				Mimic jQuery API
+			</li>
+		</ol>
+		<h4>Direction</h4>
+		<ul>
+			<li>
+				<strong>Technical:</strong> three.js power + jQuery API usability
+			</li>
+			<li>
+				<strong>Human:</strong> Bring 3D to non-specialists
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			Where does it come from ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			tQuery Started as a itch to scratch
+		</h3>
+		<br/>
+		<br/>
+		<h3><span class="orange">Will to Make WebGL accessible to everyone</span></h3>
+		<h4>Wishes - ala "car salesman pitch" :)</h4>
 		<ul>
 			<li>
 				"You want to know webgl? Good news! You already know it, just replace
@@ -134,40 +194,7 @@
 				"WebGL for jQuery enthousiasts"
 			</li>
 		</ul>
-		<h4>Would like them to be true one day...</h4>
-		<ul>
-			<li>
-				Working hard on it :)
-			</li>
-		</ul>
-	</article>
-	<article>
-		<h2>
-			and more preciselly ?
-		</h2>
-	</article>
-	<article>
-		<h3>
-			What is tQuery
-		</h3>
-		<h4>Technical</h4>
-		<ul>
-			<li>
-				Extension system for three.js
-			</li>
-			<li>
-				Mimic jQuery API
-			</li>
-		</ul>
-		<h4>Direction</h4>
-		<ul>
-			<li>
-				<strong>Technical:</strong> three.js power + jQuery API usability
-			</li>
-			<li>
-				<strong>Human:</strong> Bring 3D to non-specialists
-			</li>
-		</ul>
+		<h4>Working hard to make it true !!</h4>
 	</article>
 	<article>
 		<h2>
@@ -616,7 +643,7 @@ tQuery('cube').on('click', function(){
 			-
 			<a target="_blank" href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html">Demo</a>
 		</h3>
-		<p>&nbsp;</p>
+		<p>&nbsp;</p> 
 		<a href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html"><img src="vendor/images/webaudio-tquery.png" height='80%'></a>
 	</article>
 	<article>
@@ -748,73 +775,42 @@ world.loop().hook(function(){
 			hmm tQuery is about extension ?<br/>Show some!
 		</h2>
 	</article>
-<!--
-    * text
-    * shape
-    * csg
-    * domevent
-    * video
-    * fireball
-    * md2character
--->
 	<article>
-		<h3>tQuery.text</h3>
-
-		<h4>Display Text in 3D</h4>
-		<h4>Playground <a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\n\tvar world = tQuery.createWorld().boilerplate().start();\n\n\t// create a 3D text\n\ttQuery.createText(\"Hello Web-5\").addTo(world).scaleBy(1/4);\t\n</script></body>"}'>examples</a></h4>
-		<h4>Plugins layground <a href='http://jeromeetienne.github.com/tquery/plugins/text/examples/'>examples</a></h4>
-	</article>
-	<article>
-		<h3>tQuery.Shapes</h3>
-
-		<h4>Build 3D shape with canvas-like path</h4>
-		<h4>Playground examples:
-			<a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\tvar world = tQuery.createWorld().boilerplate().start();\n\t// create the shape triangle\n\tvar shape = tQuery.createShape()\n\t\t.moveTo(   0, -30 )\n\t\t.lineTo( -40,  30 )\n\t\t.lineTo(  40,  30 )\n\t\t.lineTo(   0, -30 );\n\t// create the geometry from the shape\n\tvar geometry = shape.extrude().computeAll().scaleBy(1/100);\n\t// create a object3d from the geometry\n\tvar object3d = geometry.toMesh().addTo(world);\n</script></body>"}'>expanded version</a>
-			<a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\t// create the world\n\tvar world = tQuery.createWorld().boilerplate().start();\n\t// create a triangle and add it to the world\n\ttQuery.createTriangle().addTo(world);\n</script></body>"}'>short version</a>
+		<h3>Examples Plugins</h3>
+		<h4>
+			<span class="orange">tQuery.text</span>: Display Text in 3D
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/text/examples/'>example</a>
 		</h4>
-		<h4>Plugins <a href='http://jeromeetienne.github.com/tquery/plugins/shape/examples/'>examples</a></h4>
-		<h4>shape+text: <a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\n\tvar world = tQuery.createWorld().fullpage().start();\n\n\ttQuery.createText(\"Valentine\").addTo(world)\n\t\t.zoom(1/4).translateY(0.6);\n\ttQuery.createText(\"Love\").addTo(world)\n\t\t.zoom(1/4).translateY(-0.6);\n\ttQuery.createHeart().id(\"heart\").addTo(world);\n\n\tworld.loop().hook(function(deltaTime, present){\n\t\tvar angle\t= present * 2 * Math.PI;\n\t\ttQuery(\"#heart\").scale( 0.8 + 0.4 * Math.abs(Math.sin(angle)))\n\t\ttQuery(\"text\").rotation( 0, Math.PI/6 * Math.sin(angle), 0 )\n\t});\n\t\n</script></body>"}'>Valentine card</a></h4>
+		<h4>
+			<span class="orange">tQuery.Shapes</span>: Build 3D shape with canvas-like path
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/shape/examples/'>example</a>
+			- <a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\n\tvar world = tQuery.createWorld().fullpage().start();\n\n\ttQuery.createText(\"Valentine\").addTo(world)\n\t\t.zoom(1/4).translateY(0.6);\n\ttQuery.createText(\"Love\").addTo(world)\n\t\t.zoom(1/4).translateY(-0.6);\n\ttQuery.createHeart().id(\"heart\").addTo(world);\n\n\tworld.loop().hook(function(deltaTime, present){\n\t\tvar angle\t= present * 2 * Math.PI;\n\t\ttQuery(\"#heart\").scale( 0.8 + 0.4 * Math.abs(Math.sin(angle)))\n\t\ttQuery(\"text\").rotation( 0, Math.PI/6 * Math.sin(angle), 0 )\n\t});\n\t\n</script></body>"}'>Valentine card</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.csg</span>: add/sub objects
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/csg/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.domevents</span>: Emulation of DOM event in 3D space
+			- <a href='http://jeromeetienne.github.com/threex/examples/threex.domevent/'>example</a>
+		</h4>
 	</article>
 	<article>
-		<h3>tQuery.csg</h3>
-
-		<h4>Constructive Shape Geometry</h4>
-		<ul>
-			<li>ok strange words</li>
-		</ul>
-		<h4>Able to add/substract/join objects to build new ones</h4>
-		<ul>
-			<li>better ?</li>
-		</ul>
-		<h4>Plugins <a href='http://jeromeetienne.github.com/tquery/plugins/csg/examples/'>examples</a></h4>
-	</article>
-	<article>
-		<h3>tQuery.domevents</h3>
-
-		<h4>Emulation of DOM event in 3D space</h4>
-		<h4>Plugins <a href='http://jeromeetienne.github.com/tquery/plugins/domevent/examples/'>examples</a></h4>
-		<h4>Playground <a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\tvar world = tQuery.createWorld().boilerplate().start();\n\t// add a cube\n\ttQuery.createCube().addTo(world);\n\t// bind the click event\n\ttQuery(\"cube\").on(\"click\", function(event){\n\t\t// get the target object\n\t\tvar object3d = tQuery(event.target);\n\t\t// double its size\n\t\tobject3d.scaleBy(1.2);\n\t});\n</script></body>"}'>example</a></h4>
-	</article>
-	<article>
-		<h3>tQuery.fireball</h3>
-
-		<h4>Pure Shader Material</h4>
-		<h4>Plugins <a href='http://jeromeetienne.github.com/tquery/plugins/fireball/examples/'>examples</a></h4>
-	</article>
-	<article>
-		<h3>tQuery.md2character</h3>
-
-		<h4>Animate doom character without breaking a sweat</h4>
-		<ul>
-			<li>MD2 is the format of the character</li>
-		</ul>
-		<h4>Plugins <a href='http://jeromeetienne.github.com/tquery/plugins/md2character/examples/'>examples</a></h4>
-		<h4>Play in javascript console</h4>
+		<h3>More Examples Plugins</h3>
+		<h4>
+			<span class="orange">tQuery.fireball</span>: pure shader material
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/fireball/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.md2Character</span>: Animate doom character
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/md2character/examples/'>example</a>
+			- can play in console too. 
+		</h4>
 		<pre>
-character.setSkin(2);		// to change the skin (5 of them)
-character.setWeapons(4);	// to change the weapons (11 of them)
+character.setSkin(2);	// to change the skin (5 of them)
+character.setWeapon(4);	// to change the weapons (11 of them)
 // some randomness
-setTimeout(function(){
+setInterval(function(){
     character.setSkin(Math.floor(Math.random()*5 % 5));
     character.setWeapon(Math.floor(Math.random()*11 % 11));
 }, 1000);
@@ -826,7 +822,7 @@ setTimeout(function(){
 		<ul>
 			<li>Plugins allows much easier reuse</li>
 			<li>Written to see how tQuery reacts in practice</li>
-			<li>Currently 30 plugins in incubation</li>
+			<li>Currently 38 plugins in incubation</li>
 		</ul>
 	</article>
 
