@@ -33,6 +33,7 @@
 	<title>tQuery: three.js + jQuery ?</title>
 	<base target=”_blank” />
 	<meta charset='utf-8'/>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
 	<script src='slides.js'></script>
 </head>
 
@@ -176,16 +177,13 @@
 		</h3>
 		<br/>
 		<br/>
-		<h3><span class="orange">Will to Make WebGL accessible to everyone</span></h3>
-		<h4>Wishes - ala "car salesman pitch" :)</h4>
+		<h3>Itch: <span class="orange">Bring 3D to non specialists</span></h3>
+		<h4>Wishes</h4>
 		<ul>
 			<li>
 				"You want to know webgl? Good news! You already know it, just replace
 				<span class='larger orange'>j</span> by <span class='orange larger'>t</span>!"
-				<ul>
-					<li>you know <span class='orange larger'>j</span>Query,
-					so you know <span class='larger orange'>t</span>Query</li>
-				</ul>
+				- a car salesman :)
 			</li>
 			<li>
 				"WebGL should not be harder than playing with lego."
@@ -194,19 +192,18 @@
 				"WebGL for jQuery enthousiasts"
 			</li>
 		</ul>
-		<h4>Working hard to make it true !!</h4>
+		<h4>Working hard to make it true !! :)</h4>
 	</article>
 	<article>
 		<h2>
-			Freeze! Show, dont tell. <br/>
-			Show us What is possible
+			Freeze! Show, dont tell.
 		</h2>
 	</article>
 	<article>
 		<h3>
 			a Sport Car - 40 lines of js
 			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples">Demo</a>
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
 		</h3>
 		<p>&nbsp;</p>
 		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
@@ -280,7 +277,9 @@
 	</article>
 	<article class='nobackground'>
 		<h3>
-			Here is a <span class='orange'>Minimal</span> Page - the <span class='orange'>SOURCE</span>
+			Here is a <span class='orange'>Minimal</span> Page
+			-
+			<a href="http://jeromeetienne.github.com/tquery/www/playground/">playground</a>
 		</h3>
 		<section>
 		<pre>
@@ -294,18 +293,19 @@
 		</section>
 		<h4>Fun Facts</h4>
 		<ul>
-			<li>Full HTML page</li>
+			<li>Full HTML5 page</li>
 			<li>Valid HTML5</li>
 			<li>Only 6-lines !</li>
+			
 		</ul>
 	</article>
 	<article class='nobackground'>
 		<h3>
 			Here is a <span style="color: orange">Minimal</span> Page
 			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minimal/examples">Demo</a>
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minimal/examples/">Demo</a>
 		</h3>
-		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples'
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/'
 			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 	</article>
 	<article>
@@ -860,5 +860,25 @@ setInterval(function(){
 			Jerome Etienne
 		</p>
 	</article>
+	<script>
+		//////////////////////////////////////////////////////////////////
+		// scan the whole webpage and replace url to their local location
+		// - usefull to have local copy of the slides in conference when internet is unavailable
+		// - and still have slides which works when internet is available
+		// $ open -a "/Applications/Google Chrome.app" --args --disable-web-security --allow-file-access-from-file
+		location.href.match(/^file:/) && jQuery('a').add('iframe').each(function(index, element){
+			var attrNames	= {
+				'A'	: 'href',
+				'IFRAME': 'src'
+			};
+			var attrName	= attrNames[element.nodeName];
+			var url		= jQuery(element).attr(attrName);
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//, 'file://localhost/Users/jerome/webwork/tquery/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//, 'file://localhost/Users/jerome/webwork/augmentedgesture.js/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//, 'file://localhost/Users/jerome/webwork/webaudio.js/')
+			url	= url.replace(/\/$/, '/index.html')
+			jQuery(element).attr(attrName, url);
+		})
+	</script>
 </body>
 </html>
