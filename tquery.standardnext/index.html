@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tQuery: three.js + jQuery</title>
+	<base target=”_blank” />
+	<meta charset='utf-8'/>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
+	<script src='slides.js'></script>
+</head>
+
+<body style='display: none'>
+	<style>
+	span.orange {
+		color		: orange;
+	}
+	span.larger {
+		font-weight	: bolder;
+		font-size	: 120%;
+	}
+	</style>
+	<section class='slides layout-regular template-default'>
+
+<!-- ****************************************************************************
+		Talk Introduction
+********************************************************************************* -->
+	<article>
+		<h1>
+			<span style="font-size: 120%; color: orange;">tQuery</span>
+			<br/>
+			<br/>
+		</h1>
+		<h3 style="font-size: 120%">
+			<center>
+				<span style="color: orange">t</span>hree.js
+				power
+				+
+				j<span style="color: orange">Query</span>
+				API Usability
+			</center>
+			<br>
+		</h3>
+		<p>
+			Jerome Etienne
+		</p>
+	</article>
+	<article>
+		<h3>
+			Who Am I
+		</h3>
+		<img style="float:right" src='jetienne-avatar.jpg' />
+		<ul>
+			<li>
+				coder, speaker, trainer
+			</li>
+			<li>
+				Consulting
+			</li>
+			<li>
+				Javascript, Node.js, WebGL and other HTML5 games stuff
+			</li>
+		</ul>
+		<h4>Learning Three.js</h4>
+		<ul>
+			<li>
+				Author of <a href="http://learningthreejs.com">learningthreejs</a> blog
+			</li>
+			<li>
+				Lists of three.js tutorials or "WebGL for dummies"
+			</li>
+		</ul>
+		<h4>Contacts</h4>
+		<ul>
+			<li>
+				<a href='https://twitter.com/jerome_etienne'>@jerome_etienne</a> on twitter,
+				<a href='http://github.com/jeromeetienne'>jeromeetienne</a> on github
+			</li>
+		</ul>
+	</article>
+
+<!-- ****************************************************************************
+		tQuery 5min Presentation
+********************************************************************************* -->
+	<article>
+		<h1>
+			What is <span style="font-size: 120%; color: orange;">tQuery</span> ?
+		</h1>
+	</article>
+	<article>
+		<h3>tQuery in a few word</h3>
+		<h4><span class="orange">Thin layer</span> on top of three.js</h4>
+		<ul>
+			<li>
+				three.js : 100k min+gzip
+			</li>
+			<li>
+				tQuery.js : 8k min+gzip
+			</li>
+		</ul>
+		<h4><span class="orange">Dumb library</span></h4>
+		<ul>
+			<li>
+				Different API
+			</li>
+			<li>
+				Different default values
+			</li>
+			<li>
+				Same Semantic
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			and more preciselly ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Key Principles
+		</h3>
+		<h4>Technical</h4>
+		<ol>
+			<li>
+				Extension system for three.js
+			</li>
+			<li>
+				Mimic jQuery API
+			</li>
+		</ol>
+		<h4>Direction</h4>
+		<ul>
+			<li>
+				<strong>Technical:</strong> three.js power + jQuery API usability
+			</li>
+			<li>
+				<strong>Human:</strong> Bring 3D to non-specialists
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Goals of the project
+		</h3>
+
+		<h4><span class="orange">Bring 3D to non specialists</span></h4>
+		<ul>
+			<li>Itch to Scratch</li>
+		</ul>
+		<h4><span class="orange">People who know jQuery will learn tQuery in no time</span></h4>
+		<ul>
+			<li>Working hard to make it happen</li>
+		</ul>
+	</article>
+	<article>
+		<h2>
+			Freeze! Show, dont tell.
+		</h2>
+	</article>
+	<article>
+		<h3>
+			a Sport Car - 40 lines
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a minecraft guy - 20 lines
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a 3D Pong in Augmented Reality - 100 lines
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/augmentedgesture.js/examples/augmentedpong/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/augmentedgesture.js/examples/augmentedpong/"><img src="vendor/images/augmentedPong.png" height='80%'></a>
+	</article>
+	<article>
+		<h2>
+			Not bad ... Why the code is so short ?
+		</h2>
+	</article>
+	<article>
+		<h3>Why the code is so short ?</h3>
+		<h4><span style="color: orange">Mimicking jQuery API</span> makes code shorter</h4>
+		<ul>
+			<li>
+				chained API tends to produce short code
+			</li>
+			<li>
+				Plugins avoids recoding repeatitive elements
+			</li>
+		</ul>
+		<h4><span style="color: orange">Plugins</span> makes code shorter</h4>
+		<ul>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself">Don't Repeat Yourself</a>: less recoding repeatitive things
+			</li>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention over configuration</a>
+				thus coders don't need to specify each time
+			</li>
+		</ul>
+		<span style="color: orange">Short code is a by product of tQuery principles</span>
+	</article>
+	<article>
+		<h2>
+			Show us the code.
+		</h2>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span class='orange'>Minimal</span> Page
+			-
+			<a href="http://jeromeetienne.github.com/tquery/www/playground/">playground</a>
+		</h3>
+		<section>
+		<pre>
+&lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
+&lt;script src=&quot;../../build/tquery-bundle.js&quot;&gt;&lt;/script&gt;
+&lt;body&gt;&lt;script&gt;
+    var world	= tQuery.createWorld().boilerplate().start();
+    var object	= tQuery.createTorus().addTo(world);
+&lt;/script&gt;&lt;/body&gt;
+</pre>
+		</section>
+		<h4>Fun Facts</h4>
+		<ul>
+			<li>Full HTML5 page</li>
+			<li>Valid HTML5</li>
+			<li>Only 6-lines !</li>
+		</ul>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span style="color: orange">Minimal</span> Page
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minimal/examples/">Demo</a>
+		</h3>
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/'
+			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+	<article>
+		<h2>
+			What is the recipe of tQuery ?
+		</h2>
+	</article>
+	<article>
+		<h1>
+				Three.js power
+				<br/>
+				+
+				<br/>
+				jQuery API Usability
+		</h1>
+	</article>
+	<article>
+		<h3>
+			<span class='orange'>jQuery</span> and its <span class='orange'>API usability</span>
+		</h3>		
+		<h4>Always admired their plugins ecosystem</h4>
+			<ul>
+				<li>varied, lively</li>
+				<li>some impressive specimens</li>
+			</ul>
+		<h4>jQuery is popular</h4>
+			<ul>
+				<li>
+					85% of marketshare (ymmv)
+				</li>
+			</ul>
+		<h4>Match my goal: "<strong style="color: orange">Bring 3D to non-specialists</strong>"</h4>
+			<ul>
+				<li>
+					people who know jQuery will learn tQuery in no time
+				</li>
+			</ul>
+	</article>
+
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article>
+		<h3>
+			Three.js Power
+		</h3>
+		<h4>What is it?</h4>
+		<ul>
+			<li>3D javascript library</li>
+			<li>can render in WebGL, Canvas or dom</li>
+		</ul>
+		<h4>Why this library ?</h4>
+		<ul>
+			<li>likely the <span class='orange'>most popular</span></li>
+			<li>Actively developped by a community of experienced devs</li>
+			<li>and i knew it already :)</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			tQuery and Three.js sitting in a tree
+		</h3>
+		<h4>Principles</h4>
+		<ul>
+			<li>tquery.js core got a <span class='orange'>single dependancy: three.js</span></li>
+		</ul>
+		<h4>No Jail</h4>
+		<ul>
+			<li>easy to go back and forth between the two</li>
+			<li>Important!</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Just another API on top of three.js
+		</h3>
+		<h4>What remains the same ?</h4>
+		<ul>
+			<li>no change in semantic</li>
+			<li>nothing smart</li>
+		</ul>
+		<h4>What changes ?</h4>
+		<ul>
+			<li>other functions</li>
+			<li>other defaults</li>
+			<li>easy plugins system</li>
+		</ul>
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article>
+		<h2>
+			So you copy jQuery ?
+		</h2>
+	</article>
+	<article>
+		<h1>
+			Relation with <span style="font-size: 120%; color: orange;">jQuery</span>
+		</h1>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			tQuery Mimicks jQuery API
+		</h3>
+		<h4>Motivation</h4>
+		<ul>
+			<li>
+				It makes tQuery very easy to learn if you know jQuery
+			</li>
+			<li>
+				Very important. It got <span class="orange">significant consequences.</span>
+			</li>
+		</ul>
+		<h4>Principles</h4>
+		<ul>
+			<li>
+				for api, copy jquery API whenever possible
+			</li>
+			<li>
+				helpers may be provided, but jquery is the auhority
+			</li>
+		</ul>
+
+	</article>
+	<article>
+		<h2>
+			hmm up to which point ?	
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Key aspects of jQuery
+		</h3>
+		<ul>
+			<li>DOM tree from webpages</li>
+			<li>Chained API</li>
+			<li>ID and Class</li>
+			<li>CSS-like selector</li>
+			<li>DOM events</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Dom Tree
+		</h3>
+		<h4>DOM and 3D Scene: <span class="orange">both suprisingly similar</strong></h4>
+		<ul>
+			<li>
+				<strong>jQuery and DOM</strong> got a tree of elements from webpages
+			</li>
+			<li>
+				<strong>three.js</strong> got a hierachy of objects too
+			</li>
+		</ul>
+		<br/>
+		<table>
+			<tr>
+				<th></th>
+				<th>DOM</th>
+				<th>Three.js</th>
+			</tr>
+			<tr>
+				<th>Hierachy</th>
+				<td>DOM tree</th>
+				<td>scene</th>
+			</tr>
+			<tr>
+				<th>Element</th>
+				<td>DOMElement</th>
+				<td>THREE.Object3D</th>
+			</tr>
+		</table>
+	</article>
+	<article>
+		<h3>Mimicking jQuery</h3>
+		<h4>Chained API	</h4>
+		<pre>
+tQuery('.fooKlass').scale(2).translate(1,0,0);
+</pre>
+		<h4>id, class and data</h4>
+		<pre>
+// jQuery version
+jQuery('&lt;div&gt;').addClass('foobar')
+// tQuery version
+tQuery.createCube().addClass('foobar')
+</pre>
+	</article>
+	<article>
+		<h3>
+			CSS-like Selector
+		</h3>
+		<h4>Selector based on <span class='orange'>geometry</span>, similar to a jQuery('span')</h4>
+		<pre>
+// jQuery version
+jQuery('div');	// select all div element
+// tQuery version
+tQuery('cube');	// select all Object3D with a cube geometry
+</pre>
+		<h4>Compose filters</h4>
+		<pre>
+// jQuery version
+jQuery('div.bar');	// div element with class 'bar'
+// tQuery version
+tQuery('cube.bar')	// objects with cube geometry with class 'bar'
+</pre>
+	</article>
+	<article>
+		<h3>
+			Dom Events
+		</h3>
+		<pre>
+tQuery('cube').on('click', function(){
+    console.log("somebody put the mouse over a cube");
+});
+</pre>
+		<ul>
+			<li>Playground <a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\tvar world = tQuery.createWorld().boilerplate().start();\n\t// add a cube\n\ttQuery.createCube().addTo(world);\n\t// bind the click event\n\ttQuery(\"cube\").on(\"click\", function(event){\n\t\t// get the target object\n\t\tvar object3d = tQuery(event.target);\n\t\t// double its size\n\t\tobject3d.scaleBy(1.2);\n\t});\n</script></body>"}'>example</a></li>
+		</ul>
+		<h4>Supported Events</h4>
+		<ul>
+			<li>click and dblclick</li>
+			<li>mouseup and mousedown</li>
+			<li>mouseover and mouse out</li>
+		</ul>
+	</article>
+<!-- ****************************************************************************
+		More Examples
+********************************************************************************* -->
+	<article>
+		<h2>
+			Bla bla bla ... all talk.
+			Show something!
+		</h2>
+	</article>
+	<article>
+		<h3>
+			a sound visualisation - 40 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p> 
+		<a href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html"><img src="vendor/images/webaudio-tquery.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Play with Doom Character - 50 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/"><img src="vendor/images/MD2Character.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Punch a Doom Character - 100 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/augmentedgesture.js/examples/punchquake2character/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/augmentedgesture.js/examples/punchquake2character/examples/"><img src="vendor/images/PunchDoomCharacter.png" height='80%'></a>
+	</article>
+<!-- ****************************************************************************
+		Tube Mini Game
+********************************************************************************* -->
+	<article>
+		<h2>
+			What about a game ?
+		</h2>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span style="color: orange">mini-game</span>
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/tunnelgl/">Demo</a>
+		</h3>
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/tunnelgl/'
+			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+	<article>
+		<h2>
+			Ok not bad, what about the code?
+		</h2>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Build the tube's <span style="color: orange">walls</span>
+		</h3>
+		<section>
+		<pre>
+// HINT: a tunnel is a cylinder seen from inside.
+// Once you realized that, most of the work is done.
+
+// create the object
+var tube = tQuery.createCylinder();
+
+// now lets turn it inside out - flip the geometry
+tube.geometry().flip();
+</pre>
+		</section>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			<span style="color: orange">Advancing</span> into the tube
+		</h3>
+		<section>
+		<pre>
+tubeTexture.material().textureScrolling({
+    // transform the texture on render
+    transform	: function(tTexture){
+        // to go forward
+        tTexture.offset.y	+= 0.2;
+        // make it loop
+        tTexture.offset.y	%= 1;
+    }
+});
+</pre>
+		</section>
+		<ul>
+			<li>
+				It is all an illusion!
+			</li>
+			<li>
+				"There is no spoon" - matrix
+			</li>
+		</ul>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Making the tube <span style="color: orange">wavy</span>
+		</h3>
+		<section>
+		<pre>
+tube.geometry().vertexAnimation({
+    // transform vertices on render
+    transform	: function(origin, vector, present){
+        // compute displacement
+        var deltaX = Math.cos(present*0.4);
+        var deltaY = Math.sin(present*0.4);
+	// apply displacement
+        vector.x = origin.x + deltaX;
+        vector.y = origin.y + deltaY;
+    }
+});
+</pre>
+		</section>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Move the <span style="color: orange">player</span>
+		</h3>
+		<pre>
+// Move player left/right
+var playerAngle	= 0;
+var keyboard	= tQuery.keyboard();
+// hook the rendering loop
+world.loop().hook(function(){
+	// check the keyboard
+	if( keyboard.pressed('right') )	playerAngle += 0.01;
+	if( keyboard.pressed('left') )	playerAngle -= 0.01;
+});
+</pre>
+
+	</article>
+
+<!-- ****************************************************************************
+		Featured Extensions
+********************************************************************************* -->
+	<article>
+		<h2>
+			hmm tQuery is about extension ?<br/>Show some!
+		</h2>
+	</article> 
+	<article>
+		<h3>Examples Plugins</h3>
+		<h4>
+			<span class="orange">tQuery.text</span>: Display Text in 3D
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/text/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.Shapes</span>: Build 3D shape with canvas-like path
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/shape/examples/'>example</a>
+			- <a href='http://jeromeetienne.github.com/tquery/www/playground/#j/{"textValue":"<!doctype html><title>tQuery minimal page</title>\n<script src=\"../../build/tquery-all.js\"></script>\n<body><script>\n\n\tvar world = tQuery.createWorld().fullpage().start();\n\n\ttQuery.createText(\"Valentine\").addTo(world)\n\t\t.zoom(1/4).translateY(0.6);\n\ttQuery.createText(\"Love\").addTo(world)\n\t\t.zoom(1/4).translateY(-0.6);\n\ttQuery.createHeart().id(\"heart\").addTo(world);\n\n\tworld.loop().hook(function(deltaTime, present){\n\t\tvar angle\t= present * 2 * Math.PI;\n\t\ttQuery(\"#heart\").scale( 0.8 + 0.4 * Math.abs(Math.sin(angle)))\n\t\ttQuery(\"text\").rotation( 0, Math.PI/6 * Math.sin(angle), 0 )\n\t});\n\t\n</script></body>"}'>Valentine card</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.csg</span>: add/sub objects
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/csg/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.domevents</span>: Emulation of DOM event in 3D space
+			- <a href='http://jeromeetienne.github.com/threex/examples/threex.domevent/'>example</a>
+		</h4>
+	</article>
+	<article>
+		<h3>More Examples Plugins</h3>
+		<h4>
+			<span class="orange">tQuery.fireball</span>: pure shader material
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/fireball/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.md2Character</span>: Animate doom character
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/md2character/examples/'>example</a>
+			- can play in console too. 
+		</h4>
+		<pre>
+character.setSkin(2);	// to change the skin (5 of them)
+character.setWeapon(4);	// to change the weapons (11 of them)
+// some randomness
+setInterval(function(){
+    character.setSkin(Math.floor(Math.random()*5 % 5));
+    character.setWeapon(Math.floor(Math.random()*11 % 11));
+}, 1000);
+</pre>
+	</article>
+	<article>
+		<h3>Just a few plugins in tQuery</h3>
+
+		<ul>
+			<li>Plugins allows much easier reuse</li>
+			<li>Written to see how tQuery reacts in practice</li>
+			<li>Currently 38 plugins in incubation</li>
+		</ul>
+	</article>
+
+<!-- ****************************************************************************
+		Future work
+********************************************************************************* -->
+	<article>
+		<h2>
+			Anything else ?
+		</h2>
+	</article>
+	<article>
+		<h3>Conclusion</h3>
+		<h4>three.js power + jQuery API Usability</h4>
+		<ul>
+			<li>
+				seems a good recipe
+			</li>
+		</ul>
+		<h4>The Code</h4>
+		<ul>
+			<li>All under MIT license</li>
+			<li>Code on github at <a href="https://github.com/jeromeetienne/tquery">https://github.com/jeromeetienne/tquery</a></li>
+			<li>Wanna play online ? use the <a href="/www/playground">playground</a></li>
+		</ul>
+	</article>
+	<article>
+		<h1>
+			That's all folks.
+		</h1>
+		<h3>
+			Question ?
+		</h3>
+		<p>
+			Jerome Etienne
+		</p>
+	</article>
+	<script>
+		//////////////////////////////////////////////////////////////////
+		// scan the whole webpage and replace url to their local location
+		// - usefull to have local copy of the slides in conference when internet is unavailable
+		// - and still have slides which works when internet is available
+		// $ open -a "/Applications/Google Chrome.app" --args --disable-web-security --allow-file-access-from-file
+		location.href.match(/^file:/) && jQuery('a').add('iframe').each(function(index, element){
+			var attrNames	= {
+				'A'	: 'href',
+				'IFRAME': 'src'
+			};
+			var attrName	= attrNames[element.nodeName];
+			var url		= jQuery(element).attr(attrName);
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//, 'file://localhost/Users/jerome/webwork/tquery/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//, 'file://localhost/Users/jerome/webwork/augmentedgesture.js/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//, 'file://localhost/Users/jerome/webwork/webaudio.js/')
+			url	= url.replace(/\/$/, '/index.html')
+			jQuery(element).attr(attrName, url);
+		})
+	</script>
+</body>
+</html>
