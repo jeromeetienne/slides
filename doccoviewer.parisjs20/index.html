@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IIM Workshop Slides</title>
+	<base target=”_blank” />
+	<meta charset='utf-8'/>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
+	<script src='slides.js'></script>
+</head>
+
+<body style='display: none'> 
+	<style>
+		[data-markdown] em {
+			color		: orange;
+			font-style	: normal;
+			font-weight	: bolder;
+			
+		}
+		article h3 {
+			font-size	: 180%;
+		}
+	</style>
+	<section class='slides layout-regular template-default'>
+
+<!-- ****************************************************************************
+		Talk Introduction
+********************************************************************************* -->
+	<article data-markdown>
+		
+		# *Docco Viewer*
+		
+		## Easy Documentation
+		
+		Jerome Etienne
+	</article>
+<!-- ****************************************************************************
+		presentation
+********************************************************************************* -->
+	<article>
+		<h3>Who Am I</h3>
+		<img style="float:right" src='jetienne-avatar.jpg' />
+		<ul>
+			<li>coder, speaker, trainer</li>
+			<li>Javascript, Node.js, WebGL and other HTML5 games stuff</li>
+		</ul>
+		<h4>Learning Three.js</h4>
+		<ul>
+			<li>Author of <a href="http://learningthreejs.com">learningthreejs</a> blog</li>
+			<li>Lists of three.js tutorials or "WebGL for dummies"</li>
+		</ul>
+		<h4>Contacts</h4>
+		<ul>
+			<li>
+				<a href='https://twitter.com/jerome_etienne'>@jerome_etienne</a> on twitter,
+				<a href='http://github.com/jeromeetienne'>jeromeetienne</a> on github
+			</li>
+		</ul>
+	</article>
+	<article data-markdown>
+		### What is Docco.js
+
+		* Documentation for source
+		* Format dead simple
+		* often called *Annoted Source*
+	</article>
+	<article data-markdown>
+		### Where does it comes from ?
+
+		#### Invented by [Jeremy Ashkenas](https://twitter.com/#!/jashkenas)
+		* Well known for his work
+		* [backbone.js](http://documentcloud.github.com/backbone/),
+		[coffeescript](http://coffeescript.org/),
+		[underscore.js](http://documentcloud.github.com/underscore/) 
+		* He will be at [dotjs](http://dotjs.eu) btw :)
+
+		#### Used to doc backbone.js
+		* see [backbone's doc](http://documentcloud.github.com/backbone/docs/backbone.html)
+	</article>
+	<article data-markdown>
+		
+		## *Show, dont tell*
+	</article>
+	<article data-markdown>
+		### Example
+
+		```
+		// This is a super comment in markdown. So you can 
+		// put [link](http://example.com)
+		//
+		// * or list
+		// * with bullets
+		//
+		// and many other thing
+		function super(){
+			console.log("javascript is cool")
+		}
+		```
+
+		* Comments in [markdown](http://daringfireball.net/projects/markdown/)
+		* Comments and source presented [side by side](http://documentcloud.github.com/backbone/docs/backbone.html)
+	</article>
+	<article data-markdown>
+
+		## *So it is perfect already ?*
+	</article>
+	<article data-markdown>
+		### Issue with docco.js
+		
+		* It generate files.
+
+		#### Issues
+
+		* So you need to *generate them*
+		* So to *store them*
+		  * Find a location
+		  * use space in repository
+		* *Keep them in sync* with the code
+		  * or docs and code are desynced
+	</article>
+	<article data-markdown>
+		### Issue with docco.js
+		
+		* It run on servers.
+
+		#### Issues
+
+		* It *requires installation*
+		* Several dependancies needs to be met
+		  * Node.js
+		  * Pygments
+		  * CoffeeScript
+		  * and NPM
+	</article>
+	<article data-markdown>
+		
+		## *hmm and how to fix those issue ?*
+	</article>
+	<article data-markdown>
+		### Which Browser to use
+		
+		* a browser with WebGL!
+		* preferably [chrome](http://www.google.com/chrome)
+		  * Thus we reduce version issues
+		* possible alternatives: firefox, opera
+	</article>
+	<article data-markdown>
+		### Point Your browser to tQuery
+		
+		#### Using file access
+		```
+		$ open -a "/Applications/Google Chrome.app" --args
+			--disable-web-security
+			--allow-file-access-from-files
+		```
+
+		#### Using http access
+		```
+		$ cd tQuery
+		$ python -m SimpleHTTPServer
+		```
+		then goto [http://127.0.0.1:8000](http://127.0.0.1:8000) with your browser
+	</article>
+	<article data-markdown>
+		# *Some Examples*
+	</article>
+	<article>
+		<h3>
+			a Sport Car
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a Minecraft Guy
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Realistic 3D Physics
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/physics/examples/body.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/physics/examples/body.html"><img src="vendor/images/physics.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a Sound Visualisation
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p> 
+		<a href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html"><img src="vendor/images/webaudio-tquery.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Doom Character
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/"><img src="vendor/images/MD2Character.png" height='80%'></a>
+	</article>
+	<article data-markdown>
+		# *Little Bit of Background*
+	</article>
+	<article data-markdown>
+		### What is WebGL
+		
+		* Browser stuff
+		* HTML5 Standard
+		* Copied from OpenGL 2.0 ES
+		* Talk directly to graphics cards
+		* Very efficient - way above normal web stuff
+		* Quite verbose tho
+	</article>
+	<article data-markdown>
+		### WebGL Support
+		
+		* Rather new thing
+		* Modern Browsers got support - IE9 hasn't
+		* Desktop support: *Ok*
+		* Mobile support: *Not Yet*
+		  * Very marginal
+		  * IOS can do it but [not by default](http://learningthreejs.com/blog/2012/05/29/three-js-sportcar-on-ios/)
+		  * firefox/opera mobile
+	</article>
+	<article data-markdown>
+		### Libraries Needed
+		
+		* Make it easier/shorter to code
+		* [Three.js](https://github.com/mrdoob/three.js/) is very popular
+		* We gonna use it thru [tQuery](http://jeromeetienne.github.com/tquery/)
+		* a jQuery-like API for THREE.js
+	</article>
+	<article data-markdown>
+		### What is tQuery
+		
+		* thin library on top of three.js
+		  * three.js 100k - tQuery 8k
+		* Make it easier/shorter to code
+		* all opensource - under [mit license](https://github.com/jeromeetienne/tquery/blob/master/MIT-LICENSE.txt)
+		* a jQuery-like API for three.js
+		  * Even Easier to learn if you already know jQuery
+		  * *85% of webdevs* already know jQuery
+	</article>
+	<article data-markdown>
+		### and Javascript ?
+		
+		* Programming language on the Web
+		* May be hard to get - [wtfjs](http://wtfjs.com/)
+		* Dont worry we will do that together :)
+	</article>
+	<article data-markdown>
+		# *Let's Code!!*
+	</article>
+	<article data-markdown>
+		### 3D character
+		
+		* Base Code [here](http://jeromeetienne.github.com/tquery/plugins/iim3dcharacter/examples/index.html)
+
+		#### Possible Modifications
+		
+		* Change character skin
+		* Change text on sign
+		* Change Animation of the character
+		  * Current one
+		  * Custom one
+		* Add another Character
+		* Change Camera Position
+	</article>
+	<article data-markdown>
+		### Mini Game
+		
+		* Base Code [here](http://jeromeetienne.github.com/tquery/plugins/iimminigame/examples/index.html)
+		
+		#### Possible Modifications
+		
+		* Change Sound
+		* Add SoundTrack
+		* Add tweening effect (on ball and racket)
+		* Add light effects
+	</article>
+	<article data-markdown>
+		### Parametric Design
+		
+		* Base Code [here](http://jeromeetienne.github.com/tquery/plugins/iimdesignparam/examples/index.html)
+		
+		#### Possible Modifications
+		
+		* Change Color of Fish
+		* Change the target of the linkified text
+		* Add another Shape (heart or fish)
+		* Animation When clicking on Fish (turn around, grow/shrink)
+		* Effect on cinema screen (drop and do bouncing effect on load)
+	</article>
+	<script>
+		//////////////////////////////////////////////////////////////////
+		// scan the whole webpage and replace url to their local location
+		// - usefull to have local copy of the slides in conference when internet is unavailable
+		// - and still have slides which works when internet is available
+		// $ open -a "/Applications/Google Chrome.app" --args --disable-web-security --allow-file-access-from-file
+		location.href.match(/^file:/) && jQuery('a').add('iframe').each(function(index, element){
+			var attrNames	= {
+				'A'	: 'href',
+				'IFRAME': 'src'
+			};
+			var attrName	= attrNames[element.nodeName];
+			var url		= jQuery(element).attr(attrName);
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//, 'file://localhost/Users/jerome/webwork/tquery/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//, 'file://localhost/Users/jerome/webwork/augmentedgesture.js/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//, 'file://localhost/Users/jerome/webwork/webaudio.js/')
+			url	= url.replace(/\/$/, '/index.html')
+			jQuery(element).attr(attrName, url);
+		})
+	</script>
+	<script>
+	// ==UserScript==
+	// @name Use Markdown, sometimes, in your HTML.
+	// @author Paul Irish <http://paulirish.com/>
+	// @link http://git.io/data-markdown
+	// @match *
+	// ==/UserScript==
+	
+	
+	// If you're not using this as a userscript just delete from this line up. It's cool, homey.
+	
+	(function markdownSlideToHtml(){
+	  
+		if (!window.Showdown){
+			var scr		= document.createElement('script');
+			scr.onload	= markdownSlideToHtml;
+			scr.src		= 'vendor/showdown.js';
+			document.body.appendChild(scr);
+			return;
+		}
+	
+		[].forEach.call(document.querySelectorAll('[data-markdown]'), function fn(elem){
+			// strip leading whitespace so it isn't evaluated as code
+			//var text      = elem.textContent.replace(/\n\s*\n/g,'\n');
+			// jerome- to have better support of html within markdown
+			var text      = elem.innerHTML;
+			//console.log("origin innerHTML", text.split('\n'));
+			// remove all blanks lines
+			//text		= text.replace(/\n\s*\n/g,'\n');
+			//console.log("step text", text)
+			// set indentation level so your markdown can be indented within your HTML
+			var matches	= text.match(/^\n([ \t]*)/);
+			var leadingws	= matches[1].length;
+			//console.log("first line", matches)
+			//console.log("leadingws", leadingws)
+			var regex	= new RegExp('\\n[ \\t]{' + leadingws + '}','g');
+			var md		= text.replace(regex,'\n');
+			//console.log("pre md", md);
+			html      = (new Showdown.converter()).makeHtml(md);
+			//console.log("post html", html);
+	
+			// to support prettyprint
+			html		= html.replace(/<code><br \/>/g,'<pre class="prettyprint">');
+			html		= html.replace(/<br \/><\/code>/g,'</pre>');
+			// unescape [><]
+			html		= html.replace(/&amp;gt;/g,'>');
+			html		= html.replace(/&amp;lt;/g,'<');
+			//console.log("escaped html", html);
+		  
+			// here, have sum HTML
+			elem.innerHTML = html;
+		});
+		// callback prettyprint to highlight code found in markdown
+		prettyPrint();
+	}());
+
+//* http://jsclassroom.com
+//* http://jscoaches.com
+//* http://html5coaches.com
+//* http://jsuni.com
+//* http://javascriptuni.com
+//
+//prefix: js html5 javascript
+//
+//suffix: school classroom univesity academy class education 
+//
+//
+//* https://github.com/hakimel/reveal.js/issues/15 reveal.js in markdown
+//  * do the same for html5slide
+//  * standalone, no compilation, no need to commit all to markdown
+//* https://github.com/vinyll/html5-slides-markdown does well but not proper target
+//  * nice on how to make slides in markdown tho
+//
+// http://tbassetto.github.com/chrome-dev-tools-tips-and-tricks/#8
+/*
+ * Controls flow:
+ * - describe the issue:
+ *   http://eloquentjavascript.net/chapter2.html
+ * - fix with Flow.js
+ *
+ * Js Basic:
+ * - if / else
+ * - condition
+ * - what is true/false
+ * - falsy values
+ *
+ *
+ * 
+*/
+	</script> 
+</body>
+</html>
