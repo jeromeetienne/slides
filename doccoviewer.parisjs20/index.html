@@ -100,7 +100,20 @@
 		* Comments and source presented [side by side](http://documentcloud.github.com/backbone/docs/backbone.html)
 	</article>
 	<article data-markdown>
+		### Possible Usage
 
+		#### Pro
+		* Very nice to document short examples
+		* (like tQuery plugins examples :)
+
+		#### Con
+		* Not too suitable for library code
+		  * Docco isnt aware of the code
+		  * no idea of type/function/class etc...
+		  * For lib, jsdoc provides needed structure
+	</article>
+	<article data-markdown>
+		
 		## *So it is perfect already ?*
 	</article>
 	<article data-markdown>
@@ -133,173 +146,78 @@
 	</article>
 	<article data-markdown>
 		
-		## *hmm and how to fix those issue ?*
+		## *hmm and how to fix those issues ?*
 	</article>
 	<article data-markdown>
-		### Which Browser to use
 		
-		* a browser with WebGL!
-		* preferably [chrome](http://www.google.com/chrome)
-		  * Thus we reduce version issues
-		* possible alternatives: firefox, opera
+		# *Docco Viewer*
+		
+		## Saving Space and Time
 	</article>
-	<article data-markdown>
-		### Point Your browser to tQuery
+	<article  data-markdown>
+		### What is it
 		
-		#### Using file access
-		```
-		$ open -a "/Applications/Google Chrome.app" --args
-			--disable-web-security
-			--allow-file-access-from-files
-		```
+		* Online Viewer 
+		* Fully compatible with docco
+		* code on [github](https://github.com/jsinside/docco.js) under MIT license
+	</article>
+	<article  data-markdown>
+		### Demo
+		
+		* in practice it is [that]()
 
-		#### Using http access
-		```
-		$ cd tQuery
-		$ python -m SimpleHTTPServer
-		```
-		then goto [http://127.0.0.1:8000](http://127.0.0.1:8000) with your browser
-	</article>
-	<article data-markdown>
-		# *Some Examples*
-	</article>
-	<article>
-		<h3>
-			a Sport Car
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
-		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
-	</article>
-	<article>
-		<h3>
-			a Minecraft Guy
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
-		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
-	</article>
-	<article>
-		<h3>
-			Realistic 3D Physics
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/physics/examples/body.html">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
-		<a href="http://jeromeetienne.github.com/tquery/plugins/physics/examples/body.html"><img src="vendor/images/physics.png" height='80%'></a>
-	</article>
-	<article>
-		<h3>
-			a Sound Visualisation
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html">Demo</a>
-		</h3>
-		<p>&nbsp;</p> 
-		<a href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html"><img src="vendor/images/webaudio-tquery.png" height='80%'></a>
-	</article>
-	<article>
-		<h3>
-			Doom Character
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
-		<a href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/"><img src="vendor/images/MD2Character.png" height='80%'></a>
-	</article>
-	<article data-markdown>
-		# *Little Bit of Background*
-	</article>
-	<article data-markdown>
-		### What is WebGL
-		
-		* Browser stuff
-		* HTML5 Standard
-		* Copied from OpenGL 2.0 ES
-		* Talk directly to graphics cards
-		* Very efficient - way above normal web stuff
-		* Quite verbose tho
-	</article>
-	<article data-markdown>
-		### WebGL Support
-		
-		* Rather new thing
-		* Modern Browsers got support - IE9 hasn't
-		* Desktop support: *Ok*
-		* Mobile support: *Not Yet*
-		  * Very marginal
-		  * IOS can do it but [not by default](http://learningthreejs.com/blog/2012/05/29/three-js-sportcar-on-ios/)
-		  * firefox/opera mobile
-	</article>
-	<article data-markdown>
-		### Libraries Needed
-		
-		* Make it easier/shorter to code
-		* [Three.js](https://github.com/mrdoob/three.js/) is very popular
-		* We gonna use it thru [tQuery](http://jeromeetienne.github.com/tquery/)
-		* a jQuery-like API for THREE.js
-	</article>
-	<article data-markdown>
-		### What is tQuery
-		
-		* thin library on top of three.js
-		  * three.js 100k - tQuery 8k
-		* Make it easier/shorter to code
-		* all opensource - under [mit license](https://github.com/jeromeetienne/tquery/blob/master/MIT-LICENSE.txt)
-		* a jQuery-like API for three.js
-		  * Even Easier to learn if you already know jQuery
-		  * *85% of webdevs* already know jQuery
-	</article>
-	<article data-markdown>
-		### and Javascript ?
-		
-		* Programming language on the Web
-		* May be hard to get - [wtfjs](http://wtfjs.com/)
-		* Dont worry we will do that together :)
-	</article>
-	<article data-markdown>
-		# *Let's Code!!*
-	</article>
-	<article data-markdown>
-		### 3D character
-		
-		* Base Code [here](http://jeromeetienne.github.com/tquery/plugins/iim3dcharacter/examples/index.html)
 
-		#### Possible Modifications
+		* Here is [source]()
+		* Here is the [output]()
+	</article>
+	<article  data-markdown>
+		### Principles
 		
-		* Change character skin
-		* Change text on sign
-		* Change Animation of the character
-		  * Current one
-		  * Custom one
-		* Add another Character
-		* Change Camera Position
+		1. Docco viewer is a webapp
+		1. give it an url
+		1. it loads the file
+		1. it parse it with docco.js format
+		1. display the result immediatly
+	</article>
+	<article  data-markdown>
+		### Work done
+		
+		#### Made in javascript
+		* original in coffee
+		
+		#### Runable in browser and Server
+		* original in server only
+		
+		#### Linkability is maintained
+		* still able to link directly to the docs
+		* the viewer webapp get parameters from the url
+	</article>
+	<article  data-markdown>
+		### What does it changes
+		
+		#### docs are live
+		* so always insync
+		* no need to generate, store, keep insync
+		
+		#### No installation required
+		* more standalone / less dependancy
+	</article>
+	<article  data-markdown>
+		### All that for What ?
+		
+		#### Easy way to get documentations
+		
+		#### docs simple and insync
+		
+		#### Less hasle due to no install
+		
+		*Now im happy :)*
 	</article>
 	<article data-markdown>
-		### Mini Game
 		
-		* Base Code [here](http://jeromeetienne.github.com/tquery/plugins/iimminigame/examples/index.html)
-		
-		#### Possible Modifications
-		
-		* Change Sound
-		* Add SoundTrack
-		* Add tweening effect (on ball and racket)
-		* Add light effects
-	</article>
-	<article data-markdown>
-		### Parametric Design
-		
-		* Base Code [here](http://jeromeetienne.github.com/tquery/plugins/iimdesignparam/examples/index.html)
-		
-		#### Possible Modifications
-		
-		* Change Color of Fish
-		* Change the target of the linkified text
-		* Add another Shape (heart or fish)
-		* Animation When clicking on Fish (turn around, grow/shrink)
-		* Effect on cinema screen (drop and do bouncing effect on load)
+		# *Questions ?*
+				
+		Jerome Etienne
 	</article>
 	<script>
 		//////////////////////////////////////////////////////////////////
@@ -376,40 +294,6 @@
 		// callback prettyprint to highlight code found in markdown
 		prettyPrint();
 	}());
-
-//* http://jsclassroom.com
-//* http://jscoaches.com
-//* http://html5coaches.com
-//* http://jsuni.com
-//* http://javascriptuni.com
-//
-//prefix: js html5 javascript
-//
-//suffix: school classroom univesity academy class education 
-//
-//
-//* https://github.com/hakimel/reveal.js/issues/15 reveal.js in markdown
-//  * do the same for html5slide
-//  * standalone, no compilation, no need to commit all to markdown
-//* https://github.com/vinyll/html5-slides-markdown does well but not proper target
-//  * nice on how to make slides in markdown tho
-//
-// http://tbassetto.github.com/chrome-dev-tools-tips-and-tricks/#8
-/*
- * Controls flow:
- * - describe the issue:
- *   http://eloquentjavascript.net/chapter2.html
- * - fix with Flow.js
- *
- * Js Basic:
- * - if / else
- * - condition
- * - what is true/false
- * - falsy values
- *
- *
- * 
-*/
 	</script> 
 </body>
 </html>
