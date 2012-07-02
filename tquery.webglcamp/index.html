@@ -169,8 +169,8 @@
 		* **Actual need :** to learn the web
 		
 		#### How to learn the Web
-		* Normal Web Tutorials takes care of that.
-		* Many already exists
+		* Already covered by Normal Web Tutorials.
+		* Many already exists.
 	</article>
 	<article data-markdown>
 		### Advocacy *Needs*
@@ -186,13 +186,6 @@
 	</article>
 	<article data-markdown>
 		# *WegGL API isn't Webby*
-	</article>
-	<article data-markdown>
-		### WegGL API isn't Webby
-		
-		* WebGL comes from old times
-		* WebGL is Very Low Level
-		* WebGL is Super Verbose
 	</article>
 	<article data-markdown>
 		## *WebGL is OLD*
@@ -220,12 +213,12 @@
 		* [post](http://learningwebgl.com/blog/?p=28)
 		  / [demo](http://learningwebgl.com/lessons/lesson01/index.html)
 		* in 2d - pure white
-		* 200 lines
+		* *200 lines!!*
 
 		#### a box and a texture
 		* [post](http://learningwebgl.com/blog/?p=684)
 		  / [demo](http://learningwebgl.com/lessons/lesson07/index.html)
-		* 500 lines
+		* *500 lines!!*
 	</article>
 	<article data-markdown>
 		## *WebGL is Low Level*
@@ -237,9 +230,9 @@
 		* designed for hardware accelerated graphic
 		* Talk to the hardware directly
 		
-		#### Fitness
-		* Uses logic foreign to usual web
-		* Usual Web api are more abstract
+		#### Fitness ?
+		* Uses a logic foreign to common WebDevs
+		* Usual Web API are far more abstract
 		  * cf. canvas2D
 	</article>
 	<article data-markdown>
@@ -265,46 +258,19 @@
 		* So let's make *a eloquent API*
 	</article>
 	<article data-markdown>
-		### a Webby API ?
-		
-		#### Api Goals ? 
-		* modern, high level, eloquent
-		
-		#### Feasability
-		* Doesn't seems out of reach
-	</article>
-	<article data-markdown>
 		### What about jQuery API ?
+		
+		#### Describing jQuery as *modern*, *high level*, and *eloquent* ?
+		* Doesn't seems far fetched at all
+		* In fact, it *seems quite ok*
 		
 		#### Highly popular
 		* so seems to fit webdevs needs
 		
-		#### Requirements Satisfaction
-		* it seems to fit the bill
-		* Describing jQuery as
-		  *modern*, *high level*, and *eloquent* ?
-		* Doesn't seems far fetched at all
-		* In fact, it *seems quite ok*
+		#### *We got a winner!*
 	</article>
 	<article data-markdown>
-		## Doesn't seem bad...
-	</article>
-	<article data-markdown>
-		### What now ?
-		
-		#### 1. Let's act on it.
-		
-		#### 2. Let's try to write this thing
-		
-		#### 3. Here is my result: *tQuery*
-	</article>
-	<article data-markdown>
-		# *t*hree.js + j*Query* => *tQuery*
-	</article>
-	<article>
-		<h1>
-			What <span style="font-size: 120%; color: orange;">tQuery</span> aimed to be?
-		</h1>
+		## not bad... Let's act on it!
 	</article>
 	<article>
 		<h1>
@@ -322,9 +288,12 @@
 			</center>
 			<br>
 		</h3>
+		<h4>My Try to make WebGL more Reachable</h4>
 	</article>
 	<article data-markdown>
 		### *t*hree.js + j*Query*
+		
+		#### Goal: *Bring 3D to non specialists*
 		
 		#### three.js power 
 		* actively developped by a team of skilled dev
@@ -332,90 +301,56 @@
 		* Very popular
 		
 		#### jQuery API usability
-		* widely recognized (85% market share)
 		* successful plugin ecosystem
-		* Very popular
+		* Very popular (85% market share?)
 	</article>
-	<article>
-		<h1>
-			Relation with <span style="font-size: 120%; color: orange;">three.js</span>
-		</h1>
+	<article data-markdown>
+		# Relation with *three.js*
 	</article>
-	<article>
-		<h3>tQuery in a few word</h3>
-		<h4>Goal: <span class="orange">Bring 3D to non specialists</span></h4>
-		<h4><span class="orange">Thin layer</span> on top of three.js</h4>
-		<ul>
-			<li>
-				three.js : 100k min+gzip
-			</li>
-			<li>
-				tQuery.js : 8k min+gzip
-			</li>
-		</ul>
-		<h4><span class="orange">Dumb library</span> on top of three.js</h4>
-		<ul>
-			<li>
-				Different API
-			</li>
-			<li>
-				Different default values
-			</li>
-			<li>
-				Same Semantic
-			</li>
-		</ul>
+	<article data-markdown>
+		### tQuery is on top of three.js
+		
+		#### three.js is *Already a simplication of WebGL*
+		
+		#### *Thin Layer* on top of three.js
+		* three.js : 100k min+gzip
+		* tQuery.js : 8k min+gzip
+		
+		#### *Dumb library* on top of three.js
+		* Different API, Different defaults
+		* Same Semantic
 	</article>
 <!-- ****************************************************************************
 		Mimic jQuery-API
 ********************************************************************************* -->
-	<article>
-		<h1>
-			Relation with <span style="font-size: 120%; color: orange;">jQuery</span>
-		</h1>
+	<article data-markdown>
+		# Relation with *jQuery*
 	</article>
-	<article class='nobackground'>
-		<h3>
-			tQuery Mimics jQuery API
-		</h3>
-		<h4>Motivation</h4>
-		<ul>
-			<li>
-				It makes tQuery very easy to learn if you know jQuery
-			</li>
-			<li>
-				Very important. It got significant consequences.
-				<span class="orange">Not Kidding</span>
-			</li>
-		</ul>
-		<h4>Principles</h4>
-		<ul>
-			<li>
-				for api, copy jquery API whenever possible
-			</li>
-			<li>
-				helpers may be provided, but jquery is the auhority
-			</li>
-		</ul>
-
+	<article data-markdown>
+		### tQuery Mimics jQuery API
+		
+		#### Motivation
+		* It makes tQuery very easy to learn if you know jQuery
+		* => So *very important*
+		
+		#### Principles 
+		* "Copy jquery API whenever possible"
+		* helpers may be provided, but jquery is the auhority
 	</article>
-	<article>
-		<h3>
-			Key aspects of jQuery
-		</h3>
-		<ul>
-			<li>DOM tree from webpages</li>
-			<li>Chained API</li>
-			<li>ID and Class</li>
-			<li>CSS-like selector</li>
-			<li>DOM events</li>
-		</ul>
-		<span class='orange'>All Present in tQuery too!</span>
+	<article data-markdown>
+		### In Bed with *jQuery*
+		
+		#### Key aspects of jQuery
+		* DOM tree from webpages
+		* Chained API
+		* ID and Class
+		* CSS-like selector
+		* DOM events
+		
+		#### *All Present in tQuery too!*
 	</article>
-	<article>
-		<h2>
-			Freeze! Show, dont tell.
-		</h2>
+	<article data-markdown>
+		## Freeze! Show, dont tell.
 	</article>
 	<article>
 		<h3>
@@ -453,38 +388,8 @@
 		<p>&nbsp;</p>
 		<a href="http://jeromeetienne.github.com/pongGL/"><img src="vendor/images/pongGL.png" height='80%'></a>
 	</article>
-	<article>
-		<h2>
-			Not bad ... Why the code is so short ?
-		</h2>
-	</article>
-	<article>
-		<h3>Why the code is so short ?</h3>
-		<h4><span style="color: orange">Mimicking jQuery API</span> makes code shorter</h4>
-		<ul>
-			<li>
-				chained API tends to produce short code
-			</li>
-			<li>
-				Plugins avoids recoding repeatitive elements
-			</li>
-		</ul>
-		<h4><span style="color: orange">Plugins</span> makes code shorter</h4>
-		<ul>
-			<li>
-				<a href="http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself">Don't Repeat Yourself</a>: less recoding repeatitive things
-			</li>
-			<li>
-				<a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention over configuration</a>
-				thus coders don't need to specify each time
-			</li>
-		</ul>
-		<span style="color: orange">Short code is a by product of tQuery principles</span>
-	</article>
-	<article>
-		<h2>
-			Show us the code.
-		</h2>
+	<article data-markdown>
+		## Show us the code.
 	</article>
 	<article class='nobackground'>
 		<h3>
@@ -519,154 +424,60 @@
 		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/index.html'
 			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 	</article>
-<!-- ****************************************************************************
-		Mimic jQuery-API
-********************************************************************************* -->
-	<article>
-		<h1>
-			Relation with <span style="font-size: 120%; color: orange;">jQuery</span>
-		</h1>
+	<article data-markdown>
+		# *Things learned with tQuery*
 	</article>
-	<article class='nobackground'>
-		<h3>
-			tQuery Mimics jQuery API
-		</h3>
-		<h4>Motivation</h4>
-		<ul>
-			<li>
-				It makes tQuery very easy to learn if you know jQuery
-			</li>
-			<li>
-				Very important. It got significant consequences.
-				<span class="orange">Not Kidding</span>
-			</li>
-		</ul>
-		<h4>Principles</h4>
-		<ul>
-			<li>
-				for api, copy jquery API whenever possible
-			</li>
-			<li>
-				helpers may be provided, but jquery is the auhority
-			</li>
-		</ul>
-
+	<article data-markdown>
+		FIXME
+		### tQuery Produces short code
+		
+		See previous examples
+		
+		#### *Mimicking jQuery API* makes code shorter 
+		* chained API tends to produce short code
+		
+		#### *Plugins* make code shorter
+		* [Don't Repeat Yourself](http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself): less recoding repeatitive things
+		* [Convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration): thus coders don't need to specify each time
 	</article>
-	<article>
-		<h3>
-			Key aspects of jQuery - <span class='orange'>All Present in tQuery too!</span>
-		</h3>
-		<ul>
-			<li>DOM tree from webpages</li>
-			<li>Chained API</li>
-			<li>ID and Class</li>
-			<li>CSS-like selector</li>
-			<li>DOM events</li>
-		</ul>
+	<article data-markdown>
+		FIXME
+		### tQuery is simple to teach
+		
+		#### Minick jQuery API
+		* Very Webby API, so Close to your audience culture
+		* Being in a known environment reassure people
+		
+		#### Less to learn
+		* Less requirement in Math
+		  * thanks to three.js
+		  * limited to 3D positions/rotations
+		* reuse syntax similar to jQuery so already known
+		* DOM Concept already known
+		* if already coded in a plugins i dont have to learn it
 	</article>
-	<article>
-		<h3>
-			Dom Tree
-		</h3>
-		<h4>DOM and 3D Scene: <span class="orange">both suprisingly similar</strong></h4>
-		<ul>
-			<li>
-				<strong>jQuery and DOM</strong> got a tree of elements from webpages
-			</li>
-			<li>
-				<strong>three.js</strong> got a hierachy of objects too
-			</li>
-		</ul>
-		<table>
-			<tr>
-				<th></th>
-				<th>DOM</th>
-				<th>Three.js</th>
-			</tr>
-			<tr>
-				<th>Hierachy</th>
-				<td>DOM tree</th>
-				<td>scene</th>
-			</tr>
-			<tr>
-				<th>Element</th>
-				<td>DOMElement</th>
-				<td>THREE.Object3D</th>
-			</tr>
-		</table>
-		<ul>
-			<li>On one hand, jquery got the dom and its tree of element.</li>
-			<li>On the other hand, three.js got a scene with Object3D.</li>
-		</ul>
+	<article data-markdown>
+		FIXME
+		### tQuery helps reuse code
+		
+		* Much of what we currently do is cut/paste
+		* aka duplicate code
+		### Plugins system ala jQuery
+		* what is in a plugins
+		  * i dont have to recode
+		  * i dont have to learn
+		  * i can reuse it without full understanding
 	</article>
-	<article>
-		<h3>Chained API	</h3>
-		<pre>
-tQuery('.fooKlass').scale(2).translate(1,0,0);
-</pre>
-		<h3>
-			ID and Class
-		</h3>
-		<pre>
-var cube    = tQuery().createCube();
-// set the id of this element
-cube.id("myId");
-// add 'fooKlass' class to this cube
-cube.addClass('fooKlass');
-// set data attribute
-cube.data('goom', 'baa');
-</pre>
-	</article>
-	<article>
-		<h3>
-			CSS-like Selector
-		</h3>
-		<p>for classes and id as we just saw in previous slide</p>
-		<h4>Selector based on <span class='orange'>geometry</span>, similar to a jQuery('span')</h4>
-		<pre>
-tQuery('sphere');   // select all objects with a sphere gemotry
-tQuery('cube');     // same with a cube gemotry
-</pre>
-		<h4>can <span class='orange'>compose</span> them like with jQuery</h4>
-		<pre>
-tQuery('.bar.foo')  // objects with class 'bar' and 'foo'
-tQuery('.bar cube') // objects with class 'bar' and cube descandants
-</pre>
-	</article>
-	<article>
-		<h3>
-			Dom Events
-		</h3>
-		<pre>
-tQuery('cube').on('click', function(){
-    console.log("somebody put the mouse over a cube");
-});
-</pre>
-		<h4>Supported Events</h4>
-		<ul>
-			<li>click and dblclick</li>
-			<li>mouseup and mousedown</li>
-			<li>mouseover and mouse out</li>
-		</ul>
-	</article>
-	
-<!-- ****************************************************************************
-		More Examples
-********************************************************************************* -->
-	<article>
-		<h2>
-			Bla bla bla ... all talk.
-			Show something!
-		</h2>
-	</article>
-	<article>
-		<h3>
-			Dom Events
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/threex/examples/threex.domevent/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
-		<a href="http://jeromeetienne.github.com/threex/examples/threex.domevent/"><img src="vendor/images/domevent.png" height='80%'></a>
+	<article data-markdown>
+		### Meta
+		
+		* What does a dev needs to know to code tQuery
+		* What is no more needed
+		  * Can do a lot without serious math 
+		  * only requiremebt is 3D position/rotations
+		  * code much much shorter
+		* what is still needed
+		  * WebGL concepts may be needed for advanced usage
 	</article>
 	<article data-markdown>
 		
