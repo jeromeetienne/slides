@@ -34,10 +34,9 @@
 ********************************************************************************* -->
 	<article data-markdown>
 		
-		# *tQuery*
+		# *WegGL API isn't Webby* ? *tQuery* !!
 		
 		#### a Different Way to Advocate WebGL 
-		or *WegGL API isn't Webby*
 
 		## Jerome Etienne
 	</article>
@@ -136,11 +135,11 @@
 	<article data-markdown>
 		### Audience: *From the Web*
 
-		#### Profile estimation
+		#### *Profile* estimation
 		* typically less experienced coder
 		* Not confortable with 3D concepts
 
-		#### Perception of WebGL
+		#### *Perception* of WebGL
 		* complex (pipeline/new vocabulary)
 		* full of scary math
 		* So verbose and hard to learn
@@ -319,6 +318,8 @@
 		#### *Dumb library* on top of three.js
 		* Different API, Different defaults
 		* Same Semantic
+		* Both works well together
+		  * Easy to go in/out tQuery and three.js
 	</article>
 <!-- ****************************************************************************
 		Mimic jQuery-API
@@ -349,136 +350,127 @@
 		
 		#### *All Present in tQuery too!*
 	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
 	<article data-markdown>
 		## Freeze! Show, dont tell.
 	</article>
-	<article>
-		<h3>
-			a Sport Car - 40 lines of js
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
+	<article data-markdown>
+		# Some *Features plugins*
+	</article>
+	<article data-markdown>
+		### a Sport Car 
+
+		40 lines of js - [Demo](http://jeromeetienne.github.com/tquery/plugins/car/examples/)
+		
 		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
 	</article>
-	<article>
-		<h3>
-			a minecraft guy - 20 lines of js
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
+	<article data-markdown>
+		### a minecraft guy 
+
+		20 lines of js - [Demo](http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/)
+		
 		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
 	</article>
-	<article>
-		<h3>
-			another minecraft guy - 30 lines of js
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
+	<article data-markdown>
+		### another minecraft guy 
+		
+		30 lines of js - [Demo](http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html)
+		
 		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html"><img src="vendor/images/minecraftAnim.png" height='80%'></a>
 	</article>
-	<article>
-		<h3>
-			a 3D Pong - 300 lines of js
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/pongGL/">Demo</a>
-		</h3>
-		<p>&nbsp;</p>
-		<a href="http://jeromeetienne.github.com/pongGL/"><img src="vendor/images/pongGL.png" height='80%'></a>
+	<article data-markdown>
+		### a 3D Pong 
+		
+		300 lines of js - [Demo](http://jeromeetienne.github.com/pongGL/index.html)
+
+		<a href="http://jeromeetienne.github.com/pongGL/index.html"><img src="vendor/images/pongGL.png" height='80%'></a>
 	</article>
 	<article data-markdown>
 		## Show us the code.
 	</article>
-	<article class='nobackground'>
-		<h3>
-			Here is a <span class='orange'>Minimal</span> Page
-			-
-			<a href="http://jeromeetienne.github.com/tquery/www/playground/">playground</a>
-		</h3>
-		<section>
-		<pre>
-&lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
-&lt;script src=&quot;../../build/tquery-bundle.js&quot;&gt;&lt;/script&gt;
-&lt;body&gt;&lt;script&gt;
-    var world	= tQuery.createWorld().boilerplate().start();
-    var object	= tQuery.createTorus().addTo(world);
-&lt;/script&gt;&lt;/body&gt;
-</pre>
-		</section>
-		<h4>Fun Facts</h4>
-		<ul>
-			<li>Full HTML5 page</li>
-			<li>Valid HTML5</li>
-			<li>Only 6-lines !</li>
-			
-		</ul>
+	<article data-markdown>
+		### *Minimal* Page - [playground](http://jeromeetienne.github.com/tquery/www/playground/index.html)
+
+		```
+		  < !doctype html><title>Minimal tQuery Page</title>
+		  <script src="../../build/tquery-bundle.js"></script>
+		  <body><script>
+		      var world	= tQuery.createWorld().boilerplate().start();
+		      var object	= tQuery.createTorus().addTo(world);
+		  </script></body>
+		```
+
+		#### Fun Facts
+		* Full HTML5 page
+		* Valid HTML5
+		* only 6-lines
 	</article>
-	<article class='nobackground'>
-		<h3>
-			Here is a <span style="color: orange">Minimal</span> Page
-			-
-			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minimal/examples/index.html">Demo</a>
-		</h3>
-		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/index.html'
+	<article data-markdown>
+		### *Minimal* Page - [Demo](http://jeromeetienne.github.com/tquery/plugins/minimal/examples/)
+
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/'
 			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 	</article>
 	<article data-markdown>
-		# *Things learned with tQuery*
+		# *Things learned* with tQuery
 	</article>
 	<article data-markdown>
-		FIXME
-		### tQuery Produces short code
-		
-		See previous examples
+		### tQuery *Produces Short Code*
+				
+		#### *Plugins* make code shorter
+		* [Don't Repeat Yourself](http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself) principle.
+		* [Convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration): thus coders don't need to specify the same things over and over
 		
 		#### *Mimicking jQuery API* makes code shorter 
-		* chained API tends to produce short code
-		
-		#### *Plugins* make code shorter
-		* [Don't Repeat Yourself](http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself): less recoding repeatitive things
-		* [Convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration): thus coders don't need to specify each time
+		* thanks to chained API and reasonable defaults
+		* shorter code is faster to learn and write.
 	</article>
 	<article data-markdown>
-		FIXME
-		### tQuery helps reuse code
+		### Plugins *helps Reuse Code*
 		
-		* Much of what we currently do is cut/paste
-		* aka duplicate code
-
-		#### Plugins system ala jQuery
-		* what is in a plugins
-		  * i dont have to recode
-		  * i dont have to learn
-		  * i can reuse it without full understanding
+		#### Hope to reproduce success of jQuery plugins ecosystem
+		
+		#### "When a plugin already exists..."
+		* i dont have to learn how to code it, and to actually code it
+		* i can use it without fully understanding it
+		* i code faster
 	</article>
 	<article data-markdown>
-		FIXME
-		### tQuery is simple to teach
+		### tQuery is *Simple to Teach*
 		
 		#### Minick jQuery API
-		* Very Webby API, so Close to your audience culture
-		* Being in a known environment reassure people
+		* Very Webby API as copied from jQuery
+		* More natural to WebDevs
 		
-		#### Less to learn
-		* Less requirement in Math
-		  * thanks to three.js
+		#### Less things to learn
+		* jQuery syntax is already known
+		* Less Math requirement thanks to three.js
 		  * limited to 3D positions/rotations
-		* reuse syntax similar to jQuery so already known
-		* DOM Concept already known
-		* if already coded in a plugins i dont have to learn it
+		* DOM Concept is already known
 	</article>
 	<article data-markdown>
-		### Meta
+		### What webdevs still have *to Learn*
 		
-		* What does a dev needs to know to code tQuery
-		* What is no more needed
-		  * Can do a lot without serious math 
-		  * only requiremebt is 3D position/rotations
-		  * code much much shorter
-		* what is still needed
-		  * WebGL concepts may be needed for advanced usage
+		* WebGL concepts 
+		  * for advanced usage or top performance
+		* modeling in 3d
+		  * How to get assets
+		* physics
+		  * Always a trouble in 3D
+	</article>
+	<article data-markdown>
+		### tQuery seems a good recipe
+
+		#### tQuery provides a *much smoother contact to WebGL*
+		* So Easier to advocate
+		
+		#### What is the recipe
+		* provide familiar API
+		* a nice plugins system
+		
+		#### All thanks to "*t*hree.js power + j*Query* Usability"
 	</article>
 	<article data-markdown>
 		
@@ -486,23 +478,6 @@
 				
 		Jerome Etienne
 	</article>
-	<article data-markdown>
-		### Meta
-		
-		* present tQuery based on normal slides
-		* Why jQuery is cool for that
-		* Why three.js is cool for that
-		* possible to cut/paste slides even if not markdown
-	</article>
-	<article data-markdown>
-		### Meta
-
-		* why tQuery is nice to advocate WebGL
-		* Why advocating WebGL is hard
-		* Why libraries are important to democratize WebGL
-		* Present three.js and tQuery. and why they are well in the flow to spread WebGL
-	</article>
-	<script src="prettify.js"></script>
 	<script>
 	// ==UserScript==
 	// @name Use Markdown, sometimes, in your HTML.
