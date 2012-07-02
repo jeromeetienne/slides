@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Docco Viewer for ParisJS 20</title>
+	<title>tQuery at WebGL Camp</title>
 	<base target=”_blank” />
 	<meta charset='utf-8'/>
 	<script src="vendor/jquery-1.7.2.min.js"></script>
@@ -27,9 +27,9 @@
 ********************************************************************************* -->
 	<article data-markdown>
 		
-		# *Docco Viewer*
+		# *tQuery*
 		
-		## Easy Documentation
+		## Different Way to Advocate WebGL
 		
 		Jerome Etienne
 	</article>
@@ -57,166 +57,163 @@
 		</ul>
 	</article>
 	<article data-markdown>
-		### What is Docco.js
-
-		* Documentation for source
-		* Format dead simple
-		* often called *Annoted Source*
+		# *Advocating WebGL is Hard*
 	</article>
 	<article data-markdown>
-		### Where does it comes from ?
+		### Possible Audiences
+		
+		#### Identified 2 audiences
+		* Where do they come from when they reach WebGL ?
+		
+		#### *OpenGL personn*
+		* Coming from desktop world
 
-		#### Invented by [Jeremy Ashkenas](https://twitter.com/#!/jashkenas)
-		* Well known for his work
-		* [backbone.js](http://documentcloud.github.com/backbone/),
-		[coffeescript](http://coffeescript.org/),
-		[underscore.js](http://documentcloud.github.com/underscore/) 
-		* He will be at [dotjs](http://dotjs.eu) btw :)
-
-		#### Used to doc backbone.js
-		* see [backbone's doc](http://documentcloud.github.com/backbone/docs/backbone.html)
+		#### *WebDev personn*
+		* Coming from Web world
 	</article>
 	<article data-markdown>
-		
-		## *Show, dont tell*
+		# *Audience*
+		## Who are we talking to ?
 	</article>
 	<article data-markdown>
-		### Example
+		### Possible Audiences
+		
+		#### Identified 2 audiences
+		* Where do they come from when they reach WebGL ?
+		
+		#### OpenGL personn
+		* Coming *from Desktop world*
 
-		```
-		// This is a super comment in markdown. So you can 
-		// put [link](http://example.com)
-		//
-		// * or list
-		// * with bullets
-		//
-		// and many other thing
-		function super(){
-			console.log("javascript is cool")
-		}
-		```
-
-		* Comments in [markdown](http://daringfireball.net/projects/markdown/)
-		* Comments and source presented [side by side](http://documentcloud.github.com/backbone/docs/backbone.html)
+		#### WebDev personn
+		* Coming *from Web World*
 	</article>
 	<article data-markdown>
-		### Possible Usage
+		### Audience: *opengl personn*
 
-		#### Pro
-		* Very nice to document short examples
-		* (like tQuery plugins examples :)
-
-		#### Con
-		* Not too suitable for library code
-		  * Docco isnt aware of the code
-		  * no idea of type/function/class etc...
-		  * For lib, jsdoc provides needed structure
+		#### *Profile* Estimation
+		* experienced coder
+		* already knows 3D concepts
+		
+		#### *Perception* of WebGL
+		* typically don't know Web techs 
+		* May even reject javascript
+		  * perceived as messy and slow
+		  * ok righfully ;) [wtfjs](http://wtfjs.com/)
 	</article>
 	<article data-markdown>
-		
-		## *So it is perfect already ?*
+		### Audience: *WebDev personn*
+
+		#### Profile estimation
+		* typically less experienced coder
+		* Not confortable with 3D concepts
+
+		#### Perception of WebGL
+		* complex (pipeline/new vocabulary)
+		* full of scary math
+		* So verbose and hard to learn
 	</article>
 	<article data-markdown>
-		### Issue with docco.js
+		### Audience: *Who needs advocacy?*
 		
-		* It generate files.
-
-		#### Issues
-
-		* So you need to *generate them*
-		* So to *store them*
-		  * Find a location
-		  * use space in repository
-		* *Keep them in sync* with the code
-		  * or docs and code are desynced
+		#### OpenGL personn
+		* not much need
+		* need to go beyond cultural choc
+		  * "just" have to learn web tech 
+		  * quite simple techs
+		  * come on, js isn't that horrendous!
 	</article>
 	<article data-markdown>
-		### Issue with docco.js
+		### Audience: *Who needs advocacy?*
 		
-		* It run on servers.
+		#### WebGL personn
+		* More need
+		* need to go beyond "Math are scary"
+		* to understand 3d concepts
+		* to learn WebGL mechanism and API
+	</article>
 
-		#### Issues
-
-		* It *requires installation*
-		* Several dependancies needs to be met
-		  * Node.js
-		  * Pygments
-		  * CoffeeScript
-		  * and NPM
+	<article data-markdown>
+		# *WegGL isn't webby*
 	</article>
 	<article data-markdown>
+		### WegGL isn't webby
 		
-		## *hmm and how to fix those issues ?*
+		* WebGL comes from old times
+		* WebGL is Very Low Level
+		* WebGL is Super Verbose
 	</article>
 	<article data-markdown>
-		
-		# *Docco Viewer*
-		
-		## Saving Space and Time
+		## *WebGL is OLD*
 	</article>
-	<article  data-markdown>
-		### What is it
+	<article data-markdown>
+		### WegGL from old time
 		
-		* Online Viewer 
-		* Fully compatible with docco
-		* code on [github](https://github.com/jsinside/docco.js) under MIT license
-	</article>
-	<article  data-markdown>
-		### Demo
-		
-		* in practice it is [that](http://jeromeetienne.github.com/tquery/plugins/car/examples/index.html)
+		* WebGL comes from OpenGL
+		* 1992 by sgi 
+		* it is old in Web Time
+		* Web was barely alive at the time
+		* 1990 : publication of Hypertext paper
 
-		* Here is [source](view-source://jeromeetienne.github.com/tquery/plugins/car/examples/index.html)
-		* Here is the [output](http://jeromeetienne.github.com/tquery/www/vendor/doccoviewer/index.html#../../../plugins/car/examples/index.html)
+		=> *not in sync with WebDevs*
 	</article>
-	<article  data-markdown>
-		### Principles
-		
-		1. Docco viewer is a webapp
-		1. give it an url
-		1. it loads the file
-		1. it parse it with docco.js format
-		1. display the result immediatly
+	<article data-markdown>
+		## *WebGL is Verbose*
 	</article>
-	<article  data-markdown>
-		### Work done
+	<article data-markdown>
+		### Random Numbers
 		
-		#### Made in javascript
-		* original in coffee
-		
-		#### Runable in browser and Server
-		* original in server only
-		
-		#### Linkability is maintained
-		* still able to link directly to the docs
-		* the viewer webapp get parameters from the url
+		#### From [learningwebgl](http://learningwebgl.com/blog/) tutorials
+				
+		#### a triangle and a square
+		* [post](http://learningwebgl.com/blog/?p=28)
+		  / [demo](http://learningwebgl.com/lessons/lesson01/index.html)
+		* in 2d - pure white
+		* 200 lines
+
+		#### a box and a texture
+		* [post](http://learningwebgl.com/blog/?p=684)
+		  / [demo](http://learningwebgl.com/lessons/lesson07/index.html)
+		* 500 lines
 	</article>
-	<article  data-markdown>
-		### What does it changes
-		
-		#### docs are live
-		* so always insync
-		* no need to generate, store, keep insync
-		
-		#### No installation required
-		* more standalone / less dependancy
+	<article data-markdown>
+		## *WebGL is Low Level*
 	</article>
-	<article  data-markdown>
-		### All that for What ?
+	<article data-markdown>
+		### WebGL is Low Level
 		
-		#### Easy way to get documentations
+		#### Origin
+		* designed for hardware accelerated graphic
+		* Talk to the hardware directly
 		
-		#### docs simple and insync
-		
-		#### Less hasle due to no install
-		
-		*Now im happy :)*
+		#### Fitness
+		* Uses logic foreign to usual web
+		* Usual Web api are more abstract
+		  * cf. canvas2D
 	</article>
+	<article data-markdown>
+		### WegGL Status
+		
+		* WebGL is Old
+		* WebGL is Low Level
+		* WebGL is Verbose
+
+		=> *not suitable for webdevs*
+	</article>
+
 	<article data-markdown>
 		
 		# *Questions ?*
 				
 		Jerome Etienne
+	</article>
+
+	<article data-markdown>
+		### Meta
+
+		* why tQuery is nice to advocate WebGL
+		* Why advocating WebGL is hard
+		* Why libraries are important to democratize WebGL
+		* Present three.js and tQuery. and why they are well in the flow to spread WebGL
 	</article>
 	<script>
 	// ==UserScript==
@@ -247,7 +244,7 @@
 			//console.log("origin innerHTML", text.split('\n'));
 			// remove all blanks lines
 			//text		= text.replace(/\n\s*\n/g,'\n');
-			//console.log("step text", text)
+			console.log("step text", text)
 			// set indentation level so your markdown can be indented within your HTML
 			var matches	= text.match(/^\n([ \t]*)/);
 			var leadingws	= matches[1].length;
