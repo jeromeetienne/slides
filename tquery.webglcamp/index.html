@@ -10,14 +10,21 @@
 
 <body style='display: none'> 
 	<style>
-		[data-markdown] em {
+		article[data-markdown] em {
 			color		: orange;
 			font-style	: normal;
 			font-weight	: bolder;
 			
 		}
-		article h3 {
+		article[data-markdown] h3 {
 			font-size	: 180%;
+		}
+		span.orange {
+			color		: orange;
+		}
+		span.larger {
+			font-weight	: bolder;
+			font-size	: 120%;
 		}
 	</style>
 	<section class='slides layout-regular template-default'>
@@ -294,6 +301,373 @@
 	<article data-markdown>
 		# *t*hree.js + j*Query* => *tQuery*
 	</article>
+	<article>
+		<h1>
+			What <span style="font-size: 120%; color: orange;">tQuery</span> aimed to be?
+		</h1>
+	</article>
+	<article>
+		<h1>
+			<span style="font-size: 120%; color: orange;">tQuery</span>
+			<br/>
+			<br/>
+		</h1>
+		<h3 style="font-size: 120%">
+			<center>
+				<span style="color: orange">t</span>hree.js
+				power
+				+
+				j<span style="color: orange">Query</span>
+				API Usability
+			</center>
+			<br>
+		</h3>
+	</article>
+	<article data-markdown>
+		### *t*hree.js + j*Query*
+		
+		#### three.js power 
+		* actively developped by a team of skilled dev
+		* significant community around three.js
+		* Very popular
+		
+		#### jQuery API usability
+		* widely recognized (85% market share)
+		* successful plugin ecosystem
+		* Very popular
+	</article>
+	<article>
+		<h1>
+			Relation with <span style="font-size: 120%; color: orange;">three.js</span>
+		</h1>
+	</article>
+	<article>
+		<h3>tQuery in a few word</h3>
+		<h4>Goal: <span class="orange">Bring 3D to non specialists</span></h4>
+		<h4><span class="orange">Thin layer</span> on top of three.js</h4>
+		<ul>
+			<li>
+				three.js : 100k min+gzip
+			</li>
+			<li>
+				tQuery.js : 8k min+gzip
+			</li>
+		</ul>
+		<h4><span class="orange">Dumb library</span> on top of three.js</h4>
+		<ul>
+			<li>
+				Different API
+			</li>
+			<li>
+				Different default values
+			</li>
+			<li>
+				Same Semantic
+			</li>
+		</ul>
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article>
+		<h1>
+			Relation with <span style="font-size: 120%; color: orange;">jQuery</span>
+		</h1>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			tQuery Mimics jQuery API
+		</h3>
+		<h4>Motivation</h4>
+		<ul>
+			<li>
+				It makes tQuery very easy to learn if you know jQuery
+			</li>
+			<li>
+				Very important. It got significant consequences.
+				<span class="orange">Not Kidding</span>
+			</li>
+		</ul>
+		<h4>Principles</h4>
+		<ul>
+			<li>
+				for api, copy jquery API whenever possible
+			</li>
+			<li>
+				helpers may be provided, but jquery is the auhority
+			</li>
+		</ul>
+
+	</article>
+	<article>
+		<h3>
+			Key aspects of jQuery
+		</h3>
+		<ul>
+			<li>DOM tree from webpages</li>
+			<li>Chained API</li>
+			<li>ID and Class</li>
+			<li>CSS-like selector</li>
+			<li>DOM events</li>
+		</ul>
+		<span class='orange'>All Present in tQuery too!</span>
+	</article>
+	<article>
+		<h2>
+			Freeze! Show, dont tell.
+		</h2>
+	</article>
+	<article>
+		<h3>
+			a Sport Car - 40 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a minecraft guy - 20 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			another minecraft guy - 30 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html"><img src="vendor/images/minecraftAnim.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a 3D Pong - 300 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/pongGL/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/pongGL/"><img src="vendor/images/pongGL.png" height='80%'></a>
+	</article>
+	<article>
+		<h2>
+			Not bad ... Why the code is so short ?
+		</h2>
+	</article>
+	<article>
+		<h3>Why the code is so short ?</h3>
+		<h4><span style="color: orange">Mimicking jQuery API</span> makes code shorter</h4>
+		<ul>
+			<li>
+				chained API tends to produce short code
+			</li>
+			<li>
+				Plugins avoids recoding repeatitive elements
+			</li>
+		</ul>
+		<h4><span style="color: orange">Plugins</span> makes code shorter</h4>
+		<ul>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself">Don't Repeat Yourself</a>: less recoding repeatitive things
+			</li>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention over configuration</a>
+				thus coders don't need to specify each time
+			</li>
+		</ul>
+		<span style="color: orange">Short code is a by product of tQuery principles</span>
+	</article>
+	<article>
+		<h2>
+			Show us the code.
+		</h2>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span class='orange'>Minimal</span> Page
+			-
+			<a href="http://jeromeetienne.github.com/tquery/www/playground/">playground</a>
+		</h3>
+		<section>
+		<pre>
+&lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
+&lt;script src=&quot;../../build/tquery-bundle.js&quot;&gt;&lt;/script&gt;
+&lt;body&gt;&lt;script&gt;
+    var world	= tQuery.createWorld().boilerplate().start();
+    var object	= tQuery.createTorus().addTo(world);
+&lt;/script&gt;&lt;/body&gt;
+</pre>
+		</section>
+		<h4>Fun Facts</h4>
+		<ul>
+			<li>Full HTML5 page</li>
+			<li>Valid HTML5</li>
+			<li>Only 6-lines !</li>
+			
+		</ul>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span style="color: orange">Minimal</span> Page
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minimal/examples/index.html">Demo</a>
+		</h3>
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/index.html'
+			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article>
+		<h1>
+			Relation with <span style="font-size: 120%; color: orange;">jQuery</span>
+		</h1>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			tQuery Mimics jQuery API
+		</h3>
+		<h4>Motivation</h4>
+		<ul>
+			<li>
+				It makes tQuery very easy to learn if you know jQuery
+			</li>
+			<li>
+				Very important. It got significant consequences.
+				<span class="orange">Not Kidding</span>
+			</li>
+		</ul>
+		<h4>Principles</h4>
+		<ul>
+			<li>
+				for api, copy jquery API whenever possible
+			</li>
+			<li>
+				helpers may be provided, but jquery is the auhority
+			</li>
+		</ul>
+
+	</article>
+	<article>
+		<h3>
+			Key aspects of jQuery - <span class='orange'>All Present in tQuery too!</span>
+		</h3>
+		<ul>
+			<li>DOM tree from webpages</li>
+			<li>Chained API</li>
+			<li>ID and Class</li>
+			<li>CSS-like selector</li>
+			<li>DOM events</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Dom Tree
+		</h3>
+		<h4>DOM and 3D Scene: <span class="orange">both suprisingly similar</strong></h4>
+		<ul>
+			<li>
+				<strong>jQuery and DOM</strong> got a tree of elements from webpages
+			</li>
+			<li>
+				<strong>three.js</strong> got a hierachy of objects too
+			</li>
+		</ul>
+		<table>
+			<tr>
+				<th></th>
+				<th>DOM</th>
+				<th>Three.js</th>
+			</tr>
+			<tr>
+				<th>Hierachy</th>
+				<td>DOM tree</th>
+				<td>scene</th>
+			</tr>
+			<tr>
+				<th>Element</th>
+				<td>DOMElement</th>
+				<td>THREE.Object3D</th>
+			</tr>
+		</table>
+		<ul>
+			<li>On one hand, jquery got the dom and its tree of element.</li>
+			<li>On the other hand, three.js got a scene with Object3D.</li>
+		</ul>
+	</article>
+	<article>
+		<h3>Chained API	</h3>
+		<pre>
+tQuery('.fooKlass').scale(2).translate(1,0,0);
+</pre>
+		<h3>
+			ID and Class
+		</h3>
+		<pre>
+var cube    = tQuery().createCube();
+// set the id of this element
+cube.id("myId");
+// add 'fooKlass' class to this cube
+cube.addClass('fooKlass');
+// set data attribute
+cube.data('goom', 'baa');
+</pre>
+	</article>
+	<article>
+		<h3>
+			CSS-like Selector
+		</h3>
+		<p>for classes and id as we just saw in previous slide</p>
+		<h4>Selector based on <span class='orange'>geometry</span>, similar to a jQuery('span')</h4>
+		<pre>
+tQuery('sphere');   // select all objects with a sphere gemotry
+tQuery('cube');     // same with a cube gemotry
+</pre>
+		<h4>can <span class='orange'>compose</span> them like with jQuery</h4>
+		<pre>
+tQuery('.bar.foo')  // objects with class 'bar' and 'foo'
+tQuery('.bar cube') // objects with class 'bar' and cube descandants
+</pre>
+	</article>
+	<article>
+		<h3>
+			Dom Events
+		</h3>
+		<pre>
+tQuery('cube').on('click', function(){
+    console.log("somebody put the mouse over a cube");
+});
+</pre>
+		<h4>Supported Events</h4>
+		<ul>
+			<li>click and dblclick</li>
+			<li>mouseup and mousedown</li>
+			<li>mouseover and mouse out</li>
+		</ul>
+	</article>
+	
+<!-- ****************************************************************************
+		More Examples
+********************************************************************************* -->
+	<article>
+		<h2>
+			Bla bla bla ... all talk.
+			Show something!
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Dom Events
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/threex/examples/threex.domevent/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/threex/examples/threex.domevent/"><img src="vendor/images/domevent.png" height='80%'></a>
+	</article>
 	<article data-markdown>
 		
 		# *Questions ?*
@@ -316,6 +690,7 @@
 		* Why libraries are important to democratize WebGL
 		* Present three.js and tQuery. and why they are well in the flow to spread WebGL
 	</article>
+	<script src="prettify.js"></script>
 	<script>
 	// ==UserScript==
 	// @name Use Markdown, sometimes, in your HTML.
@@ -345,7 +720,7 @@
 			//console.log("origin innerHTML", text.split('\n'));
 			// remove all blanks lines
 			//text		= text.replace(/\n\s*\n/g,'\n');
-			console.log("step text", text)
+			//console.log("step text", text)
 			// set indentation level so your markdown can be indented within your HTML
 			var matches	= text.match(/^\n([ \t]*)/);
 			var leadingws	= matches[1].length;
@@ -389,6 +764,9 @@
 				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//			, 'file://localhost/Users/jerome/webwork/tquery/')
 				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//	, 'file://localhost/Users/jerome/webwork/augmentedgesture.js/')
 				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//		, 'file://localhost/Users/jerome/webwork/webaudio.js/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/pongGL\//, 'file://localhost/Users/jerome/webwork/pongGL/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/threex\//, 'file://localhost/Users/jerome/webwork/threex/')
+				url	= url.replace(/^http:\/\/learningthreejs.com\//, 'file://localhost/Users/jerome/webwork/learningthreejs.com/')
 				url	= url.replace(/\/$/, '/index.html')
 				jQuery(element).attr(attrName, url);
 			})
