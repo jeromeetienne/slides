@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tQuery at WebGL Camp</title>
+	<base target=”_blank” />
+	<meta charset='utf-8'/>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
+	<script src='slides.js'></script>
+</head>
+
+<body style='display: none'> 
+	<style>
+		article[data-markdown] em {
+			color		: orange;
+			font-style	: normal;
+			font-weight	: bolder;
+			
+		}
+		article[data-markdown] h3 {
+			font-size	: 180%;
+		}
+		span.orange {
+			color		: orange;
+		}
+		span.larger {
+			font-weight	: bolder;
+			font-size	: 120%;
+		}
+	</style>
+	<section class='slides layout-regular template-default'>
+
+<!-- ****************************************************************************
+		Talk Introduction
+********************************************************************************* -->
+	<article data-markdown>
+		
+		# *WegGL API isn't Webby* ? *tQuery* !!
+		
+		#### a Different Way to Advocate WebGL 
+
+		## Jerome Etienne
+	</article>
+<!-- ****************************************************************************
+		presentation
+********************************************************************************* -->
+	<article>
+		<h3>Who Am I</h3>
+		<img style="float:right" src='jetienne-avatar.jpg' />
+		<ul>
+			<li>coder, speaker, trainer</li>
+			<li>Javascript, Node.js, WebGL and other HTML5 games stuff</li>
+		</ul>
+		<h4>Learning Three.js</h4>
+		<ul>
+			<li>Author of <a href="http://learningthreejs.com">learningthreejs</a> blog</li>
+			<li>Lists of three.js tutorials or "WebGL for dummies"</li>
+		</ul>
+		<h4>Contacts</h4>
+		<ul>
+			<li>
+				<a href='https://twitter.com/jerome_etienne'>@jerome_etienne</a> on twitter,
+				<a href='http://github.com/jeromeetienne'>jeromeetienne</a> on github
+			</li>
+		</ul>
+	</article>
+	<article data-markdown>
+		### What We Gonna Talk About ?
+		
+		#### Advocating *WebGL is Hard*
+		* Reasons, Audiences
+		
+		#### Libraries as *Possible Solutions*
+		* How libraries can help?
+		
+		#### Relation with *tQuery Library*
+		* My take on this issue
+		* how it fit in all that ?
+	</article>
+	<article data-markdown>
+		# *Advocating WebGL is Hard*
+	</article>
+	<article data-markdown>
+		## Well first is it needed ?
+	</article>
+	<article data-markdown>
+		### Is It Needed?
+		
+		*Yes* Advocating WebGL is Needed!
+		
+		#### Unprecedented Rendering Quality
+		* no other web layer is even close
+		* Canvas 2D is a century away 
+		
+		#### Way under used
+		* Many people want to know
+		* it should be everywhere e.g. in game
+		* but it is nowhere
+	</article>
+	<article data-markdown>
+		### So Why it is hard?
+		
+		#### Issue in WebGL advocacy
+		1. Varied audience, Devs origin
+		1. API unsuitable to normal webdev 
+	</article>
+	<article data-markdown>
+		# *Audience*
+		## Who are we talking to ?
+	</article>
+	<article data-markdown>
+		### Possible Audiences
+		
+		#### Identified 2 audiences
+		* Where do they come from when they reach WebGL ?
+		
+		#### OpenGL personn
+		* Coming *from Desktop world*
+
+		#### WebDev personn
+		* Coming *from Web World*
+	</article>
+	<article data-markdown>
+		### Audience: *From OpenGL*
+
+		#### *Profile* Estimation
+		* experienced coder
+		* already knows 3D concepts
+		
+		#### *Perception* of WebGL
+		* typically don't know Web techs 
+		* May even reject javascript
+		  * perceived as messy and slow
+		  * ok righfully ;) [wtfjs](http://wtfjs.com/)
+	</article>
+	<article data-markdown>
+		### Audience: *From the Web*
+
+		#### *Profile* estimation
+		* typically less experienced coder
+		* Not confortable with 3D concepts
+
+		#### *Perception* of WebGL
+		* complex (pipeline/new vocabulary)
+		* full of scary math
+		* So verbose and hard to learn
+	</article>
+	<article data-markdown>
+		### Advocacy *Needs*
+		
+		
+		#### Who: *OpenGL personn*
+		
+		#### Not Much Needs
+		* need to go beyond cultural choc
+		* "just" have to learn web tech 
+		* quite simple techs
+		* come on, js isn't that horrendous!
+	</article>
+	<article data-markdown>
+		### Advocacy *Needs*
+		
+		
+		#### Who: *OpenGL personn*
+		
+		#### How to help them with WebGL ?
+		* They already knows all the hard parts
+		  * 3D concept, experienced coder
+		* **Actual need :** to learn the web
+		
+		#### How to learn the Web
+		* Already covered by Normal Web Tutorials.
+		* Many already exists.
+	</article>
+	<article data-markdown>
+		### Advocacy *Needs*
+		
+
+		#### Who: *WebGL personn*
+
+		#### More needs - Lot more to learn.
+
+		* need to go beyond "Math are scary"
+		* to understand 3d concepts
+		* to learn WebGL mechanism and API
+	</article>
+	<article data-markdown>
+		# *WegGL API isn't Webby*
+	</article>
+	<article data-markdown>
+		## *WebGL is OLD*
+	</article>
+	<article data-markdown>
+		### WegGL from old time
+		
+		* WebGL comes from OpenGL
+		* 1992 by sgi 
+		* it is old in Web Time
+		* Web was barely alive at the time
+		* 1990 : publication of Hypertext paper
+
+		=> *Not insync with WebDevs Culture*
+	</article>
+	<article data-markdown>
+		## *WebGL is Verbose*
+	</article>
+	<article data-markdown>
+		### Random Numbers
+		
+		#### From [learningwebgl](http://learningwebgl.com/blog/) tutorials
+				
+		#### a triangle and a square
+		* [post](http://learningwebgl.com/blog/?p=28)
+		  / [demo](http://learningwebgl.com/lessons/lesson01/index.html)
+		* in 2d - pure white
+		* *200 lines!!*
+
+		#### a box and a texture
+		* [post](http://learningwebgl.com/blog/?p=684)
+		  / [demo](http://learningwebgl.com/lessons/lesson07/index.html)
+		* *500 lines!!*
+	</article>
+	<article data-markdown>
+		## *WebGL is Low Level*
+	</article>
+	<article data-markdown>
+		### WebGL is Low Level
+		
+		#### Origin
+		* designed for hardware accelerated graphic
+		* Talk to the hardware directly
+		
+		#### Fitness ?
+		* Uses a logic foreign to common WebDevs
+		* Usual Web API are far more abstract
+		  * cf. canvas2D
+	</article>
+	<article data-markdown>
+		### WegGL API Status
+		
+		* WebGL is Old
+		* WebGL is Low Level
+		* WebGL is Verbose
+
+		=> *Not Suitable for Webdevs Culture*
+	</article>
+	<article data-markdown>
+		## *So Let's Give up ?*
+	</article>
+	<article data-markdown>
+		### Let's Make WebGL Webby
+		
+		#### WebGL is Old ?
+		* So let's make *a modern API*
+		#### WebGL is Low Level ?
+		* So let's make *a high level API*
+		#### WebGL is Verbose ?
+		* So let's make *a eloquent API*
+	</article>
+	<article data-markdown>
+		### What about jQuery API ?
+		
+		#### Describing jQuery as *modern*, *high level*, and *eloquent* ?
+		* Doesn't seems far fetched at all
+		* In fact, it *seems quite ok*
+		
+		#### Highly popular
+		* so seems to fit webdevs needs
+		
+		#### *We got a winner!*
+	</article>
+	<article data-markdown>
+		## not bad... Let's act on it!
+	</article>
+	<article>
+		<h1>
+			<span style="font-size: 120%; color: orange;">tQuery</span>
+			<br/>
+			<br/>
+		</h1>
+		<h3 style="font-size: 120%">
+			<center>
+				<span style="color: orange">t</span>hree.js
+				power
+				+
+				j<span style="color: orange">Query</span>
+				API Usability
+			</center>
+			<br>
+		</h3>
+		<h4>My Try to make WebGL more Reachable</h4>
+	</article>
+	<article data-markdown>
+		### *t*hree.js + j*Query*
+		
+		#### Goal: *Bring 3D to non specialists*
+		
+		#### three.js power 
+		* actively developped by a team of skilled dev
+		* significant community around three.js
+		* Very popular
+		
+		#### jQuery API usability
+		* successful plugin ecosystem
+		* Very popular (85% market share?)
+	</article>
+	<article data-markdown>
+		# Relation with *three.js*
+	</article>
+	<article data-markdown>
+		### tQuery is on top of three.js
+		
+		#### three.js is *Already a simplication of WebGL*
+		
+		#### *Thin Layer* on top of three.js
+		* three.js : 100k min+gzip
+		* tQuery.js : 8k min+gzip
+		
+		#### *Dumb library* on top of three.js
+		* Different API, Different defaults
+		* Same Semantic
+		* Both works well together
+		  * Easy to go in/out tQuery and three.js
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article data-markdown>
+		# Relation with *jQuery*
+	</article>
+	<article data-markdown>
+		### tQuery Mimics jQuery API
+		
+		#### Motivation
+		* It makes tQuery very easy to learn if you know jQuery
+		* => So *very important*
+		
+		#### Principles 
+		* "Copy jquery API whenever possible"
+		* helpers may be provided, but jquery is the auhority
+	</article>
+	<article data-markdown>
+		### In Bed with *jQuery*
+		
+		#### Key aspects of jQuery
+		* DOM tree from webpages
+		* Chained API
+		* ID and Class
+		* CSS-like selector
+		* DOM events
+		
+		#### *All Present in tQuery too!*
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article data-markdown>
+		## Freeze! Show, dont tell.
+	</article>
+	<article data-markdown>
+		### Some *Features plugins*
+		
+		#### 4 featured plugins among 45
+		
+		#### Nice to experience tQuery
+		* How does it react in the field
+	</article>
+	<article data-markdown>
+		### a Sport Car 
+
+		40 lines of js - [Demo](http://jeromeetienne.github.com/tquery/plugins/car/examples/)
+		
+		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
+	</article>
+	<article data-markdown>
+		### a minecraft guy 
+
+		20 lines of js - [Demo](http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/)
+		
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
+	</article>
+	<article data-markdown>
+		### Dom Events
+		
+		[Demo](http://jeromeetienne.github.com/threex/examples/threex.domevent/)
+		
+		<a href="http://jeromeetienne.github.com/threex/examples/threex.domevent/"><img src="vendor/images/domevent.png" height='80%'></a>		
+	</article>
+	<article data-markdown>
+		### a 3D Pong 
+		
+		300 lines of js - [Demo](http://jeromeetienne.github.com/pongGL/index.html)
+
+		<a href="http://jeromeetienne.github.com/pongGL/index.html"><img src="vendor/images/pongGL.png" height='80%'></a>
+	</article>
+	<article data-markdown>
+		## Show us the code.
+	</article>
+	<article data-markdown>
+		### *Minimal* Page - [playground](http://jeromeetienne.github.com/tquery/www/playground/index.html)
+
+		```
+		  < !doctype html><title>Minimal tQuery Page</title>
+		  <script src="../../build/tquery-bundle.js"></script>
+		  <body><script>
+		      var world	= tQuery.createWorld().boilerplate().start();
+		      var object	= tQuery.createTorus().addTo(world);
+		  </script></body>
+		```
+
+		#### Fun Facts
+		* Full HTML5 page
+		* Valid HTML5
+		* only 6-lines
+	</article>
+	<article data-markdown>
+		### *Minimal* Page - [Demo](http://jeromeetienne.github.com/tquery/plugins/minimal/examples/)
+
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/'
+			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+	<article data-markdown>
+		# *Things learned* with tQuery
+	</article>
+	<article data-markdown>
+		### tQuery *Produces Short Code*
+				
+		#### *Plugins* make code shorter
+		* [Don't Repeat Yourself](http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself) principle.
+		* [Convention over configuration](http://en.wikipedia.org/wiki/Convention_over_configuration): thus coders don't need to specify the same things over and over
+		
+		#### *Mimicking jQuery API* makes code shorter 
+		* thanks to chained API and reasonable defaults
+		* shorter code is faster to learn and write.
+	</article>
+	<article data-markdown>
+		### Plugins *helps Reuse Code*
+		
+		#### Hope to reproduce success of jQuery plugins ecosystem
+		
+		#### "When a plugin already exists..."
+		* i dont have to learn how to code it, and to actually code it
+		* i can use it without fully understanding it
+		* i code faster
+	</article>
+	<article data-markdown>
+		### tQuery is *Simple to Teach*
+		
+		#### Minick jQuery API
+		* Very Webby API as copied from jQuery
+		* More natural to WebDevs
+		
+		#### Less things to learn
+		* jQuery syntax is already known
+		* Less Math requirement thanks to three.js
+		  * limited to 3D positions/rotations
+		* DOM Concept is already known
+	</article>
+	<article data-markdown>
+		### What remains *to Learn*
+		
+		#### WebDevs still needs to learn stuff
+		
+		* WebGL concepts 
+		  * for advanced usage or top performance
+		* Modeling in 3d
+		  * How to get assets
+		* Physics
+		  * Always a trouble in 3D
+	</article>
+	<article data-markdown>
+		### tQuery seems a good recipe
+
+		#### tQuery provides a *much smoother contact to WebGL*
+		* So Easier to advocate
+		
+		#### What is the recipe
+		* provide familiar API
+		* a nice plugins system
+		
+		#### All thanks to "*t*hree.js power + j*Query* Usability"
+	</article>
+	<article data-markdown>
+		
+		# *Questions ?*
+				
+		Jerome Etienne
+	</article>
+	<script>
+	// ==UserScript==
+	// @name Use Markdown, sometimes, in your HTML.
+	// @author Paul Irish <http://paulirish.com/>
+	// @link http://git.io/data-markdown
+	// @match *
+	// ==/UserScript==
+	
+	
+	// If you're not using this as a userscript just delete from this line up. It's cool, homey.
+	
+	(function markdownSlideToHtml(){
+	  
+		if (!window.Showdown){
+			var scr		= document.createElement('script');
+			scr.onload	= markdownSlideToHtml;
+			scr.src		= 'vendor/showdown.js';
+			document.body.appendChild(scr);
+			return;
+		}
+	
+		[].forEach.call(document.querySelectorAll('[data-markdown]'), function fn(elem){
+			// strip leading whitespace so it isn't evaluated as code
+			//var text      = elem.textContent.replace(/\n\s*\n/g,'\n');
+			// jerome- to have better support of html within markdown
+			var text      = elem.innerHTML;
+			//console.log("origin innerHTML", text.split('\n'));
+			// remove all blanks lines
+			//text		= text.replace(/\n\s*\n/g,'\n');
+			//console.log("step text", text)
+			// set indentation level so your markdown can be indented within your HTML
+			var matches	= text.match(/^\n([ \t]*)/);
+			var leadingws	= matches[1].length;
+			//console.log("first line", matches)
+			//console.log("leadingws", leadingws)
+			var regex	= new RegExp('\\n[ \\t]{' + leadingws + '}','g');
+			var md		= text.replace(regex,'\n');
+			//console.log("pre md", md);
+			html      = (new Showdown.converter()).makeHtml(md);
+			//console.log("post html", html);
+	
+			// to support prettyprint
+			html		= html.replace(/<code><br \/>/g,'<pre class="prettyprint">');
+			html		= html.replace(/<br \/><\/code>/g,'</pre>');
+			// unescape [><]
+			html		= html.replace(/&amp;gt;/g,'>');
+			html		= html.replace(/&amp;lt;/g,'<');
+			//console.log("escaped html", html);
+		  
+			// here, have sum HTML
+			elem.innerHTML = html;
+		});
+		// callback prettyprint to highlight code found in markdown
+		prettyPrint();
+	}());
+	</script> 
+	<script>
+		//////////////////////////////////////////////////////////////////
+		// scan the whole webpage and replace url to their local location
+		// - usefull to have local copy of the slides in conference when internet is unavailable
+		// - and still have slides which works when internet is available
+		// $ open -a "/Applications/Google Chrome.app" --args --disable-web-security --allow-file-access-from-file
+		setTimeout(function(){
+			location.href.match(/^file:/) && jQuery('a').add('iframe').each(function(index, element){
+				var attrNames	= {
+					'A'	: 'href',
+					'IFRAME': 'src'
+				};
+				var attrName	= attrNames[element.nodeName];
+				var url		= jQuery(element).attr(attrName);
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//			, 'file://localhost/Users/jerome/webwork/tquery/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//	, 'file://localhost/Users/jerome/webwork/augmentedgesture.js/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//		, 'file://localhost/Users/jerome/webwork/webaudio.js/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/pongGL\//, 'file://localhost/Users/jerome/webwork/pongGL/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/threex\//, 'file://localhost/Users/jerome/webwork/threex/')
+				url	= url.replace(/^http:\/\/learningthreejs.com\//, 'file://localhost/Users/jerome/webwork/learningthreejs.com/')
+				url	= url.replace(/\/$/, '/index.html')
+				jQuery(element).attr(attrName, url);
+			})
+		}, 100);
+	</script>
+</body>
+</html>
