@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tQuery Workshop at WebGL Camp</title>
+	<base target=”_blank” />
+	<meta charset='utf-8'/>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
+	<script src='slides.js'></script>
+</head>
+
+<body style='display: none'> 
+	<style>
+		article[data-markdown] em {
+			color		: orange;
+			font-style	: normal;
+			font-weight	: bolder;
+			
+		}
+		article[data-markdown] h3 {
+			font-size	: 180%;
+		}
+		span.orange {
+			color		: orange;
+		}
+		span.larger {
+			font-weight	: bolder;
+			font-size	: 120%;
+		}
+	</style>
+	<section class='slides layout-regular template-default'>
+
+<!-- ****************************************************************************
+		Talk Introduction
+********************************************************************************* -->
+	<article data-markdown>
+		# *Valentine Card in WebGL*		
+
+		## Jerome Etienne
+	</article>
+<!-- ****************************************************************************
+		presentation
+********************************************************************************* -->
+	<article>
+		<h3>Who Am I</h3>
+		<img style="float:right" src='jetienne-avatar.jpg' />
+		<ul>
+			<li>coder, speaker, trainer</li>
+			<li>Javascript, Node.js, WebGL and other HTML5 games stuff</li>
+		</ul>
+		<h4>Learning Three.js</h4>
+		<ul>
+			<li>Author of <a href="http://learningthreejs.com">learningthreejs</a> blog</li>
+			<li>Lists of three.js tutorials or "WebGL for dummies"</li>
+		</ul>
+		<h4>Contacts</h4>
+		<ul>
+			<li>
+				<a href='https://twitter.com/jerome_etienne'>@jerome_etienne</a> on twitter,
+				<a href='http://github.com/jeromeetienne'>jeromeetienne</a> on github
+			</li>
+		</ul>
+	</article>
+	<article data-markdown>
+		### What We Gonna Talk About ?
+		
+		* very much hands on
+		* Just a teaser to see basics
+		* Let's make it fun
+		
+		#### All on top the live editor
+		* [Live Editor](http://jeromeetienne.github.com/tquery/www/live/editor/)
+		* no need for installation
+	</article>
+	<article data-markdown>
+		### First Live Editor
+		
+		Let's find a place to play
+		
+		#### where to go ?
+		* link in tQuery home page (in navigation bar)
+		* [Live Editor](http://jeromeetienne.github.com/tquery/www/live/editor/)
+	</article>
+	<article>
+		<h3 style='font-size:180%'>What do you get ?</h3>
+		<br/>
+		<br/>		
+		Minimal Page
+
+		<pre>
+&lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
+&lt;script src="../../../build/tquery-bundle.js"&gt;&lt;/script&gt;
+&lt;body&gt;&lt;script&gt;
+	var world	= tQuery.createWorld().boilerplate().start();
+	var object	= tQuery.createTorus().addTo(world);
+&lt;/script&gt;&lt;/body&gt;</pre>
+	</article>
+	<article>
+		<h3 style='font-size:180%'>Let's add require.js</h3>
+		<br/>
+		<br/>
+		Easier to add tquery plugins
+		
+		<pre>
+&lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
+&lt;script src="../../../build/tquery-bundle-require.js"&gt;&lt;/script&gt;
+&lt;body&gt;&lt;script&gt;
+require([], function(){
+	var world = tQuery.createWorld().boilerplate().start();
+	var object = tQuery.createTorus().addTo(world);
+});
+&lt;/script&gt;&lt;/body&gt;</pre>
+	</article>
+	<article data-markdown>
+		## Now we are setup, Let's start
+	</article>
+	<article data-markdown>
+		### Create a heart
+		
+		Valine card needs a hear
+		
+		```
+		tQuery.createHeart().id('heart').addTo(world)
+		```
+		
+		Not too hard...
+		
+		* note the .id() 
+		* it will be usefull later
+	</article>
+	<article data-markdown>
+		### Now some texts
+		
+		About love obviously :)
+		
+		```
+		// add some text
+		tQuery.createText('Valentine').addTo(world)
+			.scaleBy(1/4).translateY(0.6)
+		tQuery.createText('Love').addTo(world)
+			.scaleBy(1/4).translateY(-0.6)
+		```
+	</article>
+	<article data-markdown>
+		## Torus is kind awkward now
+	</article>
+	<article data-markdown>
+		### ok lets remove it
+
+		```
+		var object = tQuery.createTorus().addTo(world);
+		```
+	</article>
+	<article data-markdown>
+		## It is all too static
+	</article>
+	<article data-markdown>
+		### Let's make it move!
+
+		Render loop
+
+		```
+		// animate all that
+		world.loop().hook(function(deltaTime, present){
+		});
+		```
+	</article>
+	<article data-markdown>
+		### Pulsating heart!
+
+		```
+		// animate all that
+		world.loop().hook(function(deltaTime, present){
+			var angle	= present * 2 * Math.PI;
+			tQuery('#heart').scale( 0.8 + 0.4 * Math.abs(Math.sin(angle)))
+		});
+		```
+	</article>
+	<article data-markdown>
+		### Oscilating messages
+
+		```
+		// animate all that
+		world.loop().hook(function(deltaTime, present){
+			var angle	= present * 2 * Math.PI;
+			tQuery('#heart').scale( 0.8 + 0.4 * Math.abs(Math.sin(angle)))
+			tQuery('text').rotation( 0, Math.PI/6 * Math.sin(angle), 0 )
+		});
+		```
+	</article>
+	<article data-markdown>
+		## hmm not too shiny... 
+	</article>
+	<article data-markdown>
+		### Let's add some lights
+	
+		```
+		// create some lights
+		tQuery.createAmbientLight().addTo(world)
+			.color(0x444444)
+		tQuery.createDirectionalLight().addTo(world)
+			.color(0xffffff)
+			.position(1,1,1)
+		```
+	</article>
+	<article data-markdown>
+		### More funky material
+
+		on the heart - pink obviously
+
+		```
+		// create a heart
+		tQuery.createHeart().id('heart').addTo(world)
+			.setLambertMaterial()
+				.color(0xff00ff)
+				.back()
+		```
+	</article>
+	<article data-markdown>
+		### More funky material
+
+		on the messages
+
+		```
+		tQuery.createText('Valentine').addTo(world)
+			.scaleBy(1/4).translateY(0.6)
+			.setLambertMaterial()
+				.color(0x00ffff)
+				.back()
+		tQuery.createText('Love').addTo(world)
+			.scaleBy(1/4).translateY(-0.6)
+			.setLambertMaterial()
+				.color(0x00ffff)
+				.back()
+		```
+	</article>
+	<article data-markdown>
+		## hmm better.. a little bit more ?
+	</article>
+
+	<article data-markdown>
+		### Some post processing
+		
+		```
+		// add some post processing
+		world.addEffectComposer()
+			.film(0.5, 0.25, 648, false)
+			.vignette()
+			.finish();		
+		```
+	</article>
+	<article data-markdown>
+		
+		# *Questions ?*
+				
+		Jerome Etienne
+	</article>
+	<script>
+	// ==UserScript==
+	// @name Use Markdown, sometimes, in your HTML.
+	// @author Paul Irish <http://paulirish.com/>
+	// @link http://git.io/data-markdown
+	// @match *
+	// ==/UserScript==
+	
+	
+	// If you're not using this as a userscript just delete from this line up. It's cool, homey.
+	
+	(function markdownSlideToHtml(){
+	  
+		if (!window.Showdown){
+			var scr		= document.createElement('script');
+			scr.onload	= markdownSlideToHtml;
+			scr.src		= 'vendor/showdown.js';
+			document.body.appendChild(scr);
+			return;
+		}
+	
+		[].forEach.call(document.querySelectorAll('[data-markdown]'), function fn(elem){
+			// strip leading whitespace so it isn't evaluated as code
+			//var text      = elem.textContent.replace(/\n\s*\n/g,'\n');
+			// jerome- to have better support of html within markdown
+			var text      = elem.innerHTML;
+			//console.log("origin innerHTML", text.split('\n'));
+			// remove all blanks lines
+			//text		= text.replace(/\n\s*\n/g,'\n');
+			//console.log("step text", text)
+			// set indentation level so your markdown can be indented within your HTML
+			var matches	= text.match(/^\n([ \t]*)/);
+			var leadingws	= matches[1].length;
+			//console.log("first line", matches)
+			//console.log("leadingws", leadingws)
+			var regex	= new RegExp('\\n[ \\t]{' + leadingws + '}','g');
+			var md		= text.replace(regex,'\n');
+			//console.log("pre md", md);
+			html      = (new Showdown.converter()).makeHtml(md);
+			//console.log("post html", html);
+	
+			// to support prettyprint
+			html		= html.replace(/<code><br \/>/g,'<pre class="prettyprint">');
+			html		= html.replace(/<br \/><\/code>/g,'</pre>');
+			// unescape [><]
+			html		= html.replace(/&amp;gt;/g,'>');
+			html		= html.replace(/&amp;lt;/g,'<');
+			//console.log("escaped html", html);
+		  
+			// here, have sum HTML
+			elem.innerHTML = html;
+		});
+		// callback prettyprint to highlight code found in markdown
+		prettyPrint();
+	}());
+	</script> 
+	<script>
+		//////////////////////////////////////////////////////////////////
+		// scan the whole webpage and replace url to their local location
+		// - usefull to have local copy of the slides in conference when internet is unavailable
+		// - and still have slides which works when internet is available
+		// $ open -a "/Applications/Google Chrome.app" --args --disable-web-security --allow-file-access-from-file
+		setTimeout(function(){
+			location.href.match(/^file:/) && jQuery('a').add('iframe').each(function(index, element){
+				var attrNames	= {
+					'A'	: 'href',
+					'IFRAME': 'src'
+				};
+				var attrName	= attrNames[element.nodeName];
+				var url		= jQuery(element).attr(attrName);
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//			, 'file://localhost/Users/jerome/webwork/tquery/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//	, 'file://localhost/Users/jerome/webwork/augmentedgesture.js/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//		, 'file://localhost/Users/jerome/webwork/webaudio.js/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/pongGL\//, 'file://localhost/Users/jerome/webwork/pongGL/')
+				url	= url.replace(/^http:\/\/jeromeetienne.github.com\/threex\//, 'file://localhost/Users/jerome/webwork/threex/')
+				url	= url.replace(/^http:\/\/learningthreejs.com\//, 'file://localhost/Users/jerome/webwork/learningthreejs.com/')
+				url	= url.replace(/\/$/, '/index.html')
+				jQuery(element).attr(attrName, url);
+			})
+		}, 100);
+	</script>
+</body>
+</html>
