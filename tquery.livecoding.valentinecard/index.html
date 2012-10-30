@@ -66,6 +66,7 @@
 		* very much hands on
 		* Just a teaser to see basics
 		* Let's make it fun
+		* expected [result](file://localhost/Users/jeromeetienne/webwork/tquery/plugins/ogsworkshop/examples/valentine.html)
 		
 		#### All on top the live editor
 		* [Live Editor](http://jeromeetienne.github.com/tquery/www/live/editor/)
@@ -84,8 +85,8 @@
 		<h3 style='font-size:180%'>What do you get ?</h3>
 		<br/>
 		<br/>		
-		Minimal Page
-
+		Minimal Page 
+				
 		<pre>
 &lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
 &lt;script src="../../../build/tquery-bundle.js"&gt;&lt;/script&gt;
@@ -116,8 +117,15 @@ require([], function(){
 	<article data-markdown>
 		### Create a heart
 		
-		Valine card needs a hear
+		Valine card needs a heart
 		
+		Add plugins
+		```
+		require(['tquery.shape'], function(){
+		```
+
+		
+		New code
 		```
 		tQuery.createHeart().id('heart').addTo(world)
 		```
@@ -126,6 +134,16 @@ require([], function(){
 		
 		* note the .id() 
 		* it will be usefull later
+	</article>
+	<article data-markdown>
+		## Torus is kind awkward now
+	</article>
+	<article data-markdown>
+		### ok lets remove it
+
+		```
+		var object = tQuery.createTorus().addTo(world);
+		```
 	</article>
 	<article data-markdown>
 		### Now some texts
@@ -138,16 +156,6 @@ require([], function(){
 			.scaleBy(1/4).translateY(0.6)
 		tQuery.createText('Love').addTo(world)
 			.scaleBy(1/4).translateY(-0.6)
-		```
-	</article>
-	<article data-markdown>
-		## Torus is kind awkward now
-	</article>
-	<article data-markdown>
-		### ok lets remove it
-
-		```
-		var object = tQuery.createTorus().addTo(world);
 		```
 	</article>
 	<article data-markdown>
@@ -247,6 +255,12 @@ require([], function(){
 			.vignette()
 			.finish();		
 		```
+	</article>
+
+	<article data-markdown>
+		### The end
+		
+		What you should end up with [link](file://localhost/Users/jeromeetienne/webwork/tquery/plugins/ogsworkshop/examples/valentine.html)
 	</article>
 	<article data-markdown>
 		
