@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tQuery: three.js + jQuery ?</title>
+	<base target=”_blank” />
+	<meta charset='utf-8'/>
+	<script src="vendor/jquery-1.7.2.min.js"></script>
+	<script src='slides.js'></script>
+</head>
+
+<body style='display: none'>
+	<style>
+		span.orange {
+			color		: orange;
+		}
+		span.larger {
+			font-weight	: bolder;
+			font-size	: 120%;
+		}
+		article[data-markdown] em {
+			color		: orange;
+			font-style	: normal;
+			font-weight	: bolder;
+			
+		}
+		article[data-markdown] h3 {
+			font-size	: 180%;
+		}
+	</style>
+	<section class='slides layout-regular template-default'>
+
+<!-- ****************************************************************************
+		Talk Introduction
+********************************************************************************* -->
+	<article>
+		<h1>
+			<span style="font-size: 120%; color: orange;">WebGL</span>
+			<br/>
+			<br/>
+		</h1>
+		<h3 style="font-size: 120%">
+			<center>
+				a paradigm switch for games on the web
+			</center>
+			<br>
+		</h3>
+		<p>
+			Jerome Etienne - CTO of beloola.com
+		</p>
+	</article>
+	<article class='nobackground'>
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/iim3dcharacter/examples/index.html'
+			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+	<article>
+		<h3>
+			Who Am I
+		</h3>
+		<img style="float:right" src='jetienne-avatar.jpg' />
+		<ul>
+			<li>
+				coder, speaker, trainer
+			</li>
+			<li>
+				CTO of Beloola.com
+			</li>
+			<li>
+				Javascript, Node.js, WebGL and other HTML5 games stuff
+			</li>
+		</ul>
+		<h4>Learning Three.js</h4>
+		<ul>
+			<li>
+				Author of <a href="http://learningthreejs.com">learningthreejs</a> blog
+			</li>
+			<li>
+				Lists of three.js tutorials or "WebGL for dummies"
+			</li>
+		</ul>
+		<h4>Contacts</h4>
+		<ul>
+			<li>
+				<a href='https://twitter.com/jerome_etienne'>@jerome_etienne</a> on twitter,
+				<a href='http://github.com/jeromeetienne'>jeromeetienne</a> on github
+			</li>
+		</ul>
+	</article>
+	<article data-markdown>
+		# Who is doing web games ?
+	</article>
+	<article data-markdown>
+		### Who is writing web games
+		
+		#### people
+		* mostly dedicated gamestudio
+		* some independand but not much
+		
+		#### how to teach web to your team
+		* mostly experienced webdev
+		* a lot less experienced in 3d
+		
+		=> *how to switch to them to WebGL ?*
+	</article>
+	<article data-markdown>
+		# *WegGL API isn't Webby*
+	</article>
+	<article data-markdown>
+		## *WebGL is OLD*
+	</article>
+	<article data-markdown>
+		### WegGL from old time
+		
+		* WebGL comes from OpenGL
+		* 1992 by sgi 
+		* it is old in Web Time
+		* Web was barely alive at the time
+		* 1990 : publication of Hypertext paper
+
+		=> *Not insync with WebDevs Culture*
+	</article>
+	<article data-markdown>
+		## *WebGL is Verbose*
+	</article>
+	<article data-markdown>
+		### Random Numbers
+		
+		#### From [learningwebgl](http://learningwebgl.com/blog/) tutorials
+				
+		#### a triangle and a square
+		* [post](http://learningwebgl.com/blog/?p=28)
+		  / [demo](http://learningwebgl.com/lessons/lesson01/index.html)
+		* in 2d - pure white
+		* *200 lines!!*
+
+		#### a box and a texture
+		* [post](http://learningwebgl.com/blog/?p=684)
+		  / [demo](http://learningwebgl.com/lessons/lesson07/index.html)
+		* *500 lines!!*
+	</article>
+	<article data-markdown>
+		## *WebGL is Low Level*
+	</article>
+	<article data-markdown>
+		### WebGL is Low Level
+		
+		#### Origin
+		* designed for hardware accelerated graphic
+		* Talk to the hardware directly
+		
+		#### Fitness ?
+		* Uses a logic foreign to common WebDevs
+		* Usual Web API are far more abstract
+		  * cf. canvas2D
+	</article>
+	<article data-markdown>
+		### WegGL API Status
+		
+		* WebGL is Old
+		* WebGL is Low Level
+		* WebGL is Verbose
+
+		=> *Not Suitable for Webdevs Culture*
+	</article>
+	<article data-markdown>
+		## *Let's Give up ?*
+	</article>
+	<article data-markdown>
+		## No :) here is a possible alternative
+	</article>
+	<article>
+		<h1>
+			<span style="font-size: 120%; color: orange;">tQuery API</span>
+			<br/>
+			<br/>
+		</h1>
+		<h3 style="font-size: 120%">
+			<center>
+				<span style="color: orange">t</span>hree.js
+				power
+				+
+				j<span style="color: orange">Query</span>
+				API Usability
+			</center>
+			<br>
+		</h3>
+	</article>
+
+<!-- ****************************************************************************
+		tQuery 5min Presentation
+********************************************************************************* -->
+	<article>
+		<h1>
+			What is <span style="font-size: 120%; color: orange;">tQuery API</span> ?
+		</h1>
+	</article>
+	<article>
+		<h3>tQuery API in a few word</h3>
+		<h4><span class="orange">Thin layer</span> on top of three.js</h4>
+		<ul>
+			<li>
+				three.js : 100k min+gzip
+			</li>
+			<li>
+				tQuery.js : 6k min+gzip
+			</li>
+		</ul>
+		<h4><span class="orange">Dumb library</span></h4>
+		<ul>
+			<li>
+				Different API
+			</li>
+			<li>
+				Different default values
+			</li>
+			<li>
+				Same Semantic
+			</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			tQuery API Started as a itch to scratch
+		</h3>
+		<br/>
+		<br/>
+		<h3>Itch: <span class="orange">Bring 3D to non specialists</span></h3>
+		<br/>
+		<ul>
+			<li>
+				may be seen as <span class="orange">WebGL for jQuery enthousiasts</span>
+			</li>
+			<li>
+				If you know jQuery, you learn tQuery in no time
+			</li>
+		</ul>
+		<h4>Working hard to make it true !! :)</h4>
+	</article>
+	<article>
+		<h2>
+			Freeze! Show, dont tell.
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Flying to the moon Demo - 10h of code
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/demo.flymetothemoon/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/demo.flymetothemoon/"><img src="vendor/images/demo.flyingtothemoon.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Minecraft visits Mount Olympus - 6h of code
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/demo.minecraftolympus/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/demo.minecraftolympus/"><img src="vendor/images/demo.minecraftolympus.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a Sport Car - 40 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/car/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/car/examples/"><img src="vendor/images/sportCar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a minecraft guy - 20 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/"><img src="vendor/images/minecraftChar.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			another minecraft guy - 30 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/minecraft/examples/animation.html"><img src="vendor/images/minecraftAnim.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Realistic physics - 80 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/physics/examples/domino.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/physics/examples/domino.html"><img src="vendor/images/physicsDomino.png" height='80%' width='100%'></a>
+	</article>
+	<article>
+		<h3>
+			a 3D Pong - 100 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/pongGL/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/pongGL/"><img src="vendor/images/pongGL.png" height='80%' width='100%'></a>
+	</article>
+	<article>
+		<h2>
+			Not bad ... Why the code is so short ?
+		</h2>
+	</article>
+	<article>
+		<h3>Why the code is so short ?</h3>
+		<h4><span style="color: orange">Mimicking jQuery API</span> makes code shorter</h4>
+		<ul>
+			<li>
+				chained API tends to produce short code
+			</li>
+			<li>
+				Plugins avoids recoding repeatitive elements
+			</li>
+		</ul>
+		<h4><span style="color: orange">Plugins</span> makes code shorter</h4>
+		<ul>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself">Don't Repeat Yourself</a>: less recoding repeatitive things
+			</li>
+			<li>
+				<a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention over configuration</a>
+				thus coders don't need to specify each time
+			</li>
+		</ul>
+		<span style="color: orange">Short code is a by product of tQuery principles</span>
+	</article>
+	<article>
+		<h2>
+			Wanna try ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			<span class="orange">Live editor</span> to the rescue
+		</h3>
+		<h4>Coolness</h4>
+		<ul>
+			<li>
+				no install needed
+			</li>
+			<li>
+				live experimentation
+			</li>
+		</ul>
+		<h4>Examples cuteness</h4>
+		<ul>
+			<li>
+				<a href='http://jeromeetienne.github.com/tquery/www/live/editor/index.html#B/XY5NDoIwEIXXeIrKCha2B7BwAxNNSFz3Z6IlheJ00HB7C1UXJrN5b9438+TeBkPLBOxOg28lOfLQntzoBuUZXWbAhZ3VDaTIq52MBt1ELKJpSs5FHj07bwU91vxBz6P1wPtYtlLkeOJ0sEsrv7J4KmSvgN4WzecPNwiK4LqaVc11cB5w8slKKpJCqupjBoPuwdA/2QWcY8oqa7tQbccT8KsgxVbhDQ=='>Simple one</a>
+			</li>
+			<li>
+				<a href='http://jeromeetienne.github.com/tquery/www/live/editor/index.html#B/XVHLTsMwELzDTyy9NJVap0KAkEhzoOJYCaRKHBAHx9k0BidO7U1Lhfh3Nk5aHlZes56dnYmTi9wqOjQIJVUmTUiTwXSla11JA/TUojvAo9xgEvdbZ4lXTjcE3qnFSIi4v7JWmzymbcefZW2dG5w53LbaoXjzozSJ+zbuz2x+SJMjHEjRy7hvFk3jrBpP4Yh3Okfrx69TKNpakbZ1NPk8A15xDOyTgEqEvXUmD9WddD2CxeBfKIeS8LkrRhORWW3QNYZLjDxJR9Hk7qgo8xy8rRAa6wk6L+i9rjdhP+gKpjwUBSpa2opZ6DoZbLTkd6FNFc3F9RTm4pKfN1e3bFwaj5Og0C2OtKmRwviCE/jy1/zeK0hQbcaxNJX8vcdMyQoIP6h1eIo54A7+zxoa1v3+Uf0PY8nyPJ+zrG0Ucv0YDCY90r30Wq2Y7LQ0TK5kEw0z+TdK9d4pf/F9fjreJA7H+w0='>Fun with webcam</a>
+				- same on <a href='http://jsfiddle.net/jetienne/XLpBc/'>jsfiddle</a>
+			</li>
+			<li>
+				<a href='http://jeromeetienne.github.com/tquery/www/live/editor/index.html#B/zVRRb9MwEH7frzB7iQOts40NAcsqsbEHHioVCYQG4sFJro03x87s60o17b9zdtoshT0gHhBW5MTffXe++3xO/qyyJa5bYDU2epKjQg2TqTKqkZrhxyW4NZvJBeRZZ9rLfelUi8y78mxfiKx7iqXSVYa3gT8ulqbSMHZwu1QOxLXfn+RZ50b+ha3Wk3y73JD4t6RzFq2WBtAnI7ZFGmWgdHKOA6xtnS2T7yM2X5oSlTU8vd9jNO6kYyvrdBUWZ5sKROlAInwJOE9FYZUGRxsh0MqjdMjT0+ieZUxWFfO2AdZajyzsA94rs4j2nXiX8zmUeGEbYoKjUA5MBW4mvedppIchCg2yrIt1+wve2JD4uV46fiDeDAxzpRuCjk5GrJtfHb+mSqX2MGDdqQUJFUoYehrla0KGxWANDKjGuheo0/gJhWbRwO/7iLE1aLxlSQyRRMtDKijwJ8uj0t3+8VNoa1sSorb2hvdHU4FGOWLGrtLHyCEPaRYaujTGB+KQPQ8cmqcSazH7QF9Hp71Dl7RwFmWMGp1JIXrSTVY7ZUvWNw4ra+lkieCYNQxt2yvxSPldjOnWdkHeA038jTKfnSZNNvQdoiikBzK/SDL4IZtWg8/oMi3oRZNB3ygqrjWLhD2l5WmH9nkJW1xTk718zxNnLSaDw0YnjQ9NfEXNcjIw+FJqOF/zw+w43SpCjYEsXL13dLV9RA2snqwgMKLEnvdpbK9JspL6JqHL8mdSFxbRNv+x2n8j9nhX7diQ8JVvmjbdAFc98G8P5iEcTv+7zbP4u/0J'>Spy vs Spy</a>
+				- same on <a href='http://jsfiddle.net/jetienne/y2ypZ/'>jsfiddle</a>
+			</li>
+		</ul>		
+	</article>
+	<article>
+		<h2>
+			Show us the code.
+		</h2>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span class='orange'>Minimal</span> Page
+			-
+			<a href="http://jeromeetienne.github.com/tquery/www/playground/">playground</a>
+		</h3>
+		<section>
+		<pre>
+&lt;!doctype html&gt;&lt;title&gt;Minimal tQuery Page&lt;/title&gt;
+&lt;script src=&quot;../../build/tquery-bundle.js&quot;&gt;&lt;/script&gt;
+&lt;body&gt;&lt;script&gt;
+    var world	= tQuery.createWorld().boilerplate().start();
+    var object	= tQuery.createTorus().addTo(world);
+&lt;/script&gt;&lt;/body&gt;
+</pre>
+		</section>
+		<h4>Fun Facts</h4>
+		<ul>
+			<li>Full HTML5 page</li>
+			<li>Valid HTML5</li>
+			<li>Only 6-lines !</li>
+			
+		</ul>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			Here is a <span style="color: orange">Minimal</span> Page
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/minimal/examples/">Demo</a>
+		</h3>
+		<iframe src='http://jeromeetienne.github.com/tquery/plugins/minimal/examples/'
+			allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+	</article>
+	<article>
+		<h2>
+			What is the recipe of tQuery ?
+		</h2>
+	</article>
+	<article>
+		<h3>
+			tQuery aims to <span style="color: orange">three.js power</span> + <span style="color: orange">jQuery API usability</span>
+		</h3>
+		<h4>three.js power:</h4>
+		<ul>
+			<li>
+				actively developped by a team of skilled dev
+			</li>
+			<li>
+				significant community around three.js
+			</li>
+		</ul>
+		<h4>jQuery API usability</h4>
+		<ul>
+			<li>
+				widely recognized (85% market share)
+			</li>
+			<li>
+				successful plugin ecosystem
+			</li>
+		</ul>
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article>
+		<h1>
+			Relation with <span style="font-size: 120%; color: orange;">three.js</span>
+		</h1>
+	</article>
+	<article>
+		<h3>
+			Three.js Library
+		</h3>
+		<h4>What is it?</h4>
+		<ul>
+			<li>3D javascript library</li>
+			<li>can render in WebGL, Canvas or dom</li>
+		</ul>
+		<h4>Why this library ?</h4>
+		<ul>
+			<li>likely the <span class='orange'>most popular</span></li>
+			<li>Actively developped by a community of experienced devs</li>
+			<li>and i knew it already :)</li>
+		</ul>
+	</article>
+	<article>
+		<h3>
+			Just another API on top of three.js
+		</h3>
+		<h4>What remains the same ?</h4>
+		<ul>
+			<li>no change in semantic</li>
+			<li>nothing smart</li>
+		</ul>
+		<h4>What changes ?</h4>
+		<ul>
+			<li>other functions</li>
+			<li>other defaults</li>
+			<li>easy plugins system</li>
+		</ul>
+	</article>
+<!-- ****************************************************************************
+		Mimic jQuery-API
+********************************************************************************* -->
+	<article>
+		<h1>
+			Relation with <span style="font-size: 120%; color: orange;">jQuery</span>
+		</h1>
+	</article>
+	<article class='nobackground'>
+		<h3>
+			tQuery Mimics jQuery API
+		</h3>
+		<h4>Motivation</h4>
+		<ul>
+			<li>
+				It makes tQuery very easy to learn if you know jQuery
+			</li>
+			<li>
+				Very important. It got significant consequences.
+				<span class="orange">Not Kidding</span>
+			</li>
+		</ul>
+		<h4>Principles</h4>
+		<ul>
+			<li>
+				for api, copy jquery API whenever possible
+			</li>
+			<li>
+				helpers may be provided, but jquery is the auhority
+			</li>
+		</ul>
+
+	</article>
+	<article>
+		<h3>
+			Key aspects of jQuery
+		</h3>
+		<ul>
+			<li>DOM tree from webpages</li>
+			<li>Chained API</li>
+			<li>ID and Class</li>
+			<li>CSS-like selector</li>
+			<li>DOM events</li>
+		</ul>
+		<span class='orange'>All Present in tQuery too!</span>
+	</article>
+
+<!-- ****************************************************************************
+		More Examples
+********************************************************************************* -->
+	<article>
+		<h2>
+			Bla bla bla ... all talk.
+			Show something!
+		</h2>
+	</article>
+	<article>
+		<h3>
+			Dom Events
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/threex/examples/threex.domevent/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/threex/examples/threex.domevent/"><img src="vendor/images/domevent.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			a sound visualisation - 40 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html">Demo</a>
+		</h3>
+		<p>&nbsp;</p> 
+		<a href="http://jeromeetienne.github.com/webaudio.js/examples/histotquery.html"><img src="vendor/images/webaudio-tquery.png" height='80%'></a>
+	</article>
+	<article>
+		<h3>
+			Play with Doom Character - 50 lines of js
+			-
+			<a target="_blank" href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/">Demo</a>
+		</h3>
+		<p>&nbsp;</p>
+		<a href="http://jeromeetienne.github.com/tquery/plugins/md2character/examples/"><img src="vendor/images/MD2Character.png" height='80%'></a>
+	</article>
+<!-- ****************************************************************************
+		Featured Extensions
+********************************************************************************* -->
+	<article>
+		<h2>
+			hmm tQuery is about extension ?<br/>Show some!
+		</h2>
+	</article> 
+	<article>
+		<h3>Examples Plugins</h3>
+		<h4>
+			<span class="orange">tQuery.text</span>: Display Text in 3D
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/text/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.Shapes</span>: Build 3D shape with canvas-like path
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/shape/examples/'>example</a>
+			- <a href='http://jeromeetienne.github.com/tquery/www/live/editor/index.html#B/lZJNS8QwEIbPrX8i6qGJdtNVRAS7e/CkoKCwKCIe0ma00WxSk6m6iP/dNLv1Cy9CU2YmM0/emaRcl7bGRQukwbmelqhQw/RMGTUXmuBFB25BzsU9lMVyKy197VSLxLt6ssF5sfyqTmlZ4FOfP6o6IzWMHDx1ygF/8BvTsliWhfrKysW0HNxVEr3JlsXcN6KFLCeDj/CK2W1O7jpTo7KGsrc0eRaOvFinJZmsRPLagUC46oOU8coqDa7VIRQ8j8IhZYdpmvzIngU2zS6FBoPKQMa4kHJmaUSzNEm4r8Pm0YLuFHuMoxPG98hrOub7AfcX7dQ+/wc0+ot0DFEvV5JmTW//AvaNRItra9uQ2Fj7SD8nJEGjmKk55KR14ENz/czi0IS515BMhjjZIrthnQls+PlJkLHSQbPN4dwonJIxPyDb4b83pIvK02h4ZWjEMsa+AeK9Me4siiiKjPPhnGJ/gHzV5mRMQvl76C2stfTzwZRFfDAf'>Valentine card</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.csg</span>: add/sub objects
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/csg/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.domevents</span>: Emulation of DOM event in 3D space
+			- <a href='http://jeromeetienne.github.com/threex/examples/threex.domevent/'>example</a>
+		</h4>
+	</article>
+	<article>
+		<h3>More Examples Plugins</h3>
+		<h4>
+			<span class="orange">tQuery.fireball</span>: pure shader material
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/fireball/examples/'>example</a>
+		</h4>
+		<h4>
+			<span class="orange">tQuery.md2Character</span>: Animate doom character
+			- <a href='http://jeromeetienne.github.com/tquery/plugins/md2character/examples/'>example</a>
+			- can play in console too. 
+		</h4>
+		<pre>
+character.setSkin(2);	// to change the skin (5 of them)
+character.setWeapon(4);	// to change the weapons (11 of them)
+// some randomness
+setInterval(function(){
+    character.setSkin(Math.floor(Math.random()*5 % 5));
+    character.setWeapon(Math.floor(Math.random()*11 % 11));
+}, 1000);
+</pre>
+	</article>
+	<article>
+		<h3>Just a few plugins in tQuery</h3>
+
+		<ul>
+			<li>Plugins allows much easier reuse</li>
+			<li>Written to see how tQuery reacts in practice</li>
+			<li>Currently 55 plugins in incubation</li>
+		</ul>
+	</article>
+
+<!-- ****************************************************************************
+		Future work
+********************************************************************************* -->
+	<article>
+		<h2>
+			Anything else ?
+		</h2>
+	</article>
+	<article>
+		<h3>Conclusion</h3>
+		<h4>three.js power + jQuery API Usability</h4>
+		<ul>
+			<li>
+				seems a good recipe
+			</li>
+		</ul>
+		<h4>The Code</h4>
+		<ul>
+			<li>All under MIT license</li>
+			<li>Code on github at <a href="https://github.com/jeromeetienne/tquery">https://github.com/jeromeetienne/tquery</a></li>
+			<li>Wanna play online ? use the <a href="http://jeromeetienne.github.com/tquery/www/live/editor/index.html">live editor</a></li>
+		</ul>
+	</article>
+	<article>
+		<h1>
+			That's all folks.
+		</h1>
+		<h3>
+			Question ?
+		</h3>
+		<p>
+			Jerome Etienne
+		</p>
+	</article>
+	<script>
+	// ==UserScript==
+	// @name Use Markdown, sometimes, in your HTML.
+	// @author Paul Irish <http://paulirish.com/>
+	// @link http://git.io/data-markdown
+	// @match *
+	// ==/UserScript==
+	
+	
+	// If you're not using this as a userscript just delete from this line up. It's cool, homey.
+	
+	(function markdownSlideToHtml(){
+	  
+		if (!window.Showdown){
+			var scr		= document.createElement('script');
+			scr.onload	= markdownSlideToHtml;
+			scr.src		= 'vendor/showdown.js';
+			document.body.appendChild(scr);
+			return;
+		}
+	
+		[].forEach.call(document.querySelectorAll('[data-markdown]'), function fn(elem){
+			// strip leading whitespace so it isn't evaluated as code
+			//var text      = elem.textContent.replace(/\n\s*\n/g,'\n');
+			// jerome- to have better support of html within markdown
+			var text      = elem.innerHTML;
+			//console.log("origin innerHTML", text.split('\n'));
+			// remove all blanks lines
+			//text		= text.replace(/\n\s*\n/g,'\n');
+			//console.log("step text", text)
+			// set indentation level so your markdown can be indented within your HTML
+			var matches	= text.match(/^\n([ \t]*)/);
+			var leadingws	= matches[1].length;
+			//console.log("first line", matches)
+			//console.log("leadingws", leadingws)
+			var regex	= new RegExp('\\n[ \\t]{' + leadingws + '}','g');
+			var md		= text.replace(regex,'\n');
+			//console.log("pre md", md);
+			html      = (new Showdown.converter()).makeHtml(md);
+			//console.log("post html", html);
+	
+			// to support prettyprint
+			html		= html.replace(/<code><br \/>/g,'<pre class="prettyprint">');
+			html		= html.replace(/<br \/><\/code>/g,'</pre>');
+			// unescape [><]
+			html		= html.replace(/&amp;gt;/g,'>');
+			html		= html.replace(/&amp;lt;/g,'<');
+			//console.log("escaped html", html);
+		  
+			// here, have sum HTML
+			elem.innerHTML = html;
+		});
+		// callback prettyprint to highlight code found in markdown
+		prettyPrint();
+	}());
+	</script> 
+	<script>
+		//////////////////////////////////////////////////////////////////
+		// scan the whole webpage and replace url to their local location
+		// - usefull to have local copy of the slides in conference when internet is unavailable
+		// - and still have slides which works when internet is available
+		// $ open -a "/Applications/Google Chrome.app" --args --disable-web-security --allow-file-access-from-file
+		location.href.match(/^file:/) && jQuery('a').add('iframe').each(function(index, element){
+			var attrNames	= {
+				'A'	: 'href',
+				'IFRAME': 'src'
+			};
+			var attrName	= attrNames[element.nodeName];
+			var url		= jQuery(element).attr(attrName);
+			url	= url.replace('http://jeromeetienne.github.com/chatandfight/', 'file://localhost/Users/jeromeetienne/webwork/chatandfight/');
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/demo.minecraftolympus\//, 'file://localhost/Users/jeromeetienne/webwork/demo.minecraftolympus/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/demo.ridinglight\//, 'file://localhost/Users/jeromeetienne/webwork/demo.ridinglight/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/demo.flymetothemoon\//, 'file://localhost/Users/jeromeetienne/webwork/demo.flymetothemoon/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/tquery\//, 'file://localhost/Users/jeromeetienne/webwork/tquery/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/augmentedgesture.js\//, 'file://localhost/Users/jeromeetienne/webwork/augmentedgesture.js/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/webaudio.js\//, 'file://localhost/Users/jeromeetienne/webwork/webaudio.js/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/pongGL\//, 'file://localhost/Users/jeromeetienne/webwork/pongGL/')
+			url	= url.replace(/^http:\/\/jeromeetienne.github.com\/threex\//, 'file://localhost/Users/jeromeetienne/webwork/threex/')
+			url	= url.replace(/^http:\/\/learningthreejs.com\//, 'file://localhost/Users/jeromeetienne/webwork/learningthreejs.com/')
+			url	= url.replace(/\/$/, '/index.html')
+			jQuery(element).attr(attrName, url);
+		})
+	</script>
+</body>
+</html>
