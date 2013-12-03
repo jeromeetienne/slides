@@ -17,12 +17,21 @@ output: index.html
 * Modern Workflow for WebApps
 * [homepage](http://yeoman.io/)
 
-### Using Yeoman ?
+--
+
+### Why Using Yeoman ?
 
 * Optional
 * Much Faster with it tho
 * Time is limited!
 * **YES**
+
+--
+
+### What to use in Yeoman ?
+
+* [generator](http://yeoman.io/generators.html) for initiate bootstrap
+* [bower](http://yeoman.io/packagemanager.html) for threex modules
 
 --
 
@@ -72,5 +81,5 @@ yo threejs-boilerplate
 
 ```make server``` then goto [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-<iframe src='http://127.0.0.1:8000/index10-postboilerplate.html' width='100%' height='400px'></iframe>
+<iframe src='http://127.0.0.1:8000/' width='100%' height='400px'></iframe>
 
