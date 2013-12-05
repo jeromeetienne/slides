@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>WebGL Workshop</title>
+  <title>Three.js and Yeoman sitting in a tree</title>
   <style type="text/css">
     body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -230,28 +230,60 @@ pre > code {
   </div>
 
 <div id="wrapper">
-    <section class="slide"><h1>Three.js+Yeoman</h1>
+    <section class="slide"><p><base target='_blank'/>
+<style>pre { background: lightgrey; font-size: 100%;}</style></p>
+
+<h1>Three.js+Yeoman</h1>
 
 <h2>three.js easier than ever</h2></section>
     <section class="slide"><h3>What Is Yeoman ?</h3>
 
 <ul>
-<li>Modern Workflow for WebApps</li>
-<li><a href="http://yeoman.io/">homepage</a></li>
+<li>Effort from google - <a href="http://yeoman.io/">homepage</a></li>
+<li>"Modern Workflow for WebApps"</li>
+<li>Composed of 3 tools: <a href="http://yeoman.io/packagemanager.html">bower</a>
+/ <a href="http://gruntjs.com/">grunt</a>
+/ <a href="https://github.com/yeoman/yo">yo</a></li>
 </ul></section>
     <section class="slide"><h3>Why Using Yeoman ?</h3>
 
 <ul>
-<li>Optional</li>
-<li>Much Faster with it tho</li>
-<li>Time is limited!</li>
-<li><strong>YES</strong></li>
+<li><strong>TOTALLY Optional</strong> :)</li>
+<li>You can do the same without yeoman</li>
+<li>Much Faster with it tho!</li>
 </ul></section>
-    <section class="slide"><h3>What to use in Yeoman ?</h3>
+    <section class="slide"><h2>go deeper about yeoman</h2></section>
+    <section class="slide"><h3>grunt for automating tasks</h3>
 
 <ul>
-<li><a href="http://yeoman.io/generators.html">generator</a> for initiate bootstrap</li>
-<li><a href="http://yeoman.io/packagemanager.html">bower</a> for threex modules</li>
+<li>all done in javascript</li>
+<li>kindof Makefile on steroid</li>
+</ul></section>
+    <section class="slide"><h3>Bower For Packaging</h3>
+
+<ul>
+<li>effort from twitter</li>
+<li>package management: publish/search/install</li>
+<li>similar to npm for node.js</li>
+</ul>
+
+<h4>Our Usage</h4>
+
+<ul>
+<li>easy to install three.js extensions</li>
+</ul></section>
+    <section class="slide"><h3>Yo For Scafolding</h3>
+
+<ul>
+<li>like you got in rails</li>
+</ul>
+
+<h4>Our Usage</h4>
+
+<ul>
+<li>for three.js boilerplate</li>
+<li>to start fast your three.js project</li>
+<li>to start with the good practices you like</li>
 </ul></section>
     <section class="slide"><h3>Installing yeoman</h3>
 
@@ -271,13 +303,13 @@ sudo npm install -g generator-threejs-boilerplate
 <h4>create it</h4>
 
 <p><code>
-mkdir mythreejsproject
+mkdir yourthreejsproject
 </code></p>
 
 <h4>go in</h4>
 
 <p><code>
-cd mythreejsproject
+cd yourthreejsproject
 </code></p></section>
     <section class="slide"><h3>Generate Three.js Boilerplate</h3>
 
@@ -290,7 +322,96 @@ yo threejs-boilerplate
 
 <p><code>make server</code> then goto <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
 
-<iframe src='http://127.0.0.1:8000/' width='100%' height='400px'></iframe></section>
+<p><img src="images/screenshot-threejs-boilerplate.png" style="width: 80%;"/></p></section>
+    <section class="slide"><h2>Cool But Rather empty...</h2>
+
+<h1>Let's Add NyanCat!</h1></section>
+    <section class="slide"><h2>Good Idea!</h2>
+
+<h1>Where to get it ?</h1></section>
+    <section class="slide"><h3>threex nyancat</h3>
+
+<ul>
+<li>threex extensions for basic nyancat</li>
+<li>on github: <a href="https://github.com/jeromeetienne/threex.nyancat/">repo</a> / 
+<a href="http://jeromeetienne.github.io/threex.nyancat/examples/basic.html">demo</a></li>
+</ul>
+
+<p><img src="images/threex.nyancat.png" width='80%'/></p></section>
+    <section class="slide"><h1>Wait!</h1>
+
+<h2>What is threex ?</h2></section>
+    <section class="slide"><h3>A Bit on threex ?</h3>
+
+<ul>
+<li>ultra light extension system for <a href="http://mrdoob.github.io/three.js/">three.js</a></li>
+<li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github - 28 modules and counting</li>
+</ul>
+
+<p><img src='images/screenshot-threex-homepage.png' width='100%' height='400px'></iframe></p></section>
+    <section class="slide"><h3>threex and yeoman</h3>
+
+<ul>
+<li><a href="http://bower.io/">bower</a> for package management</li>
+<li>Support <a href="requirejs.org">require.js</a> and <a href="http://yeoman.io">yeoman generator</a> too
+<ul><li>more on that later</li></ul></li>
+</ul>
+
+<h3>All Optional</h3>
+
+<ul>
+<li>only there for convenience</li>
+<li>free to use something else if you wish</li>
+</ul></section>
+    <section class="slide"><h2>Back To NyanCat...</h2></section>
+    <section class="slide"><h3>install threex module with bower</h3>
+
+<p><code>bower install threex.nyancat</code></p>
+
+<p><img src="images/bower-install-threex.nyancat.png" style="width: 100%;"/></p>
+
+<p>Now it is in <code>bower_components/threex.nyancat/</code></p>
+
+<p>Rather Easy...</p></section>
+    <section class="slide"><h3>Now Let's add Nyan Cat</h3>
+
+<p><strong>Step 1</strong> Include the script</p>
+
+<pre><code>&lt;script src='bower_components/threex.nyancat/threex.nyancat.js'&gt;
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>Step 2</strong> Add some javascript</p>
+
+<pre><code>var nyanCat    = new THREEx.NyanCat()
+nyanCat.container.scale.multiplyScalar(1/30)
+scene.add( nyanCat.container )
+</code></pre>
+
+<p><strong>Step 3</strong> And now, the model is in the scene.</p></section>
+    <section class="slide"><h2>Well almost.. Just the tail :)</h2>
+
+<p><img src="images/boilerplate-nyancat-cube.png" style="width: 100%;"/></p></section>
+    <section class="slide"><h2>Lets remove the cube</h2></section>
+    <section class="slide"><h2>Better!!</h2>
+
+<p><img src="images/boilerplate-nyancat-naked.png" style="width: 100%;"/></p></section>
+    <section class="slide"><h2>Enougth now...</h2>
+
+<h1>Packing it up</h1></section>
+    <section class="slide"><h3>Generate three.js boilerplate</h3>
+
+<p><code>
+yo threejs-boilerplate
+</code></p>
+
+<h3>Install threex extension for three.js</h3>
+
+<p><code>
+bower install threex.nyancat
+</code></p>
+
+<p>Simple Enougth :)</p></section>
     <section class="slide"><div class="author">
   <h1 class="name">Jerome Etienne</h1>
   <h3 class="twitter">
