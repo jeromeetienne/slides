@@ -1,4 +1,4 @@
-title: Three.js and Yeoman sitting in a tree
+title: Yeoman For Three.js
 author:
   name: "Jerome Etienne"
   twitter: "@jerome_etienne"
@@ -10,8 +10,27 @@ output: index.html
 <base target='_blank'/>
 <style>pre { background: lightgrey; font-size: 100%;}</style>
 
-# Three.js+Yeoman
-## three.js easier than ever
+# Zero to nyancat in 30 seconds flat
+## or Yeoman For Three.js
+
+--
+
+## Our Goal 
+
+<img src="images/boilerplate-nyancat-naked.png" style="width: 100%;"/>
+
+--
+
+# First The Tools
+
+--
+
+### What Is Three.js
+
+* javascript 3d library
+* effort lead by mrdoob
+* large community
+
 
 --
 
@@ -22,7 +41,6 @@ output: index.html
 * Composed of 3 tools: [bower](http://yeoman.io/packagemanager.html)
 / [grunt](http://gruntjs.com/)
 / [yo](https://github.com/yeoman/yo)
-
   
 --
 
