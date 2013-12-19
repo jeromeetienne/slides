@@ -27,8 +27,8 @@ output: index.html
 
 ### What Is Three.js
 
-* javascript 3d library
-* effort lead by mrdoob
+* javascript 3d library - [github](http://threejs.org/)
+* effort lead by [mrdoob](http://www.mrdoob.com/)
 * large community
 
 
@@ -103,6 +103,10 @@ sudo npm install -g generator-threejs-boilerplate
 
 --
 
+# Now The Action!
+
+--
+
 ### Project Directory
 
 #### create it
@@ -139,17 +143,13 @@ yo threejs-boilerplate
 
 ## Cool But Rather empty...
 
+--
+
 # Let's Add NyanCat!
 
 --
 
-## Good Idea! 
-
-# Where to get it ?
-
---
-
-### threex nyancat
+### threex.nyancat
 
 * threex extensions for basic nyancat
 * on github: [repo](https://github.com/jeromeetienne/threex.nyancat/) / 
@@ -159,12 +159,15 @@ yo threejs-boilerplate
 
 --
 
-# Wait!
-## What is threex ?
+## Wait! threex ?
 
 --
 
-### A Bit on threex ?
+# What is threex ?
+
+--
+
+### A Bit On Threex
 
 * ultra light extension system for [three.js](http://mrdoob.github.io/three.js/)
 * [threex](http://jeromeetienne.github.io/threex/) on github - 28 modules and counting
@@ -188,7 +191,7 @@ yo threejs-boilerplate
 
 --
 
-### install threex module with bower
+### Install It With Bower
 
 ```bower install threex.nyancat```
 
@@ -217,29 +220,35 @@ Rather Easy...
 
 --
 
-## Well almost.. Just the tail :)
+## Well Almost.. Just The Tail :)
 
 <img src="images/boilerplate-nyancat-cube.png" style="width: 100%;"/>
 
 --
 
-## Lets remove the cube
+# One Last Step
 
 --
 
-## Better!! 
+## Lets remove the cube...
+
+--
+
+## TADA!! 
 
 <img src="images/boilerplate-nyancat-naked.png" style="width: 100%;"/>
 
 --
 
-## Enougth now... 
-
-# Packing it up
+## Enougth now...
 
 --
 
-### Generate three.js boilerplate 
+# Packing It Up
+
+--
+
+### Generate Three.js Boilerplate 
 
 ```
 yo threejs-boilerplate
@@ -252,3 +261,11 @@ bower install threex.nyancat
 ```
 
 Simple Enougth :)
+
+--
+
+### Usefull Links
+
+* yeoman - [http://yeoman.io](http://yeoman.io)
+* three.js - [http://threejs.org](http://threejs.org)
+* threex - [http://jeromeetienne.github.io/threex/](http://jeromeetienne.github.io/threex/)
