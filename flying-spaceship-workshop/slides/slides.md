@@ -26,7 +26,7 @@ output: index.html
 
 ### Expect Final Result
 
-[demo](../index99.html)
+[demo](../step99.html)
 
 <img src="images/screenshot-final-result.png" style="width: 80%;"/>
 
@@ -270,7 +270,7 @@ Pitfalls
 
 --
 
-## Result
+### Result
 
 [demo](../step2-00-with-keyboard.html)
 
