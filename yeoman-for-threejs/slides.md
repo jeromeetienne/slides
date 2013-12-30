@@ -15,7 +15,7 @@ output: index.html
 
 --
 
-## Our Goal 
+## Our Goal [link](demo/index.html)
 
 <img src="images/boilerplate-nyancat-naked.png" style="width: 100%;"/>
 
