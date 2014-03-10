@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<script src='vendor/three.js/build/three.js'></script>
+<script src="vendor/require.js/require.js"></script>
+<script src="vendor/three.js/examples/js/Detector.js"></script>
+<script src="vendor/threex.windowresize.js"></script>
+<body style='margin: 0px; background-color: #bbbbbb; overflow: hidden;'>
+
+<style>
+#title {
+	position: absolute;
+	width: 100%;
+	font-size: 5em;
+	font-family: monospace;
+	font-weight: bolder;
+	text-align: center;
+	top: 20px;
+}
+</style>
+<div id='title'></div>	
+
+<style>
+#footer {
+	position: absolute;
+	width: 100%;
+	font-size: 5em;
+	font-family: monospace;
+	font-weight: bolder;
+	text-align: center;
+	bottom: 50px;
+}
+#footer a {
+	color: black;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+}
+#footer a:hover {
+	border-radius: 30px;
+	background: red;
+}
+#footer a.not:hover {
+	background: darkgreen;
+}
+#footer a.hot:hover {
+	background: red;
+}
+</style>
+<div id='footer'><a href='javascript:void(0);' class='hot'>Hot</a> 
+	or 
+	<a href='javascript:void(0);' class='not'>Not</a> ?
+</div>
+
+
+<style>
+#code {
+	position: absolute;
+	font-size: 2em;
+	font-family: monospace;
+	font-weight: bolder;
+	left: 20px;
+	top: 30%;
+	background: rgba(1,1,1,0.1);
+	padding: 20px;
+	border-radius: 30px;
+	border: 1px black solid;
+	visibility: hidden;
+}
+</style>
+<pre id='code'>
+</pre>
+
+<script>
+require([ 'bower_components/threex.minecraft/package.require.js'
+	], function(){
+	// detect WebGL
+	if( !Detector.webgl ){
+		Detector.addGetWebGLMessage();
+		throw 'WebGL Not Available'
+	} 
+	// setup webgl renderer full page
+	var renderer	= new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
+	// setup a scene and camera
+	var scene	= new THREE.Scene();
+	var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
+	camera.position.z = 2;
+
+	// declare the rendering loop
+	var onRenderFcts= [];
+
+	// handle window resize events
+	var winResize	= new THREEx.WindowResize(renderer, camera)
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		default 3 points lightning					//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	var ambientLight= new THREE.AmbientLight( 0x020202 )
+	scene.add( ambientLight)
+	var frontLight	= new THREE.DirectionalLight('white', 1)
+	frontLight.position.set(0.5, 0.5, 2)
+	scene.add( frontLight )
+	var backLight	= new THREE.DirectionalLight('white', 0.75)
+	backLight.position.set(-0.5, -0.5, -2)
+	scene.add( backLight )		
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		comment								//
+	//////////////////////////////////////////////////////////////////////////////////
+
+	var container	= new THREE.Object3D()
+	container.position.x	= 0.5
+	container.position.y	= -0.5
+	scene.add(container)
+
+	var player;
+	// var player	= new THREEx.MinecraftPlayer()
+	// player.character.root.position.y	= -0.5
+	// scene.add(player.character.root)
+	onRenderFcts.push(function(delta, now){
+		if( player === undefined )	return
+		player.update(delta, now)
+	})
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		comment								//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	var bodyParts	= ['body', 'head', 'helmet', 'armL', 'armR', 'legL', 'legR' ]
+	
+	Flow()
+	.seq(function(next){
+		// create new player
+		player		= new THREEx.MinecraftPlayer()
+		var object3d	= player.character.root
+		container.add(object3d)
+		// show only parts
+		bodyParts.forEach(function(bodyPart){
+			player.character[bodyPart].visible= false			
+		});
+		['body'].forEach(function(bodyPart){
+			player.character[bodyPart].visible= true			
+		})
+		// set title
+		setTitle('A Cube Body')
+		// set Code String
+		var codeString	= ''
+ 		setCode(codeString)
+		// set material
+		var material	=  new THREE.MeshLambertMaterial({
+			color	: 'white',
+		})
+		object3d.traverse(function(object3d){
+			if( !object3d.material )	return;
+			object3d.material	= material
+		})
+		// init next step
+		window.nextStep	= function(){
+			container.remove(object3d)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player		= new THREEx.MinecraftPlayer()
+		var object3d	= player.character.root
+		container.add(object3d)
+		// show only parts
+		bodyParts.forEach(function(bodyPart){
+			player.character[bodyPart].visible= false			
+		});
+		['body', 'head', 'helmet'].forEach(function(bodyPart){
+			player.character[bodyPart].visible= true			
+		})
+		// set title
+		setTitle('A Head To Think')
+		// set Code String
+		var codeString	= ''
+ 		setCode(codeString)
+		// set material
+		var material	=  new THREE.MeshLambertMaterial({
+			color	: 'white',
+		})
+		object3d.traverse(function(object3d){
+			if( !object3d.material )	return;
+			object3d.material	= material
+		})
+		// init next step
+		window.nextStep	= function(){
+			container.remove(object3d)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player		= new THREEx.MinecraftPlayer()
+		var object3d	= player.character.root
+		container.add(object3d)
+		// show only parts
+		bodyParts.forEach(function(bodyPart){
+			player.character[bodyPart].visible= false			
+		});
+		['body', 'head', 'helmet', 'armR', 'armL'].forEach(function(bodyPart){
+			player.character[bodyPart].visible= true			
+		})
+		// set title
+		setTitle('Lets add Arms')
+		// set Code String
+		var codeString	= ''
+ 		setCode(codeString)
+		// set material
+		var material	=  new THREE.MeshLambertMaterial({
+			color	: 'white',
+		})
+		object3d.traverse(function(object3d){
+			if( !object3d.material )	return;
+			object3d.material	= material
+		})
+		// init next step
+		window.nextStep	= function(){
+			container.remove(object3d)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player		= new THREEx.MinecraftPlayer()
+		var object3d	= player.character.root
+		container.add(object3d)
+		// show only parts
+		bodyParts.forEach(function(bodyPart){
+			player.character[bodyPart].visible= false			
+		});
+		['body', 'head', 'helmet', 'armR', 'armL', 'legR', 'legL'].forEach(function(bodyPart){
+			player.character[bodyPart].visible= true			
+		})
+		// set title
+		setTitle('Lets add Legs')
+		// set Code String
+		var codeString	= ''
+ 		setCode(codeString)
+		// set material
+		var material	=  new THREE.MeshLambertMaterial({
+			color	: 'white',
+		})
+		object3d.traverse(function(object3d){
+			if( !object3d.material )	return;
+			object3d.material	= material
+		})
+		// init next step
+		window.nextStep	= function(){
+			container.remove(object3d)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player		= new THREEx.MinecraftPlayer()
+		var object3d	= player.character.root
+		container.add(object3d)
+		// set title
+		setTitle('Lambert White')
+		// set Code String
+		var codeString	= (function(){ /*
+var material = new THREE.MeshLambertMaterial({
+	color	: 'white',
+})
+		*/}).toString().split('\n').slice(1, -1).join('\n');
+ 		setCode(codeString)
+		// set material
+		var material	=  new THREE.MeshLambertMaterial({
+			color	: 'white',
+		})
+		object3d.traverse(function(object3d){
+			if( !object3d.material )	return;
+			object3d.material	= material
+		})
+		// init next step
+		window.nextStep	= function(){
+			container.remove(object3d)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player	= new THREEx.MinecraftPlayer()
+		player.character.loadWellKnownSkin('char')
+		container.add(player.character.root)
+		// set title
+		setTitle('Phong Texture')
+		// set Code String
+		var codeString	= (function(){ /*
+var url = 'char.png'
+var texture = THREE.ImageUtils.loadTexture( url );
+var material = new THREE.MeshPhongMaterial({
+	map	: texture,
+})
+		*/}).toString().split('\n').slice(1, -1).join('\n');
+ 		setCode(codeString)
+
+		window.nextStep	= function(){
+			container.remove(player.character.root)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player	= new THREEx.MinecraftPlayer()
+		player.character.loadWellKnownSkin('mario')
+		container.add(player.character.root)
+		// set title
+		setTitle('Mario Skin')
+		// set Code String
+		var codeString	= (function(){ /*
+var url = 'mario.png'
+var texture = THREE.ImageUtils.loadTexture( url );
+var material = new THREE.MeshPhongMaterial({
+	map	: texture,
+})
+		*/}).toString().split('\n').slice(1, -1).join('\n');
+ 		setCode(codeString)
+
+		window.nextStep	= function(){
+			container.remove(player.character.root)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player	= new THREEx.MinecraftPlayer()
+		player.character.loadWellKnownSkin('superman')
+		container.add(player.character.root)
+		// set title
+		setTitle('Superman Skin')
+		// set Code String
+		var codeString	= (function(){ /*
+var url = 'superman.png'
+var texture = THREE.ImageUtils.loadTexture( url );
+var material = new THREE.MeshPhongMaterial({
+	map	: texture,
+})
+		*/}).toString().split('\n').slice(1, -1).join('\n');
+ 		setCode(codeString)
+
+		window.nextStep	= function(){
+			container.remove(player.character.root)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player	= new THREEx.MinecraftPlayer()
+		player.character.loadWellKnownSkin('agentsmith')
+		container.add(player.character.root)
+		// set title
+		setTitle('Agent Smith')
+		// set Code String
+		var codeString	= (function(){ /*
+var url = 'agentsmith.png'
+var texture = THREE.ImageUtils.loadTexture( url );
+var material = new THREE.MeshPhongMaterial({
+	map	: texture,
+})
+		*/}).toString().split('\n').slice(1, -1).join('\n');
+ 		setCode(codeString)
+
+		window.nextStep	= function(){
+			container.remove(player.character.root)
+			window.nextStep	= null
+			next()
+		}
+	})
+	.seq(function(next){
+		// create new player
+		player	= new THREEx.MinecraftPlayer()
+		container.add(player.character.root)
+		// set title
+		setTitle('Misterious Texture')
+		// set Code String
+		var codeString	= (function(){ /*
+var url = 'misterious.png'
+var texture = THREE.ImageUtils.loadTexture( url );
+var material = new THREE.MeshPhongMaterial({
+	map	: texture,
+})
+		*/}).toString().split('\n').slice(1, -1).join('\n');
+ 		setCode(codeString)
+
+		// window.nextStep	= function(){
+		// 	container.remove(player.character.root)
+		// 	window.nextStep	= null
+		// 	next()
+		// }
+	})
+	function setTitle(text){
+		var domElement	= document.querySelector('#title')
+		domElement.innerText	= text
+	}
+	function setCode(text){
+		var domElement	= document.querySelector('#code')
+		domElement.style.visibility	= text ? 'visible' : 'hidden'
+		domElement.innerText		= text
+	}
+	document.querySelector('body').addEventListener('click', function(){
+		if( window.nextStep )	window.nextStep()		
+	})
+	document.addEventListener('keydown', function(){
+		if( window.nextStep )	window.nextStep()
+	})
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Camera Controls							//
+	//////////////////////////////////////////////////////////////////////////////////
+	var mouse	= {x : 0, y : 0}
+	document.addEventListener('mousemove', function(event){
+		mouse.x	= (event.clientX / window.innerWidth ) - 0.5
+		mouse.y	= (event.clientY / window.innerHeight) - 0.5
+	}, false)
+	onRenderFcts.push(function(delta, now){
+		camera.position.x += (mouse.x*2.0 - camera.position.x) * (delta*3)
+		camera.position.y += (mouse.y*0.5 - camera.position.y) * (delta*3)
+		camera.lookAt( scene.position )
+	})
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		render the scene						//
+	//////////////////////////////////////////////////////////////////////////////////
+	onRenderFcts.push(function(){
+		renderer.render( scene, camera );		
+	})
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Rendering Loop runner						//
+	//////////////////////////////////////////////////////////////////////////////////
+	var lastTimeMsec= null
+	requestAnimationFrame(function animate(nowMsec){
+		// keep looping
+		requestAnimationFrame( animate );
+		// measure time
+		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+		var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+		lastTimeMsec	= nowMsec
+		// call each update function
+		onRenderFcts.forEach(function(onRenderFct){
+			onRenderFct(deltaMsec/1000, nowMsec/1000)
+		})
+	})
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		gowiththeflow.js						//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	function Flow(){
+		var self, stack = [], timerId = setTimeout(function(){ timerId = null; self._next(); }, 0);
+		return self = {
+			destroy : function(){ timerId && clearTimeout(timerId); },
+			par	: function(callback, isSeq){
+				if(isSeq || !(stack[stack.length-1] instanceof Array)) stack.push([]);
+				stack[stack.length-1].push(callback);
+				return self;
+			},seq	: function(callback){ return self.par(callback, true);	},
+			_next	: function(err, result){
+				var errors = [], results = [], callbacks = stack.shift() || [], nbReturn = callbacks.length, isSeq = nbReturn == 1;
+				for(var i = 0; i < callbacks.length; i++){
+					(function(fct, index){
+						fct(function(error, result){
+							errors[index]	= error;
+							results[index]	= result;		
+							if(--nbReturn == 0)	self._next(isSeq?errors[0]:errors, isSeq?results[0]:results)
+						}, err, result)
+					})(callbacks[i], i);
+				}
+			}
+		}
+	};
+})
+</script></body>
