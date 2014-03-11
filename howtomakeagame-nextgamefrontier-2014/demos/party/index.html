@@ -27,6 +27,7 @@ require([ 'bower_components/threex.minecraft/package.require.js'
 
 	// handle window resize events
 	var winResize	= new THREEx.WindowResize(renderer, camera)
+	
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		default 3 points lightning					//
@@ -34,38 +35,450 @@ require([ 'bower_components/threex.minecraft/package.require.js'
 	
 	var ambientLight= new THREE.AmbientLight( 0x020202 )
 	scene.add( ambientLight)
-	var frontLight	= new THREE.DirectionalLight('white', 1)
+	var frontLight	= new THREE.DirectionalLight('white', 0.2)
 	frontLight.position.set(0.5, 0.5, 2)
 	scene.add( frontLight )
-	var backLight	= new THREE.DirectionalLight('white', 0.75)
+	var backLight	= new THREE.DirectionalLight('white', 2)
 	backLight.position.set(-0.5, -0.5, -2)
 	scene.add( backLight )		
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		comment								//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+var nRows	= 3
+var nColumns	= 5
+for(var z = 0; z < nRows; z++){
+for(var x = 0; x < nColumns; x++){
+	;(function(){
+		THREEx.MinecraftChar.defaultMaterial	= THREE.MeshPhongMaterial
+
+		var character	= new THREEx.MinecraftChar()
+		scene.add(character.root)
+		character.root.traverse(function(object3d){
+			object3d.receiveShadow	= true
+			object3d.castShadow	= true
+		})
+
+		character.root.position.z	= -z*0.6 - 1
+		character.root.position.x	= (x-(nColumns/2))*0.9
+		character.root.rotation.y	= Math.random()*Math.PI*2
+
+
+		//////////////////////////////////////////////////////////////////////////////////
+		//		animation							//
+		//////////////////////////////////////////////////////////////////////////////////
+				
+		var headAnims	= new THREEx.MinecraftCharHeadAnimations(character);
+		this.headAnims	= headAnims
+		onRenderFcts.push(function(delta, now){
+			headAnims.update(delta, now)	
+		})
+
+		// init bodyAnims
+		var bodyAnims	= new THREEx.MinecraftCharBodyAnimations(character);
+		this.bodyAnims	= bodyAnims
+		onRenderFcts.push(function(delta, now){
+			bodyAnims.update(delta, now)	
+		})
+			
+		bodyAnims.start('strafe')
+	})()
+}
+}
 
 	//////////////////////////////////////////////////////////////////////////////////
-	//		add an object and make it move					//
+	//		comment								//
+	//////////////////////////////////////////////////////////////////////////////////
+
+	THREEx.MinecraftChar.defaultMaterial	= THREE.MeshPhongMaterial
+
+	var player1	= new THREEx.MinecraftPlayer()
+	player1.setNickname('Mike')	
+	scene.add(player1.character.root)
+	onRenderFcts.push(function(delta, now){
+		player1.update(delta, now)
+	})
+	player1.character.root.traverse(function(object3d){
+		object3d.receiveShadow	= true
+		object3d.castShadow	= true
+	})
+	
+	var player2	= new THREEx.MinecraftPlayer()
+	player2.setNickname('Batman')	
+	player2.character.loadWellKnownSkin('batman')
+	player2.character.root.position.x	= -1
+	scene.add(player2.character.root)
+	player2.character.root.traverse(function(object3d){
+		object3d.receiveShadow	= true
+		object3d.castShadow	= true
+	})
+	onRenderFcts.push(function(delta, now){
+		player2.update(delta, now)
+	})
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		comment								//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	Flow()
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('Hello, My name is Mike')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()	
+		player2.setSay('Hello, my name is Batman')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('How are things ?')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('Slow... And i lost Robin :(')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('Hmm OK, have you seen women around ?')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('No...')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('I keep thinking about Robin')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('And btw for Woman...')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('I think you miss something...')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('Hue ? What do you mean ?')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('Well Look')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		cameraControlsDisabled	= true
+		camera.position.set(1, 1, 0.5)
+		camera.lookAt( new THREE.Vector3(0, 0, 0) ) 
+		setTimeout(function(){
+			camera.position.z = 3;
+			cameraControlsDisabled	= false
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player2.clearSay()
+		player2.setSay('... flat.')	
+		setTimeout(function(){
+			player2.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('oh...')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		setTimeout(function(){
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('(embarrassing)')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		setTimeout(function(){
+			next()	
+		}, 1000 * 3)
+	})
+	.seq(function(next){
+		player1.clearSay()
+		player1.setSay('OK i gonna play video Games.')	
+		setTimeout(function(){
+			player1.clearSay()
+			next()	
+		}, 1000 * 3)
+	})
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		music to playe						//
+	//////////////////////////////////////////////////////////////////////////////////
+
+	var gameSounds	= new WebAudiox.GameSounds()
+	gameSounds.lineOut.volume	= 0.2
+	onRenderFcts.push(function(delta){
+		gameSounds.update(delta)
+	})
+
+	var url	= 'sounds/rezoner-7DFPS-2013-2.mp3'
+	gameSounds.createSound().load(url, function(sound){
+		sound.play({
+			loop	: true,
+			volume	: 1.0,
+		})
+	})
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		create a ground							//
 	//////////////////////////////////////////////////////////////////////////////////	
-	var geometry	= new THREE.CubeGeometry( 1, 1, 1);
-	var material	= new THREE.MeshPhongMaterial();
+
+	// add back wall
+	var geometry	= new THREE.CubeGeometry( 40, 0.1, 20, 20, 1, 20 );
+	var material	= new THREE.MeshPhongMaterial({
+		color	: new THREE.Color('gray')
+	});
 	var mesh	= new THREE.Mesh( geometry, material );
+	mesh.receiveShadow	= true
+	mesh.castShadow		= true
+	mesh.rotateX(Math.PI/2)
+	mesh.position.set( 0, -geometry.height/2, -4)
 	scene.add( mesh );
+	// add back wall - wireframe
+	var material	= new THREE.MeshBasicMaterial({
+		wireframe		: true,
+		wireframeLinewidth	: 2,
+		color			: new THREE.Color('black'),
+	});
+	var mesh	= new THREE.Mesh( geometry.clone(), material );
+	mesh.receiveShadow	= true
+	mesh.castShadow		= true
+	mesh.scale.multiplyScalar(1.01)
+	mesh.rotateX(Math.PI/2)
+	mesh.position.set( 0, -geometry.height/2, -4)
+	scene.add( mesh );
+		
+	// add ground
+	var geometry	= new THREE.CubeGeometry( 40, 0.1, 20, 20, 1, 20 );
+	var material	= new THREE.MeshPhongMaterial({
+		color	: new THREE.Color('gray')
+	});
+	var mesh	= new THREE.Mesh( geometry, material );
+	mesh.receiveShadow	= true
+	mesh.castShadow		= true
+	mesh.position.set( 0, -geometry.height/2, -3)
+	scene.add( mesh );
+
+	// add ground - wireframe
+	var material	= new THREE.MeshBasicMaterial({
+		wireframe		: true,
+		wireframeLinewidth	: 2,
+		color			: new THREE.Color('black'),
+	});
+	var mesh	= new THREE.Mesh( geometry.clone(), material );
+	mesh.receiveShadow	= true
+	mesh.castShadow		= true
+	mesh.scale.multiplyScalar(1.01)
+	mesh.position.set( 0, -geometry.height/2, -3)
+	scene.add( mesh );
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		add a volumetric spotligth					//
+	//////////////////////////////////////////////////////////////////////////////////
+
+;(function(){
+// return
+	// add spot light
+	var geometry	= new THREE.CylinderGeometry( 0.1, 1.5, 5, 32*2, 20, true);
+	geometry.applyMatrix( new THREE.Matrix4().makeTranslation( 0, -geometry.height/2, 0 ) );
+	geometry.applyMatrix( new THREE.Matrix4().makeRotationX( -Math.PI / 2 ) );
+
+	var material	= new THREEx.VolumetricSpotLightMaterial()
+	var mesh	= new THREE.Mesh( geometry, material );
+	mesh.position.set(1.5,2,2)
+	mesh.lookAt(new THREE.Vector3(0,0, 0))
+	material.uniforms.lightColor.value.set('red')
+	material.uniforms.spotPosition.value	= mesh.position	
+	scene.add( mesh );
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		animate the volumetric spotLight				//
+	//////////////////////////////////////////////////////////////////////////////////
 	
 	onRenderFcts.push(function(delta, now){
-		mesh.rotateX(0.5 * delta);
-		mesh.rotateY(2.0 * delta);		
+		var angle	= 0.3 * Math.PI*2*now
+		var target	= new THREE.Vector3(1*Math.cos(angle),0,1*Math.sin(angle))
+		mesh.lookAt(target)
+		spotLight.target.position.copy(target)
 	})
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		link it with a spotLight					//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	var spotLight	= new THREE.SpotLight()
+	spotLight.position	= mesh.position
+	spotLight.color		= mesh.material.uniforms.lightColor.value
+	spotLight.exponent	= 30
+	spotLight.angle		= Math.PI/3;
+	spotLight.intensity	= 2
+	scene.add( spotLight )
+	renderer.shadowMapEnabled	= true
+
+	var light	= spotLight
+	light.castShadow	= true
+	light.shadowCameraNear	= 0.01
+	light.shadowCameraFar	= 15
+	light.shadowCameraFov	= 90
+
+	light.shadowCameraLeft	= -8
+	light.shadowCameraRight	=  8
+	light.shadowCameraTop	=  8
+	light.shadowCameraBottom= -8
+
+	light.shadowBias	= 0.0
+	light.shadowDarkness	= 0.5
+
+	light.shadowMapWidth	= 1024
+	light.shadowMapHeight	= 1024	
+})()
+
+
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		add a volumetric spotligth					//
+	//////////////////////////////////////////////////////////////////////////////////
+
+;(function(){
+	// add spot light
+	var geometry	= new THREE.CylinderGeometry( 0.1, 1.5, 5, 32*2, 20, true);
+	geometry.applyMatrix( new THREE.Matrix4().makeTranslation( 0, -geometry.height/2, 0 ) );
+	geometry.applyMatrix( new THREE.Matrix4().makeRotationX( -Math.PI / 2 ) );
+
+	var material	= new THREEx.VolumetricSpotLightMaterial()
+	var mesh	= new THREE.Mesh( geometry, material );
+	mesh.position.set(-1.5,2,2)
+	mesh.lookAt(new THREE.Vector3(0,0, 0))
+	material.uniforms.lightColor.value.set('blue')
+	material.uniforms.spotPosition.value	= mesh.position	
+	scene.add( mesh );
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		animate the volumetric spotLight				//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	onRenderFcts.push(function(delta, now){
+		var angle	= 0.3 * Math.PI*2*now - Math.PI
+		var target	= new THREE.Vector3(1*Math.cos(angle),0,1*Math.sin(angle))
+		mesh.lookAt(target)
+		spotLight.target.position.copy(target)
+	})
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//		link it with a spotLight					//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	var spotLight	= new THREE.SpotLight()
+	spotLight.position	= mesh.position
+	spotLight.color		= mesh.material.uniforms.lightColor.value
+	spotLight.exponent	= 30
+	spotLight.angle		= Math.PI/3;
+	spotLight.intensity	= 2
+	scene.add( spotLight )
+	renderer.shadowMapEnabled	= true
+
+	var light	= spotLight
+	light.castShadow	= true
+	light.shadowCameraNear	= 0.01
+	light.shadowCameraFar	= 15
+	light.shadowCameraFov	= 90
+
+	light.shadowCameraLeft	= -8
+	light.shadowCameraRight	=  8
+	light.shadowCameraTop	=  8
+	light.shadowCameraBottom= -8
+
+	light.shadowBias	= 0.0
+	light.shadowDarkness	= 0.5
+
+	light.shadowMapWidth	= 1024
+	light.shadowMapHeight	= 1024	
+})()
+
+
 	
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Camera Controls							//
 	//////////////////////////////////////////////////////////////////////////////////
 	var mouse	= {x : 0, y : 0}
+	var cameraControlsDisabled	= false
 	document.addEventListener('mousemove', function(event){
 		mouse.x	= (event.clientX / window.innerWidth ) - 0.5
 		mouse.y	= (event.clientY / window.innerHeight) - 0.5
 	}, false)
 	onRenderFcts.push(function(delta, now){
-		camera.position.x += (mouse.x*5 - camera.position.x) * (delta*3)
+		if( cameraControlsDisabled === true )	return
+		camera.position.x += (mouse.x*2 - camera.position.x) * (delta*3)
 		camera.position.y += (mouse.y*5 - camera.position.y) * (delta*3)
-		camera.lookAt( scene.position )
+		
+		camera.position.y	= Math.max(camera.position.y, 0.4)
+		
+		var target	= scene.position.clone()
+		target.y	+= 1
+		camera.lookAt( target )
 	})
 
 	//////////////////////////////////////////////////////////////////////////////////
@@ -91,5 +504,34 @@ require([ 'bower_components/threex.minecraft/package.require.js'
 			onRenderFct(deltaMsec/1000, nowMsec/1000)
 		})
 	})
+
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	//		gowiththeflow.js						//
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	function Flow(){
+		var self, stack = [], timerId = setTimeout(function(){ timerId = null; self._next(); }, 0);
+		return self = {
+			destroy : function(){ timerId && clearTimeout(timerId); },
+			par	: function(callback, isSeq){
+				if(isSeq || !(stack[stack.length-1] instanceof Array)) stack.push([]);
+				stack[stack.length-1].push(callback);
+				return self;
+			},seq	: function(callback){ return self.par(callback, true);	},
+			_next	: function(err, result){
+				var errors = [], results = [], callbacks = stack.shift() || [], nbReturn = callbacks.length, isSeq = nbReturn == 1;
+				for(var i = 0; i < callbacks.length; i++){
+					(function(fct, index){
+						fct(function(error, result){
+							errors[index]	= error;
+							results[index]	= result;		
+							if(--nbReturn == 0)	self._next(isSeq?errors[0]:errors, isSeq?results[0]:results)
+						}, err, result)
+					})(callbacks[i], i);
+				}
+			}
+		}
+	};
 })
 </script></body>

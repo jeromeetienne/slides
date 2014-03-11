@@ -1,5 +1,5 @@
 define( [ './threex.volumetricspotlightmaterial'
 	, './threex.volumetricspotlightmaterialdatgui'
-	, './threex.volumetricspotlightmaterialmesh'
+	, './threex.volumetricspotlightmesh'
 	], function(){
 });
