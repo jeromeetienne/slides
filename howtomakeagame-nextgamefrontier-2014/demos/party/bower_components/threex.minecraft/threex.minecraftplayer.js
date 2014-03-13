@@ -41,16 +41,16 @@ THREEx.MinecraftPlayer	= function(){
 	//		animation based on velocity					//
 	//////////////////////////////////////////////////////////////////////////////////
 	
-	updateFcts.push(function(delta, now){
-		var input	= controls.input
-		if( input.up || input.down ){
-			bodyAnims.start('run');			
-		}else if( input.strafeLeft || input.strafeRight ){
-			bodyAnims.start('strafe');
-		}else {
-			bodyAnims.start('stand');			
-		}
-	})
+	// updateFcts.push(function(delta, now){
+	// 	var input	= controls.input
+	// 	if( input.up || input.down ){
+	// 		bodyAnims.start('run');			
+	// 	}else if( input.strafeLeft || input.strafeRight ){
+	// 		bodyAnims.start('strafe');
+	// 	}else {
+	// 		bodyAnims.start('stand');			
+	// 	}
+	// })
 	
 	//////////////////////////////////////////////////////////////////////////////////
 	//		controls							//

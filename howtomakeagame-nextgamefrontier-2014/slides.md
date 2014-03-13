@@ -33,11 +33,11 @@ output: index.html
 
 ### What is THREE.js
 
-* [homepage](http://threejs.org)
 * Display 3D graphics in Web Browser
 * Effort led by [mrdoob](http://www.mrdoob.com/)
 * Large community
 * 100kbyte after gzip
+* [homepage](http://threejs.org)
 
 --
 
@@ -73,7 +73,11 @@ pure js drawing -
 
 --
 
-## so only display ? But game is more than that.
+## so only display ? 
+
+--
+
+## But game is more than that.
 
 --
 
@@ -181,12 +185,23 @@ bower search threex
 
 --
 
-### First we need a HERO
+## First we need a HERO
 
-* in all game you need a hero
-* a personna to embody you
-* a virtual self for the player to interact with
-* so lets do just that, lets create a hero
+--
+
+## In all game you need a hero
+
+--
+
+## A personna to embody you
+
+--
+
+## A virtual self for the player to interact with
+
+--
+
+## So lets do just that, lets create a hero
 
 --
 
@@ -231,8 +246,6 @@ var mesh     = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 ```
 
-Let's details each part
-
 --
 
 ### First the Geometry
@@ -260,77 +273,34 @@ scene.add(mesh)
 
 --
 
-## Well just a cube
-
-# We Need a Hero!
-
---
-
-### we needs a hero!
-
-* More Cubes
-* [link](demos/hotornot/)
-* Duplication same principle
-* Cube for everything
-* bouncy effect
-* all in normalmaterial
-
---
-
-### META tech demo needed
-
-* select on geometry
-* nice light setting
-* autobuild of the player
-  * based on minecraft with visibility of each part
-  * change visibility until you arrive to full player
-* then change materials
-  * white lambert
-  * flat shading/smooth shading
-  * phong
-  * texture is better for color
-  * which skin
-* with HOT or NOT at the bottom to go to next step
-
---
-
-### First the Material
-
-
-
-
---
-
-## Colors are strange
-
---
-
-### Materials
+### Then Materials
 
 "How the object reflect lights"
 
-* Supported Lights - [lights in source](https://github.com/mrdoob/three.js/tree/master/src/lights)
-* Support Material - [materials in source](https://github.com/mrdoob/three.js/tree/master/src/materials)
-* [Hot or Not](demos/hotornot/)
-* Meta do a select with various lights and material
-* boring lambert all white
-* phong + random rainbow color for each box
-* textures 
-* various skin
-* do something interactive ? 
-  * like for each skin, display hot/not ?
-  * with possible suggestion
-  * you get close to the button suggested, do the yes animation, 
-  * if close to the non recommended, do the no animation.
-* stop on mine obviously :)
+* Basic
+* Lambert
+* Phong 
+* Custom Shader
 
 --
 
-### Meta POST texture
+## Well it is just a cube...
 
-* Do not forget parallel with JE/ pictures. 
-* disclaimer about not being based on actual character
-* I did that because I love the recursive jokes.
+--
+
+### We Needs A Hero!
+
+* Duplication same principle
+* Cubes for everything
+
+
+--
+
+### Hot or NOT
+
+[demo](demos/hotornot/)
+
+<img src='images/screenshot-demo-hotornot.png' width='100%'/>
 
 --
 
@@ -351,24 +321,220 @@ scene.add(mesh)
 
 --
 
-### Transition end
-
-* Story telling: 
-* After the animation the Minecraft (Mike) becomes alive. 
-* [demo](http://jeromeetienne.github.io/threex/src/threex.minecraft/examples/animation.html)
-* He is Gollem. My Frankenstein. 
-* Oh damn! Turing was right! 
-* What have I done! 
+## I love the recursive jokes.
 
 --
 
-### Transition end
+## Cool we got a player
 
-* Now he is aware. 
-* His name is Mike.
-* He needs a purpose, a goal, a quest
-* He is looking for love, fame and justice
-* because that is what every video game hero is doing.
+--
+
+## He needs more life
+
+--
+
+## He needs to move
+
+--
+
+### Player Animations
+
+[demo](http://jeromeetienne.github.io/threex/src/threex.minecraft/examples/animation.html)
+
+<img src='images/threex.minecraft-animation.png' width='100%'/>
+
+--
+
+## He is Alive!
+
+--
+
+## He is Gollem. My Frankenstein.
+
+--
+
+## What have I done! 
+
+--
+
+## Oh damn! Turing was right! 
+
+--
+
+## Now he is aware. 
+
+--
+
+# His name is Mike.
+
+--
+
+## He needs a purpose, a goal, a quest
+
+--
+
+## He is looking for **love**, **fame** and **justice**
+
+--
+
+## because that is what every video game hero is doing :)
+
+--
+
+# New Part
+
+--
+
+# "Mike Needs a World"
+
+--
+
+## Now that we got the player 
+
+--
+
+## we need a map to move in
+
+--
+
+## a world where we can evolve
+
+--
+
+## a world where Mike can become a man
+
+--
+
+## a new man
+
+--
+
+## a better man!
+
+--
+
+### Demo Time!
+
+[link](demos/mike-map)
+
+<img src='images/screenshot-mike-map.png' width='100%'/>
+
+--
+
+### Used Extensions 
+
+* [threex.grassground](https://github.com/jeromeetienne/threex.grassground) - for the ground
+* [threex.montainsarena](https://github.com/jeromeetienne/threex.montainsarena) - to put montains around us
+* [threex.daynight](https://github.com/jeromeetienne/threex.daynight) - to fill the sky and see time passing 
+
+--
+
+### Grass Ground
+
+threex.grassground - 
+[repo](https://github.com/jeromeetienne/threex.grassground)
+[demo](http://jeromeetienne.github.io/threex.grassground/examples/basic.html)
+
+<img src='images/threex.grassground.png' width='100%'/>
+
+--
+
+### Perlin Terrain ?
+
+threex.terrain - 
+[repo](https://github.com/jeromeetienne/threex.terrain)
+[demo](http://jeromeetienne.github.io/threex.terrain/examples/minecraft.html)
+
+<img src='images/threex.terrain.png' width='100%'/>
+
+--
+
+### Montain Arena
+
+threex.montainsarena - 
+[repo](https://github.com/jeromeetienne/threex.montainsarena)
+[demo](http://jeromeetienne.github.io/threex.montainsarena/examples/basic.html)
+
+<img src='images/threex.montainsarena.png' width='100%'/>
+
+--
+
+### Day And Night
+
+threex.daynight - 
+[repo](https://github.com/jeromeetienne/threex.daynight)
+[demo](http://jeromeetienne.github.io/threex.daynight/examples/basic.html)
+
+<img src='images/threex.daynight.png' width='100%'/>
+
+--
+
+# Physics
+
+--
+
+### Physics and Three.js
+
+* not included in three.js itself
+* realtime 3d physics is a project in itself
+* keep them separate 
+* but interact well with it
+
+--
+
+### Current Alternatives
+
+* [oimo.js](http://lo-th.github.io/Oimo.js/) by [lo-th](https://github.com/lo-th)
+* [cannon.js](http://cannonjs.org/) by [schteppe](https://twitter.com/schteppe)
+* [ammo.js](https://github.com/kripken/ammo.js/) from wellknown [bullet](http://bulletphysics.org/wordpress/)
+
+--
+
+### oimo.js
+
+[demo](http://lo-th.github.io/Oimo.js/) by [lo-th](https://github.com/lo-th)
+
+<img src='images/screenshot-oimo-demo.png' width='100%'/>
+
+--
+
+### cannon.js
+
+[homepage](http://cannonjs.org/)  by [schteppe](https://twitter.com/schteppe) /
+[demo](http://schteppe.github.io/cannon.js/examples/threejs_fps.html)
+
+<img src='images/screenshot-cannonjs-demo.png' width='100%'/>
+
+--
+
+### ammo.js
+
+[homepage](https://github.com/kripken/ammo.js/) by [Alon Zakai](https://github.com/kripken) /
+[demo](http://alteredqualia.com/xg/examples/animation_physics_level.html) by 
+[alteredq](http://alteredqualia.com/)
+
+<img src='images/screenshot-alteredq-ammo.png' width='100%'/>
+
+--
+
+### three.js and cannon.js
+
+[repo](https://github.com/jeromeetienne/threex.cannonjs)
+/
+[demo](http://jeromeetienne.github.io/threex.cannonjs/examples/domino.html)
+
+<img src='images/threex.cannonjs.png' width='100%'/>
+
+
+--
+
+### three.js and oimo.js
+
+[repo](https://github.com/jeromeetienne/threex.oimo)
+/
+[demo](http://jeromeetienne.github.io/threex.oimo/examples/demo.html)
+
+<img src='images/threex.oimo.png' width='100%'/>
 
 --
 
@@ -419,9 +585,11 @@ scene.add(mesh)
 
 --
 
-### Demo
+### Demo Time!
 
-<a href='http://jetienne.com/games/'><img src='images/screenshot-videogames.png' width='100%'/></a>
+[link](http://jetienne.com/games/)
+
+<img src='images/screenshot-videogames.png' width='100%'/>
 
 --
 
