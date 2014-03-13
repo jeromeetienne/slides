@@ -410,57 +410,219 @@ pre .chunk {
 </section>
   </div>
   <div class="slide hidden" id="slide-2">
-    <section class="slide-content"><h3 id="meta-intro">META Intro</h3>
+    <section class="slide-content"><h3 id="plan">Plan</h3>
 <ul>
-<li>present three.js</li>
+<li>Short intro three.js for Games</li>
+<li>&quot;Mike is Born&quot; - build simple object</li>
+<li>TODO other parts</li>
 <li>who is doing it</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-3">
-    <section class="slide-content"><h2 id="three-js-seems-ok-but">Three.js seems ok... but</h2>
-<h1 id="how-to-make-a-game-with-it">How to make a game with it</h1>
+    <section class="slide-content"><h1 id="introduction">Introduction</h1>
+<h2 id="three-js-for-games">THREE.js For Games</h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-4">
-    <section class="slide-content"><h3 id="transition-meta">Transition META</h3>
+    <section class="slide-content"><h3 id="what-is-three-js">What is THREE.js</h3>
 <ul>
-<li>First we need a hero</li>
-<li>in all game you need a hero</li>
-<li>a personna to embody you</li>
-<li><p>a virtual self for the player to interact with</p>
-</li>
-<li><p>so lets do just that, lets create a hero</p>
-</li>
+<li><a href="http://threejs.org">homepage</a></li>
+<li>Display 3D graphics in Web Browser</li>
+<li>Effort led by <a href="http://www.mrdoob.com/">mrdoob</a></li>
+<li>Large community</li>
+<li>100kbyte after gzip</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-5">
-    <section class="slide-content"><h1 id="new-part">New Part</h1>
+    <section class="slide-content"><h3 id="general-presentations">General Presentations</h3>
+<ul>
+<li>Focus on displaying 3d</li>
+<li>scene graph</li>
+<li>import assets from many file formats</li>
+<li>post processing</li>
+<li>Many renderers</li>
+</ul>
+<p><strong>So Many Things Can&#39;t list them all</strong></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h1 id="-a-hero-is-born-">&quot;A Hero is Born!&quot;</h1>
+    <section class="slide-content"><h3 id="many-renderers">Many Renderers</h3>
+<ul>
+<li><a href="http://threejs.org/examples/webgl_materials.html">WebGL renderer</a> - webgl direct rendering</li>
+<li><a href="http://threejs.org/examples/webgldeferred_pointlights.html">WebGL deferred renderer</a> - WebGL deffered rendering - Lot&#39;s more light</li>
+<li><a href="http://threejs.org/examples/css3d_periodictable.html">css3 renderer</a> - use css 3d transformation</li>
+</ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h3 id="meta-story-telling">META Story Telling</h3>
+    <section class="slide-content"><h3 id="more-funky-renderers">More Funky Renderers</h3>
 <ul>
-<li>we gonna go for something simple</li>
-<li>very blocky </li>
-<li>very lego like</li>
-<li>we go for minecraft character</li>
+<li><a href="http://threejs.org/examples/canvas_materials.html">canvas renderer</a> - to render in canvas2d</li>
+<li><a href="http://threejs.org/examples/software_sandbox.html">software renderer</a>
+pure js drawing - <ul>
+<li>pre GPU era - actual zbuffer</li>
+</ul>
+</li>
+<li><a href="http://threejs.org/examples/canvas_ascii_effect.html">ascii renderer</a> - for live ascii art</li>
+<li><a href="http://alteredqualia.com/three/examples/raytracer_sandbox_reflection.html">Even a raytracer</a> - yeah you heard me<ul>
+<li>to be landed soon</li>
+</ul>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h2 id="so-only-display-but-game-is-more-than-that-">so only display ? But game is more than that.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="three-js-for-games">THREE.js for Games</h3>
+<ul>
+<li>use extensions and other libraries</li>
+<li>handle physics and collision</li>
+<li>handle sounds</li>
+<li>handle inputs</li>
+<li>handle effects</li>
+</ul>
+<p><strong>Packaged as THREEx</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h1 id="wait-">Wait!</h1>
+<h2 id="what-is-threex-">What is THREEx ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="what-is-threex-">What is THREEx ?</h3>
+<ul>
+<li>ultra light extension system for <a href="http://threejs.org">three.js</a></li>
+<li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github - 40 modules and counting</li>
+</ul>
+<p><img src='images/screenshot-threex-homepage.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="what-is-threex-">What is THREEx ?</h3>
+<ul>
+<li>light extension system ala <a href="http://vanilla-js.com/">vanilla.js</a></li>
+<li>as little dependancy as possible</li>
+<li>not a framework, </li>
+<li>more a <a href="http://jeromeetienne.github.io/threex/www/how-to-write-a-threex-module.html">bunch of convention</a></li>
+<li>DRY modules to help you write three.js stuff</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="threex-workflow">THREEx Workflow</h3>
+<ul>
+<li>support modern web workflow</li>
+<li>Support <a href="http://bower.io/">bower</a> for install</li>
+<li>Support <a href="http://requirejs.org/">require.js</a> for include</li>
+<li>Even support <a href="http://yeoman.io">yeoman</a> for boilerplates</li>
+</ul>
+<h3 id="do-not-require-it">DO NOT REQUIRE IT</h3>
+<ul>
+<li>this is the trick :)</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="packages-install-manual">Packages - install manual</h3>
+<ul>
+<li>find the repository and copy the files</li>
+<li>no handling for dependancy</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="packages-install-with-bower">Packages - install with bower</h3>
+<ul>
+<li>homepage <a href="http://bower.io">bower</a></li>
+<li>effort led by <a href="http://twitter.com">twitter</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="packages-install-with-bower">Packages - install with bower</h3>
+<p>To install</p>
+<pre><code>bower install threex.planets</code></pre>
+<p>To search for more</p>
+<pre><code>bower search threex</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="packages-include-manual">Packages - include manual</h3>
+<ul>
+<li>include all <code>.js</code> with a <code>&lt;script&gt;</code></li>
+<li>may need to init some variables<ul>
+<li>e.g. <code>.baseUrl</code> for asset location</li>
+</ul>
+</li>
+<li>js minification is on yoou</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="packages-include-with-require-js">Packages - include with require.js</h3>
+<ul>
+<li>just require the <code>package.require.js</code> file</li>
+<li>it does a bunch of things for you<ul>
+<li>includes all <code>.js</code></li>
+<li>setup asset location</li>
+<li>handle js minification</li>
+</ul>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h2 id="three-js-seems-ok-but">Three.js seems ok... but</h2>
+<h1 id="how-to-make-a-game-with-it">How to make a game with it</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="first-we-need-a-hero">First we need a HERO</h3>
+<ul>
+<li>in all game you need a hero</li>
+<li>a personna to embody you</li>
+<li>a virtual self for the player to interact with</li>
+<li>so lets do just that, lets create a hero</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h1 id="new-part">New Part</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h1 id="-a-hero-is-born-">&quot;A Hero is Born!&quot;</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="lets-mold-our-hero">Lets Mold Our Hero</h3>
+<ul>
+<li>We gonna go for something simple</li>
+<li>Very blocky </li>
+<li>Very lego like</li>
+<li>We go for minecraft character</li>
 </ul>
 <ul>
 <li>(hint: trick because i dunno how to use a modeler :) )</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-8">
+  <div class="slide hidden" id="slide-24">
     <section class="slide-content"><h2 id="so-let-s-start-with-a-cube">So Let&#39;s Start with a cube</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-9">
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="how-to-create-a-cube-">How to create a cube ?</h3>
+<p><img src='images/screenshot-geometry-cube.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
     <section class="slide-content"><h3 id="how-to-create-a-cube-">How to create a cube ?</h3>
 <p>Here is the code</p>
 <pre><code>var geometry = new THREE.CubeGeometry(1,1,1)
@@ -470,7 +632,7 @@ scene.add(mesh)</code></pre>
 <p>Let&#39;s details each part</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-10">
+  <div class="slide hidden" id="slide-27">
     <section class="slide-content"><h3 id="first-the-geometry">First the Geometry</h3>
 <ul>
 <li>Geometry is <code>the shape of the object</code></li>
@@ -482,23 +644,22 @@ var mesh     = new THREE.Mesh(geometry, material)
 scene.add(mesh)</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h3 id="other-predefined-geometry">Other Predefined Geometry</h3>
-<ul>
-<li>Meta TODO a select.html for geometry</li>
-<li>maybe some tweening for transition. make it bouncy, more games</li>
-</ul>
+<p><a href="demos/geometryselect/">demo</a></p>
+<p><img src='images/screenshot-geometry-torusknot.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-12">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h2 id="well-just-a-cube">Well just a cube</h2>
-<h1 id="we-need-a-hero">We Need a Hero</h1>
+<h1 id="we-need-a-hero-">We Need a Hero!</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-13">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><h3 id="we-needs-a-hero-">we needs a hero!</h3>
 <ul>
 <li>More Cubes</li>
+<li><a href="demos/hotornot/">link</a></li>
 <li>Duplication same principle</li>
 <li>Cube for everything</li>
 <li>bouncy effect</li>
@@ -506,7 +667,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><h3 id="meta-tech-demo-needed">META tech demo needed</h3>
 <ul>
 <li>select on geometry</li>
@@ -528,14 +689,21 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-15">
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="first-the-material">First the Material</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h2 id="colors-are-strange">Colors are strange</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-34">
     <section class="slide-content"><h3 id="materials">Materials</h3>
 <p>&quot;How the object reflect lights&quot;</p>
 <ul>
+<li>Supported Lights - <a href="https://github.com/mrdoob/three.js/tree/master/src/lights">lights in source</a></li>
+<li>Support Material - <a href="https://github.com/mrdoob/three.js/tree/master/src/materials">materials in source</a></li>
+<li><a href="demos/hotornot/">Hot or Not</a></li>
 <li>Meta do a select with various lights and material</li>
 <li>boring lambert all white</li>
 <li>phong + random rainbow color for each box</li>
@@ -552,7 +720,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h3 id="meta-post-texture">Meta POST texture</h3>
 <ul>
 <li>Do not forget parallel with JE/ pictures. </li>
@@ -561,18 +729,35 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-18">
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h3 id="-all-persons-fictitious-">&quot;All persons fictitious&quot;</h3>
+<p><a href="http://en.wikipedia.org/wiki/All_persons_fictitious_disclaimer">disclaimer</a></p>
+<blockquote>
+<p>&quot;All characters appearing in this work are fictitious. 
+ Any resemblance to real persons, living or dead, 
+ is purely coincidental.&quot;</p>
+</blockquote>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="almost-">Almost :)</h3>
+<p><img src='images/screenshot-jetienne-minecraft.png'/>
+<img src='images/screenshot-jetienne-real.png'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h3 id="transition-end">Transition end</h3>
 <ul>
 <li>Story telling: </li>
 <li>After the animation the Minecraft (Mike) becomes alive. </li>
+<li><a href="http://jeromeetienne.github.io/threex/src/threex.minecraft/examples/animation.html">demo</a></li>
 <li>He is Gollem. My Frankenstein. </li>
 <li>Oh damn! Turing was right! </li>
 <li>What have I done!</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h3 id="transition-end">Transition end</h3>
 <ul>
 <li>Now he is aware. </li>
@@ -583,18 +768,19 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
+  <div class="slide hidden" id="slide-40">
     <section class="slide-content"><h1 id="new-part">New Part</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><h1 id="-mike-goes-party-">&quot;Mike Goes Party&quot;</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-22">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h3 id="meta">META</h3>
 <ul>
 <li>demo: volumetric spotlight</li>
+<li><a href="demos/party/">link</a></li>
 <li>webaudiox</li>
 <li>change of spot color </li>
 <li>multiple spot synchronized</li>
@@ -611,33 +797,35 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-23">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h3 id="how-to-make-the-spot">How to make the spot</h3>
 <ul>
 <li>from where it comes from</li>
 <li>flexibility if you want your own effects and shader</li>
 </ul>
-<p>-- </p>
-<h3 id="how-to-sync-sound-with-color">How to sync sound with color</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h3 id="how-to-sync-sound-with-color">How to sync sound with color</h3>
 <ul>
 <li>web audio api</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-24">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><h1 id="new-part">New Part</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-46">
     <section class="slide-content"><h1 id="-mike-goes-home-and-play-video-games-">&quot;Mike Goes Home And Play Video Games&quot;</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-47">
     <section class="slide-content"><h3 id="demo">Demo</h3>
 <p><a href='http://jetienne.com/games/'><img src='images/screenshot-videogames.png' width='100%'/></a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-48">
     <section class="slide-content"><h3 id="meta">Meta</h3>
 <ul>
 <li>goto portfolio games<ul>
@@ -649,7 +837,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-49">
     <section class="slide-content"><h3 id="meta-story-telling">Meta Story Telling</h3>
 <ul>
 <li>here is a virtual game console</li>
@@ -661,7 +849,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-50">
     <section class="slide-content"><ul>
 <li>ok so which game to play ?</li>
 <li>Lets see pong, this is classic</li>
@@ -677,7 +865,7 @@ Another classic</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-51">
     <section class="slide-content"><h3 id="how-to-include-webpage-like-that-">How to include webpage like that ?</h3>
 <ul>
 <li>Meta html mixer <a href="https://github.com/jeromeetienne/threex.htmlmixer">threex.htmlmixer</a>
@@ -692,27 +880,50 @@ Another classic</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-31">
-    <section class="slide-content"><h3 id="stellar7-and-post-processing">Stellar7 and Post Processing</h3>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h2 id="what-about-those-mini-games-">What about Those Mini Games ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><h3 id="minigame-ponggl">MiniGame - PongGL</h3>
+<p><a href="http://jeromeetienne.github.io/pongGL/">link</a></p>
+<p><img src='images/screenshot-game-ponggl.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><h3 id="its-rackets">Its Rackets</h3>
 <ul>
-<li><a href="http://jeromeetienne.github.io/stellar7/">link</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface">Catmull–Clark subdivision surface</a>
+<a href="http://threejs.org/examples/webgl_geometry_subdivision.html">demo</a></li>
+</ul>
+<p><img src='images/screenshot-threejs-subdivision.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><h3 id="minigame-stellar7">MiniGame - Stellar7</h3>
+<p><a href="http://jeromeetienne.github.io/stellar7/">link</a></p>
+<p><img src='images/screenshot-game-stellar7.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-56">
+    <section class="slide-content"><h3 id="its-post-processing">Its post processing</h3>
+<ul>
 <li>color adjust</li>
 <li>bad tv effect</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-57">
     <section class="slide-content"><h3 id="color-adjust">color adjust</h3>
 <ul>
-<li><a href="https://github.com/jeromeetienne/threex.coloradjust">repo</a></li>
-<li><a href="http://jeromeetienne.github.io/threex.coloradjust/examples/demo.html">demo</a></li>
+<li><a href="https://github.com/jeromeetienne/threex.coloradjust">repo</a> - <a href="http://jeromeetienne.github.io/threex.coloradjust/examples/demo.html">demo</a></li>
 <li>by <a href="http://greggman.com/">@greggman</a>
 <a href="http://webglsamples.googlecode.com/hg/color-adjust/color-adjust.html">original demo</a>
 explain in <a href="http://www.youtube.com/watch?v=rfQ8rKGTVlg#t=25m03s">this video</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-58">
     <section class="slide-content"><h3 id="bad-tv-effect">bad tv effect</h3>
 <ul>
 <li>from <a href="https://twitter.com/felixturner">@felixturner</a>
@@ -724,43 +935,387 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-59">
     <section class="slide-content"><h1 id="new-part">New Part</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
-    <section class="slide-content"><h1 id="-mike-thinks-about-wendy-">&quot;Mike Thinks about Wendy&quot;</h1>
+  <div class="slide hidden" id="slide-60">
+    <section class="slide-content"><h1 id="-mike-thinks-about-diana-">&quot;Mike Thinks about Diana&quot;</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-61">
     <section class="slide-content"><h3 id="meta-storytelling-">META Storytelling:</h3>
 <ul>
 <li>After playing video games, </li>
 <li>Mike gets tired and he starts to daydream</li>
 <li>&quot;What would be the best video game for me?&quot;</li>
-<li>I like games and i lack girls</li>
-<li>He wants to create a girl for him, </li>
-<li>&quot;I&#39;m horny, sexually frustrated. My pet name for my dick is joystick&quot; </li>
-<li><p>Here is what is in mike head</p>
-</li>
-<li><p><a href="http://lo-th.github.io/olympe/index_diana.html">demo</a></p>
+<li>&quot;I am young and full of energy&quot;</li>
+<li>&quot;I like games and i lack girls&quot;</li>
+<li>He wants to create a girl for himself </li>
+<li>A Game where people could find their match</li>
+<li>Here is what is in mike head</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-62">
+    <section class="slide-content"><h3 id="here-is-diana">Here is Diana</h3>
+<p><a href="http://lo-th.github.io/olympe/index_diana.html">demo</a></p>
+<p><img src='images/screenshot-diana-demo.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-63">
+    <section class="slide-content"><h3 id="diana-s-avatar">Diana&#39;s Avatar</h3>
+<ul>
+<li>top notch avatar all in three.js</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-64">
+    <section class="slide-content"><h3 id="diana-s-eyes">Diana&#39;s Eyes</h3>
+<p><a href="http://vill.ee/eye/">demo</a> - by <a href="https://twitter.com/shaderology">Artur Vill</a></p>
+<p><img src='images/screenshot-diana-eye.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-65">
+    <section class="slide-content"><h3 id="diana-s-eyes">Diana&#39;s Eyes</h3>
+<ul>
+<li>Very realistic</li>
+<li>All in custom Shaders</li>
+<li>Quite Sexy<ul>
+<li>the designer wasnt thinking about his gramma</li>
+</ul>
 </li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-66">
     <section class="slide-content"><h3 id="meta-tech">META tech</h3>
 <ul>
 <li>Detailler chaque element technique de cette demo</li>
-<li>the guy who modeled that wasnt thinking about his grand mother</li>
 <li>then extend to the possibility of what could it be</li>
-<li>with leap motion, occulus drift</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-67">
+    <section class="slide-content"><ul>
+<li>It is already very nice avatar</li>
+<li>What could it be ?</li>
+<li>What if we improve how we interact with this virtual world</li>
+<li>Make it a better experience. a more immersive experience</li>
+<li></li>
+<li>occulus drift to get better depth perception<ul>
+<li>or similar</li>
+</ul>
+</li>
+<li>leap motion as game input<ul>
+<li>more natural move</li>
+<li>more instinctive</li>
+</ul>
+</li>
+<li>suppose on top of that you</li>
+<li>with leap motion, occulus drift<ul>
+<li>[three.js occulus drift)(<a href="http://threejs.org/examples/webgl_effects_oculusrift.html">http://threejs.org/examples/webgl_effects_oculusrift.html</a>)</li>
+<li><a href="http://blog.romanliutikov.com/post/60899246643/manipulating-rigged-hand-with-leap-motion-in-three-js">hand with leap motion</a></li>
+<li><a href="https://www.youtube.com/watch?v=1LHBlY9go7M">youtube video</a></li>
+</ul>
+</li>
 <li>multiplayer with webrtc</li>
 <li><a href="http://en.wikipedia.org/wiki/Simulated_reality">Simulated reality</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-68">
+    <section class="slide-content"><h3 id="occulus-drift-">Occulus drift ?</h3>
+<ul>
+<li><a href="http://www.oculusvr.com/">homepage</a> - <a href="http://www.oculusvr.com/blog/john-carmack-joins-oculus-as-cto/">John Carmack as CTO</a> - <a href="https://www.oculusvr.com/order/">300usd</a></li>
+</ul>
+<p><img src='images/screenshot-occulusdrift-device.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-69">
+    <section class="slide-content"><h3 id="already-available-in-three-js">Already Available in THREE.js</h3>
+<p><a href="http://threejs.org/examples/webgl_effects_oculusrift.html">link</a></p>
+<p><img src='images/screenshot-occulusdrift-threejs.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-70">
+    <section class="slide-content"><h2 id="what-if-i-don-t-want-occulus-drift-">What if i don&#39;t want Occulus Drift ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-71">
+    <section class="slide-content"><h3 id="alternatives-anaglyph">Alternatives - anaglyph</h3>
+<p><a href="http://threejs.org/examples/webgl_effects_anaglyph">demo</a></p>
+<p><img src='images/screenshot-diana-anaglyph.png' width='100%'/></a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-72">
+    <section class="slide-content"><h3 id="alternatives-crosseyed">Alternatives - crosseyed</h3>
+<p><a href="http://threejs.org/examples/webgl_effects_crosseyed">demo</a></p>
+<p><img src='images/screenshot-diana-crosseyed.png' width='100%'/></a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-73">
+    <section class="slide-content"><h3 id="alternatives-parallaxbarrier">Alternatives - parallaxbarrier</h3>
+<p><a href="http://threejs.org/examples/webgl_effects_parallaxbarrier">demo</a></p>
+<p><img src='images/screenshot-diana-parallaxbarrier.png' width='100%'/></a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-74">
+    <section class="slide-content"><h2 id="how-to-interact-with-this-virtual-world-">How to interact with this virtual world ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-75">
+    <section class="slide-content"><h3 id="leap-motion-device">Leap Motion Device</h3>
+<ul>
+<li><a href="https://github.com/leapmotion/leapjs">leapjs</a> - JavaScript client for the Leap Motion Controller</li>
+<li><a href="https://leapmotion.com/">100euro</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-76">
+    <section class="slide-content"><h3 id="webrtc">WebRTC</h3>
+<ul>
+<li>live audio/video conferencing<ul>
+<li>open standard</li>
+</ul>
+</li>
+<li>p2p so cheap to run<ul>
+<li>and reduce privacy issues</li>
+</ul>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-77">
+    <section class="slide-content"><h2 id="now-mike-is-in-love">Now mike is in love</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-78">
+    <section class="slide-content"><h2 id="he-can-t-stop-thinking-about-diana">He can&#39;t stop thinking about diana</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-79">
+    <section class="slide-content"><h2 id="he-want-to-share-every-moment-of-his-life">He want to share every moment of his life</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-80">
+    <section class="slide-content"><h2 id="even-when-he-is-on-the-go">Even when he is on the go</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-81">
+    <section class="slide-content"><h1 id="new-part">New Part</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-82">
+    <section class="slide-content"><h1 id="-mike-wants-diana-on-his-mobile-">&quot;Mike wants Diana on his Mobile&quot;</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-83">
+    <section class="slide-content"><h3 id="state-of-webgl-on-mobile">State of WebGL on Mobile</h3>
+<ul>
+<li>not widely supported yet...</li>
+</ul>
+<h3 id="per-os">Per OS</h3>
+<ul>
+<li>android is doing OK</li>
+<li>window mobile is doing OK</li>
+<li>IOS is still resisting</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-84">
+    <section class="slide-content"><h2 id="what-if-my-device-doesn-t-support-webgl">What if my device doesn&#39;t support WebGL</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-85">
+    <section class="slide-content"><h1 id="cloud-gaming-">Cloud Gaming ?</h1>
+<h2 id="to-save-the-day">To save the day</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-86">
+    <section class="slide-content"><h3 id="what-are-we-gonna-talk-about-">What are we gonna talk about ?</h3>
+<ul>
+<li>Possible solution for cloud gaming</li>
+<li>apply to any webgl games<ul>
+<li>not only three.js ones</li>
+</ul>
+</li>
+<li>cheap idea for cloud gaming for webgl</li>
+</ul>
+<p><strong>status</strong> : experimental, naive but working surprisingly well!</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-87">
+    <section class="slide-content"><h3 id="demo-time">Demo Time</h3>
+<p>Youtube video <a href="http://www.youtube.com/watch?v=yTSXLyg1uu8">here</a></p>
+<iframe width="560" height="315" src="//www.youtube.com/embed/fHVfy7WrPH0" frameborder="0" allowfullscreen></iframe></section>
+  </div>
+  <div class="slide hidden" id="slide-88">
+    <section class="slide-content"><h3 id="what-is-cloud-gaming-">What is Cloud Gaming ?</h3>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cloud_gaming">wikipedia</a> definition</li>
+<li>It is new. no widely accepted definition</li>
+<li>usually implies <strong>render on server</strong> feature</li>
+</ul>
+<p>Rougly…</p>
+<pre><code>Trying to run a game written for device A
+on a device B, typically dumber than A.</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-89">
+    <section class="slide-content"><h2 id="what-it-is-for-us-">What it is for us ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-90">
+    <section class="slide-content"><h3 id="what-is-our-use-case">What is Our Use Case</h3>
+<p>Let&#39;s clear the dust a bit...</p>
+<ul>
+<li>we run a webgl game in browser</li>
+<li>player device is a non-webgl mobile phone</li>
+</ul>
+<p><strong>Goal</strong> : to make that game playable on your player device</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-91">
+    <section class="slide-content"><h3 id="our-goal">Our Goal</h3>
+<ul>
+<li>To display a webgl game </li>
+<li>on a non-webgl player device</li>
+</ul>
+<p><strong>Simple Enough...</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-92">
+    <section class="slide-content"><h2 id="ok-we-know-the-target-what-s-next-">Ok We Know the Target, What&#39;s Next ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-93">
+    <section class="slide-content"><h1 id="early-study">Early Study</h1>
+<h2 id="for-early-prototype">For Early Prototype</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-94">
+    <section class="slide-content"><h3 id="early-study-rendering">Early Study - Rendering</h3>
+<ul>
+<li>So we got to render our game in server</li>
+<li>it will be <strong>rendered via a web browser</strong></li>
+<li>seems natural choise to render webgl</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-95">
+    <section class="slide-content"><h3 id="early-study-architechture">Early Study - Architechture</h3>
+<p>3 parts </p>
+<ul>
+<li><strong>a renderer :</strong> the brower running our game</li>
+<li><strong>a controller :</strong> used by players to access our game</li>
+<li><strong>a server :</strong> ensures the communication between both</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-96">
+    <section class="slide-content"><h3 id="early-study-networking">Early Study - Networking</h3>
+<ul>
+<li>networking done thru websocket</li>
+<li>no webrtc at the moment</li>
+<li>websocket is available a lot more than webrtc</li>
+<li>especially on mobile phone, our usecase.</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-97">
+    <section class="slide-content"><h3 id="early-study-software">Early Study - Software</h3>
+<ul>
+<li>server in node.js</li>
+<li>websocket are trivial with socket.io</li>
+<li>little js library in renderer, and another in controller</li>
+<li>only common technology here</li>
+</ul>
+<p><strong>implementation is easy</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-98">
+    <section class="slide-content"><h2 id="looks-good-">Looks Good…</h2>
+<h2 id="what-would-it-be-in-action-">What Would it be in Action ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-99">
+    <section class="slide-content"><h1 id="theory-of-operations">Theory Of Operations</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-100">
+    <section class="slide-content"><h3 id="theory-of-operations-server">Theory Of Operations - Server</h3>
+<ul>
+<li>a renderer browser web running the game</li>
+<li>take regular screenshots with <a href="https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement#Methods">.toDataUrl()</a></li>
+<li>Send them to the player device via echo server <ul>
+<li>mobile phone, tablette whatever.</li>
+</ul>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-101">
+    <section class="slide-content"><h3 id="theory-of-operations-player">Theory Of Operations - Player</h3>
+<ul>
+<li>player can see webgl rendering on any device</li>
+<li>player uses touch screen as inputs</li>
+<li>inputs are then sent to the server </li>
+<li>server send them back to the renderer.</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-102">
+    <section class="slide-content"><h3 id="theory-of-operations-output">Theory Of Operations - Output</h3>
+<ul>
+<li>browser receives inputs from the player.</li>
+<li>player sees what is displayed in the browser.</li>
+</ul>
+<p><strong>we got the whole loop</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-103">
+    <section class="slide-content"><h3 id="theory-of-operations-results">Theory Of Operations - Results</h3>
+<ul>
+<li>This is actual cloud gaming! </li>
+<li>Simple implementation</li>
+<li>Less than 24h to write!</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-104">
+    <section class="slide-content"><h3 id="performances">Performances</h3>
+<ul>
+<li>left as an exercice to the reader :)</li>
+<li>Depends about too many factors<ul>
+<li>screen resolution, screen size</li>
+<li>network bandwidth, network latency</li>
+<li>servers cost</li>
+</ul>
+</li>
+</ul>
+<p><strong>On Wifi, i had 30fps ymmv</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-105">
+    <section class="slide-content"><h1 id="last-part">Last Part</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-106">
+    <section class="slide-content"><h1 id="-mike-concludes-his-talk-">&quot;Mike Concludes His Talk&quot;</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-107">
+    <section class="slide-content"><ul>
+<li>We have seen what three.js could do for Games</li>
+<li>we createa a player</li>
+<li>a map for him to move in</li>
+<li>showed how to handle sounds in 3d env with Web Audio API</li>
+<li>we show various alternative to handle physics</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-108">
     <section class="slide-content"><div class="author">
   <h1 class="name">Jerome Etienne</h1>
     <h3 class="twitter">

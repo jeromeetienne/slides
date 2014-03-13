@@ -38,7 +38,7 @@ output: index.html
 * [oimo.js](http://lo-th.github.io/Oimo.js/)
 * [cannon.js](http://cannonjs.org/)
 * [ammo.js](https://github.com/kripken/ammo.js/)
-
+  * [alteredq](http://alteredqualia.com/xg/examples/animation_physics_terrain.html)
 --
 
 ### meta
