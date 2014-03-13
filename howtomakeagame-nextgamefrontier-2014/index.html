@@ -412,19 +412,28 @@ pre .chunk {
   <div class="slide hidden" id="slide-2">
     <section class="slide-content"><h3 id="plan">Plan</h3>
 <ul>
-<li>Short intro three.js for Games</li>
-<li>&quot;Mike is Born&quot; - build simple object</li>
-<li>TODO other parts</li>
-<li>who is doing it</li>
+<li>Creating an basic 3d object and animate it</li>
+<li>Build a Map with existing extensions</li>
+<li>How to add sounds in your games</li>
+<li>how to link your webgl with usual web content</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h3 id="plan-bis-">Plan (bis)</h3>
+<ul>
+<li>Some Tricks from minigames</li>
+<li>What we could do soon in the future</li>
+<li>how to handle mobile</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
     <section class="slide-content"><h1 id="introduction">Introduction</h1>
 <h2 id="three-js-for-games">THREE.js For Games</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-4">
+  <div class="slide hidden" id="slide-5">
     <section class="slide-content"><h3 id="what-is-three-js">What is THREE.js</h3>
 <ul>
 <li>Display 3D graphics in Web Browser</li>
@@ -435,7 +444,7 @@ pre .chunk {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-5">
+  <div class="slide hidden" id="slide-6">
     <section class="slide-content"><h3 id="general-presentations">General Presentations</h3>
 <ul>
 <li>Focus on displaying 3d</li>
@@ -447,7 +456,7 @@ pre .chunk {
 <p><strong>So Many Things Can&#39;t list them all</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-6">
+  <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h3 id="many-renderers">Many Renderers</h3>
 <ul>
 <li><a href="http://threejs.org/examples/webgl_materials.html">WebGL renderer</a> - webgl direct rendering</li>
@@ -456,7 +465,7 @@ pre .chunk {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-7">
+  <div class="slide hidden" id="slide-8">
     <section class="slide-content"><h3 id="more-funky-renderers">More Funky Renderers</h3>
 <ul>
 <li><a href="http://threejs.org/examples/canvas_materials.html">canvas renderer</a> - to render in canvas2d</li>
@@ -473,15 +482,15 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-8">
+  <div class="slide hidden" id="slide-9">
     <section class="slide-content"><h2 id="so-only-display-">so only display ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-9">
+  <div class="slide hidden" id="slide-10">
     <section class="slide-content"><h2 id="but-game-is-more-than-that-">But game is more than that.</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-10">
+  <div class="slide hidden" id="slide-11">
     <section class="slide-content"><h3 id="three-js-for-games">THREE.js for Games</h3>
 <ul>
 <li>use extensions and other libraries</li>
@@ -489,25 +498,256 @@ pure js drawing - <ul>
 <li>handle sounds</li>
 <li>handle inputs</li>
 <li>handle effects</li>
+<li>etc...</li>
 </ul>
-<p><strong>Packaged as THREEx</strong></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-11">
-    <section class="slide-content"><h1 id="wait-">Wait!</h1>
-<h2 id="what-is-threex-">What is THREEx ?</h2>
+<p><strong>Packaged as THREEx Extensions</strong></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h3 id="what-is-threex-">What is THREEx ?</h3>
 <ul>
-<li>ultra light extension system for <a href="http://threejs.org">three.js</a></li>
+<li>Ultra light extension system for <a href="http://threejs.org">three.js</a></li>
 <li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github - 40 modules and counting</li>
 </ul>
 <p><img src='images/screenshot-threex-homepage.png' width='100%'/></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h2 id="three-js-seems-ok-but">Three.js seems ok... but</h2>
+<h1 id="how-to-make-a-game-with-it">How to make a game with it</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h2 id="first-we-need-a-hero">First we need a HERO</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h2 id="in-all-game-you-need-a-hero">In all game you need a hero</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h2 id="a-personna-to-embody-you">A personna to embody you</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h2 id="a-virtual-self-for-the-player-to-interact-with">A virtual self for the player to interact with</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h2 id="so-lets-do-just-that-lets-create-a-hero">So lets do just that, lets create a hero</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h1 id="new-part">New Part</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="-a-hero-is-born-">&quot;A Hero is Born!&quot;</h1>
+<h2 id="or-how-to-build-simple-3d-objects">or How to Build Simple 3D Objects</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="lets-mold-our-hero">Lets Mold Our Hero</h3>
+<ul>
+<li>We gonna go for something simple</li>
+<li>Very blocky </li>
+<li>Very lego like</li>
+<li>We go for minecraft character</li>
+</ul>
+<ul>
+<li>(hint: trick because i dunno how to use a modeler :) )</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h2 id="so-let-s-start-with-a-cube">So Let&#39;s Start with a cube</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="how-to-create-a-cube-">How to create a cube ?</h3>
+<p><img src='images/screenshot-geometry-cube.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="how-to-create-a-cube-">How to create a cube ?</h3>
+<p>Here is the code</p>
+<pre><code>var geometry = new THREE.CubeGeometry(1,1,1)
+var material = new THREE.MeshNormalMaterial()
+var mesh     = new THREE.Mesh(geometry, material)
+scene.add(mesh)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="first-the-geometry">First the Geometry</h3>
+<ul>
+<li>Geometry is <code>the shape of the object</code></li>
+<li>create a cube with dimension 1,1,1</li>
+</ul>
+<pre><code>var geometry = new THREE.CubeGeometry(1,1,1)</code></pre>
+<pre><code>var material = new THREE.MeshNormalMaterial()
+var mesh     = new THREE.Mesh(geometry, material)
+scene.add(mesh)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h3 id="other-predefined-geometry">Other Predefined Geometry</h3>
+<p><a href="demos/geometryselect/">demo</a></p>
+<p><img src='images/screenshot-geometry-torusknot.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h3 id="then-materials">Then Materials</h3>
+<p>&quot;How the object reflect lights&quot;</p>
+<ul>
+<li>Basic</li>
+<li>Lambert</li>
+<li>Phong </li>
+<li>Custom Shader</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h2 id="well-it-is-just-a-cube-">Well it is just a cube...</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><h3 id="we-needs-a-hero-">We Needs A Hero!</h3>
+<ul>
+<li>Duplication same principle</li>
+<li>Cubes for everything</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="hot-or-not">Hot or NOT</h3>
+<p><a href="demos/hotornot/">demo</a></p>
+<p><img src='images/screenshot-demo-hotornot.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h3 id="-all-persons-fictitious-">&quot;All persons fictitious&quot;</h3>
+<p><a href="http://en.wikipedia.org/wiki/All_persons_fictitious_disclaimer">disclaimer</a></p>
+<blockquote>
+<p>&quot;All characters appearing in this work are fictitious. 
+ Any resemblance to real persons, living or dead, 
+ is purely coincidental.&quot;</p>
+</blockquote>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="almost-">Almost :)</h3>
+<p><img src='images/screenshot-jetienne-minecraft.png'/>
+<img src='images/screenshot-jetienne-real.png'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h2 id="i-love-the-recursive-jokes-">I love the recursive jokes.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h2 id="cool-we-got-a-player">Cool we got a player</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h2 id="he-needs-more-life">He needs more life</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h2 id="he-needs-to-move">He needs to move</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="player-animations">Player Animations</h3>
+<p><a href="http://jeromeetienne.github.io/threex/src/threex.minecraft/examples/animation.html">demo</a></p>
+<p><img src='images/threex.minecraft-animation.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h2 id="he-is-alive-">He is Alive!</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><h2 id="he-is-gollem-my-frankenstein-">He is Gollem. My Frankenstein.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h2 id="what-have-i-done-">What have I done!</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><h2 id="oh-damn-turing-was-right-">Oh damn! Turing was right!</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h2 id="now-he-is-aware-">Now he is aware.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><h1 id="his-name-is-mike-">His name is Mike.</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h2 id="he-needs-a-purpose-a-goal-a-quest">He needs a purpose, a goal, a quest</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h2 id="he-is-looking-for-love-fame-and-justice-">He is looking for <strong>love</strong>, <strong>fame</strong> and <strong>justice</strong></h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><h2 id="because-that-is-what-every-video-game-hero-is-doing-">because that is what every video game hero is doing :)</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-47">
+    <section class="slide-content"><h2 id="now-that-we-got-the-player">Now that we got the player</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-48">
+    <section class="slide-content"><h2 id="we-need-a-map-to-move-in">we need a map to move in</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-49">
+    <section class="slide-content"><h2 id="a-world-where-we-can-evolve">a world where we can evolve</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-50">
+    <section class="slide-content"><h2 id="a-world-where-mike-can-become-a-man">a world where Mike can become a man</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-51">
+    <section class="slide-content"><h2 id="a-new-man">a new man</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h2 id="a-better-man-">a better man!</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><h1 id="new-part">New Part</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><h1 id="-mike-needs-a-world-">&quot;Mike Needs a World&quot;</h1>
+<h2 id="or-how-to-use-threex-games-extensions">or How to use THREEx Games Extensions</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><h3 id="demo-time-">Demo Time!</h3>
+<p><a href="demos/mike-map">link</a></p>
+<p><img src='images/screenshot-mike-map.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-56">
+    <section class="slide-content"><h3 id="used-extensions">Used Extensions</h3>
+<ul>
+<li><a href="https://github.com/jeromeetienne/threex.grassground">threex.grassground</a> - for the ground</li>
+<li><a href="https://github.com/jeromeetienne/threex.montainsarena">threex.montainsarena</a> - to put montains around us</li>
+<li><a href="https://github.com/jeromeetienne/threex.daynight">threex.daynight</a> - to fill the sky and see time passing </li>
+</ul>
+<p><strong>List of <a href="http://jeromeetienne.github.io/threex/">all Extensions</a></strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-57">
     <section class="slide-content"><h3 id="what-is-threex-">What is THREEx ?</h3>
 <ul>
 <li>light extension system ala <a href="http://vanilla-js.com/">vanilla.js</a></li>
@@ -518,7 +758,7 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-14">
+  <div class="slide hidden" id="slide-58">
     <section class="slide-content"><h3 id="threex-workflow">THREEx Workflow</h3>
 <ul>
 <li>support modern web workflow</li>
@@ -532,7 +772,7 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-15">
+  <div class="slide hidden" id="slide-59">
     <section class="slide-content"><h3 id="packages-install-manual">Packages - install manual</h3>
 <ul>
 <li>find the repository and copy the files</li>
@@ -540,7 +780,7 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-16">
+  <div class="slide hidden" id="slide-60">
     <section class="slide-content"><h3 id="packages-install-with-bower">Packages - install with bower</h3>
 <ul>
 <li>homepage <a href="http://bower.io">bower</a></li>
@@ -548,7 +788,7 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-17">
+  <div class="slide hidden" id="slide-61">
     <section class="slide-content"><h3 id="packages-install-with-bower">Packages - install with bower</h3>
 <p>To install</p>
 <pre><code>bower install threex.planets</code></pre>
@@ -556,7 +796,7 @@ pure js drawing - <ul>
 <pre><code>bower search threex</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-18">
+  <div class="slide hidden" id="slide-62">
     <section class="slide-content"><h3 id="packages-include-manual">Packages - include manual</h3>
 <ul>
 <li>include all <code>.js</code> with a <code>&lt;script&gt;</code></li>
@@ -568,7 +808,7 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-19">
+  <div class="slide hidden" id="slide-63">
     <section class="slide-content"><h3 id="packages-include-with-require-js">Packages - include with require.js</h3>
 <ul>
 <li>just require the <code>package.require.js</code> file</li>
@@ -581,230 +821,11 @@ pure js drawing - <ul>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-20">
-    <section class="slide-content"><h2 id="three-js-seems-ok-but">Three.js seems ok... but</h2>
-<h1 id="how-to-make-a-game-with-it">How to make a game with it</h1>
+  <div class="slide hidden" id="slide-64">
+    <section class="slide-content"><h2 id="now-we-got-principles-lets-see-some-extensions">Now we got principles, lets see some extensions</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-21">
-    <section class="slide-content"><h2 id="first-we-need-a-hero">First we need a HERO</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-22">
-    <section class="slide-content"><h2 id="in-all-game-you-need-a-hero">In all game you need a hero</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-23">
-    <section class="slide-content"><h2 id="a-personna-to-embody-you">A personna to embody you</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-24">
-    <section class="slide-content"><h2 id="a-virtual-self-for-the-player-to-interact-with">A virtual self for the player to interact with</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-25">
-    <section class="slide-content"><h2 id="so-lets-do-just-that-lets-create-a-hero">So lets do just that, lets create a hero</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-26">
-    <section class="slide-content"><h1 id="new-part">New Part</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-27">
-    <section class="slide-content"><h1 id="-a-hero-is-born-">&quot;A Hero is Born!&quot;</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-28">
-    <section class="slide-content"><h3 id="lets-mold-our-hero">Lets Mold Our Hero</h3>
-<ul>
-<li>We gonna go for something simple</li>
-<li>Very blocky </li>
-<li>Very lego like</li>
-<li>We go for minecraft character</li>
-</ul>
-<ul>
-<li>(hint: trick because i dunno how to use a modeler :) )</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-29">
-    <section class="slide-content"><h2 id="so-let-s-start-with-a-cube">So Let&#39;s Start with a cube</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><h3 id="how-to-create-a-cube-">How to create a cube ?</h3>
-<p><img src='images/screenshot-geometry-cube.png' width='100%'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-31">
-    <section class="slide-content"><h3 id="how-to-create-a-cube-">How to create a cube ?</h3>
-<p>Here is the code</p>
-<pre><code>var geometry = new THREE.CubeGeometry(1,1,1)
-var material = new THREE.MeshNormalMaterial()
-var mesh     = new THREE.Mesh(geometry, material)
-scene.add(mesh)</code></pre>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-32">
-    <section class="slide-content"><h3 id="first-the-geometry">First the Geometry</h3>
-<ul>
-<li>Geometry is <code>the shape of the object</code></li>
-<li>create a cube with dimension 1,1,1</li>
-</ul>
-<pre><code>var geometry = new THREE.CubeGeometry(1,1,1)</code></pre>
-<pre><code>var material = new THREE.MeshNormalMaterial()
-var mesh     = new THREE.Mesh(geometry, material)
-scene.add(mesh)</code></pre>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-33">
-    <section class="slide-content"><h3 id="other-predefined-geometry">Other Predefined Geometry</h3>
-<p><a href="demos/geometryselect/">demo</a></p>
-<p><img src='images/screenshot-geometry-torusknot.png' width='100%'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-34">
-    <section class="slide-content"><h3 id="then-materials">Then Materials</h3>
-<p>&quot;How the object reflect lights&quot;</p>
-<ul>
-<li>Basic</li>
-<li>Lambert</li>
-<li>Phong </li>
-<li>Custom Shader</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-35">
-    <section class="slide-content"><h2 id="well-it-is-just-a-cube-">Well it is just a cube...</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-36">
-    <section class="slide-content"><h3 id="we-needs-a-hero-">We Needs A Hero!</h3>
-<ul>
-<li>Duplication same principle</li>
-<li>Cubes for everything</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-37">
-    <section class="slide-content"><h3 id="hot-or-not">Hot or NOT</h3>
-<p><a href="demos/hotornot/">demo</a></p>
-<p><img src='images/screenshot-demo-hotornot.png' width='100%'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-38">
-    <section class="slide-content"><h3 id="-all-persons-fictitious-">&quot;All persons fictitious&quot;</h3>
-<p><a href="http://en.wikipedia.org/wiki/All_persons_fictitious_disclaimer">disclaimer</a></p>
-<blockquote>
-<p>&quot;All characters appearing in this work are fictitious. 
- Any resemblance to real persons, living or dead, 
- is purely coincidental.&quot;</p>
-</blockquote>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-39">
-    <section class="slide-content"><h3 id="almost-">Almost :)</h3>
-<p><img src='images/screenshot-jetienne-minecraft.png'/>
-<img src='images/screenshot-jetienne-real.png'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-40">
-    <section class="slide-content"><h2 id="i-love-the-recursive-jokes-">I love the recursive jokes.</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-41">
-    <section class="slide-content"><h2 id="cool-we-got-a-player">Cool we got a player</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-42">
-    <section class="slide-content"><h2 id="he-needs-more-life">He needs more life</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-43">
-    <section class="slide-content"><h2 id="he-needs-to-move">He needs to move</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-44">
-    <section class="slide-content"><h3 id="player-animations">Player Animations</h3>
-<p><a href="http://jeromeetienne.github.io/threex/src/threex.minecraft/examples/animation.html">demo</a></p>
-<p><img src='images/threex.minecraft-animation.png' width='100%'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-45">
-    <section class="slide-content"><h2 id="he-is-alive-">He is Alive!</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-46">
-    <section class="slide-content"><h2 id="he-is-gollem-my-frankenstein-">He is Gollem. My Frankenstein.</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-47">
-    <section class="slide-content"><h2 id="what-have-i-done-">What have I done!</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-48">
-    <section class="slide-content"><h2 id="oh-damn-turing-was-right-">Oh damn! Turing was right!</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-49">
-    <section class="slide-content"><h2 id="now-he-is-aware-">Now he is aware.</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-50">
-    <section class="slide-content"><h1 id="his-name-is-mike-">His name is Mike.</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-51">
-    <section class="slide-content"><h2 id="he-needs-a-purpose-a-goal-a-quest">He needs a purpose, a goal, a quest</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-52">
-    <section class="slide-content"><h2 id="he-is-looking-for-love-fame-and-justice-">He is looking for <strong>love</strong>, <strong>fame</strong> and <strong>justice</strong></h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-53">
-    <section class="slide-content"><h2 id="because-that-is-what-every-video-game-hero-is-doing-">because that is what every video game hero is doing :)</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-54">
-    <section class="slide-content"><h1 id="new-part">New Part</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-55">
-    <section class="slide-content"><h1 id="-mike-needs-a-world-">&quot;Mike Needs a World&quot;</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-56">
-    <section class="slide-content"><h2 id="now-that-we-got-the-player">Now that we got the player</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-57">
-    <section class="slide-content"><h2 id="we-need-a-map-to-move-in">we need a map to move in</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-58">
-    <section class="slide-content"><h2 id="a-world-where-we-can-evolve">a world where we can evolve</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-59">
-    <section class="slide-content"><h2 id="a-world-where-mike-can-become-a-man">a world where Mike can become a man</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-60">
-    <section class="slide-content"><h2 id="a-new-man">a new man</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-61">
-    <section class="slide-content"><h2 id="a-better-man-">a better man!</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-62">
-    <section class="slide-content"><h3 id="demo-time-">Demo Time!</h3>
-<p><a href="demos/mike-map">link</a></p>
-<p><img src='images/screenshot-mike-map.png' width='100%'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-63">
+  <div class="slide hidden" id="slide-65">
     <section class="slide-content"><h3 id="used-extensions">Used Extensions</h3>
 <ul>
 <li><a href="https://github.com/jeromeetienne/threex.grassground">threex.grassground</a> - for the ground</li>
@@ -813,7 +834,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-64">
+  <div class="slide hidden" id="slide-66">
     <section class="slide-content"><h3 id="grass-ground">Grass Ground</h3>
 <p>threex.grassground - 
 <a href="https://github.com/jeromeetienne/threex.grassground">repo</a>
@@ -821,7 +842,18 @@ scene.add(mesh)</code></pre>
 <p><img src='images/threex.grassground.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-65">
+  <div class="slide hidden" id="slide-67">
+    <section class="slide-content"><h3 id="threex-grassground">threex.grassground</h3>
+<p>Install it</p>
+<pre><code>bower install threex.grassground</code></pre>
+<p>Include it</p>
+<pre><code> &lt;script src=&#39;threex.grassground.js&#39;&gt;&lt;/script&gt;</code></pre>
+<p>Use it</p>
+<pre><code>var groundMesh  = new THREEx.GrassGround()
+scene.add(groundMesh)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-68">
     <section class="slide-content"><h3 id="perlin-terrain-">Perlin Terrain ?</h3>
 <p>threex.terrain - 
 <a href="https://github.com/jeromeetienne/threex.terrain">repo</a>
@@ -829,7 +861,7 @@ scene.add(mesh)</code></pre>
 <p><img src='images/threex.terrain.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-66">
+  <div class="slide hidden" id="slide-69">
     <section class="slide-content"><h3 id="montain-arena">Montain Arena</h3>
 <p>threex.montainsarena - 
 <a href="https://github.com/jeromeetienne/threex.montainsarena">repo</a>
@@ -837,7 +869,16 @@ scene.add(mesh)</code></pre>
 <p><img src='images/threex.montainsarena.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-67">
+  <div class="slide hidden" id="slide-70">
+    <section class="slide-content"><h3 id="threex-montainsarena">threex.montainsarena</h3>
+<p>include it</p>
+<pre><code> &lt;script src=&#39;threex.montainsarena.js&#39;&gt;&lt;/script&gt;</code></pre>
+<p>Use it</p>
+<pre><code>var mesh    = new THREEx.MontainsArena()
+scene.add(mesh)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-71">
     <section class="slide-content"><h3 id="day-and-night">Day And Night</h3>
 <p>threex.daynight - 
 <a href="https://github.com/jeromeetienne/threex.daynight">repo</a>
@@ -845,21 +886,36 @@ scene.add(mesh)</code></pre>
 <p><img src='images/threex.daynight.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-68">
+  <div class="slide hidden" id="slide-72">
+    <section class="slide-content"><h3 id="threex-daynight">threex.daynight</h3>
+<p>include it</p>
+<pre><code> &lt;script src=&#39;threex.daynight.js&#39;&gt;&lt;/script&gt;</code></pre>
+<p>Use it</p>
+<pre><code>var sunLight    = new THREEx.DayNight.SunLight()
+scene.add( sunLight.object3d )</code></pre>
+<p>Update it</p>
+<pre><code>sunLight.update(sunAngle)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-73">
     <section class="slide-content"><h1 id="physics">Physics</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-69">
+  <div class="slide hidden" id="slide-74">
     <section class="slide-content"><h3 id="physics-and-three-js">Physics and Three.js</h3>
 <ul>
-<li>not included in three.js itself</li>
-<li>realtime 3d physics is a project in itself</li>
+<li>not in three.js itself</li>
+<li>realtime 3d physics is <strong>HARD</strong></li>
+<li>It is a project in itself</li>
+</ul>
+<h3 id="principles">Principles</h3>
+<ul>
 <li>keep them separate </li>
 <li>but interact well with it</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-70">
+  <div class="slide hidden" id="slide-75">
     <section class="slide-content"><h3 id="current-alternatives">Current Alternatives</h3>
 <ul>
 <li><a href="http://lo-th.github.io/Oimo.js/">oimo.js</a> by <a href="https://github.com/lo-th">lo-th</a></li>
@@ -868,20 +924,20 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-71">
+  <div class="slide hidden" id="slide-76">
     <section class="slide-content"><h3 id="oimo-js">oimo.js</h3>
 <p><a href="http://lo-th.github.io/Oimo.js/">demo</a> by <a href="https://github.com/lo-th">lo-th</a></p>
 <p><img src='images/screenshot-oimo-demo.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-72">
+  <div class="slide hidden" id="slide-77">
     <section class="slide-content"><h3 id="cannon-js">cannon.js</h3>
-<p><a href="http://cannonjs.org/">homepage</a>  by <a href="https://twitter.com/schteppe">schteppe</a> /
-<a href="http://schteppe.github.io/cannon.js/examples/threejs_fps.html">demo</a></p>
-<p><img src='images/screenshot-cannonjs-demo.png' width='100%'/></p>
+<p><a href="http://cannonjs.org/">homepage</a>  by <a href="https://twitter.com/schteppe">schteppe</a>
+/ <a href="http://schteppe.github.io/cannon.js/examples/threejs_fps.html">demo</a>
+<img src='images/screenshot-cannonjs-demo.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-73">
+  <div class="slide hidden" id="slide-78">
     <section class="slide-content"><h3 id="ammo-js">ammo.js</h3>
 <p><a href="https://github.com/kripken/ammo.js/">homepage</a> by <a href="https://github.com/kripken">Alon Zakai</a> /
 <a href="http://alteredqualia.com/xg/examples/animation_physics_level.html">demo</a> by 
@@ -889,64 +945,19 @@ scene.add(mesh)</code></pre>
 <p><img src='images/screenshot-alteredq-ammo.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-74">
+  <div class="slide hidden" id="slide-79">
     <section class="slide-content"><h3 id="three-js-and-cannon-js">three.js and cannon.js</h3>
 <p><a href="https://github.com/jeromeetienne/threex.cannonjs">repo</a>
-/
-<a href="http://jeromeetienne.github.io/threex.cannonjs/examples/domino.html">demo</a></p>
+/ <a href="http://jeromeetienne.github.io/threex.cannonjs/examples/domino.html">demo</a></p>
 <p><img src='images/threex.cannonjs.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-75">
+  <div class="slide hidden" id="slide-80">
     <section class="slide-content"><h3 id="three-js-and-oimo-js">three.js and oimo.js</h3>
 <p><a href="https://github.com/jeromeetienne/threex.oimo">repo</a>
-/
-<a href="http://jeromeetienne.github.io/threex.oimo/examples/demo.html">demo</a></p>
+/ <a href="http://jeromeetienne.github.io/threex.oimo/examples/demo.html">demo</a>
+/ <a href="http://jeromeetienne.github.io/threex.oimo/examples/crates.html">demo crates</a></p>
 <p><img src='images/threex.oimo.png' width='100%'/></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-76">
-    <section class="slide-content"><h1 id="new-part">New Part</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-77">
-    <section class="slide-content"><h1 id="-mike-goes-party-">&quot;Mike Goes Party&quot;</h1>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-78">
-    <section class="slide-content"><h3 id="meta">META</h3>
-<ul>
-<li>demo: volumetric spotlight</li>
-<li><a href="demos/party/">link</a></li>
-<li>webaudiox</li>
-<li>change of spot color </li>
-<li>multiple spot synchronized</li>
-<li>minecraft move ala saturday night fever</li>
-<li>like 10 minecraft players on the screen</li>
-<li>do a gowiththeflow.js with an animation of 2 guys discussing<ul>
-<li>&quot;Hey guys, there are no girls here!&quot;</li>
-<li>&quot;Where can I find a girl.&quot;</li>
-<li>&quot;Wait you are missing something too!&quot;</li>
-<li>camera move</li>
-<li>even noticed how minecraft is lacking of female ?</li>
-</ul>
-</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-79">
-    <section class="slide-content"><h3 id="how-to-make-the-spot">How to make the spot</h3>
-<ul>
-<li>from where it comes from</li>
-<li>flexibility if you want your own effects and shader</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-80">
-    <section class="slide-content"><h3 id="how-to-sync-sound-with-color">How to sync sound with color</h3>
-<ul>
-<li>web audio api</li>
-</ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-81">
@@ -954,16 +965,158 @@ scene.add(mesh)</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-82">
-    <section class="slide-content"><h1 id="-mike-goes-home-and-play-video-games-">&quot;Mike Goes Home And Play Video Games&quot;</h1>
+    <section class="slide-content"><h1 id="-mike-goes-party-">&quot;Mike Goes Party&quot;</h1>
+<h2 id="or-how-to-add-sounds-in-your-games">or how to add sounds in your games</h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-83">
-    <section class="slide-content"><h3 id="demo-time-">Demo Time!</h3>
-<p><a href="http://jetienne.com/games/">link</a></p>
-<p><img src='images/screenshot-videogames.png' width='100%'/></p>
+    <section class="slide-content"><h3 id="demo-time">Demo Time</h3>
+<p><a href="demos/party">demo</a></p>
+<p><img src='images/screenshot-mikeparty.png' width='100%'/></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-84">
+    <section class="slide-content"><h3 id="web-audio-api">Web Audio API</h3>
+<ul>
+<li>New Sound API - Aimed for game</li>
+<li>Based on OpenAL - So Rather complex</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>sound localisation</li>
+<li>Dopler</li>
+<li>convolver</li>
+<li>Great Accuracy - no latency</li>
+<li>very little cpu consumption</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-85">
+    <section class="slide-content"><h2 id="maybe-a-little-helper-could-helps">Maybe a little helper could helps</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-86">
+    <section class="slide-content"><h3 id="webaudiox-gamesounds">webaudiox.gamesounds</h3>
+<ul>
+<li>make Web Audio Api easy to use for gamedevs</li>
+<li>provide the typical cases</li>
+<li>no need to understand the whole Web Audio API</li>
+</ul>
+<h3 id="how-to-get-it">How to get it</h3>
+<ul>
+<li>webaudiox on <a href="https://github.com/jeromeetienne/webaudiox">github</a></li>
+<li>or via <code>bower install webaudiox</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-87">
+    <section class="slide-content"><h3 id="basic-usage">Basic Usage</h3>
+<p>Initialize sound context</p>
+<pre><code>var gameSounds  = new WebAudiox.GameSounds()</code></pre>
+<p>Load the Sound</p>
+<pre><code>gameSounds.createSound().load(&#39;mysound.ogg&#39;, function(sound){
+    // here the sound is loaded
+})</code></pre>
+<p>Play it</p>
+<pre><code>sound.play();</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-88">
+    <section class="slide-content"><h3 id="sound-localisation-good-for-3d">Sound Localisation - Good For 3D</h3>
+<p>Set the listener as player object3d</p>
+<pre><code>gameSounds.listenerFollow(object3d)</code></pre>
+<p>Play Sound at a given position in space</p>
+<pre><code>gamesound.play({
+  follow  : explosionMesh
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-89">
+    <section class="slide-content"><h1 id="new-part">New Part</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-90">
+    <section class="slide-content"><h1 id="-mike-goes-home-and-play-video-games-">&quot;Mike Goes Home And Play Video Games&quot;</h1>
+<h2 id="or-how-to-link-your-webgl-with-usual-web-content">or how to link your webgl with usual web content</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-91">
+    <section class="slide-content"><h3 id="demo-time-">Demo Time!</h3>
+<p><a href="http://jetienne.com/games/">demo</a></p>
+<p><img src='images/screenshot-videogames.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-92">
+    <section class="slide-content"><h2 id="nice-how-the-tv-set-is-done-">Nice! How the tv set is done ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-93">
+    <section class="slide-content"><h3 id="display-actual-web-content">Display actual web content</h3>
+<ul>
+<li>able to seamlessly display web content in webgl</li>
+</ul>
+<h3 id="contains-mouse-events-on-3d-events">Contains mouse events on 3d events</h3>
+<ul>
+<li>player able to interact with 3d elements</li>
+</ul>
+<h3 id="the-whole-shebang">The whole shebang</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-94">
+    <section class="slide-content"><h3 id="threex-text-js">threex.text.js</h3>
+<p><a href="https://github.com/jeromeetienne/threex.text">repo</a> - <a href="http://jeromeetienne.github.io/threex.text/examples/basic.html">demo</a></p>
+<p><img src='images/threex.text.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-95">
+    <section class="slide-content"><h3 id="threex-text-js">threex.text.js</h3>
+<p>Install it</p>
+<pre><code>bower install threex.text</code></pre>
+<p>Use it</p>
+<pre><code>var mesh    = new THREEx.Text(&#39;THREEx&#39;)
+scene.add(mesh)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-96">
+    <section class="slide-content"><h3 id="threex-domevents-js">threex.domevents.js</h3>
+<p><a href="https://github.com/jeromeetienne/threex.domevents">repo</a> - <a href="http://jeromeetienne.github.io/threex.domevents/examples/basic.html">demo</a></p>
+<p><img src='images/threex.domevents.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-97">
+    <section class="slide-content"><h3 id="threex-domevents-js">threex.domevents.js</h3>
+<p>Install it</p>
+<pre><code>bower install threex.domevents</code></pre>
+<p>Init it</p>
+<pre><code>var domEvents   = new THREEx.DomEvents(camera)</code></pre>
+<p>Bind <code>click</code> event on a mesh</p>
+<pre><code>domEvents.addEventListener(mesh, &#39;click&#39;, function(){
+    console.log(&#39;you clicked on the mesh&#39;)
+}, false)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-98">
+    <section class="slide-content"><h3 id="threex-htmlmixer-js">threex.htmlmixer.js</h3>
+<p><a href="https://github.com/jeromeetienne/threex.htmlmixer">repo</a>
+/ <a href="http://jeromeetienne.github.io/threex.htmlmixer/examples/basic.html">demo</a>
+/ <a href="http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/">post</a>
+/ <a href="http://jeromeetienne.github.io/videobrowser4learningthreejs">videobrowser</a></p>
+<p><img src='images/threex.htmlmixer.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-99">
+    <section class="slide-content"><h3 id="threex-htmlmixer-js">threex.htmlmixer.js</h3>
+<p>Initialize it</p>
+<pre><code>var mixerContext    = new THREEx.HtmlMixer.Context(renderer, scene, camera)
+onRenderFcts.push(function(delta, now){
+    mixerContext.update(delta, now)
+})</code></pre>
+<p>Use it on a domElement - typically an iframe</p>
+<pre><code>var mixerPlane  = new THREEx.HtmlMixer.Plane(mixerContext, domElement)
+scene.add(mixerPlane.object3d)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-100">
     <section class="slide-content"><h3 id="meta">Meta</h3>
 <ul>
 <li>goto portfolio games<ul>
@@ -975,7 +1128,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-85">
+  <div class="slide hidden" id="slide-101">
     <section class="slide-content"><h3 id="meta-story-telling">Meta Story Telling</h3>
 <ul>
 <li>here is a virtual game console</li>
@@ -987,7 +1140,7 @@ scene.add(mesh)</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-86">
+  <div class="slide hidden" id="slide-102">
     <section class="slide-content"><ul>
 <li>ok so which game to play ?</li>
 <li>Lets see pong, this is classic</li>
@@ -1003,7 +1156,7 @@ Another classic</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-87">
+  <div class="slide hidden" id="slide-103">
     <section class="slide-content"><h3 id="how-to-include-webpage-like-that-">How to include webpage like that ?</h3>
 <ul>
 <li>Meta html mixer <a href="https://github.com/jeromeetienne/threex.htmlmixer">threex.htmlmixer</a>
@@ -1018,70 +1171,68 @@ Another classic</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-88">
+  <div class="slide hidden" id="slide-104">
     <section class="slide-content"><h2 id="what-about-those-mini-games-">What about Those Mini Games ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-89">
+  <div class="slide hidden" id="slide-105">
     <section class="slide-content"><h3 id="minigame-ponggl">MiniGame - PongGL</h3>
 <p><a href="http://jeromeetienne.github.io/pongGL/">link</a></p>
 <p><img src='images/screenshot-game-ponggl.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-90">
-    <section class="slide-content"><h3 id="its-rackets">Its Rackets</h3>
+  <div class="slide hidden" id="slide-106">
+    <section class="slide-content"><h3 id="minigame-ponggl">MiniGame - PongGL</h3>
 <ul>
-<li><a href="http://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface">Catmull–Clark subdivision surface</a>
+<li>Racket + ground with <a href="http://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface">Catmull–Clark subdivision surface</a>
 <a href="http://threejs.org/examples/webgl_geometry_subdivision.html">demo</a></li>
+<li>Minecraft looking at the ball</li>
+<li>Particles for smoke on impact</li>
+<li>WebAudiox for sound</li>
 </ul>
-<p><img src='images/screenshot-threejs-subdivision.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-91">
+  <div class="slide hidden" id="slide-107">
+    <section class="slide-content"><h3 id="minigame-marble-table">MiniGame - Marble Table</h3>
+<p><a href="http://jeromeetienne.github.io/marbleTable/">link</a></p>
+<p><img src='images/screenshot-game-marbletable.png' width='100%'/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-108">
+    <section class="slide-content"><h3 id="minigame-marble-table">MiniGame - Marble Table</h3>
+<ul>
+<li>granular sound with Web Audio API - <a href="https://github.com/jeromeetienne/webaudiox">webaudiox</a></li>
+<li>Add skymap - <a href="https://github.com/jeromeetienne/threex.skymap">threex.skymap</a></li>
+<li>Handle keyboard input - <a href="https://github.com/jeromeetienne/threex.keyboardstate">threex.keyboardstate</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-109">
     <section class="slide-content"><h3 id="minigame-stellar7">MiniGame - Stellar7</h3>
 <p><a href="http://jeromeetienne.github.io/stellar7/">link</a></p>
 <p><img src='images/screenshot-game-stellar7.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-92">
-    <section class="slide-content"><h3 id="its-post-processing">Its post processing</h3>
+  <div class="slide hidden" id="slide-110">
+    <section class="slide-content"><h3 id="minigame-stellar7">MiniGame - Stellar7</h3>
 <ul>
-<li>color adjust</li>
-<li>bad tv effect</li>
+<li>color adjust post processing - <a href="https://github.com/jeromeetienne/threex.coloradjust">threex.coloradjust</a></li>
+<li>bad tv effect post processing - <a href="https://github.com/jeromeetienne/threex.badtvpproc">threex.badtvpproc</a></li>
+<li>solid wireframe - <a href="https://github.com/jeromeetienne/threex.solidwireframe">threex.solidwireframe</a></li>
+<li>Planets - <a href="https://github.com/jeromeetienne/threex.planets">threex.planets</a></li>
+<li>NyanCat - <a href="https://github.com/jeromeetienne/threex.nyancat">threex.nyancat</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-93">
-    <section class="slide-content"><h3 id="color-adjust">color adjust</h3>
-<ul>
-<li><a href="https://github.com/jeromeetienne/threex.coloradjust">repo</a> - <a href="http://jeromeetienne.github.io/threex.coloradjust/examples/demo.html">demo</a></li>
-<li>by <a href="http://greggman.com/">@greggman</a>
-<a href="http://webglsamples.googlecode.com/hg/color-adjust/color-adjust.html">original demo</a>
-explain in <a href="http://www.youtube.com/watch?v=rfQ8rKGTVlg#t=25m03s">this video</a></li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-94">
-    <section class="slide-content"><h3 id="bad-tv-effect">bad tv effect</h3>
-<ul>
-<li>from <a href="https://twitter.com/felixturner">@felixturner</a>
-in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</a></li>
-<li>like one step further, from the demo to the reusable effect</li>
-<li>more scripted, some predefined usage linked with sound</li>
-<li>how to install it</li>
-<li>play with dat.gui to decompose the effect</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-95">
+  <div class="slide hidden" id="slide-111">
     <section class="slide-content"><h1 id="new-part">New Part</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-96">
+  <div class="slide hidden" id="slide-112">
     <section class="slide-content"><h1 id="-mike-thinks-about-diana-">&quot;Mike Thinks about Diana&quot;</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-97">
+  <div class="slide hidden" id="slide-113">
     <section class="slide-content"><h3 id="meta-storytelling-">META Storytelling:</h3>
 <ul>
 <li>After playing video games, </li>
@@ -1095,26 +1246,26 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-98">
+  <div class="slide hidden" id="slide-114">
     <section class="slide-content"><h3 id="here-is-diana">Here is Diana</h3>
 <p><a href="http://lo-th.github.io/olympe/index_diana.html">demo</a></p>
 <p><img src='images/screenshot-diana-demo.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-99">
+  <div class="slide hidden" id="slide-115">
     <section class="slide-content"><h3 id="diana-s-avatar">Diana&#39;s Avatar</h3>
 <ul>
 <li>top notch avatar all in three.js</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-100">
+  <div class="slide hidden" id="slide-116">
     <section class="slide-content"><h3 id="diana-s-eyes">Diana&#39;s Eyes</h3>
 <p><a href="http://vill.ee/eye/">demo</a> - by <a href="https://twitter.com/shaderology">Artur Vill</a></p>
 <p><img src='images/screenshot-diana-eye.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-101">
+  <div class="slide hidden" id="slide-117">
     <section class="slide-content"><h3 id="diana-s-eyes">Diana&#39;s Eyes</h3>
 <ul>
 <li>Very realistic</li>
@@ -1126,7 +1277,7 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-102">
+  <div class="slide hidden" id="slide-118">
     <section class="slide-content"><h3 id="meta-tech">META tech</h3>
 <ul>
 <li>Detailler chaque element technique de cette demo</li>
@@ -1134,7 +1285,7 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-103">
+  <div class="slide hidden" id="slide-119">
     <section class="slide-content"><ul>
 <li>It is already very nice avatar</li>
 <li>What could it be ?</li>
@@ -1162,7 +1313,7 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-104">
+  <div class="slide hidden" id="slide-120">
     <section class="slide-content"><h3 id="occulus-drift-">Occulus drift ?</h3>
 <ul>
 <li><a href="http://www.oculusvr.com/">homepage</a> - <a href="http://www.oculusvr.com/blog/john-carmack-joins-oculus-as-cto/">John Carmack as CTO</a> - <a href="https://www.oculusvr.com/order/">300usd</a></li>
@@ -1170,39 +1321,39 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 <p><img src='images/screenshot-occulusdrift-device.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-105">
+  <div class="slide hidden" id="slide-121">
     <section class="slide-content"><h3 id="already-available-in-three-js">Already Available in THREE.js</h3>
 <p><a href="http://threejs.org/examples/webgl_effects_oculusrift.html">link</a></p>
 <p><img src='images/screenshot-occulusdrift-threejs.png' width='100%'/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-106">
+  <div class="slide hidden" id="slide-122">
     <section class="slide-content"><h2 id="what-if-i-don-t-want-occulus-drift-">What if i don&#39;t want Occulus Drift ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-107">
+  <div class="slide hidden" id="slide-123">
     <section class="slide-content"><h3 id="alternatives-anaglyph">Alternatives - anaglyph</h3>
 <p><a href="http://threejs.org/examples/webgl_effects_anaglyph">demo</a></p>
 <p><img src='images/screenshot-diana-anaglyph.png' width='100%'/></a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-108">
+  <div class="slide hidden" id="slide-124">
     <section class="slide-content"><h3 id="alternatives-crosseyed">Alternatives - crosseyed</h3>
 <p><a href="http://threejs.org/examples/webgl_effects_crosseyed">demo</a></p>
 <p><img src='images/screenshot-diana-crosseyed.png' width='100%'/></a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-109">
+  <div class="slide hidden" id="slide-125">
     <section class="slide-content"><h3 id="alternatives-parallaxbarrier">Alternatives - parallaxbarrier</h3>
 <p><a href="http://threejs.org/examples/webgl_effects_parallaxbarrier">demo</a></p>
 <p><img src='images/screenshot-diana-parallaxbarrier.png' width='100%'/></a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-110">
+  <div class="slide hidden" id="slide-126">
     <section class="slide-content"><h2 id="how-to-interact-with-this-virtual-world-">How to interact with this virtual world ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-111">
+  <div class="slide hidden" id="slide-127">
     <section class="slide-content"><h3 id="leap-motion-device">Leap Motion Device</h3>
 <ul>
 <li><a href="https://github.com/leapmotion/leapjs">leapjs</a> - JavaScript client for the Leap Motion Controller</li>
@@ -1210,7 +1361,7 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-112">
+  <div class="slide hidden" id="slide-128">
     <section class="slide-content"><h3 id="webrtc">WebRTC</h3>
 <ul>
 <li>live audio/video conferencing<ul>
@@ -1224,53 +1375,76 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-113">
+  <div class="slide hidden" id="slide-129">
     <section class="slide-content"><h2 id="now-mike-is-in-love">Now mike is in love</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-114">
+  <div class="slide hidden" id="slide-130">
     <section class="slide-content"><h2 id="he-can-t-stop-thinking-about-diana">He can&#39;t stop thinking about diana</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-115">
+  <div class="slide hidden" id="slide-131">
     <section class="slide-content"><h2 id="he-want-to-share-every-moment-of-his-life">He want to share every moment of his life</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-116">
+  <div class="slide hidden" id="slide-132">
     <section class="slide-content"><h2 id="even-when-he-is-on-the-go">Even when he is on the go</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-117">
+  <div class="slide hidden" id="slide-133">
     <section class="slide-content"><h1 id="new-part">New Part</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-118">
+  <div class="slide hidden" id="slide-134">
     <section class="slide-content"><h1 id="-mike-wants-diana-on-his-mobile-">&quot;Mike wants Diana on his Mobile&quot;</h1>
+<h2 id="or-webgl-on-mobile">or WebGL on mobile</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-119">
-    <section class="slide-content"><h3 id="state-of-webgl-on-mobile">State of WebGL on Mobile</h3>
+  <div class="slide hidden" id="slide-135">
+    <section class="slide-content"><h3 id="mobile-inputs">Mobile Inputs</h3>
+<ul>
+<li>on desktop, keyboard and mouse</li>
+<li>on mobile, touch screen</li>
+</ul>
+<p><strong>ALL UI is Changed</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-136">
+    <section class="slide-content"><h3 id="virtualjoystick-js">virtualjoystick.js</h3>
+<p><a href="https://github.com/jeromeetienne/virtualjoystick.js">repo</a>
+/ <a href="http://jeromeetienne.github.io/virtualjoystick.js/examples/basic.html">demo</a>
+/ <a href="http://learningthreejs.com/blog/2011/12/26/let-s-make-a-3d-game-virtual-joystick/">post</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-137">
+    <section class="slide-content"><h3 id="webgl-support-on-mobile">WebGL Support on Mobile</h3>
 <ul>
 <li>not widely supported yet...</li>
+<li>not all OS</li>
+<li>great difference between devices</li>
 </ul>
-<h3 id="per-os">Per OS</h3>
+<p><strong>Not Easy Yet</strong></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-138">
+    <section class="slide-content"><h3 id="three-js-games-mobile">THREE.js Games Mobile</h3>
 <ul>
-<li>android is doing OK</li>
-<li>window mobile is doing OK</li>
-<li>IOS is still resisting</li>
+<li><a href="http://jeromeetienne.github.io/stellar7/">stellar7</a> WebGL clone from the old game</li>
+<li><a href="http://mmo3d.jit.su">mmo3d</a> multiplayer game</li>
 </ul>
+<p><strong>Works on Mobile</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-120">
-    <section class="slide-content"><h2 id="what-if-my-device-doesn-t-support-webgl">What if my device doesn&#39;t support WebGL</h2>
+  <div class="slide hidden" id="slide-139">
+    <section class="slide-content"><h2 id="what-if-my-device-doesn-t-support-webgl-">What if my device doesn&#39;t support WebGL ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-121">
+  <div class="slide hidden" id="slide-140">
     <section class="slide-content"><h1 id="cloud-gaming-">Cloud Gaming ?</h1>
 <h2 id="to-save-the-day">To save the day</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-122">
+  <div class="slide hidden" id="slide-141">
     <section class="slide-content"><h3 id="what-are-we-gonna-talk-about-">What are we gonna talk about ?</h3>
 <ul>
 <li>Possible solution for cloud gaming</li>
@@ -1283,12 +1457,12 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 <p><strong>status</strong> : experimental, naive but working surprisingly well!</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-123">
+  <div class="slide hidden" id="slide-142">
     <section class="slide-content"><h3 id="demo-time">Demo Time</h3>
 <p>Youtube video <a href="http://www.youtube.com/watch?v=yTSXLyg1uu8">here</a></p>
 <iframe width="560" height="315" src="//www.youtube.com/embed/fHVfy7WrPH0" frameborder="0" allowfullscreen></iframe></section>
   </div>
-  <div class="slide hidden" id="slide-124">
+  <div class="slide hidden" id="slide-143">
     <section class="slide-content"><h3 id="what-is-cloud-gaming-">What is Cloud Gaming ?</h3>
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Cloud_gaming">wikipedia</a> definition</li>
@@ -1300,39 +1474,25 @@ in <a href="http://www.airtightinteractive.com/demos/js/badtvshader/">his demo</
 on a device B, typically dumber than A.</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-125">
+  <div class="slide hidden" id="slide-144">
     <section class="slide-content"><h2 id="what-it-is-for-us-">What it is for us ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-126">
-    <section class="slide-content"><h3 id="what-is-our-use-case">What is Our Use Case</h3>
-<p>Let&#39;s clear the dust a bit...</p>
-<ul>
-<li>we run a webgl game in browser</li>
-<li>player device is a non-webgl mobile phone</li>
-</ul>
-<p><strong>Goal</strong> : to make that game playable on your player device</p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-127">
+  <div class="slide hidden" id="slide-145">
     <section class="slide-content"><h3 id="our-goal">Our Goal</h3>
 <ul>
 <li>To display a webgl game </li>
-<li>on a non-webgl player device</li>
+<li>on a non-webgl player mobil device</li>
 </ul>
 <p><strong>Simple Enough...</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-128">
-    <section class="slide-content"><h2 id="ok-we-know-the-target-what-s-next-">Ok We Know the Target, What&#39;s Next ?</h2>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-129">
+  <div class="slide hidden" id="slide-146">
     <section class="slide-content"><h1 id="early-study">Early Study</h1>
 <h2 id="for-early-prototype">For Early Prototype</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-130">
+  <div class="slide hidden" id="slide-147">
     <section class="slide-content"><h3 id="early-study-rendering">Early Study - Rendering</h3>
 <ul>
 <li>So we got to render our game in server</li>
@@ -1341,7 +1501,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-131">
+  <div class="slide hidden" id="slide-148">
     <section class="slide-content"><h3 id="early-study-architechture">Early Study - Architechture</h3>
 <p>3 parts </p>
 <ul>
@@ -1351,7 +1511,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-132">
+  <div class="slide hidden" id="slide-149">
     <section class="slide-content"><h3 id="early-study-networking">Early Study - Networking</h3>
 <ul>
 <li>networking done thru websocket</li>
@@ -1361,7 +1521,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-133">
+  <div class="slide hidden" id="slide-150">
     <section class="slide-content"><h3 id="early-study-software">Early Study - Software</h3>
 <ul>
 <li>server in node.js</li>
@@ -1372,16 +1532,16 @@ on a device B, typically dumber than A.</code></pre>
 <p><strong>implementation is easy</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-134">
+  <div class="slide hidden" id="slide-151">
     <section class="slide-content"><h2 id="looks-good-">Looks Good…</h2>
 <h2 id="what-would-it-be-in-action-">What Would it be in Action ?</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-135">
+  <div class="slide hidden" id="slide-152">
     <section class="slide-content"><h1 id="theory-of-operations">Theory Of Operations</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-136">
+  <div class="slide hidden" id="slide-153">
     <section class="slide-content"><h3 id="theory-of-operations-server">Theory Of Operations - Server</h3>
 <ul>
 <li>a renderer browser web running the game</li>
@@ -1393,7 +1553,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-137">
+  <div class="slide hidden" id="slide-154">
     <section class="slide-content"><h3 id="theory-of-operations-player">Theory Of Operations - Player</h3>
 <ul>
 <li>player can see webgl rendering on any device</li>
@@ -1403,7 +1563,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-138">
+  <div class="slide hidden" id="slide-155">
     <section class="slide-content"><h3 id="theory-of-operations-output">Theory Of Operations - Output</h3>
 <ul>
 <li>browser receives inputs from the player.</li>
@@ -1412,7 +1572,7 @@ on a device B, typically dumber than A.</code></pre>
 <p><strong>we got the whole loop</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-139">
+  <div class="slide hidden" id="slide-156">
     <section class="slide-content"><h3 id="theory-of-operations-results">Theory Of Operations - Results</h3>
 <ul>
 <li>This is actual cloud gaming! </li>
@@ -1421,7 +1581,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-140">
+  <div class="slide hidden" id="slide-157">
     <section class="slide-content"><h3 id="performances">Performances</h3>
 <ul>
 <li>left as an exercice to the reader :)</li>
@@ -1435,15 +1595,15 @@ on a device B, typically dumber than A.</code></pre>
 <p><strong>On Wifi, i had 30fps ymmv</strong></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-141">
+  <div class="slide hidden" id="slide-158">
     <section class="slide-content"><h1 id="last-part">Last Part</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-142">
+  <div class="slide hidden" id="slide-159">
     <section class="slide-content"><h1 id="-mike-concludes-his-talk-">&quot;Mike Concludes His Talk&quot;</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-143">
+  <div class="slide hidden" id="slide-160">
     <section class="slide-content"><ul>
 <li>We have seen what three.js could do for Games</li>
 <li>we createa a player</li>
@@ -1453,7 +1613,7 @@ on a device B, typically dumber than A.</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-144">
+  <div class="slide hidden" id="slide-161">
     <section class="slide-content"><div class="author">
   <h1 class="name">Jerome Etienne</h1>
     <h3 class="twitter">

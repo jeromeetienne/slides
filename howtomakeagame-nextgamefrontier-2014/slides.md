@@ -19,10 +19,18 @@ output: index.html
 
 ### Plan
 
-* Short intro three.js for Games
-* "Mike is Born" - build simple object
-* TODO other parts
-* who is doing it
+* Creating an basic 3d object and animate it
+* Build a Map with existing extensions
+* How to add sounds in your games
+* how to link your webgl with usual web content
+
+--
+
+### Plan (bis)
+
+* Some Tricks from minigames
+* What we could do soon in the future
+* how to handle mobile
 
 --
 
@@ -88,94 +96,18 @@ pure js drawing -
 * handle sounds
 * handle inputs
 * handle effects
+* etc...
 
-**Packaged as THREEx**
-
---
-
-# Wait!
-## What is THREEx ?
+**Packaged as THREEx Extensions**
 
 --
 
 ### What is THREEx ?
 
-* ultra light extension system for [three.js](http://threejs.org)
+* Ultra light extension system for [three.js](http://threejs.org)
 * [threex](http://jeromeetienne.github.io/threex/) on github - 40 modules and counting
 
 <img src='images/screenshot-threex-homepage.png' width='100%'/>
-
---
-
-### What is THREEx ?
-
-* light extension system ala [vanilla.js](http://vanilla-js.com/)
-* as little dependancy as possible
-* not a framework, 
-* more a [bunch of convention](http://jeromeetienne.github.io/threex/www/how-to-write-a-threex-module.html)
-* DRY modules to help you write three.js stuff
-
---
-
-### THREEx Workflow
-
-* support modern web workflow
-* Support [bower](http://bower.io/) for install
-* Support [require.js](http://requirejs.org/) for include
-* Even support [yeoman](http://yeoman.io) for boilerplates
-
-### DO NOT REQUIRE IT
-
-* this is the trick :)
-
---
-
-### Packages - install manual
-
-* find the repository and copy the files
-* no handling for dependancy
-
---
-
-### Packages - install with bower
-
-* homepage [bower](http://bower.io)
-* effort led by [twitter](http://twitter.com)
-
---
-
-### Packages - install with bower
-
-To install
-
-```
-bower install threex.planets
-```
-
-To search for more
-
-```
-bower search threex
-```
-
---
-
-### Packages - include manual
-
-* include all ```.js``` with a ```<script>```
-* may need to init some variables
-  * e.g. ```.baseUrl``` for asset location
-* js minification is on yoou
-
---
-
-### Packages - include with require.js
-
-* just require the ```package.require.js``` file
-* it does a bunch of things for you
-  * includes all ```.js```
-  * setup asset location
-  * handle js minification 
 
 --
 
@@ -211,6 +143,7 @@ bower search threex
 
 # "A Hero is Born!"
 
+## or How to Build Simple 3D Objects
 --
 
 ### Lets Mold Our Hero
@@ -381,14 +314,6 @@ scene.add(mesh)
 
 --
 
-# New Part
-
---
-
-# "Mike Needs a World"
-
---
-
 ## Now that we got the player 
 
 --
@@ -413,11 +338,108 @@ scene.add(mesh)
 
 --
 
+# New Part
+
+--
+
+# "Mike Needs a World"
+
+## or How to use THREEx Games Extensions
+
+--
+
 ### Demo Time!
 
 [link](demos/mike-map)
 
 <img src='images/screenshot-mike-map.png' width='100%'/>
+
+--
+
+### Used Extensions 
+
+* [threex.grassground](https://github.com/jeromeetienne/threex.grassground) - for the ground
+* [threex.montainsarena](https://github.com/jeromeetienne/threex.montainsarena) - to put montains around us
+* [threex.daynight](https://github.com/jeromeetienne/threex.daynight) - to fill the sky and see time passing 
+
+
+**List of [all Extensions](http://jeromeetienne.github.io/threex/)**
+
+--
+
+### What is THREEx ?
+
+* light extension system ala [vanilla.js](http://vanilla-js.com/)
+* as little dependancy as possible
+* not a framework, 
+* more a [bunch of convention](http://jeromeetienne.github.io/threex/www/how-to-write-a-threex-module.html)
+* DRY modules to help you write three.js stuff
+
+--
+
+### THREEx Workflow
+
+* support modern web workflow
+* Support [bower](http://bower.io/) for install
+* Support [require.js](http://requirejs.org/) for include
+* Even support [yeoman](http://yeoman.io) for boilerplates
+
+### DO NOT REQUIRE IT
+
+* this is the trick :)
+
+--
+
+### Packages - install manual
+
+* find the repository and copy the files
+* no handling for dependancy
+
+--
+
+### Packages - install with bower
+
+* homepage [bower](http://bower.io)
+* effort led by [twitter](http://twitter.com)
+
+--
+
+### Packages - install with bower
+
+To install
+
+```
+bower install threex.planets
+```
+
+To search for more
+
+```
+bower search threex
+```
+
+--
+
+### Packages - include manual
+
+* include all ```.js``` with a ```<script>```
+* may need to init some variables
+  * e.g. ```.baseUrl``` for asset location
+* js minification is on yoou
+
+--
+
+### Packages - include with require.js
+
+* just require the ```package.require.js``` file
+* it does a bunch of things for you
+  * includes all ```.js```
+  * setup asset location
+  * handle js minification 
+
+--
+
+## Now we got principles, lets see some extensions
 
 --
 
@@ -436,6 +458,29 @@ threex.grassground -
 [demo](http://jeromeetienne.github.io/threex.grassground/examples/basic.html)
 
 <img src='images/threex.grassground.png' width='100%'/>
+
+--
+
+### threex.grassground
+
+Install it
+
+```
+bower install threex.grassground
+```
+
+Include it
+
+```
+ <script src='threex.grassground.js'></script>
+```
+
+Use it
+
+```
+var groundMesh  = new THREEx.GrassGround()
+scene.add(groundMesh)
+```
 
 --
 
@@ -459,6 +504,22 @@ threex.montainsarena -
 
 --
 
+### threex.montainsarena
+
+include it
+
+```
+ <script src='threex.montainsarena.js'></script>
+```
+
+Use it
+
+```
+var mesh    = new THREEx.MontainsArena()
+scene.add(mesh)
+```
+--
+
 ### Day And Night
 
 threex.daynight - 
@@ -469,14 +530,41 @@ threex.daynight -
 
 --
 
+### threex.daynight
+
+include it
+
+```
+ <script src='threex.daynight.js'></script>
+```
+
+Use it
+
+```
+var sunLight    = new THREEx.DayNight.SunLight()
+scene.add( sunLight.object3d )
+```
+
+Update it
+
+```
+sunLight.update(sunAngle)
+```
+
+--
+
 # Physics
 
 --
 
 ### Physics and Three.js
 
-* not included in three.js itself
-* realtime 3d physics is a project in itself
+* not in three.js itself
+* realtime 3d physics is **HARD**
+* It is a project in itself
+
+### Principles 
+
 * keep them separate 
 * but interact well with it
 
@@ -500,9 +588,8 @@ threex.daynight -
 
 ### cannon.js
 
-[homepage](http://cannonjs.org/)  by [schteppe](https://twitter.com/schteppe) /
-[demo](http://schteppe.github.io/cannon.js/examples/threejs_fps.html)
-
+[homepage](http://cannonjs.org/)  by [schteppe](https://twitter.com/schteppe)
+/ [demo](http://schteppe.github.io/cannon.js/examples/threejs_fps.html)
 <img src='images/screenshot-cannonjs-demo.png' width='100%'/>
 
 --
@@ -520,8 +607,7 @@ threex.daynight -
 ### three.js and cannon.js
 
 [repo](https://github.com/jeromeetienne/threex.cannonjs)
-/
-[demo](http://jeromeetienne.github.io/threex.cannonjs/examples/domino.html)
+/ [demo](http://jeromeetienne.github.io/threex.cannonjs/examples/domino.html)
 
 <img src='images/threex.cannonjs.png' width='100%'/>
 
@@ -531,8 +617,8 @@ threex.daynight -
 ### three.js and oimo.js
 
 [repo](https://github.com/jeromeetienne/threex.oimo)
-/
-[demo](http://jeromeetienne.github.io/threex.oimo/examples/demo.html)
+/ [demo](http://jeromeetienne.github.io/threex.oimo/examples/demo.html)
+/ [demo crates](http://jeromeetienne.github.io/threex.oimo/examples/crates.html)
 
 <img src='images/threex.oimo.png' width='100%'/>
 
@@ -544,36 +630,86 @@ threex.daynight -
 
 # "Mike Goes Party"
 
---
-
-### META
-
-* demo: volumetric spotlight
-* [link](demos/party/)
-* webaudiox
-* change of spot color 
-* multiple spot synchronized
-* minecraft move ala saturday night fever
-* like 10 minecraft players on the screen
-* do a gowiththeflow.js with an animation of 2 guys discussing
-  * "Hey guys, there are no girls here!"
-  * "Where can I find a girl."
-  * "Wait you are missing something too!"
-  * camera move
-  * even noticed how minecraft is lacking of female ?
+## or how to add sounds in your games
 
 --
 
-### How to make the spot
+### Demo Time
 
-* from where it comes from
-* flexibility if you want your own effects and shader
+[demo](demos/party)
+
+<img src='images/screenshot-mikeparty.png' width='100%'/>
 
 --
 
-### How to sync sound with color
+### Web Audio API
 
-* web audio api
+* New Sound API - Aimed for game
+* Based on OpenAL - So Rather complex
+
+### Features
+* sound localisation
+* Dopler
+* convolver
+* Great Accuracy - no latency
+* very little cpu consumption
+
+--
+
+## Maybe a little helper could helps
+
+--
+
+### webaudiox.gamesounds
+
+* make Web Audio Api easy to use for gamedevs
+* provide the typical cases
+* no need to understand the whole Web Audio API
+
+### How to get it
+* webaudiox on [github](https://github.com/jeromeetienne/webaudiox)
+* or via ```bower install webaudiox```
+--
+
+### Basic Usage
+
+Initialize sound context
+
+```
+var gameSounds  = new WebAudiox.GameSounds()
+```
+
+Load the Sound
+
+```
+gameSounds.createSound().load('mysound.ogg', function(sound){
+    // here the sound is loaded
+})
+```
+
+Play it
+
+```
+sound.play();
+```
+
+--
+
+### Sound Localisation - Good For 3D
+
+Set the listener as player object3d
+
+```
+gameSounds.listenerFollow(object3d)
+```
+
+Play Sound at a given position in space
+
+```
+gamesound.play({
+  follow  : explosionMesh
+})
+```
 
 --
 
@@ -583,13 +719,122 @@ threex.daynight -
 
 # "Mike Goes Home And Play Video Games"
 
+## or how to link your webgl with usual web content
+
 --
 
 ### Demo Time!
 
-[link](http://jetienne.com/games/)
+[demo](http://jetienne.com/games/)
 
 <img src='images/screenshot-videogames.png' width='100%'/>
+
+--
+
+## Nice! How the tv set is done ?
+
+
+--
+
+### Display actual web content
+
+* able to seamlessly display web content in webgl
+
+### Contains mouse events on 3d events
+
+* player able to interact with 3d elements
+
+
+### The whole shebang
+
+--
+
+### threex.text.js
+
+[repo](https://github.com/jeromeetienne/threex.text) - [demo](http://jeromeetienne.github.io/threex.text/examples/basic.html)
+
+<img src='images/threex.text.png' width='100%'/>
+
+--
+
+### threex.text.js
+
+Install it
+
+```
+bower install threex.text
+```
+
+Use it
+
+```
+var mesh    = new THREEx.Text('THREEx')
+scene.add(mesh)
+```
+
+--
+
+### threex.domevents.js
+
+[repo](https://github.com/jeromeetienne/threex.domevents) - [demo](http://jeromeetienne.github.io/threex.domevents/examples/basic.html)
+
+<img src='images/threex.domevents.png' width='100%'/>
+
+--
+
+### threex.domevents.js
+
+Install it
+
+```
+bower install threex.domevents
+```
+
+Init it
+
+```
+var domEvents   = new THREEx.DomEvents(camera)
+```
+
+Bind ```click``` event on a mesh
+
+```
+domEvents.addEventListener(mesh, 'click', function(){
+    console.log('you clicked on the mesh')
+}, false)
+```
+
+
+--
+
+### threex.htmlmixer.js
+
+[repo](https://github.com/jeromeetienne/threex.htmlmixer)
+/ [demo](http://jeromeetienne.github.io/threex.htmlmixer/examples/basic.html)
+/ [post](http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/)
+/ [videobrowser](http://jeromeetienne.github.io/videobrowser4learningthreejs)
+
+<img src='images/threex.htmlmixer.png' width='100%'/>
+
+--
+
+### threex.htmlmixer.js
+
+Initialize it
+
+```
+var mixerContext    = new THREEx.HtmlMixer.Context(renderer, scene, camera)
+onRenderFcts.push(function(delta, now){
+    mixerContext.update(delta, now)
+})
+```
+
+Use it on a domElement - typically an iframe
+
+```
+var mixerPlane  = new THREEx.HtmlMixer.Plane(mixerContext, domElement)
+scene.add(mixerPlane.object3d)
+```
 
 --
 
@@ -649,13 +894,29 @@ threex.daynight -
 
 --
 
-### Its Rackets
+### MiniGame - PongGL
 
-* [Catmull–Clark subdivision surface](http://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface)
+* Racket + ground with [Catmull–Clark subdivision surface](http://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface)
 [demo](http://threejs.org/examples/webgl_geometry_subdivision.html)
+* Minecraft looking at the ball
+* Particles for smoke on impact
+* WebAudiox for sound
 
-<img src='images/screenshot-threejs-subdivision.png' width='100%'/>
+--
 
+### MiniGame - Marble Table
+
+[link](http://jeromeetienne.github.io/marbleTable/)
+
+<img src='images/screenshot-game-marbletable.png' width='100%'/>
+
+--
+
+### MiniGame - Marble Table
+
+* granular sound with Web Audio API - [webaudiox](https://github.com/jeromeetienne/webaudiox)
+* Add skymap - [threex.skymap](https://github.com/jeromeetienne/threex.skymap)
+* Handle keyboard input - [threex.keyboardstate](https://github.com/jeromeetienne/threex.keyboardstate)
 
 --
 
@@ -667,30 +928,13 @@ threex.daynight -
 
 --
 
-### Its post processing
+### MiniGame - Stellar7
 
-* color adjust
-* bad tv effect
-
---
-
-### color adjust
-
-* [repo](https://github.com/jeromeetienne/threex.coloradjust) - [demo](http://jeromeetienne.github.io/threex.coloradjust/examples/demo.html)
-* by [@greggman](http://greggman.com/)
-  [original demo](http://webglsamples.googlecode.com/hg/color-adjust/color-adjust.html)
-  explain in [this video](http://www.youtube.com/watch?v=rfQ8rKGTVlg#t=25m03s)
-
---
-
-### bad tv effect
-
-* from [@felixturner](https://twitter.com/felixturner)
-  in [his demo](http://www.airtightinteractive.com/demos/js/badtvshader/)
-* like one step further, from the demo to the reusable effect
-* more scripted, some predefined usage linked with sound
-* how to install it
-* play with dat.gui to decompose the effect
+* color adjust post processing - [threex.coloradjust](https://github.com/jeromeetienne/threex.coloradjust)
+* bad tv effect post processing - [threex.badtvpproc](https://github.com/jeromeetienne/threex.badtvpproc)
+* solid wireframe - [threex.solidwireframe](https://github.com/jeromeetienne/threex.solidwireframe)
+* Planets - [threex.planets](https://github.com/jeromeetienne/threex.planets)
+* NyanCat - [threex.nyancat](https://github.com/jeromeetienne/threex.nyancat)
 
 --
 
@@ -861,20 +1105,48 @@ threex.daynight -
 
 # "Mike wants Diana on his Mobile"
 
+## or WebGL on mobile
+
 --
 
-### State of WebGL on Mobile
+### Mobile Inputs
+
+* on desktop, keyboard and mouse
+* on mobile, touch screen
+
+
+**ALL UI is Changed**
+
+--
+
+### virtualjoystick.js
+
+[repo](https://github.com/jeromeetienne/virtualjoystick.js)
+/ [demo](http://jeromeetienne.github.io/virtualjoystick.js/examples/basic.html)
+/ [post](http://learningthreejs.com/blog/2011/12/26/let-s-make-a-3d-game-virtual-joystick/)
+
+--
+
+### WebGL Support on Mobile
 
 * not widely supported yet...
+* not all OS
+* great difference between devices
 
-### Per OS
-* android is doing OK
-* window mobile is doing OK
-* IOS is still resisting
+**Not Easy Yet**
 
 --
 
-## What if my device doesn't support WebGL
+### THREE.js Games Mobile
+
+* [stellar7](http://jeromeetienne.github.io/stellar7/) WebGL clone from the old game
+* [mmo3d](http://mmo3d.jit.su) multiplayer game
+
+**Works on Mobile**
+
+--
+
+## What if my device doesn't support WebGL ?
 
 --
 
@@ -921,27 +1193,12 @@ on a device B, typically dumber than A.
 
 --
 
-### What is Our Use Case
-
-Let's clear the dust a bit...
-
-* we run a webgl game in browser
-* player device is a non-webgl mobile phone
-
-**Goal** : to make that game playable on your player device
-
---
-
 ### Our Goal
 
 * To display a webgl game 
-* on a non-webgl player device
+* on a non-webgl player mobil device
 
 **Simple Enough...**
-
---
-
-## Ok We Know the Target, What's Next ? 
 
 --
 

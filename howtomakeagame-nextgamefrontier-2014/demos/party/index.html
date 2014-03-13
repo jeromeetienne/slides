@@ -98,7 +98,7 @@ for(var x = 0; x < nColumns; x++){
 
 		var skinNames	= Object.keys(THREEx.MinecraftChar.skinWellKnownUrls)
 		var skinName	= skinNames[Math.floor(Math.random()*skinNames.length)]
-		character.loadWellKnownSkin(skinName)
+		character.loadWellKnownSkin(skinName) 
 		//////////////////////////////////////////////////////////////////////////////////
 		//		animation							//
 		//////////////////////////////////////////////////////////////////////////////////
@@ -251,7 +251,7 @@ for(var x = 0; x < nColumns; x++){
 	})
 	.seq(function(next){
 		player2.clearSay()
-		player2.setSay('And btw for Woman...')	
+		player2.setSay('And btw for women...')	
 		setTimeout(function(){
 			player2.clearSay()
 			next()	
