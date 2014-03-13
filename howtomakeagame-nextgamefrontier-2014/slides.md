@@ -970,6 +970,8 @@ scene.add(mixerPlane.object3d)
 
 # "Mike Thinks about Diana"
 
+## or "what could be the future of webgl games"
+
 --
 
 ### Here is Diana
@@ -1188,7 +1190,7 @@ on a device B, typically dumber than A.
 
 --
 
-### Theory Of Operations - Server
+### Theory Of Operations - Server 
 
 
 * a renderer browser web running the game on a server 
