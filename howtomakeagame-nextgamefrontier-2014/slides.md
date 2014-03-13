@@ -723,6 +723,33 @@ gamesound.play({
 
 --
 
+## here is a virtual game console
+
+# [demo](http://jetienne.com/games/)
+
+--
+
+## you can play games inside a game
+
+--
+
+## you got a menu with all the games
+
+--
+
+## if you go close to the TV, the camera becomes centered on the tv and you can enjoy your play
+
+--
+
+## but still the actual games is going on around us
+
+--
+
+## see with the day night cycle
+
+
+--
+
 ### Demo Time!
 
 [demo](http://jetienne.com/games/)
@@ -746,6 +773,10 @@ gamesound.play({
 
 
 ### The whole shebang
+
+--
+
+## How the mouse interacts with 3d object ?
 
 --
 
@@ -804,6 +835,10 @@ domEvents.addEventListener(mesh, 'click', function(){
 }, false)
 ```
 
+--
+
+## How to seamlessly include web page ?
+
 
 --
 
@@ -838,50 +873,6 @@ scene.add(mixerPlane.object3d)
 
 --
 
-### Meta
-
-* goto portfolio games
-  * use directly this demo
-* do some story telling
-* and then switch to the tech part
-
---
-
-### Meta Story Telling
-
-* here is a virtual game console
-* you can play games inside a game
-* you got a menu with all the games
-* if you go close to the TV, the camera becomes centered on the tv and you can enjoy your play
-* but still the actual games is going on around us
-* see with the day night cycle
-
---
-
-* ok so which game to play ?
-* Lets see pong, this is classic
-* or marble table, actual physics cannonjs, granular sound, play with camera
-* or Let's play with a friend
-  * launch mmo3d
-  * multiplayer game 
-  * demo it. run on nodejitsu. they got a "if it is opensource, we run it for free"
-* or simply stellar7
-  Another classic
-
---
-
-### How to include webpage like that ?
-
-* Meta html mixer [threex.htmlmixer](https://github.com/jeromeetienne/threex.htmlmixer)
-  [demo](http://jeromeetienne.github.io/videobrowser4learningthreejs/)
-  [post](http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/)
-* Meta domEvenr repo [threex.domevents](https://github.com/jeromeetienne/threex.domevents)
-  [post](http://learningthreejs.com/blog/2012/01/17/dom-events-in-3d-space/)
-* take it from the blog
-  * ["Mixing HTML Pages Inside Your WebGL"](http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/)
-
---
-
 ## What about Those Mini Games ?
 
 --
@@ -898,9 +889,9 @@ scene.add(mixerPlane.object3d)
 
 * Racket + ground with [Catmull–Clark subdivision surface](http://en.wikipedia.org/wiki/Catmull%E2%80%93Clark_subdivision_surface)
 [demo](http://threejs.org/examples/webgl_geometry_subdivision.html)
-* Minecraft looking at the ball
+* Minecraft looking at the ball 
 * Particles for smoke on impact
-* WebAudiox for sound
+* WebAudiox for sound - [webaudiox](https://github.com/jeromeetienne/webaudiox)
 
 --
 
@@ -935,6 +926,41 @@ scene.add(mixerPlane.object3d)
 * solid wireframe - [threex.solidwireframe](https://github.com/jeromeetienne/threex.solidwireframe)
 * Planets - [threex.planets](https://github.com/jeromeetienne/threex.planets)
 * NyanCat - [threex.nyancat](https://github.com/jeromeetienne/threex.nyancat)
+* virtualjoystick for mobile - [virtualjoystick.js](https://github.com/jeromeetienne/virtualjoystick.js)
+
+--
+
+## After playing video games, 
+
+--
+
+## Mike gets tired and he starts to daydream
+
+--
+
+## "What would be the best video game for me?"
+
+--
+
+## "I am young and full of energy"
+
+--
+
+## "I like games and i lack girls"
+
+--
+
+## He wants to create a girl for himself 
+
+--
+
+## A Game where people could find their match parterns
+
+--
+
+## Here is what is in mike head
+
+
 
 --
 
@@ -943,19 +969,6 @@ scene.add(mixerPlane.object3d)
 --
 
 # "Mike Thinks about Diana"
-
---
-
-### META Storytelling: 
-
-* After playing video games, 
-* Mike gets tired and he starts to daydream
-* "What would be the best video game for me?"
-* "I am young and full of energy"
-* "I like games and i lack girls"
-* He wants to create a girl for himself 
-* A Game where people could find their match
-* Here is what is in mike head
 
 --
 
@@ -970,6 +983,11 @@ scene.add(mixerPlane.object3d)
 ### Diana's Avatar
 
 * top notch avatar all in three.js
+* Quite Sexy
+* Designer wasnt thinking about his gramma
+
+
+**What if we made a dating game ?**
 
 --
 
@@ -984,38 +1002,9 @@ scene.add(mixerPlane.object3d)
 ### Diana's Eyes
 
 * Very realistic
+* "the eyes are the window of the soul"
+  * important to convey feelings
 * All in custom Shaders
-* Quite Sexy
-  * the designer wasnt thinking about his gramma
-
---
-
-### META tech
-
-* Detailler chaque element technique de cette demo
-* then extend to the possibility of what could it be
-
-
---
-
-* It is already very nice avatar
-* What could it be ?
-* What if we improve how we interact with this virtual world
-* Make it a better experience. a more immersive experience
-* 
-* occulus drift to get better depth perception
-  * or similar
-* leap motion as game input
-  * more natural move
-  * more instinctive
-* suppose on top of that you
-* with leap motion, occulus drift
-  * [three.js occulus drift)(http://threejs.org/examples/webgl_effects_oculusrift.html)
-  * [hand with leap motion](http://blog.romanliutikov.com/post/60899246643/manipulating-rigged-hand-with-leap-motion-in-three-js)
-  * [youtube video](https://www.youtube.com/watch?v=1LHBlY9go7M)
-* multiplayer with webrtc
-* [Simulated reality](http://en.wikipedia.org/wiki/Simulated_reality)
-
 --
 
 ### Occulus drift ?
@@ -1034,38 +1023,6 @@ scene.add(mixerPlane.object3d)
 
 --
 
-## What if i don't want Occulus Drift ?
-
---
-
-### Alternatives - anaglyph
-
-[demo](http://threejs.org/examples/webgl_effects_anaglyph)
-
-<img src='images/screenshot-diana-anaglyph.png' width='100%'/></a>
-
---
-
-### Alternatives - crosseyed
-
-[demo](http://threejs.org/examples/webgl_effects_crosseyed)
-
-<img src='images/screenshot-diana-crosseyed.png' width='100%'/></a>
-
---
-
-### Alternatives - parallaxbarrier
-
-[demo](http://threejs.org/examples/webgl_effects_parallaxbarrier)
-
-<img src='images/screenshot-diana-parallaxbarrier.png' width='100%'/></a>
-
---
-
-## How to interact with this virtual world ?
-
---
-
 ### Leap Motion Device
 
 * [leapjs](https://github.com/leapmotion/leapjs) - JavaScript client for the Leap Motion Controller
@@ -1073,13 +1030,37 @@ scene.add(mixerPlane.object3d)
 
 --
 
+### Multiplayer
+
+* people able to share live
+* with alternative personna
+
 ### WebRTC
 
-* live audio/video conferencing
-  * open standard
+* open standard
+* audio/video conference
 * p2p so cheap to run
-  * and reduce privacy issues
 
+
+--
+
+# Future of This Dream
+
+--
+
+### Future
+
+* realistic visual rendering - three.js
+* immersive 3d glasses - occulus drift
+* instinctive inputs - leap motions
+
+--
+
+### Future
+
+* All are off-the-self devices
+* How long before somebody code this ?
+* My bet is one year max
 
 --
 
@@ -1109,10 +1090,10 @@ scene.add(mixerPlane.object3d)
 
 --
 
-### Mobile Inputs
+### Mobile Are Not Desktop
 
-* on desktop, keyboard and mouse
-* on mobile, touch screen
+* on desktop, keyboard, mouse and large screen
+* on mobile, touch screen and small screen
 
 
 **ALL UI is Changed**
@@ -1161,6 +1142,7 @@ scene.add(mixerPlane.object3d)
 * apply to any webgl games
   * not only three.js ones
 * cheap idea for cloud gaming for webgl
+* [full slides](jeromeetienne.github.io/threex.cloudgaming/slides/)
 
 **status** : experimental, naive but working surprisingly well!
 
@@ -1202,63 +1184,14 @@ on a device B, typically dumber than A.
 
 --
 
-# Early Study
-
-## For Early Prototype
-
---
-
-### Early Study - Rendering
-
-* So we got to render our game in server
-* it will be **rendered via a web browser**
-* seems natural choise to render webgl
-
---
-
-### Early Study - Architechture
-
-3 parts 
-
-* **a renderer :** the brower running our game
-* **a controller :** used by players to access our game
-* **a server :** ensures the communication between both
-
---
-
-### Early Study - Networking
-
-* networking done thru websocket
-* no webrtc at the moment
-* websocket is available a lot more than webrtc
-* especially on mobile phone, our usecase.
-
---
-
-### Early Study - Software
-
-* server in node.js
-* websocket are trivial with socket.io
-* little js library in renderer, and another in controller
-* only common technology here
-
-**implementation is easy**
-
---
-
-## Looks Good… 
-
-## What Would it be in Action ?
---
-
-# Theory Of Operations
+## Theory Of Operations
 
 --
 
 ### Theory Of Operations - Server
 
 
-* a renderer browser web running the game
+* a renderer browser web running the game on a server 
 * take regular screenshots with [.toDataUrl()](https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement#Methods)
 * Send them to the player device via echo server 
   * mobile phone, tablette whatever.
@@ -1299,7 +1232,7 @@ on a device B, typically dumber than A.
   * network bandwidth, network latency
   * servers cost
 
-**On Wifi, i had 30fps ymmv**
+**On Wifi, i had 30fps, ymmv**
 
 --
 
@@ -1308,13 +1241,49 @@ on a device B, typically dumber than A.
 --
 
 # "Mike Concludes His Talk"
+## or the end
 
 --
 
-* We have seen what three.js could do for Games
-* we createa a player
-* a map for him to move in
-* showed how to handle sounds in 3d env with Web Audio API
-* we show various alternative to handle physics
+## We have seen what three.js could do for Games
+
+--
+
+## how to create a player
+
+--
+
+## a map for him to move in
+
+--
+
+## how to handle sounds in 3d with Web Audio API
+
+--
+
+## seen how to link your web content in your webgl
+
+--
+
+## what could be done in the future 
+
+--
+
+## how to handle mobile
+
+--
+
+## So i hope convinced you :)
+
+--
+
+## three.js is a reasonable alternative 
+
+## to build a 3d game on web
+
+--
+
+# The End
+
 
 
