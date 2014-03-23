@@ -571,13 +571,13 @@ console.log(foo == foo);  // =&gt; true</code></pre>
   </div>
   <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h2 id="javascript-got-no-private-">Javascript got no <strong>Private</strong>!</h2>
-<h1 id="thinks-again-">Thinks Again!</h1>
+<h1 id="think-again-">Think Again!</h1>
 <h2 id="with-better-js-it-does-">with Better.js it does!</h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-29">
     <section class="slide-content"><h2 id="javascript-got-no-strong-typing-">Javascript got no <strong>Strong Typing</strong>!</h2>
-<h1 id="thinks-again-">Thinks Again!</h1>
+<h1 id="think-again-">Think Again!</h1>
 <h2 id="with-better-js-it-does-">with Better.js it does!</h2>
 </section>
   </div>
@@ -585,7 +585,7 @@ console.log(foo == foo);  // =&gt; true</code></pre>
     <section class="slide-content"><h3 id="better-js-is-funky-">Better.js is funky!</h3>
 <p>It is &quot;Not your mother Javascript!&quot;</p>
 <ul>
-<li>Provides Strong Typeing to Javascript</li>
+<li>Provides Strong Typing to Javascript</li>
 <li>Provides Private Visibility to Javascript</li>
 </ul>
 <p><strong>Features unseen in Javascript World!</strong></p>
@@ -597,7 +597,7 @@ console.log(foo == foo);  // =&gt; true</code></pre>
 <li>No compilation Step</li>
 <li>No New Language to Learn</li>
 </ul>
-<p>Better.js is 100% in Plain Old Javascript</p>
+<p>Better.js is 100% Plain Old Javascript</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-32">
@@ -612,6 +612,18 @@ console.log(foo == foo);  // =&gt; true</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h3 id="sample-function">Sample Function</h3>
+<pre><code class="lang-javascript"><span class="keyword">var</span> cat = <span class="keyword">function</span>(name, age){
+  console.log(<span class="string">'my name is'</span>, name, <span class="string">'and im'</span>, age)
+}</code></pre>
+<ul>
+<li>Simple function to display a message</li>
+<li>receive a String <code>name</code></li>
+<li>receive a Number <code>age</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h3 id="play-with-strong-typing-in-js">Play with Strong Typing In JS</h3>
 <ul>
 <li>Define a function class</li>
@@ -621,18 +633,6 @@ console.log(foo == foo);  // =&gt; true</code></pre>
 </ul>
 </li>
 <li>See what happen</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-35">
-    <section class="slide-content"><h3 id="sample-function">Sample Function</h3>
-<pre><code class="lang-javascript"><span class="keyword">var</span> cat = <span class="keyword">function</span>(name, age){
-  console.log(<span class="string">'my name is'</span>, name, <span class="string">'and im'</span>, age)
-}</code></pre>
-<ul>
-<li>Simple function to display a message</li>
-<li>receive a String <code>name</code></li>
-<li>receive a Number <code>age</code></li>
 </ul>
 </section>
   </div>
@@ -649,14 +649,14 @@ console.log(foo == foo);  // =&gt; true</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-37">
-    <section class="slide-content"><h3 id="let-s-see-what-happen">Let&#39;s See What happen</h3>
+    <section class="slide-content"><h3 id="let-s-see-what-happens">Let&#39;s See What Happens</h3>
 <p>Calling the function with <strong>valid types</strong> - OK</p>
 <pre><code>cat(&#39;kitty&#39;, 5)
 // display &#39;My name is kitty and im 5.&#39;</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-38">
-    <section class="slide-content"><h3 id="let-s-see-what-happen">Let&#39;s See What happen</h3>
+    <section class="slide-content"><h3 id="let-s-see-what-happens">Let&#39;s See What Happens</h3>
 <p>Calling the function with <strong>invalid types</strong> - BAD</p>
 <pre><code>cat(&#39;kitty&#39;, &#39;ten&#39;)
 // Exception thrown
@@ -667,8 +667,8 @@ console.log(foo == foo);  // =&gt; true</code></pre>
   <div class="slide hidden" id="slide-39">
     <section class="slide-content"><h3 id="strong-typing-in-better-js">Strong Typing in Better.js</h3>
 <ul>
-<li>Better.js provides strong typing to JS! <strong>COOL!</strong></li>
-<li>Unauthorized access are immediatly detected</li>
+<li>Better.js provides strong typing to JS! <strong>COOL! </strong></li>
+<li>Unauthorized access is immediatly detected</li>
 </ul>
 <p><strong>Earlier bug detection, so helps you write better js</strong></p>
 </section>
@@ -680,15 +680,6 @@ console.log(foo == foo);  // =&gt; true</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-41">
-    <section class="slide-content"><h3 id="play-with-private-in-better-js">Play with Private In Better.js</h3>
-<ul>
-<li>Define a sample class</li>
-<li>Make a Better.js declaration for it</li>
-<li>See what happen</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h3 id="sample-class">Sample Class</h3>
 <pre><code class="lang-javascript"><span class="keyword">var</span> Cat = <span class="keyword">function</span>(name){
   <span class="keyword">this</span>._name = name
@@ -701,6 +692,15 @@ Cat.prototype.getName = <span class="keyword">function</span>(){
 <li>Let&#39;s define a nice kitty class.</li>
 <li><code>._name</code> is a private property </li>
 <li><code>.getName()</code> is its getter</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h3 id="play-with-private-in-better-js">Play with Private In Better.js</h3>
+<ul>
+<li>Define a sample class</li>
+<li>Make a Better.js declaration for it</li>
+<li>See what happen</li>
 </ul>
 </section>
   </div>
@@ -717,27 +717,27 @@ Cat.prototype.getName = <span class="keyword">function</span>(){
 </section>
   </div>
   <div class="slide hidden" id="slide-44">
-    <section class="slide-content"><h3 id="let-s-see-what-happen">Let&#39;s See What happen</h3>
+    <section class="slide-content"><h3 id="let-s-see-what-happens">Let&#39;s See What Happens</h3>
 <p>Create an instance for your class</p>
 <pre><code class="lang-javascript"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat(<span class="string">'kitty'</span>)</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-45">
-    <section class="slide-content"><h3 id="let-s-see-what-happen-bis-">Let&#39;s See What happen (bis)</h3>
+    <section class="slide-content"><h3 id="let-s-see-what-happens-bis-">Let&#39;s See What Happens (bis)</h3>
 <p>Accessing public property <code>.age</code> - OK</p>
 <pre><code>console.log(&#39;cat age is &#39;, cat.age)
 // Display &quot;cat age is 7&quot;</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-46">
-    <section class="slide-content"><h3 id="let-s-see-what-happen-bis-">Let&#39;s See What happen (bis)</h3>
+    <section class="slide-content"><h3 id="let-s-see-what-happens-bis-">Let&#39;s See What Happens (bis)</h3>
 <p>Now calling the getter <code>.getName()</code> - OK</p>
 <pre><code class="lang-javascript">console.log(<span class="string">'cat name is '</span>, cat.getName())
 <span class="comment">// Display "cat kitty is kitty" - OK</span></code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-47">
-    <section class="slide-content"><h3 id="let-s-see-what-happen-bis-">Let&#39;s See What happen (bis)</h3>
+    <section class="slide-content"><h3 id="let-s-see-what-happens-bis-">Let&#39;s See What Happens (bis)</h3>
 <p>Now accessing the private property <code>._name</code> - BAD</p>
 <pre><code class="lang-javascript">console.log(<span class="string">'cat name is '</span>, cat._name)
 <span class="comment">// Exception thrown </span>

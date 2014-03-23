@@ -195,7 +195,7 @@ Just to name a few...
 
 ## Javascript got no **Private**!
 
-# Thinks Again!
+# Think Again!
 
 ## with Better.js it does!
 
@@ -204,7 +204,7 @@ Just to name a few...
 
 ## Javascript got no **Strong Typing**!
 
-# Thinks Again!
+# Think Again!
 
 ## with Better.js it does!
 
@@ -214,7 +214,7 @@ Just to name a few...
 
 It is "Not your mother Javascript!"
 
-* Provides Strong Typeing to Javascript
+* Provides Strong Typing to Javascript
 * Provides Private Visibility to Javascript
 
 **Features unseen in Javascript World!**
@@ -227,7 +227,7 @@ It is "Not your mother Javascript!"
 * No New Language to Learn
 
 
-Better.js is 100% in Plain Old Javascript
+Better.js is 100% Plain Old Javascript
 
 --
 
@@ -245,16 +245,6 @@ Better.js is 100% in Plain Old Javascript
 
 --
 
-### Play with Strong Typing In JS
-
-* Define a function class
-* Make a Better.js declaration for its arguments
-  * works for function return types too
-  * works for object property too
-* See what happen
-
---
-
 ### Sample Function
 
 ```javascript
@@ -266,6 +256,17 @@ var cat = function(name, age){
 * Simple function to display a message
 * receive a String ```name```
 * receive a Number ```age```
+
+--
+
+### Play with Strong Typing In JS
+
+* Define a function class
+* Make a Better.js declaration for its arguments
+  * works for function return types too
+  * works for object property too
+* See what happen
+
 
 --
 
@@ -283,7 +284,7 @@ cat = BetterJS.Function(cat, {
 
 --
 
-### Let's See What happen
+### Let's See What Happens
 
 Calling the function with **valid types** - OK
 
@@ -294,7 +295,7 @@ cat('kitty', 5)
 
 --
 
-### Let's See What happen
+### Let's See What Happens
 
 Calling the function with **invalid types** - BAD
 
@@ -311,8 +312,8 @@ Error Immediatly detected and execution stopped
 
 ### Strong Typing in Better.js
 
-* Better.js provides strong typing to JS! **COOL!**
-* Unauthorized access are immediatly detected
+* Better.js provides strong typing to JS! **COOL! **
+* Unauthorized access is immediatly detected
 
 
 **Earlier bug detection, so helps you write better js**
@@ -324,15 +325,6 @@ Error Immediatly detected and execution stopped
 # Private in Javascript
 
 ## An example
-
-
---
-
-### Play with Private In Better.js
-
-* Define a sample class
-* Make a Better.js declaration for it
-* See what happen
 
 --
 
@@ -354,6 +346,14 @@ Cat.prototype.getName = function(){
 
 --
 
+### Play with Private In Better.js
+
+* Define a sample class
+* Make a Better.js declaration for it
+* See what happen
+
+--
+
 ### Make a Better.js for it
 
 ```javascript
@@ -368,7 +368,7 @@ Cat = BetterJS.Class(Cat, {
 
 --
 
-### Let's See What happen
+### Let's See What Happens
 
 Create an instance for your class
 
@@ -378,7 +378,7 @@ var cat = new Cat('kitty')
 
 --
 
-### Let's See What happen (bis)
+### Let's See What Happens (bis)
 
 Accessing public property ```.age``` - OK
 
@@ -389,7 +389,7 @@ console.log('cat age is ', cat.age)
 
 --
 
-### Let's See What happen (bis)
+### Let's See What Happens (bis)
 
 Now calling the getter ```.getName()``` - OK
 
@@ -399,7 +399,7 @@ console.log('cat name is ', cat.getName())
 ```
 --
 
-### Let's See What happen (bis)
+### Let's See What Happens (bis)
 
 Now accessing the private property ```._name``` - BAD
 
