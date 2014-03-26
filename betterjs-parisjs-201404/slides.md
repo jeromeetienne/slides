@@ -189,7 +189,7 @@ Just to name a few...
 * unintrusive javascript library
 * focused on helping you write better javascript
 
-"Make writting JS safer, faster and easier"
+**"Make writting JS safer, faster and easier"**
 
 --
 
@@ -458,7 +458,7 @@ console.log('cat name is ', cat._name)
 
 ### Better.js Spirit
 
-"Make writting JS safer, faster and easier"
+**"Make writting JS safer, faster and easier"**
 
 * 100% plain javascript
 * earlier bug detections

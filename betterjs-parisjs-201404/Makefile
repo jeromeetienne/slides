@@ -1,7 +1,7 @@
 build:
 	cleaver slides.md
 
-buildDev:
+monitor:
 	cleaver watch slides.md
 
 server:
