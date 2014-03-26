@@ -13,6 +13,8 @@ output: index.html
 
 ## For A Better Javascript In Javascript
 
+## [Jerome Etienne](http://twitter.com/jerome_etienne)
+
 --
 
 ## A Better Javascript In Javascript ?
@@ -77,7 +79,7 @@ Heard the rumor of ```maybe``` operator in ES6 ?
 
 --
 
-## OK... so javascript is not perfect.
+## OK... so javascript is far from perfect.
 
 --
 
@@ -105,7 +107,11 @@ Heard the rumor of ```maybe``` operator in ES6 ?
 
 --
 
-# Why I Love Javascript
+## I Wasn't Kidding You :)
+
+--
+
+# Why Do I Love Javascript
 
 --
 
@@ -163,11 +169,11 @@ Just to name a few...
 
 --
 
-## Meanwhile we are stuck with javascript...
+## Meanwhile **we, the webdevs,** are stuck with javascript...
 
 --
 
-# Plain Old Javascript Power
+# Plain Old Javascript
 
 ## Engaged Super Power
 
@@ -305,7 +311,7 @@ cat('kitty', 'ten')
 // "Invalid arguments 1 - Should be Number"
 ```
 
-Error Immediatly detected and execution stopped
+**Error Immediatly detected and execution stopped**
 
 
 --
@@ -409,7 +415,7 @@ console.log('cat name is ', cat._name)
 // "Denied access to private property _name"
 ```
 
-Error Immediatly detected and execution stopped
+**Error Immediatly detected and execution stopped**
 
 --
 
@@ -442,13 +448,11 @@ Error Immediatly detected and execution stopped
 
 * 2 Major features
 * Both unseen in JS
-* Both helping you finding bugs earlier
 
+### Result
 
-### What Better.js is Doing
-
-* Strong Typing
-* Private Visibility
+* Helps you write Safer Javascript
+* Helps you find bug Earlier
 
 --
 
@@ -482,7 +486,6 @@ Error Immediatly detected and execution stopped
 --
 
 # Questions ?
-## [Jerome Etienne](http://twitter.com/jerome_etienne)
 
 
 
