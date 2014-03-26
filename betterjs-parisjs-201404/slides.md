@@ -83,46 +83,6 @@ Heard the rumor of ```maybe``` operator in ES6 ?
 
 --
 
-## Still...
-
-# I Love Javascript!
-
---
-
-## "This is the last thing you gonna see if you mess with javascript!" - [tweet](https://twitter.com/jerome_etienne/status/333203103472046080)
-
-<img width='60%' src='images/last_thing_you_gonna_see.jpg'/>
-
---
-
-## "Javascript fell from heaven!" - [tweet](https://twitter.com/jerome_etienne/status/333200144570929152")
-
-<img width='80%' src='images/fell_from_even.jpg'/>
-
---
-
-## "i love javascript THIIIIISSS much !" - [tweet](https://twitter.com/jerome_etienne/status/333195407620452352)
-
-<img width='80%' src='images/love_js_this_much.jpg'/>
-
---
-
-## I Wasn't Kidding You :)
-
---
-
-# Why Do I Love Javascript
-
---
-
-### Javascript is The King
-
-* Javascript is open standard
-* Javascript run everywhere
-* You can't beat that.
-
---
-
 ### How to deal with Javascript Issues
 
 * People are trying to fix them. Good
@@ -166,6 +126,58 @@ Just to name a few...
 
 * microsoft, google, mozilla, facebook...
 * estimated time to converge... **infinity+1** :)
+
+--
+
+## They All Attack Javascript
+
+--
+
+## But me...
+
+# I Love Javascript!
+
+--
+
+## I am the Javascript Knight 
+
+--
+
+## I am defending Javascript Against Evil Attackers
+
+--
+
+## "This is the last thing you gonna see if you mess with javascript!" - [tweet](https://twitter.com/jerome_etienne/status/333203103472046080)
+
+<img width='60%' src='images/last_thing_you_gonna_see.jpg'/>
+
+--
+
+## "Javascript fell from heaven!" - [tweet](https://twitter.com/jerome_etienne/status/333200144570929152")
+
+<img width='80%' src='images/fell_from_even.jpg'/>
+
+--
+
+## "i love javascript THIIIIISSS much !" - [tweet](https://twitter.com/jerome_etienne/status/333195407620452352)
+
+<img width='80%' src='images/love_js_this_much.jpg'/>
+
+--
+
+## I Wasn't Kidding You :)
+
+--
+
+# Why Do I Love Javascript
+
+--
+
+### Javascript is The King
+
+* Javascript is open standard
+* Javascript run everywhere
+* You can't beat that.
 
 --
 
