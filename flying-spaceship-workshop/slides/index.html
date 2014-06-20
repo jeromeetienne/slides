@@ -12,29 +12,19 @@
   font-size: 100%;
 }
 
-#wrapper {
-  width: 850px;
+.slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+}
+
+.slide-content {
+  width: 800px;
   height: 600px;
   overflow: hidden;
   margin: 80px auto 0 auto;
-}
-
-/* styles for print layout */
-#wrapper.nohide {
-  overflow: auto;
-  height: auto;
-  box-shadow: none;
-}
-
-#wrapper.nohide .slide {
-  margin-bottom: 30px;
-}
-/* /styles */
-
-.slide {
-  width: auto;
-  height: 540px;
   padding: 30px;
+
   font-weight: 200;
   font-size: 200%;
   line-height: 1.375;
@@ -46,7 +36,7 @@
   left: 20px;
 }
 
-.controls .arrow {
+.arrow {
   width: 0; height: 0;
   border: 30px solid #333;
   float: left;
@@ -60,7 +50,7 @@
   user-select: none;
 }
 
-.controls .prev {
+.prev {
   border-top-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -69,7 +59,7 @@
   border-right-width: 50px;
 }
 
-.controls .next {
+.next {
   border-top-color: transparent;
   border-bottom-color: transparent;
   border-right-color: transparent;
@@ -78,24 +68,24 @@
   border-right-width: 0;
 }
 
-.controls .prev:hover {
+.prev:hover {
   border-right-color: #888;
   cursor: pointer;
 }
 
-.controls .next:hover {
+.next:hover {
   border-left-color: #888;
   cursor: pointer;
 }
 
-.slide h1 {
+h1 {
   font-size: 300%;
   line-height: 1.2;
   text-align: center;
   margin: 170px 0 0;
 }
 
-.slide h2 {
+h2 {
   font-size: 100%;
   line-height: 1.2;
   margin: 5px 0;
@@ -103,7 +93,7 @@
   font-weight: 200;
 }
 
-.slide h3 {
+h3 {
   font-size: 140%;
   line-height: 1.2;
   border-bottom: 1px solid #aaa;
@@ -111,20 +101,20 @@
   padding-bottom: 15px;
 }
 
-.slide ul {
+ul {
   padding: 20px 0 0 60px;
   font-weight: 200;
   line-height: 1.375;
 }
 
-.slide .author h1.name {
+.author h1 {
   font-size: 170%;
   font-weight: 200;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.slide .author h3 {
+.author h3 {
   font-weight: 100;
   text-align: center;
   font-size: 95%;
@@ -145,14 +135,6 @@ pre {
   line-height: 1.3;
 }
 
-code {
-  background-color: #e7e7e7;
-}
-
-pre > code {
-  background-color: inherit;
-}
-
 .progress {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -164,34 +146,39 @@ pre > code {
   height: 3px;
   background-color: #b4b4b4;
 
-  -webkit-transition: width 0.1s ease-out;
-  -moz-transition: width 0.1s ease-out;
-  -o-transition: width 0.1s ease-out;
-  transition: width 0.1s ease-out;
+  -webkit-transition: width 0.05s ease-out;
+  -moz-transition: width 0.05s ease-out;
+  -o-transition: width 0.05s ease-out;
+  transition: width 0.05s ease-out;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 850px) {
-  #wrapper {
-    width: auto;
-  }
 
   body {
     font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
   }
 
   img {
     width: 100%;
   }
 
-  .slide h1 {
+  h1 {
     margin-top: 120px;
   }
 
-  .controls .prev, .controls .prev:hover {
+  .prev, .prev:hover {
     border-right-color: rgba(135, 135, 135, 0.5);
   }
 
-  .controls .next, .controls .next:hover {
+  .next, .next:hover {
     border-left-color: rgba(135, 135, 135, 0.5);
   }
 }
@@ -202,26 +189,210 @@ pre > code {
     overflow: hidden;
   }
 
-  #wrapper {
+  .slide-content {
+    padding: 10px;
     margin-top: 10px;
     height: 340px;
   }
 
-  .slide {
-    padding: 10px;
-    height: 340px;
-  }
-
-  .slide h1 {
+  h1 {
     margin-top: 50px;
   }
 
-  .slide ul {
+  ul {
     padding-left: 25px;
   }
 }
 
-    
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  .hidden {
+    display: inline;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  body {
+    margin: 0 auto !important;
+    border: 0;
+    padding: 0;
+    float: none !important;
+    overflow: visible;
+    background: none !important;
+    font-size: 52%;
+  }
+
+  .progress, .controls {
+    display: none;
+  }
+
+  .slide {
+    position: static;
+  }
+
+  .slide-content {
+    border: 1px solid #222;
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 3.5in;
+    overflow: visible;
+  }
+
+  .slide:nth-child(even) {
+    /* 2 slides per page */
+    page-break-before: always;
+  }
+}
+
+/*
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+*/
+
+code, pre {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: auto;
+  padding: 6px 10px;
+}
+
+code {
+  padding: 0 5px;
+}
+
+pre>code {
+  margin: 0; padding: 0;
+  border: none;
+  background: transparent;
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #998;
+  font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .nginx .title,
+pre .subst,
+pre .request,
+pre .status {
+  color: #333;
+  font-weight: bold
+}
+
+pre .number,
+pre .hexcolor,
+pre .ruby .constant {
+  color: #099;
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+  color: #d14
+}
+
+pre .title,
+pre .id {
+  color: #900;
+  font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .clojure .title,
+pre .subst {
+  font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .vhdl .literal,
+pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .lisp .body {
+  color: #008080
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .lisp .keyword,
+pre .tex .special,
+pre .prompt {
+  color: #990073
+}
+
+pre .built_in,
+pre .lisp .title,
+pre .clojure .built_in {
+  color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}
+
+
   </style>
 </head>
 <body>
@@ -229,28 +400,32 @@ pre > code {
     <div class="progress-bar"></div>
   </div>
 
-<div id="wrapper">
-    <section class="slide"><p><base target='_blank'/>
-<style>pre { background: lightgrey; font-size: 60%;}</style></p>
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><p><base target='_blank'/></p>
+<style>pre { background: lightgrey; font-size: 60%;}</style>
 
-<h1>Flying Spaceship</h1>
-
-<h2>A Mini Game in 3D with HTML5</h2></section>
-    <section class="slide"><h3>What we gonna do ?</h3>
-
+<h1 id="flying-spaceship">Flying Spaceship</h1>
+<h2 id="a-mini-game-in-3d-with-html5">A Mini Game in 3D with HTML5</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-2">
+    <section class="slide-content"><h3 id="what-we-gonna-do-">What we gonna do ?</h3>
 <ul>
-<li>a mini game called 'flying spaceship'</li>
+<li>a mini game called &#39;flying spaceship&#39;</li>
 <li>all in browser</li>
 <li>three.js to get 3d</li>
 <li>webaudio api to get sound</li>
-</ul></section>
-    <section class="slide"><h3>Expect Final Result</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h3 id="expect-final-result">Expect Final Result</h3>
 <p><a href="../step99.html">demo</a></p>
-
-<p><img src="images/screenshot-final-result.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h3>Steps</h3>
-
+<p><img src="images/screenshot-final-result.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h3 id="steps">Steps</h3>
 <ul>
 <li>threejs boilerplate</li>
 <li>then spaceships</li>
@@ -258,133 +433,146 @@ pre > code {
 <li>then planets and stars</li>
 <li>then collisions</li>
 <li>then sounds</li>
-</ul></section>
-    <section class="slide"><h1>Let's Get Started</h1></section>
-    <section class="slide"><h3>Install three.js boilerplate</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h1 id="let-s-get-started">Let&#39;s Get Started</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h3 id="install-three-js-boilerplate">Install three.js boilerplate</h3>
 <ul>
 <li>Basic WebGL Page</li>
 <li>only a moving cube</li>
 <li>best practices already setup</li>
 <li>tunable thru yeoman</li>
-</ul></section>
-    <section class="slide"><h3>Three.js + yeoman</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h3 id="three-js-yeoman">Three.js + yeoman</h3>
 <ul>
 <li>effort by google</li>
-<li>"Modern Workflow for WebApps"</li>
+<li>&quot;Modern Workflow for WebApps&quot;</li>
 <li>Composed of 3 tools: <a href="http://yeoman.io/packagemanager.html">bower</a>
 / <a href="http://gruntjs.com/">grunt</a>
 / <a href="https://github.com/yeoman/yo">yo</a></li>
 </ul>
-
-<h3>Smoother</h3>
-
+<h3 id="smoother">Smoother</h3>
 <ul>
 <li>used to generate boilerplate with yo</li>
 <li>used to handle packages with bower</li>
 <li><strong>but not required</strong></li>
-</ul></section>
-    <section class="slide"><h3>Install three.js boilerplate</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h3 id="install-three-js-boilerplate">Install three.js boilerplate</h3>
 <p>Make folder </p>
-
 <pre><code>mkdir flyingspaceship
-cd flyingspaceship
-</code></pre>
-
+cd flyingspaceship</code></pre>
 <p>Generate boilerplate with yeoman</p>
-
-<pre><code>yo threejs-boilerplate
-</code></pre></section>
-    <section class="slide"><h3>Install three.js boilerplate</h3>
-
+<pre><code>yo threejs-boilerplate</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="install-three-js-boilerplate">Install three.js boilerplate</h3>
 <p>Serves Static Files</p>
-
-<pre><code>make server
-</code></pre></section>
-    <section class="slide"><h3>Result</h3>
-
+<pre><code>make server</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="result">Result</h3>
 <p><a href="../step0-00-naked-boilerplate.html">demo</a></p>
-
-<p><img src="images/step0-00-naked-boilerplate.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>That's a start...</h2>
-
-<h1>Let's Add SpaceShips</h1></section>
-    <section class="slide"><h3>threex.spaceships</h3>
-
+<p><img src="images/step0-00-naked-boilerplate.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h2 id="that-s-a-start-">That&#39;s a start...</h2>
+<h1 id="let-s-add-spaceships">Let&#39;s Add SpaceShips</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="threex-spaceships">threex.spaceships</h3>
 <ul>
 <li>got it from threex extensions</li>
 <li>install with bower</li>
 <li>or get the files on <a href="https://github.com/jeromeetienne/threex.spaceships">github</a></li>
 </ul>
-
-<p><code>
-bower install threex.spaceships
-</code></p></section>
-    <section class="slide"><h1>Wait!</h1>
-
-<h2>What is threex ?</h2></section>
-    <section class="slide"><h3>A Bit on threex ?</h3>
-
+<pre><code>bower install threex.spaceships</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h1 id="wait-">Wait!</h1>
+<h2 id="what-is-threex-">What is threex ?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="a-bit-on-threex-">A Bit on threex ?</h3>
 <ul>
 <li>ultra light extension system for <a href="http://mrdoob.github.io/three.js/">three.js</a></li>
-<li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github - 28 modules and counting</li>
+<li><a href="http://jeromeetienne.github.io/threex/">threex</a> on github - 44 modules and counting</li>
 </ul>
-
-<p><img src='images/screenshot-threex-homepage.png' width='100%' height='400px'></iframe></p></section>
-    <section class="slide"><h3>threex modules with require.js</h3>
-
+<p><img src='images/screenshot-threex-homepage.png' width='100%' height='400px'></iframe></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="threex-modules-with-require-js">threex modules with require.js</h3>
 <ul>
 <li>Most threex extension support require.js</li>
 <li>Convention: <code>package.require.js</code> at project root</li>
 <li>require this file to load the module</li>
 </ul>
-
-<h3>Required ?</h3>
-
+<h3 id="required-">Required ?</h3>
 <ul>
 <li>Optional</li>
 <li>Feel free to pick another tech if you wish</li>
 <li>Faster to dev tho</li>
-</ul></section>
-    <section class="slide"><h3>Include it in the code</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="include-it-in-the-code">Include it in the code</h3>
 <p>Find the require line and add</p>
-
-<pre><code>require([ 'bower_components/threex.spaceships/package.require.js'
-    , 'bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/OBJMTLLoader.js'
-    , 'bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/OBJLoader.js'
-    , 'bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/MTLLoader.js'
+<pre><code>require([ &#39;bower_components/threex.spaceships/package.require.js&#39;
+    , &#39;bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/OBJMTLLoader.js&#39;
+    , &#39;bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/OBJLoader.js&#39;
+    , &#39;bower_components/threex.spaceships/examples/vendor/three.js/examples/js/loaders/MTLLoader.js&#39;
         ], function(){
     // ...     
-});
-</code></pre></section>
-    <section class="slide"><h3>Add SpaceShip</h3>
-
+});</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="add-spaceship">Add SpaceShip</h3>
 <p>put that after the scene init</p>
-
 <pre><code>var spaceship   = null;
 THREEx.SpaceShips.loadSpaceFighter03(function(object3d){
     scene.add(object3d)
     spaceship   = object3d
-})
-</code></pre></section>
-    <section class="slide"><h3>Result</h3>
-
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="result">Result</h3>
 <p><a href="../step1-00-spaceship-cube.html">demo</a></p>
-
-<p><img src="images/step1-00-spaceship-cube.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>Almost... Let's remove the cube :)</h2>
-
+<p><img src="images/step1-00-spaceship-cube.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h2 id="almost-let-s-remove-the-cube-">Almost... Let&#39;s remove the cube :)</h2>
 <p><a href="../step1-01-naked-spaceship.html">demo</a></p>
-
-<p><img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>Not Bad... lack of interactivity</h2>
-
-<h1>Controls by Keyboard</h1></section>
-    <section class="slide"><h3>threex.keyboardstate</h3>
-
+<p><img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h2 id="not-bad-lack-of-interactivity">Not Bad... lack of interactivity</h2>
+<h1 id="controls-by-keyboard">Controls by Keyboard</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="threex-keyboardstate">threex.keyboardstate</h3>
 <ul>
 <li>to keep the current state of the keyboard.</li>
 <li>threex module for three.js</li>
@@ -392,47 +580,46 @@ THREEx.SpaceShips.loadSpaceFighter03(function(object3d){
 / <a href="http://jeromeetienne.github.io/threex.keyboardstate/examples/basic.html">demo</a></li>
 <li>blog post explaining internals <a href="http://learningthreejs.com/blog/2011/09/12/lets-Make-a-3D-game-keyboard/">here</a></li>
 <li>with bower and require.js again</li>
-</ul></section>
-    <section class="slide"><h3>Basic Usage</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h3 id="basic-usage">Basic Usage</h3>
 <pre><code>var keyboard  = new THREEx.KeyboardState();
-if( keyboard.pressed("shift+H") ){
-    console.log('you are pressing shift and H')
-}
-</code></pre></section>
-    <section class="slide"><h3>threex.keyboardstate setup</h3>
-
+if( keyboard.pressed(&quot;shift+H&quot;) ){
+    console.log(&#39;you are pressing shift and H&#39;)
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="threex-keyboardstate-setup">threex.keyboardstate setup</h3>
 <p>Install it with bower</p>
-
 <p><code>bower install threex.keyboardstate</code></p>
-
 <p>Include it with require.js</p>
-
-<pre><code>require([ 'bower_components/threex.keyboardstate/package.require.js'
+<pre><code>require([ &#39;bower_components/threex.keyboardstate/package.require.js&#39;
         ], function(){
         // ...     
-});
-</code></pre>
-
-<p>Done... not too hard like last time</p></section>
-    <section class="slide"><h3>Controls Player With Keyboard</h3>
-
+});</code></pre>
+<p>Done... not too hard like last time</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="controls-player-with-keyboard">Controls Player With Keyboard</h3>
 <p>The Algo</p>
-
 <ul>
 <li>add a function in the rendering loop</li>
 <li>monitor keyboard state</li>
 <li>move spaceship accordingly</li>
 </ul>
-
 <p>Pitfalls</p>
-
 <ul>
 <li>async in spaceship loading</li>
 <li>speed independent of fps</li>
-</ul></section>
-    <section class="slide"><h3>The Code</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="the-code">The Code</h3>
 <pre><code>// create keyboard instance
 var keyboard  = new THREEx.KeyboardState();
 
@@ -445,172 +632,183 @@ onRenderFcts.push(function(delta, now){
     // set the speed
     var speed = 1;
     // only if spaceships is loaded
-    if( keyboard.pressed('down') ){
+    if( keyboard.pressed(&#39;down&#39;) ){
         spaceship.position.y  -= speed * delta;
-    }else if( keyboard.pressed('up') ){
+    }else if( keyboard.pressed(&#39;up&#39;) ){
         spaceship.position.y  += speed * delta;
     }
 
-})
-</code></pre></section>
-    <section class="slide"><h3>Result</h3>
-
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h3 id="result">Result</h3>
 <p><a href="../step2-00-with-keyboard.html">demo</a></p>
-
-<p><img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>What goes well with spaceships ?</h2>
-
-<h1>Let's add planets</h1></section>
-    <section class="slide"><h3>threex.planets</h3>
-
+<p><img src="images/step1-01-naked-spaceship.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h2 id="what-goes-well-with-spaceships-">What goes well with spaceships ?</h2>
+<h1 id="let-s-add-planets">Let&#39;s add planets</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h3 id="threex-planets">threex.planets</h3>
 <ul>
 <li>content module for threex</li>
 <li>available in <a href="https://github.com/jeromeetienne/threex.planets">threex.planets</a></li>
 <li>blog post explaining internals <a href="http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/">here</a></li>
 <li>with bower and require.js again</li>
-</ul></section>
-    <section class="slide"><h3>Earth demo <a href="http://jeromeetienne.github.io/threex.planets/examples/earth.html">link</a></h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><h3 id="earth-demo-link-http-jeromeetienne-github-io-threex-planets-examples-earth-html-">Earth demo <a href="http://jeromeetienne.github.io/threex.planets/examples/earth.html">link</a></h3>
 <p>Earth, cloud, atmosphere, stars, moon, shadow</p>
-
-<p><img src="images/screenshot-threex-planets-demo-earth.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h3>Select Any planets  <a href="http://jeromeetienne.github.io/threex.planets/examples/select.html#Uranus">link</a></h3>
-
+<p><img src="images/screenshot-threex-planets-demo-earth.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="select-any-planets-link-http-jeromeetienne-github-io-threex-planets-examples-select-html-uranus-">Select Any planets  <a href="http://jeromeetienne.github.io/threex.planets/examples/select.html#Uranus">link</a></h3>
 <p>based on <a href="http://planetpixelemporium.com/planets.html">planetpixelemporium</a></p>
-
-<p><img src="images/screenshot-threex-planets-examples-select.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h3>threex planets with bower</h3>
-
+<p><img src="images/screenshot-threex-planets-examples-select.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h3 id="threex-planets-with-bower">threex planets with bower</h3>
 <p><code>bower install threex.planets</code></p>
-
 <p>Now it is in <code>bower_components/threex.planets/</code></p>
-
-<p>Rather Easy...</p></section>
-    <section class="slide"><h3>threex planets with require.js</h3>
-
+<p>Rather Easy...</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="threex-planets-with-require-js">threex planets with require.js</h3>
 <p>Find require.js call in the header and put that</p>
-
-<pre><code>require([ 'bower_components/threex.planets/package.require.js'
+<pre><code>require([ &#39;bower_components/threex.planets/package.require.js&#39;
         ], function(){
         // ...     
-});
-</code></pre>
-
-<p>Done... not too hard</p></section>
-    <section class="slide"><h3>The Code</h3>
-
+});</code></pre>
+<p>Done... not too hard</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h3 id="the-code">The Code</h3>
 <pre><code>var moonMesh  = THREEx.Planets.createMoon()
-scene.add(moonMesh)
-</code></pre></section>
-    <section class="slide"><h3>The Result <a href="../step3-00-simple-moon.html">link</a></h3>
-
-<p><img src="images/step3-00-simple-moon.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>a bit overcrowded</h2></section>
-    <section class="slide"><h3>Move Spaceship Away</h3>
-
+scene.add(moonMesh)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h3 id="the-result-link-step3-00-simple-moon-html-">The Result <a href="../step3-00-simple-moon.html">link</a></h3>
+<p><img src="images/step3-00-simple-moon.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h2 id="a-bit-overcrowded">a bit overcrowded</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h3 id="move-spaceship-away">Move Spaceship Away</h3>
 <pre><code>spaceship   = object3d
 spaceship.rotateY(Math.PI/2)
-spaceship.position.x    = -1
-</code></pre>
-
+spaceship.position.x    = -1</code></pre>
 <p>The Result <a href="../step3-01-spaceship-away-moon.html">link</a></p>
-
-<p><img src="images/step3-01-spaceship-away-moon.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h3>Make The Moon Moves</h3>
-
+<p><img src="images/step3-01-spaceship-away-moon.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="make-the-moon-moves">Make The Moon Moves</h3>
 <p>Initial position</p>
-
 <pre><code>function resetMoon(){
     moonMesh.position.x = 5
     moonMesh.position.x += 5 * (Math.random()-0.5)
     moonMesh.position.y = 2 * (Math.random()-0.5)       
 }
-resetMoon()
-</code></pre></section>
-    <section class="slide"><h3>Make The Moon Moves</h3>
-
+resetMoon()</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h3 id="make-the-moon-moves">Make The Moon Moves</h3>
 <p>Animate the moon and handle limits</p>
-
 <pre><code>onRenderFcts.push(function(delta, now){
     // move the moon to the left
     moonMesh.position.x += -1 * delta;
     // make it warp
     if( moonMesh.position.x &lt; -3 )  resetMoon()
-})
-</code></pre></section>
-    <section class="slide"><h3>The Result <a href="../step3-02-moving-moon.html">link</a></h3>
-
-<p><img src="images/step3-02-moving-moon.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>Grey Background ? Not Too Shabby</h2>
-
-<h1>Let's add Stars!</h1></section>
-    <section class="slide"><h3>Stars</h3>
-
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><h3 id="the-result-link-step3-02-moving-moon-html-">The Result <a href="../step3-02-moving-moon.html">link</a></h3>
+<p><img src="images/step3-02-moving-moon.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h2 id="grey-background-not-too-shabby">Grey Background ? Not Too Shabby</h2>
+<h1 id="let-s-add-stars-">Let&#39;s add Stars!</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><h3 id="stars">Stars</h3>
 <ul>
 <li>part of threex.planets</li>
 <li>no install needed</li>
-</ul></section>
-    <section class="slide"><h3>How ? with a <em>environmantal sphere</em></h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h3 id="how-with-a-environmantal-sphere-">How ? with a <em>environmantal sphere</em></h3>
 <ul>
 <li>Large Sphere</li>
 <li>we are at its center</li>
 <li>we see the inside of it</li>
 <li>with a proper texture it does the tricks</li>
-</ul></section>
-    <section class="slide"><h3>The Texture</h3>
-
-<p>Part of threex.spaceships module</p>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><h3 id="the-texture">The Texture</h3>
+<p>Part of threex.planets module</p>
 <iframe src='../bower_components/threex.planets/examples/images/galaxy_starfield.png' width='100%' height='400px'></iframe></section>
-    <section class="slide"><h3>The Code</h3>
-
-<p>a geometry</p>
-
-<pre><code>var geometry  = new THREE.SphereGeometry(90, 32, 32)
-</code></pre>
-
-<p>a material</p>
-
-<pre><code>var url   = 'bower_components/threex.planets/examples/images/galaxy_starfield.png'
-var material  = new THREE.MeshBasicMaterial({
-  map : THREE.ImageUtils.loadTexture(url),
-  side  : THREE.BackSide
-})
-</code></pre>
-
-<p>a mesh</p>
-
-<pre><code>var starSphere  = new THREE.Mesh(geometry, material)
-scene.add(starSphere)
-</code></pre></section>
-    <section class="slide"><h3>The Result <a href="../step4-00-stars-sphere.html">link</a></h3>
-
-<p><img src="images/step4-00-stars-sphere.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>a bit of Game Play</h2>
-
-<h1>Let's add Collision</h1></section>
-    <section class="slide"><h3>Collision for GamePlay</h3>
-
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h3 id="the-code">The Code</h3>
+<pre><code>var starSphere  = THREEx.Planets.createStarfield()
+scene.add(starSphere)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h3 id="the-result-link-step4-00-stars-sphere-html-">The Result <a href="../step4-00-stars-sphere.html">link</a></h3>
+<p><img src="images/step4-00-stars-sphere.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><h2 id="a-bit-of-game-play">a bit of Game Play</h2>
+<h1 id="let-s-add-collision">Let&#39;s add Collision</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-47">
+    <section class="slide-content"><h3 id="collision-for-gameplay">Collision for GamePlay</h3>
 <ul>
 <li><strong>Goal</strong>: destroy moons</li>
 <li><strong>Means</strong>: going thru the moon destroy it</li>
-</ul></section>
-    <section class="slide"><h3>Algo</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-48">
+    <section class="slide-content"><h3 id="algo">Algo</h3>
 <ul>
 <li>collide if distance &lt; 3</li>
 <li>if contact, reset moon position</li>
 </ul>
-
-<h3>Pitfalls</h3>
-
+<h3 id="pitfalls">Pitfalls</h3>
 <ul>
 <li>async model loading</li>
-<li>spaceship isn't spheric</li>
-</ul></section>
-    <section class="slide"><h3>Code to add</h3>
-
+<li>spaceship isn&#39;t spheric</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-49">
+    <section class="slide-content"><h3 id="code-to-add">Code to add</h3>
 <pre><code>onRenderFcts.push(function(delta, now){
 
     // only if the spaceship is loaded
@@ -621,53 +819,56 @@ scene.add(starSphere)
     if( distance &lt; 0.3 ){
         resetMoon()
     }
-})
-</code></pre></section>
-    <section class="slide"><h3>The Result <a href="../step5-00-collision.html">link</a></h3>
-
-<p><img src="images/step5-00-collision.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>What about sounds</h2>
-
-<h1>Let's make some noise</h1></section>
-    <section class="slide"><h3>Use Web Audio API</h3>
-
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-50">
+    <section class="slide-content"><h3 id="the-result-link-step5-00-collision-html-">The Result <a href="../step5-00-collision.html">link</a></h3>
+<p><img src="images/step5-00-collision.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-51">
+    <section class="slide-content"><h2 id="what-about-sounds">What about sounds</h2>
+<h1 id="let-s-make-some-noise">Let&#39;s make some noise</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h3 id="use-web-audio-api">Use Web Audio API</h3>
 <ul>
 <li>low latency sound API for games</li>
 <li><a href="https://github.com/jeromeetienne/webaudiox">webaudiox.js</a> : bunch of helpers</li>
 <li>heavily documented</li>
 <li>Explosion Sound from <a href="http://www.freesound.org">freesounds.org</a></li>
-</ul></section>
-    <section class="slide"><h3>Installation with bower</h3>
-
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><h3 id="installation-with-bower">Installation with bower</h3>
 <p><code>bower install webaudiox</code></p>
-
 <p>now files are in <code>bower_components/webaudiox</code> as usual</p>
-
-<h3>Include it with require.js</h3>
-
-<pre><code>require([ 'bower_components/webaudiox/build/webaudiox.js'
+<h3 id="include-it-with-require-js">Include it with require.js</h3>
+<pre><code>require([ &#39;bower_components/webaudiox/build/webaudiox.js&#39;
         ], function(){
         // ...     
-});
-</code></pre></section>
-    <section class="slide"><h3>Init Web Audio</h3>
-
+});</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><h3 id="init-web-audio">Init Web Audio</h3>
 <pre><code>var context = new AudioContext()
 var lineOut = new WebAudiox.LineOut(context)
-lineOut.volume  = 0.2
-</code></pre>
-
-<h3>Load Sound</h3>
-
+lineOut.volume  = 0.2</code></pre>
+<h3 id="load-sound">Load Sound</h3>
 <pre><code>var soundBuffer;
 // load the sound
-var soundUrl    = 'sounds/102720__sarge4267__explosion.wav'
+var soundUrl    = &#39;sounds/102720__sarge4267__explosion.wav&#39;
 WebAudiox.loadBuffer(context, soundUrl, function(buffer){
     soundBuffer = buffer
-})
-</code></pre></section>
-    <section class="slide"><h3>Function to play</h3>
-
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><h3 id="function-to-play">Function to play</h3>
 <pre><code>// setup a play function
 function playExplosionSound(){
     if( !soundBuffer )  return
@@ -676,25 +877,27 @@ function playExplosionSound(){
     source.connect(lineOut.destination)
     source.start(0)
     return source
-}
-</code></pre>
-
-<h3>Play Sound on contact</h3>
-
+}</code></pre>
+<h3 id="play-sound-on-contact">Play Sound on contact</h3>
 <pre><code>    var distance    = moonMesh.position.distanceTo(spaceship.position)
     if( distance &lt; 0.3 ){
         resetMoon()
         playExplosionSound()
-    }
-</code></pre></section>
-    <section class="slide"><h3>Result <a href="../step6-00-explosion.html">link</a></h3>
-
-<p><img src="images/step6-00-explosion.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h2>and we are ...</h2>
-
-<h1>DONE!</h1></section>
-    <section class="slide"><h3>Let's Pat our back</h3>
-
+    }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-56">
+    <section class="slide-content"><h3 id="result-link-step6-00-explosion-html-">Result <a href="../step6-00-explosion.html">link</a></h3>
+<p><img src="images/step6-00-explosion.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-57">
+    <section class="slide-content"><h2 id="and-we-are-">and we are ...</h2>
+<h1 id="done-">DONE!</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-58">
+    <section class="slide-content"><h3 id="let-s-pat-our-back">Let&#39;s Pat our back</h3>
 <ul>
 <li>pure html5 game</li>
 <li>3d models</li>
@@ -702,174 +905,154 @@ function playExplosionSound(){
 <li>sounds</li>
 <li>mini gameplay</li>
 </ul>
-
-<h4>not bad!</h4></section>
-    <section class="slide"><h3>Result <a href="../step99.html">link</a></h3>
-
-<p><img src="images/step99.png" style="width: 80%;"/></p></section>
-    <section class="slide"><h3>not bad for less than 1h</h3>
-
+<h4 id="not-bad-">not bad!</h4>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-59">
+    <section class="slide-content"><h3 id="result-link-step99-html-">Result <a href="../step99.html">link</a></h3>
+<p><img src="images/step99.png" style="width: 80%;"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-60">
+    <section class="slide-content"><h3 id="not-bad-for-less-than-1h">not bad for less than 1h</h3>
 <ul>
 <li>Thanks to threex modules</li>
 <li>Thanks to three.js boilerplate</li>
 <li>Thanks to yeoman</li>
 </ul>
-
-<h4>Make it real easy</h4></section>
-    <section class="slide"><div class="author">
+<h4 id="make-it-real-easy">Make it real easy</h4>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-61">
+    <section class="slide-content"><div class="author">
   <h1 class="name">Jerome Etienne</h1>
-  <h3 class="twitter">
-    <a href="http://twitter.com/@jerome_etienne" tabindex="-1">@jerome_etienne</a>
-  </h3>
-  <h3 class="url">
-    <a href="http://jetienne.com" tabindex="-1">http://jetienne.com</a>
-  </h3>
+    <h3 class="twitter">
+      <a href="http://twitter.com/@jerome_etienne">@jerome_etienne</a>
+    </h3>
+    <h3 class="url">
+      <a href="http://jetienne.com">http://jetienne.com</a>
+    </h3>
 </div>
 </section>
-</div>
+  </div>
+
   <div class="controls">
     <div class="arrow prev"></div>
     <div class="arrow next"></div>
   </div>
 
-<script type="text/javascript">
-  /**
- * Takes the last slide and places it at the front.
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
  */
-function goBack() {
-  var wrapper = document.querySelector('#wrapper');
-  var lastSlide = wrapper.lastChild;
-  while (lastSlide != null && lastSlide.nodeType !== 1) {
-    lastSlide = lastSlide.previousSibling;
-  }
-
-  wrapper.removeChild(lastSlide);
-  wrapper.insertBefore(lastSlide, wrapper.firstChild);
-
-  setCurrentProgress();
-  updateURL();
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
 }
+
 
 /**
- * Takes the first slide and places it at the end.
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
  */
-function goForward() {
-  var wrapper = document.querySelector('#wrapper');
-  var firstSlide = wrapper.firstChild;
-  while (firstSlide != null && firstSlide.nodeType !== 1) {
-    firstSlide = firstSlide.nextSibling;
-  }
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
 
-  wrapper.removeChild(firstSlide);
-  wrapper.appendChild(firstSlide);
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
 
-  setCurrentProgress();
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
   updateURL();
+  updateTabIndex();
 }
+
 
 /**
  * Updates the current URL to include a hashtag of the current page number.
  */
 function updateURL() {
-  window.history.replaceState({} , null, '#' + currentPage());
+  window.history.replaceState({} , null, '#' + currentPosition());
 }
 
-/**
- * Returns the current page number of the presentation.
- */
-function currentPage() {
-  return document.querySelector('#wrapper .slide').dataset.page;
-}
 
 /**
- * Returns a NodeList of each .slide element.
+ * Sets the progress indicator.
  */
-function allSlides() {
-  return document.querySelectorAll('#wrapper .slide');
-}
-
-/**
- * Give each slide a "page" data attribute.
- */
-function setPageNumbers() {
-  var wrapper = document.querySelector('#wrapper');
-  var pages   = wrapper.querySelectorAll('section');
-  var page;
-
-  for (var i = 0; i < pages.length; ++i) {
-    page = pages[i];
-    page.dataset.page = i;
-  }
-}
-
-/**
- * Set the current progress indicator.
- */
-function setCurrentProgress() {
-  var wrapper = document.querySelector('#wrapper');
+function updateProgress() {
   var progressBar = document.querySelector('.progress-bar');
 
   if (progressBar !== null) {
-    var pagesNumber    = wrapper.querySelectorAll('section').length;
-    var currentNumber  = parseInt(currentPage());
-    var currentPercent = pagesNumber === 1 ? 100 : 100 * currentNumber / (pagesNumber - 1);
-    progressBar.style.width = currentPercent.toString() + '%';
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
   }
 }
+
 
 /**
- * Go to the specified page of content.
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
  */
-function goToPage(page) {
-  // Try to find the target slide.
-  var targetSlide = document.querySelector('#wrapper .slide[data-page="' + page + '"]');
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
 
-  // If it actually exists, go forward until we find it.
-  if (targetSlide) {
-    var numSlides = allSlides().length;
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
 
-    for (var i = 0; currentPage() != page && i < numSlides; i++) {
-      goForward();
-    }
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
   }
 }
 
-window.onload = function () {
-
-  // Give each slide a "page" data attribute.
-  setPageNumbers();
+document.addEventListener('DOMContentLoaded', function () {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex();
 
   // If the location hash specifies a page number, go to it.
   var page = window.location.hash.slice(1);
-  if (page) goToPage(page);
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
 
   document.onkeydown = function (e) {
     var kc = e.keyCode;
 
-    // left, down, H, J, backspace - BACK
-    // up, right, K, L, space, enter - FORWARD
-    if (kc == 37 || kc == 40 || kc == 8 || kc == 72 || kc == 74) {
-      goBack();
-    } else if (kc == 38 || kc == 39 || kc == 13 || kc == 32 || kc == 75 || kc == 76) {
-      goForward();
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, enter, PgDn - FORWARD
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 13 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
     }
-  }
+  };
 
   if (document.querySelector('.next') && document.querySelector('.prev')) {
     document.querySelector('.next').onclick = function (e) {
       e.preventDefault();
-      goForward();
-    }
+      navigate(1);
+    };
 
     document.querySelector('.prev').onclick = function (e) {
       e.preventDefault();
-      goBack();
-    }
+      navigate(-1);
+    };
   }
+});
 
-}
 
-</script>
-
+  </script>
 </body>
 </html>

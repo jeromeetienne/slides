@@ -125,7 +125,7 @@ bower install threex.spaceships
 ### A Bit on threex ?
 
 * ultra light extension system for [three.js](http://mrdoob.github.io/three.js/)
-* [threex](http://jeromeetienne.github.io/threex/) on github - 28 modules and counting
+* [threex](http://jeromeetienne.github.io/threex/) on github - 44 modules and counting
 
 <img src='images/screenshot-threex-homepage.png' width='100%' height='400px'></iframe>
 
@@ -420,7 +420,7 @@ Animate the moon and handle limits
 
 ### The Texture
 
-Part of threex.spaceships module
+Part of threex.planets module
 
 <iframe src='../bower_components/threex.planets/examples/images/galaxy_starfield.png' width='100%' height='400px'></iframe>
 
@@ -428,21 +428,7 @@ Part of threex.spaceships module
 
 ### The Code
 
-a geometry
-
-    var geometry  = new THREE.SphereGeometry(90, 32, 32)
-
-a material
-
-    var url   = 'bower_components/threex.planets/examples/images/galaxy_starfield.png'
-    var material  = new THREE.MeshBasicMaterial({
-      map : THREE.ImageUtils.loadTexture(url),
-      side  : THREE.BackSide
-    })
-
-a mesh
-
-    var starSphere  = new THREE.Mesh(geometry, material)
+    var starSphere  = THREEx.Planets.createStarfield()
     scene.add(starSphere)
 
 --
