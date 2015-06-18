@@ -725,7 +725,7 @@ gamesound.play({
 
 ## here is a virtual game console
 
-# [demo](http://jetienne.com/games/)
+# [demo](http://jetienne.com/portfolio/room/#threejsgames)
 
 --
 
@@ -752,7 +752,7 @@ gamesound.play({
 
 ### Demo Time!
 
-[demo](http://jetienne.com/games/)
+[demo](http://jetienne.com/portfolio/room/#threejsgames)
 
 <img src='images/screenshot-videogames.png' width='100%'/>
 
@@ -807,7 +807,7 @@ scene.add(mesh)
 
 ### threex.domevents.js
 
-[repo](https://github.com/jeromeetienne/threex.domevents) - [demo](http://jeromeetienne.github.io/threex.domevents/examples/basic.html)
+[repo](https://github.com/jeromeetienne/threex.domevents) - [demo](http://jeromeetienne.github.io/threex.domevents/examples/demo.html)
 
 <img src='images/threex.domevents.png' width='100%'/>
 
