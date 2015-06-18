@@ -201,73 +201,23 @@ Several possibilities, we focused on
 
 ---
 
-# Blank
------------------------------------------
+# 
 
 ---
 
-# Blank
------------------------------------------
+### Overview of the code
 
-
----
-
-# Blank
----------------------------------------------
+- See [README.md](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/README.md) for Details
+- [threex.jsarucomarker.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.jsarucomarker.js)
+- [threex.webcamgrabbing.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.webcamgrabbing.js)
 
 ---
 
-# Demos
+### Examples walk through
 
-- TODO explains each demo
-- TODO what could be reused
-- TODO inpire people
-
----
-
-# Blank
----------------------------------------------
-
-
----
-
-# How Does Web Compare with Native ?
-
----
-
-## Well it depends... :)
-
----
-
-### PRO Native
-- Better controls on running platform
-  - e.g. can't read webcam in ios browser 
-  - but possible in ios native 
-- More efficient
-  - native typically run faster
-  - less latency.
-
----
-
-### PRO Web
-- Lots less code to write
-  - no need for android version + ios version
-- Easier to learn
-  - More standard
-  - Less Varied
-
----
-
-### Choosing Between Native and Web
-
-- It depends on your goals
-
-- For serious, long term project, native may be better
-
-- For fun, short project, go for web technology
-
-
-<!-- TODO find transition -->
+- [basic.html](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html) to see a simple application
+- [data-visualization-histogram3d.html](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html) to visualize industrial information you got from a devices
+- [contact-sharing-in-ar.html](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html) to display information based on a given markerId
 
 ---
 
@@ -306,7 +256,11 @@ Several possibilities, we focused on
 
 ---
 
-# Experiment with Markers
+# Markers
+
+---
+
+## They are the base
 
 ---
 
@@ -319,6 +273,10 @@ Several possibilities, we focused on
 
 ---
 
+TODO put a picture
+
+---
+
 ### Display it on Mobile
 
 - Load the image on your phone or tablet
@@ -328,9 +286,17 @@ Several possibilities, we focused on
 
 ---
 
+TODO put a picture
+
+---
+
 ### Where to put the marker ?
 
 In front of the camera :)
+
+---
+
+## Typically 2 setups
 
 ---
 
@@ -354,6 +320,55 @@ TODO image of moving camera app
 
 TODO image of moving marker app
 
+---
+
+## All that seems nice !
+
+---
+
+## What about performance ?
+
+---
+
+# How Does Web Compare with Native ?
+
+---
+
+## Well it depends... :)
+
+---
+
+### PRO Web
+- Lots less code to write
+  - no need for android version + ios version
+- Easier to learn
+  - More standard
+  - Less Varied
+
+---
+
+### PRO Native
+- Better controls on running platform
+  - e.g. can't read webcam in ios browser 
+  - but possible in ios native 
+- More efficient
+  - native typically run faster
+  - less latency.
+  - more battery life
+
+---
+
+### Choosing Between Native and Web
+
+- It depends on your goals
+
+- For serious, long term project, native may be better
+
+- For fun, short project, go for web technology
+
+---
+
+<!-- Transition -->
 
 ---
 
