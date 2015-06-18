@@ -18,7 +18,7 @@ output: index.html
 
 ### Who i Am ?
 
-- The author of [Learning Three.js Blog](http://learningthreejs.com/)
+- Best Known author of [Learning Three.js Blog](http://learningthreejs.com/)
 - Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
 - Lead for
 Three.js Team at [Daqri](http://daqri.com) in Dublin
@@ -31,9 +31,9 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-#### Doing AR 
+#### To Do AR 
 
-#### with Web Technology 
+#### With Web Technology 
 
 #### And Open Source
 
@@ -43,7 +43,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## Let's see What We Need
+## Fist, Let's see What We Need.
 
 ---
 
@@ -84,7 +84,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## All the Ingredients are there...
+## All the Ingredients needed For AR are there...
 
 ---
 
@@ -106,10 +106,11 @@ model by [@superhoge](https://twitter.com/superhoge)
 
 ---
 
-### Being Awesome - [link][https://twitter.com/jerome_etienne/status/608743377077739520]
+### Being Awesome - [link](https://twitter.com/jerome_etienne/status/608743377077739520)
 
-<img src="images/being-awesome.jpg" width="50%">
+<img src="images/being-awesome.jpg">
 
+--- A wine would be better
 
 ---
 
