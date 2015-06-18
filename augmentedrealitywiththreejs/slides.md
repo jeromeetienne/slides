@@ -88,13 +88,50 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
+### Sample Code
+
+- Code for you to build on
+- Thus you focus on your own apps
+- Available on [github](https://github.com/jeromeetienne/arplayerforthreejs)
+
+---
+
+## Let's See What We Can Do With It
+
+---
+
 # Demo Time
 
 ---
 
-TODO here show video of each the Demo
-- video is safer
-- no live
+### Being Awesome - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html)
+
+<img src="images/being-awesome.jpg" width='100%'>
+
+<!-- TODO A vine would be better  -->
+<!-- TODO link to source in github -->
+
+---
+
+### Data Visualisation
+
+Dynamic histogram in AR
+
+<img src="images/data-visualization-historgram3d.png" width='80%'>
+
+<!-- TODO A vine would be better  -->
+<!-- TODO link to source in github -->
+
+---
+
+### Contact Sharing in AR
+
+Dynamic histogram in AR
+
+<img src="images/contact-sharing.png" width='80%'>
+
+<!-- TODO A vine would be better  -->
+<!-- TODO link to source in github -->
 
 ---
 
@@ -104,13 +141,6 @@ model by [@superhoge](https://twitter.com/superhoge)
 
 <iframe src="https://vine.co/v/eApD5rPtKxT/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
----
-
-### Being Awesome - [link](https://twitter.com/jerome_etienne/status/608743377077739520)
-
-<img src="images/being-awesome.jpg">
-
---- A wine would be better
 
 ---
 
@@ -179,6 +209,26 @@ Several possibilities, we focused on
 # Blank
 -----------------------------------------
 
+
+---
+
+# Blank
+---------------------------------------------
+
+---
+
+# Demos
+
+- TODO explains each demo
+- TODO what could be reused
+- TODO inpire people
+
+---
+
+# Blank
+---------------------------------------------
+
+
 ---
 
 # How Does Web Compare with Native ?
@@ -216,23 +266,8 @@ Several possibilities, we focused on
 
 - For fun, short project, go for web technology
 
----
 
-# Blank
----------------------------------------------
-
----
-
-# Demos
-
-- TODO explains each demo
-- TODO what could be reused
-- TODO inpire people
-
----
-
-# Blank
----------------------------------------------
+<!-- TODO find transition -->
 
 ---
 
@@ -252,7 +287,7 @@ Several possibilities, we focused on
 
 ### Markers Details
 
-- Each got a ID
+- Each got a given ID
 - From 0 to 1023
 - Simple to recognize many markers
 
@@ -264,14 +299,14 @@ Several possibilities, we focused on
 
 ---
 
-### How to Generate Marker
+### How to Generate Other Markers
 
 - Web app to automatically generate it
 - find it in [repo](http://jeromeetienne.github.io/arplayerforthreejs/marker/builder/iframe.html#265)
 
 ---
 
-## What to do with it ?
+# Experiment with Markers
 
 ---
 
