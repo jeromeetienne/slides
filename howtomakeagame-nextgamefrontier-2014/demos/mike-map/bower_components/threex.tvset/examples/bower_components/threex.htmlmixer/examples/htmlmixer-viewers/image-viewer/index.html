@@ -1,0 +1,24 @@
+<!doctype html>
+<script src="http://jwpsrv.com/library/Dr2UtkbpEeSbHiIAC0WXxA.js"></script>
+<body style='margin: 0px;'><script>
+
+	// get parameters from the url query
+	function parseUrlQuery() {
+		var query	= location.search.substr(1);
+		var result	= {};
+		query.split("&").forEach(function(part) {
+			var item	= part.split("=");
+			result[item[0]] = decodeURIComponent(item[1]);
+		});
+		return result;
+	}
+	var query	= parseUrlQuery()
+	if(!query.url )	alert('an url is required!')
+	var url		= query.url
+
+	var image	= document.createElement('img')
+	image.src	= url
+	image.style.width	= '100%'
+	image.style.height	= '100%'
+	document.body.appendChild(image)
+</script></body>
