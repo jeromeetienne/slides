@@ -31,11 +31,11 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-#### To Do Augmented Reality
+## To Do Augmented Reality
 
-#### With Web Technology 
+## With Web Technology
 
-#### And Open Source
+## And Open Source
 
 ---
 
@@ -49,9 +49,9 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ### Ingredients Needed For AR
 
-1. Get a camera feed 
+1. Get a camera feed
 1. Analyze it to localize AR Markers
-1. Generate 3d on top 
+1. Generate 3d on top
 1. Finally display both, 3d and video, on the screen
 
 ---
@@ -121,15 +121,15 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ### Being Awesome - [link](images/screenshots/being-awesome.jpg)
 
-<img src="images/screenshots/being-awesome.jpg" width='100%'>
+<!-- <img src="images/screenshots/being-awesome.jpg" width='100%'> -->
 
-<!-- TODO A vine would be better YES or youtube  -->
+<iframe width="640" height="480" src="https://www.youtube.com/embed/fz9bmOfYvG0" frameborder="0" allowfullscreen></iframe>
 
 ---
 
 ### Data Visualisation - [link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
 
-Dynamic histogram in AR
+Dynamic Histogram in AR on Mobile
 
 <iframe src="https://vine.co/v/ei1TDWLrYiX/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
@@ -140,7 +140,7 @@ Dynamic histogram in AR
 Display Info From a Database on per-marker basis
 <!-- <img src="images/screenshots/contact-sharing.png" width='80%'> -->
 
-<iframe width="640" height="480" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="400" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
 
 
 ---
@@ -186,7 +186,7 @@ Several possibilities, we focused on
 
 ### js-aruco
 
->>> ArUco library is a minimal library for Augmented Reality 
+>>> ArUco library is a minimal library for Augmented Reality
 >>> applications based on OpenCv.
 
 - js-aruco is a Javascript Port of [ArUco library](http://www.uco.es/investiga/grupos/ava/node/26).
@@ -217,7 +217,7 @@ See [README.md](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/
 
 - can be found in ```/examples``` - [link](https://github.com/jeromeetienne/arplayerforthreejs/tree/master/examples)
 - Good place to learn how to use the code
-- Experiment with multiple type of applications 
+- Experiment with multiple type of applications
 
 ---
 
@@ -381,8 +381,8 @@ Up to you
 
 ### PRO Native
 - Better controls on running platform
-  - e.g. can't read webcam in IOS browser 
-  - but possible in IOS native 
+  - e.g. can't read webcam in IOS browser
+  - but possible in IOS native
 - More efficient
   - native typically runs faster
   - less latency
@@ -408,11 +408,11 @@ Up to you
 
 ## So now that we have all the ingredients
 
-# Time to cook it up! 
+# Time to cook it up!
 
 ---
 
-# To do AR is to work on the future 
+# To do AR is to work on the future
 
 ---
 
