@@ -8,7 +8,7 @@ output: index.html
 
 ---
 
-### What Will i Talk About ?
+### What Will I Talk About ?
 
 - Doing Augmented Reality
 - Using Only Web Technology
@@ -16,7 +16,7 @@ output: index.html
 
 ---
 
-### Who i Am ?
+### Who Am I ?
 
 - Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
 - Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
@@ -52,11 +52,11 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 1. Get a camera feed 
 1. Analyze it to localize AR Markers
 1. Generate 3d on top 
-1. Finally Display both, 3d and video, on the screen
+1. Finally display both, 3d and video, on the screen
 
 ---
 
-## How to Do With the Web ?
+## How To Do It With The Web ?
 
 ---
 
@@ -102,7 +102,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 - We tried and it works!
 - We have augmented reality in browsers.
-- It runs in browser and mobile phones, even.
+- It EVEN runs in browser and mobile phones.
 - All open source, so you can use it.
 
 ---
@@ -115,11 +115,11 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## Let's See What We Can Do With them
+## Let's See What We Can Do With Them
 
 ---
 
-### Being Awesome - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html)
+### Being Awesome - [link](images/screenshots/being-awesome.jpg)
 
 <img src="images/screenshots/being-awesome.jpg" width='100%'>
 
@@ -127,22 +127,21 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-### Data Visualisation - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/data-visualization-histogram3d.html)
+### Data Visualisation - [link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
 
 Dynamic histogram in AR
 
-<img src="images/screenshots/data-visualization-histogram3d.png" width='80%'>
-
-<!-- TODO A vine would be better?  -->
+<iframe src="https://vine.co/v/ei1TDWLrYiX/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
 ---
 
 ### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
 
+Display Info From a Database on per-marker basis
+<!-- <img src="images/screenshots/contact-sharing.png" width='80%'> -->
 
-<img src="images/screenshots/contact-sharing.png" width='80%'>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
 
-<!-- TODO A vine would be better?  -->
 
 ---
 
@@ -170,9 +169,9 @@ model by [@superhoge](https://twitter.com/superhoge)
 ### Display WebGL
 
 - Three.js javascript library from [mrdoob](https://twitter.com/mrdoob)
-- Leading library to display webgl
+- Leading library to display Webgl
 - MIT license, so easy to integrate
-- Run on desktop and mobile.
+- Runs on desktop and mobile.
 
 ---
 
@@ -267,7 +266,7 @@ Up to you
 - [source](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
 - Simple App to share contact in AR.
 - Show informations on a per-marker basis.
-- Informations is from database.
+- Informations are from database.
 
 ---
 
@@ -310,7 +309,7 @@ Up to you
 ### How to Generate Other Markers
 
 - Web app to automatically generate it
-- find it in [repo](http://jeromeetienne.github.io/arplayerforthreejs/marker/builder/iframe.html#265)
+- Find it in [repo](http://jeromeetienne.github.io/arplayerforthreejs/marker/builder/iframe.html#265)
 - It is using [aruco-marker](http://github.com/bhollis/aruco-marker)
 
 ---
@@ -335,7 +334,7 @@ Up to you
 
 - Load the image on your phone or tablet
 - Put the mobile in front of the camera
-- CON: mobile screens reflective
+- CON: mobile screens are reflective
 - PRO: highly available
 
 ---
@@ -348,7 +347,7 @@ Up to you
 
 ### Print It on Paper
 
-- CON: Require a printer
+- CON: Requires a printer
 - PRO: No/little reflection - so ease recognition
 - So paper is usually better
 - Glue it on cardboard for robustness
@@ -373,7 +372,7 @@ Up to you
 
 ### PRO Web
 - Lots less code to write
-  - no need for android version + ios version
+  - no need for android version + IOS version
 - Easier to learn
   - More standard
   - Less Varied
@@ -382,11 +381,11 @@ Up to you
 
 ### PRO Native
 - Better controls on running platform
-  - e.g. can't read webcam in ios browser 
-  - but possible in ios native 
+  - e.g. can't read webcam in IOS browser 
+  - but possible in IOS native 
 - More efficient
-  - native typically run faster
-  - less latency.
+  - native typically runs faster
+  - less latency
   - more battery life
 
 ---
@@ -403,7 +402,7 @@ Up to you
 
 ## Whatever you choose, Native or Web
 
-# the importance is to experience AR
+# The importance is to experience AR
 
 ---
 
