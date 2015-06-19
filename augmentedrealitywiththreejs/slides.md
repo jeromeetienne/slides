@@ -18,7 +18,7 @@ output: index.html
 
 ### Who i Am ?
 
-- Best Known author of [Learning Three.js Blog](http://learningthreejs.com/)
+- Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
 - Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
 - Lead for
 Three.js Team at [Daqri](http://daqri.com) in Dublin
@@ -31,7 +31,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-#### To Do AR 
+#### To Do Augmented Reality
 
 #### With Web Technology 
 
@@ -43,7 +43,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## Fist, Let's see What We Need.
+## First, Let's See What We Need.
 
 ---
 
@@ -56,7 +56,11 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## A Pinch of Web Standards
+## How to Do With the Web ?
+
+---
+
+## With A Pinch of Web Standards
 
 ---
 
@@ -65,13 +69,14 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 - Simple color video like Webcam
 - webrtc/getUserMedia - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
 - Supported on Desktop and Android mobile
-- not IOS unfortunatly - [details](http://caniuse.com/#feat=stream)
+- Not IOS unfortunatly - [details](http://caniuse.com/#feat=stream)
 
 ---
 
 ### Display 3D
 
 - WebGL - [spec](https://www.khronos.org/registry/webgl/specs/latest/)
+- Standard to display 3d on the web
 - Based on openGL 2.0
 - Available on desktop and modern mobile phones
 
@@ -84,65 +89,72 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## All the Ingredients needed For AR are there...
+## The web contains all the Ingredients needed For Augmented Reality
+
+---
+
+
+## How far can we go ?
+
+---
+
+### Result
+
+- We tried and it works!
+- We have augmented reality in browsers.
+- It runs in browser and mobile phones, even.
+- All open source, so you can use it.
 
 ---
 
 ### Sample Code
 
-- Code for you to build on
-- Thus you focus on your own apps
+- It is provided as sample code for you to build on
+- Thus you focus on your own app
 - Available on [github](https://github.com/jeromeetienne/arplayerforthreejs)
 
 ---
 
-## Let's See What We Can Do With It
-
----
-
-# Demo Time
+## Let's See What We Can Do With them
 
 ---
 
 ### Being Awesome - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html)
 
-<img src="images/being-awesome.jpg" width='100%'>
+<img src="images/screenshots/being-awesome.jpg" width='100%'>
 
-<!-- TODO A vine would be better  -->
-<!-- TODO link to source in github -->
+<!-- TODO A vine would be better YES or youtube  -->
 
 ---
 
-### Data Visualisation
+### Data Visualisation - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/data-visualization-histogram3d.html)
 
 Dynamic histogram in AR
 
-<img src="images/data-visualization-historgram3d.png" width='80%'>
+<img src="images/screenshots/data-visualization-histogram3d.png" width='80%'>
 
-<!-- TODO A vine would be better  -->
-<!-- TODO link to source in github -->
+<!-- TODO A vine would be better?  -->
 
 ---
 
-### Contact Sharing in AR
+### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
 
 Dynamic histogram in AR
 
-<img src="images/contact-sharing.png" width='80%'>
+<img src="images/screenshots/contact-sharing.png" width='80%'>
 
-<!-- TODO A vine would be better  -->
-<!-- TODO link to source in github -->
+<!-- TODO A vine would be better?  -->
 
 ---
 
-### Hatsune Miku - [link](https://vine.co/v/eApD5rPtKxT)
+### Funny Joke - Hatsune Miku - [link](https://vine.co/v/eApD5rPtKxT)
 
 model by [@superhoge](https://twitter.com/superhoge)
 
 <iframe src="https://vine.co/v/eApD5rPtKxT/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
-
 ---
+
 
 ## How we implemented it
 
@@ -153,10 +165,6 @@ model by [@superhoge](https://twitter.com/superhoge)
 - [three.js](http://threejs.org/) to ease webgl display
 - [jsaruco](https://github.com/jcmellado/js-aruco) to find AR markers within video streams
 
----
-
-
-## Let's see how far can we go ?
 
 ---
 
@@ -173,8 +181,8 @@ model by [@superhoge](https://twitter.com/superhoge)
 
 Several possibilities, we focused on
 
-- jsaruco
-- jsartoolkit
+- jsaruco - current implementation
+- jsartoolkit - to be implemented
 
 ---
 
@@ -196,28 +204,79 @@ Several possibilities, we focused on
 
 ---
 
-- We picked js-aruco 
-- Using js-artoolkit is in progress 
+# Code Overview
 
 ---
+### Extensions For Augmented Reality
+- [threex.jsarucomarker.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.jsarucomarker.js) - marker recognition
+- [threex.webcamgrabbing.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.webcamgrabbing.js) - video grabbing
 
-# 
-
----
-
-### Overview of the code
-
-- See [README.md](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/README.md) for Details
-- [threex.jsarucomarker.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.jsarucomarker.js)
-- [threex.webcamgrabbing.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.webcamgrabbing.js)
+See [README.md](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/README.md) for Details
 
 ---
 
 ### Examples walk through
 
-- [basic.html](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html) to see a simple application
-- [data-visualization-histogram3d.html](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html) to visualize industrial information you got from a devices
-- [contact-sharing-in-ar.html](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html) to display information based on a given markerId
+- can be found in ```/examples``` - [link](https://github.com/jeromeetienne/arplayerforthreejs/tree/master/examples)
+- Good place to learn how to use the code
+- Experiment with multiple type of applications 
+
+---
+
+### basic.html
+
+<img src="images/screenshots/being-awesome.jpg" width='100%'>
+
+---
+
+### basic.html
+
+-  [source](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/basic.html) written to be simple and clear
+- Good for getting started
+- Display debug informations to ease understanding
+
+---
+
+### data-visualization-histogram3d.html
+
+<img src="images/screenshots/data-visualization-histogram3d.png" width='80%'>
+
+---
+
+### data-visualization-histogram3d.html
+
+- [source](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/data-visualization-histogram3d.html)
+- Data visualisation with a 3d histogram
+- Change the value the way you like
+- Information source may be a REST API
+- or from an industrial sensor
+
+Up to you
+
+---
+
+### contact-sharing-in-ar.html
+
+[link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
+
+---
+
+### contact-sharing-in-ar.html
+
+- [source](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
+- Simple App to share contact in AR.
+- Show informations on a per-marker basis.
+- Informations is from database.
+
+---
+
+### contact-sharing-in-ar.html
+
+<img src="images/screenshots/contact-sharing-details.png" width='80%'>
+
+<!-- TODO add a wine -->
 
 ---
 
@@ -253,27 +312,23 @@ Several possibilities, we focused on
 
 - Web app to automatically generate it
 - find it in [repo](http://jeromeetienne.github.io/arplayerforthreejs/marker/builder/iframe.html#265)
+- It is using [aruco-marker](http://github.com/bhollis/aruco-marker)
 
 ---
 
-# Markers
+# Markers (bis)
 
 ---
 
 ## They are the base
 
----
-
-### Print It on Paper
-
-- CON: Require a printer
-- PRO: No/little reflection - so ease recognition
-- So paper is usually better
-- Glue it on cardboard for robustness
+## Let's see how to handle them
 
 ---
 
-TODO put a picture
+### Display it on Mobile
+
+<img src="images/photo-marker-ipad.jpg" width='80%'>
 
 ---
 
@@ -286,39 +341,18 @@ TODO put a picture
 
 ---
 
-TODO put a picture
+### Print It on Paper
+
+<img src="images/marker-on-cardboard.jpg" width='80%'>
 
 ---
 
-### Where to put the marker ?
+### Print It on Paper
 
-In front of the camera :)
-
----
-
-## Typically 2 setups
-
----
-
-### Moving the camera
-
-- fix marker on walls/tables
-- move around with the camera
-
----
-
-TODO image of moving camera app
-
----
-
-### Moving the marker
-
-- fix the camera
-- move the marker around
-
----
-
-TODO image of moving marker app
+- CON: Require a printer
+- PRO: No/little reflection - so ease recognition
+- So paper is usually better
+- Glue it on cardboard for robustness
 
 ---
 
@@ -368,7 +402,7 @@ TODO image of moving marker app
 
 ---
 
-<!-- Transition -->
+<!-- TODO Transition -->
 
 ---
 
