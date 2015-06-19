@@ -139,7 +139,6 @@ Dynamic histogram in AR
 
 ### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
 
-Dynamic histogram in AR
 
 <img src="images/screenshots/contact-sharing.png" width='80%'>
 
@@ -402,7 +401,19 @@ Up to you
 
 ---
 
-<!-- TODO Transition -->
+## Whatever you choose, Native or Web
+
+# the importance is to experience AR
+
+---
+
+## So now that we have all the ingredients
+
+# Time to cook it up! 
+
+---
+
+# To do AR is to work on the future 
 
 ---
 
