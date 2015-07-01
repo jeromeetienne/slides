@@ -25,7 +25,7 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 
 ### Who is Hatsune Miku
 
-- fictional character - [wikipedia](https://en.wikipedia.org/wiki/Hatsune_Miku)
+- pure fictional character - [wikipedia](https://en.wikipedia.org/wiki/Hatsune_Miku)
 - 3d model
 - no human singing - all thru a yahama program
 - doing actual concerts - [video](https://www.youtube.com/watch?v=dhYaX01NOfA)
@@ -53,10 +53,9 @@ model by [@superhoge](https://twitter.com/superhoge)
 
 ### The Code
 
-- [threex.webar](https://github.com/jeromeetienne/threex.webar) - extensions to get augmented reality with three.js
+- [threex.webar](https://github.com/jeromeetienne/threex.webar) - augmented reality with three.js
 - [mmd loader](http://takahirox.github.io/three.js/examples/#webgl_loader_mmd) - to load models
-  - version [pure webgl](http://takahirox.github.io/mmd-viewer-js/)
-  - by [@superhoge](https://twitter.com/superhoge)
+  - by [@superhoge](https://twitter.com/superhoge) - version [pure webgl](http://takahirox.github.io/mmd-viewer-js/)
 
 ---
 
