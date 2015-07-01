@@ -9,13 +9,13 @@
 
     <title>All My Slides</title>
 
-    <!-- Bootstrap core CSS --> 
+    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap3.0.2/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="vendor/bootstrap3.0.2/css/jumbotron-narrow.css" rel="stylesheet"> -->
   </head>
-  <body>      
+  <body>
 
     <div class="container">
       <div class="jumbotron">
@@ -23,9 +23,9 @@
         </h1>
         <p class="lead">Find below all my slides i used over the time. Enjoy!</p>
       </div>
-      
 
-	<div class="row" id='items' data-tag=''>  
+
+	<div class="row" id='items' data-tag=''>
 	</div> <!-- /row -->
 
 	<!-- github ribbon -->
@@ -60,6 +60,11 @@
 //		All items							//
 //////////////////////////////////////////////////////////////////////////////////
 var items	= []
+
+items.push({
+	title		: 'Hatsune Miku Dancing In Augmented Reality',
+	slidesUrl	: 'hatsune-miku-dancing-in-ar/',
+})
 
 items.push({
 	title		: 'Augmented Reality in Three.js - Daqri Dublin Hackathon 2015',
@@ -192,7 +197,7 @@ jQuery(function(){
 	})
 	jQuery(output).appendTo('#items')
 
-	// honor location.hash as active	
+	// honor location.hash as active
 	if( window.location.hash.substr(1) ){
 		var selectedId	= window.location.hash.substr(1);
 		var element	= document.getElementById(selectedId)
