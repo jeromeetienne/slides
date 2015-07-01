@@ -25,7 +25,7 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 
 ## Wanna Work on AR at [Daqri](http://daqri.com) ?
 
-# We Hire!
+## **We Hire!**
 
 ---
 
