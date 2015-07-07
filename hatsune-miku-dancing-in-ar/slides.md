@@ -6,13 +6,6 @@ output: index.html
 
 ---
 
-### Hatsune Miku Dancing in AR - [demo](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
-
-
-<iframe src="https://vine.co/v/e5w5jaxE0r1/embed/simple" width="480" height="480" frameborder="0"></iframe>
-
----
-
 ### Who Am I ?
 
 - Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
@@ -27,6 +20,21 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 ## Wanna Work on AR at [Daqri](http://daqri.com) ?
 
 ## **We Hire!**
+
+---
+
+### Web AR
+
+- Augmented Reality within the browser
+- Run on desktop
+- Run on mobile phones
+
+---
+
+### Hatsune Miku Dancing in AR - [demo](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
+
+
+<iframe src="https://vine.co/v/e5w5jaxE0r1/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
 ---
 
