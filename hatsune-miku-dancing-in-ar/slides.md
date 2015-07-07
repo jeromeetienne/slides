@@ -6,7 +6,8 @@ output: index.html
 
 ---
 
-### Hatsune Miku Dancing in AR
+### Hatsune Miku Dancing in AR - [demo](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
+
 
 <iframe src="https://vine.co/v/e5w5jaxE0r1/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
