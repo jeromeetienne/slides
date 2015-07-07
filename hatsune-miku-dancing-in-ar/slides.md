@@ -38,22 +38,19 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 
 ---
 
-# Demo Time
-
----
-
-### Demo and Links
-
-- demo - [link](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
-- code is on github - [link](https://github.com/jeromeetienne/demo.hatsunemiku-augmentedreality)
-
----
-
 ### The Code
 
 - [threex.webar](https://github.com/jeromeetienne/threex.webar) - augmented reality with three.js
 - [mmd loader](http://takahirox.github.io/three.js/examples/#webgl_loader_mmd) - to load models
   - by [@superhoge](https://twitter.com/superhoge) - version [pure webgl](http://takahirox.github.io/mmd-viewer-js/)
+- code is on github - [link](https://github.com/jeromeetienne/demo.hatsunemiku-augmentedreality)
+
+All under MIT license - Play With It
+---
+
+# Demo Time
+
+## [link](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
 
 ---
 
