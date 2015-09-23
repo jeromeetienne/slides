@@ -1,0 +1,885 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>How we integrated a graphical language for AR</title>
+  <style type="text/css">
+    body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #222;
+  background-color: #f7f7f7;
+  font-size: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+}
+
+.slide-content {
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  margin: 80px auto 0 auto;
+  padding: 30px;
+
+  font-weight: 200;
+  font-size: 200%;
+  line-height: 1.375;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.arrow {
+  width: 0; height: 0;
+  border: 30px solid #333;
+  float: left;
+  margin-right: 30px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prev {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+
+  border-left-width: 0;
+  border-right-width: 50px;
+}
+
+.next {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+
+  border-left-width: 50px;
+  border-right-width: 0;
+}
+
+.prev:hover {
+  border-right-color: #888;
+  cursor: pointer;
+}
+
+.next:hover {
+  border-left-color: #888;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 300%;
+  line-height: 1.2;
+  text-align: center;
+  margin: 170px 0 0;
+}
+
+h2 {
+  font-size: 100%;
+  line-height: 1.2;
+  margin: 5px 0;
+  text-align: center;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 140%;
+  line-height: 1.2;
+  border-bottom: 1px solid #aaa;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+ul {
+  padding: 20px 0 0 60px;
+  font-weight: 200;
+  line-height: 1.375;
+}
+
+.author h1 {
+  font-size: 170%;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.author h3 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 95%;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #44a4dd;
+}
+
+a:hover {
+  color: #66b5ff;
+}
+
+pre {
+  font-size: 60%;
+  line-height: 1.3;
+}
+
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 3px;
+  background-color: #b4b4b4;
+
+  -webkit-transition: width 0.05s ease-out;
+  -moz-transition: width 0.05s ease-out;
+  -o-transition: width 0.05s ease-out;
+  transition: width 0.05s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 850px) {
+
+  body {
+    font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 120px;
+  }
+
+  .prev, .prev:hover {
+    border-right-color: rgba(135, 135, 135, 0.5);
+  }
+
+  .next, .next:hover {
+    border-left-color: rgba(135, 135, 135, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 50%;
+    overflow: hidden;
+  }
+
+  .slide-content {
+    padding: 10px;
+    margin-top: 10px;
+    height: 340px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  .hidden {
+    display: inline;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  body {
+    margin: 0 auto !important;
+    border: 0;
+    padding: 0;
+    float: none !important;
+    overflow: visible;
+    background: none !important;
+    font-size: 52%;
+  }
+
+  .progress, .controls {
+    display: none;
+  }
+
+  .slide {
+    position: static;
+  }
+
+  .slide-content {
+    border: 1px solid #222;
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 3.5in;
+    overflow: visible;
+  }
+
+  .slide:nth-child(even) {
+    /* 2 slides per page */
+    page-break-before: always;
+  }
+}
+
+/*
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+*/
+
+code, pre {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: auto;
+  padding: 6px 10px;
+}
+
+code {
+  padding: 0 5px;
+}
+
+pre>code {
+  margin: 0; padding: 0;
+  border: none;
+  background: transparent;
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #998;
+  font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .nginx .title,
+pre .subst,
+pre .request,
+pre .status {
+  color: #333;
+  font-weight: bold
+}
+
+pre .number,
+pre .hexcolor,
+pre .ruby .constant {
+  color: #099;
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+  color: #d14
+}
+
+pre .title,
+pre .id {
+  color: #900;
+  font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .clojure .title,
+pre .subst {
+  font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .vhdl .literal,
+pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .lisp .body {
+  color: #008080
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .lisp .keyword,
+pre .tex .special,
+pre .prompt {
+  color: #990073
+}
+
+pre .built_in,
+pre .lisp .title,
+pre .clojure .built_in {
+  color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}
+
+
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><style>img { width: 100% }</style>
+<style>pre { font-size: 100% }</style>
+
+<h1 id="a-graphical-language-for-ar">A Graphical Language for AR</h1>
+<h2 id="by-jerome_etienne-https-twitter-com-jerome_etienne-">by <a href="https://twitter.com/jerome_etienne">@jerome_etienne</a></h2>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-2">
+    <section class="slide-content"><h2 id="an-experiment-to-extend-scripting-to-non-programmers">An experiment to extend scripting to non-programmers</h2>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-3">
+    <section class="slide-content"><h3 id="who-am-i-">Who Am I ?</h3>
+<ul>
+<li>Lead for
+Three.js Team at <a href="http://daqri.com">Daqri</a> in Dublin</li>
+<li>Best Known as the author of <a href="http://learningthreejs.com/">Learning Three.js Blog</a></li>
+<li>Wrote more than <a href="http://www.threejsgames.com/extensions/">45 game extensions for three.js</a></li>
+</ul>
+<p>Contact me Anytime on twitter <a href="https://twitter.com/jerome_etienne">@jerome_etienne</a></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-4">
+    <section class="slide-content"><h1 id="what-is-daqri-">What Is DAQRI ?</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-5">
+    <section class="slide-content"><h3 id="daqri-by-the-numbers">Daqri By the Numbers</h3>
+<ul>
+<li>Augmented Reality Startup - 200+ employees</li>
+<li>International Offices LA/Sunnyvale and Dublin</li>
+<li>4+ Years old</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-6">
+    <section class="slide-content"><h1 id="what-are-we-doing-">What Are We Doing ?</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-7">
+    <section class="slide-content"><h3 id="main-products-smart-helmet-http-hardware-daqri-com-smarthelmet-">Main Products - <a href="http://hardware.daqri.com/smarthelmet/">Smart Helmet</a></h3>
+<p><img src="images/daqri_smart_helmet.png" alt="daqri_smart_helmet.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-8">
+    <section class="slide-content"><h3 id="main-products-smart-helmet-http-hardware-daqri-com-smarthelmet-">Main Products - <a href="http://hardware.daqri.com/smarthelmet/">Smart Helmet</a></h3>
+<ul>
+<li>Powerful Augmented Reality Device</li>
+<li>Wearable Helmet with 360 sensor package</li>
+<li>Actual hard hat for industrial purpose</li>
+<li>Precise 3D understanding of your work environment</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-9">
+    <section class="slide-content"><p><img src="images/guy_with_smart_helmet.png" alt="guy_with_smart_helmet.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-10">
+    <section class="slide-content"><h3 id="main-products-ar-toolkit-http-artoolkit-org-">Main Products - <a href="http://artoolkit.org/">AR Toolkit</a></h3>
+<p><img src="images/artoolkit_example.png" alt="artoolkit_example.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-11">
+    <section class="slide-content"><h3 id="main-products-ar-toolkit-http-artoolkit-org-">Main Products - <a href="http://artoolkit.org/">AR Toolkit</a></h3>
+<ul>
+<li>Tracking library for augmented reality</li>
+<li>Run on desktop and mobile</li>
+<li>Acquired by Daqri in May 2015</li>
+<li>Had a free version + a pro version</li>
+</ul>
+<p><strong>We opened source it all!</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-12">
+    <section class="slide-content"><h3 id="main-products-4d-studio-http-4dstudio-daqri-com-">Main Products - <a href="http://4dstudio.daqri.com">4D Studio</a></h3>
+<p><img src="images/4dstudio_viewport.png" alt="4dstudio_viewport.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-13">
+    <section class="slide-content"><h3 id="main-products-4d-studio-http-4dstudio-daqri-com-">Main Products - <a href="http://4dstudio.daqri.com">4D Studio</a></h3>
+<ul>
+<li>Authoring tool for Augmented Reality</li>
+<li>We build your AR scenario</li>
+<li>We play it on mobile and Smart Helmet</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-14">
+    <section class="slide-content"><h1 id="scripting-in-4d-studio">Scripting In 4D Studio</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-15">
+    <section class="slide-content"><h3 id="what-is-scripting">What is Scripting</h3>
+<ul>
+<li>Allow to program each part of your AR scenario</li>
+<li>You choose how the user interact with your content</li>
+<li>Scripting provides a much richer experience</li>
+</ul>
+<p><strong>Key concept to create interactive content</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-16">
+    <section class="slide-content"><h3 id="scripting-in-4d-studio">Scripting in 4D Studio</h3>
+<ul>
+<li>Designed to be flexible and powerful</li>
+<li>Scripting available at every level</li>
+<li>Scripting for 3d world (similar to <a href="http://threejs.org/editor">three.js editor</a>)</li>
+<li>Scripting for screenspace UI</li>
+</ul>
+<p><strong>META</strong> add screenshots with examples</p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-17">
+    <section class="slide-content"><h3 id="how-to-write-scripts">How to Write Scripts</h3>
+<ul>
+<li>Scripting for 3d uses <a href="http://threejs.org">three.js</a></li>
+<li>Screenspace UI uses web technology (css/html/js)</li>
+<li>All Done in javascript (most used language atm)</li>
+<li>Provides lots of flexibility and richness</li>
+</ul>
+<p><strong>It Fits Perfectly the Power Users</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-18">
+    <section class="slide-content"><h2 id="what-about-other-users-">What about other users ?</h2>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-19">
+    <section class="slide-content"><h3 id="issues-with-programming-languages">Issues with Programming Languages</h3>
+<p>Heard in the field</p>
+<ul>
+<li>&quot;What ? I missed a ( and all is broken ???&quot;</li>
+<li>&quot;What is the = vs == vs === ?&quot;</li>
+<li>&quot;Function and function are different ?!?&quot;</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-20">
+    <section class="slide-content"><h3 id="issues-with-programming-languages">Issues with Programming Languages</h3>
+<ul>
+<li>Javascript is hard to learn for non-programmers</li>
+<li>Very sensible to syntax and grammatical errors</li>
+<li>Normal Users are very uncomfortable - almost scared</li>
+</ul>
+<p><strong>Learning how to code is time consuming</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-21">
+    <section class="slide-content"><h1 id="graphical-languages-to-the-rescue">Graphical Languages To the Rescue</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-22">
+    <section class="slide-content"><h3 id="why-graphical-programming-">Why Graphical Programming ?</h3>
+<ul>
+<li>No more syntax or grammatical error</li>
+<li>Easier and faster to learn</li>
+<li>Less error prone. </li>
+</ul>
+<p><strong>Accessible to a Wider Range of Users</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-23">
+    <section class="slide-content"><h1 id="blockly">Blockly</h1>
+<h2 id="a-nice-solution">A Nice Solution</h2>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-24">
+    <section class="slide-content"><p><img src="images/blockly_screenshot.png" alt="blockly_screenshot.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-25">
+    <section class="slide-content"><h3 id="why-blockly">Why Blockly</h3>
+<ul>
+<li>Uses usual notions of sequential programming </li>
+<li>So easier to learn and teach</li>
+<li>Easy to generate various languages e.g. javascript</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-26">
+    <section class="slide-content"><h3 id="blockly-origin">Blockly Origin</h3>
+<ul>
+<li>Heavily Based on <a href="scratch.mit.edu">scratch</a> by MIT</li>
+<li>Unfortunately scratch is in Flash</li>
+<li>Blockly is a scratch like in HTML5 by Google</li>
+<li>Used for <a href="https://hourofcode.com">One Hour Of Code</a>. nationwide effort in USA</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-27">
+    <section class="slide-content"><h3 id="flexible-extensible-documented">Flexible, Extensible, Documented</h3>
+<ul>
+<li>It is <a href="https://developers.google.com/blockly/">well documented</a></li>
+<li>Lots of <a href="https://blockly-demo.appspot.com/static/demos/index.html">examples to copy</a></li>
+<li>You can code your own blocks in JS</li>
+<li>even in blockly itself, with its powerful <a href="https://blockly-demo.appspot.com/static/demos/blockfactory/index.html">factory</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-28">
+    <section class="slide-content"><h3 id="perfect-to-experiment">Perfect To Experiment</h3>
+<ul>
+<li>Able to generate scripts compatible with 4D Studio</li>
+<li>It can run on 4D Studio unmodified </li>
+</ul>
+<p><strong>Definitive for our experiment requirements</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-29">
+    <section class="slide-content"><h1 id="integrating-blockly-and-4d-studio">Integrating Blockly And 4D Studio</h1>
+<h2 id="gory-details">Gory Details</h2>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-30">
+    <section class="slide-content"><h3 id="blockly-editor-as-a-web-app">Blockly Editor As a Web App</h3>
+<ul>
+<li>Forked from <a href="https://blockly-demo.appspot.com/static/demos/resizable/index.html">their examples</a></li>
+<li>Run in its own window</li>
+<li>Developed independently from the main product</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-31">
+    <section class="slide-content"><h3 id="typical-workflow">Typical workflow</h3>
+<p><img src="images/blockly_4dstudio_workflow.png" alt="blockly_4dstudio_workflow.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-32">
+    <section class="slide-content"><h3 id="communication-via-message-passing">Communication via Message Passing</h3>
+<ul>
+<li>HTML5 allows to pass message between <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">window</a></li>
+<li>4D Studio and blockly Editor communication</li>
+<li>Clearly defined messages</li>
+<li>Small number of messages (only 3)</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-33">
+    <section class="slide-content"><h3 id="sending-message-to-blockly-editor">Sending message to blockly editor</h3>
+<ul>
+<li>Done via <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">postMessage</a> between window frames</li>
+<li>For example to change the content edited by blockly</li>
+</ul>
+<pre><code>editorWin.postMessage({
+        type: &#39;loadContent&#39;,
+        data: contentText
+}, editorOrigin)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-34">
+    <section class="slide-content"><h3 id="receiving-message-from-blockly-editor">Receiving message from blockly editor</h3>
+<p>Just listen to the <code>message</code> event </p>
+<pre><code>window.addEventListener(&quot;message&quot;, function(event) {
+    // check if it is for my domain
+    if( event.source !== editorWin )    return
+
+    var message    = event.data
+
+        //... here process the message
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-35">
+    <section class="slide-content"><h3 id="storing-file-format">Storing file Format</h3>
+<ul>
+<li><em>Should</em> compatible with current 4D Studio</li>
+<li><em>Should</em> store the javascript generated by blockly</li>
+<li><em>Should</em> include the blockly layout</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-36">
+    <section class="slide-content"><h3 id="storing-file-format">Storing file Format</h3>
+<p><img src="images/blockly_script_format.png" alt="blockly_script_format.png"></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-37">
+    <section class="slide-content"><h3 id="including-blockly-layout-in-js">Including Blockly Layout in JS</h3>
+<ul>
+<li>Needed for users to retrieve blockly blocks where they created it</li>
+<li>Blockly store their code in XML</li>
+</ul>
+<p><strong>We simply &quot;Escaped&quot; it in javascript comment</strong></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-38">
+    <section class="slide-content"><h3 id="escaped-blockly-layout-in-js">Escaped Blockly Layout in JS</h3>
+<pre><code>// BLOCKLY XML START
+// &lt;xml xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+//   &lt;block type=&quot;threejs_onUpdate&quot; 
+//          id=&quot;6&quot; x=&quot;11&quot; y=&quot;11&quot;&gt;
+//   &lt;/block&gt;
+// &lt;/xml&gt;
+// BLOCKLY XML END</code></pre>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-39">
+    <section class="slide-content"><h1 id="conclusion">Conclusion</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-40">
+    <section class="slide-content"><h3 id="results">Results</h3>
+<ul>
+<li>We got basic blockly integrated in 4D Studio</li>
+<li>Little to no modification in 4D Studio</li>
+</ul>
+<p><em>Nicely loosely decoupled</em></p>
+<p><em>Perfect for experimenting</em></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-41">
+    <section class="slide-content"><h3 id="evaluation">Evaluation</h3>
+<ul>
+<li>Need Users test to see how they react</li>
+<li>Feedback loop to improve it</li>
+<li>Depending on results, make it to actual product</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-42">
+    <section class="slide-content"><h1 id="questions-">Questions ?</h1>
+</section>
+  </div>
+
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="arrow next"></div>
+  </div>
+
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
+ */
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
+}
+
+
+/**
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
+ */
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
+
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
+
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
+  updateURL();
+  updateTabIndex();
+}
+
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+  window.history.replaceState({} , null, '#' + currentPosition());
+}
+
+
+/**
+ * Sets the progress indicator.
+ */
+function updateProgress() {
+  var progressBar = document.querySelector('.progress-bar');
+
+  if (progressBar !== null) {
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
+  }
+}
+
+
+/**
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
+ */
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
+
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
+
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
+  }
+}
+
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+         document.mozFullScreenElement ||
+         document.webkitFullscreenElement ||
+         document.msFullscreenElement;
+}
+
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
+
+  docElem.requestFullscreen =
+      docElem.requestFullscreen ||
+      docElem.msRequestFullscreen ||
+      docElem.mozRequestFullScreen ||
+      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+      doc.exitFullscreen ||
+      doc.msExitFullscreen ||
+      doc.mozCancelFullScreen ||
+      doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex();
+
+  // If the location hash specifies a page number, go to it.
+  var page = window.location.hash.slice(1);
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
+
+  document.onkeydown = function (e) {
+    var kc = e.keyCode;
+
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
+    } else if (kc === 13) {
+      toggleFullScreen();
+    }
+  };
+
+  if (document.querySelector('.next') && document.querySelector('.prev')) {
+    document.querySelector('.next').onclick = function (e) {
+      e.preventDefault();
+      navigate(1);
+    };
+
+    document.querySelector('.prev').onclick = function (e) {
+      e.preventDefault();
+      navigate(-1);
+    };
+  }
+});
+
+
+  </script>
+</body>
+</html>
