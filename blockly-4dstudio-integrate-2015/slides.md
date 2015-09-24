@@ -2,10 +2,13 @@ title: How we integrated a graphical language for AR
 output: index.html
 --
 
-<style>img { width: 100% }</style>
+<style>section.slide-content img { width: 100% }</style>
 <style>pre { font-size: 100% }</style>
+<style>div.slide { background-image: url(images/daqri/daqri_ribbon.png); background-repeat: no-repeat; background-position: 0px 30px, top; }</style>
 
-# A Graphical Language for AR
+
+![daqri_logo.png](images/daqri/daqri_logo.png)
+## Integrating a Graphical Language for Augmented Reality
 ## by [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
