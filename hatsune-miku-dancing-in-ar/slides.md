@@ -6,12 +6,6 @@ output: index.html
 
 ---
 
-### Hatsune Miku Dancing in AR
-
-<iframe src="https://vine.co/v/e5w5jaxE0r1/embed/simple" width="480" height="480" frameborder="0"></iframe>
-
----
-
 ### Who Am I ?
 
 - Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
@@ -29,6 +23,21 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 
 ---
 
+### Web AR
+
+- Augmented Reality within the browser
+- Run on desktop
+- Run on mobile phones
+
+---
+
+### Hatsune Miku Dancing in AR - [demo](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
+
+
+<iframe src="https://vine.co/v/e5w5jaxE0r1/embed/simple" width="480" height="480" frameborder="0"></iframe>
+
+---
+
 ### Who is Hatsune Miku
 
 - pure fictional character - [wikipedia](https://en.wikipedia.org/wiki/Hatsune_Miku)
@@ -38,22 +47,19 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 
 ---
 
-# Demo Time
-
----
-
-### Demo and Links
-
-- demo - [link](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
-- code is on github - [link](https://github.com/jeromeetienne/demo.hatsunemiku-augmentedreality)
-
----
-
 ### The Code
 
 - [threex.webar](https://github.com/jeromeetienne/threex.webar) - augmented reality with three.js
 - [mmd loader](http://takahirox.github.io/three.js/examples/#webgl_loader_mmd) - to load models
   - by [@superhoge](https://twitter.com/superhoge) - version [pure webgl](http://takahirox.github.io/mmd-viewer-js/)
+- code is on github - [link](https://github.com/jeromeetienne/demo.hatsunemiku-augmentedreality)
+
+All under MIT license - Play With It
+---
+
+# Demo Time
+
+## [link](http://jeromeetienne.github.io/demo.hatsunemiku-augmentedreality/#image)
 
 ---
 
