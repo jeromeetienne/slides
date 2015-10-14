@@ -1,4 +1,4 @@
-title: Hatsune Miku Dancing in Augmented Reality
+title: Hatsune Miku Dancing in Augmented Reality 
 output: index.html
 --
 
