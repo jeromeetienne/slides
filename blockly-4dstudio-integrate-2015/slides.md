@@ -4,7 +4,7 @@ output: index.html
 
 <style>section.slide-content img { width: 100% }</style>
 <style>pre { font-size: 100% }</style>
-<style>div.slide { background-image: url(images/daqri/daqri_ribbon.png); background-repeat: no-repeat; background-position: 0px 30px, top; }</style>
+<style>div.slide { background-image: url(images/daqri/daqri_ribbon.png); background-repeat: no-repeat; background-position: 0px 0px, top; }</style>
 
 
 ![daqri_logo.png](images/daqri/daqri_logo.png)
