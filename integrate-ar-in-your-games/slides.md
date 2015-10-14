@@ -2,9 +2,75 @@ title: Augmented Reality in Three.js
 output: index.html
 --
 
-# Integrate Augmented Reality in Your Game
+# Integrate AR in Your Game
 
 ## By [@jerome_etienne](https://twitter.com/jerome_etienne)
+
+---
+
+### Wtf am i going to talk about ?
+
+1. Intro on gaming and AR
+2. Present WebAR: an AR solution for the Web
+
+---
+
+## In Short...
+
+---
+
+### Challenges in Gaming and AR
+
+- Works well for board/card games
+- Everybody is looking
+- No killer app game yet
+
+There is an opportunity there!
+
+---
+
+### WebAR - a AR solution for the Web
+
+- What is [WebAR](https://github.com/jeromeetienne/threex.webar)
+- Only Web Technology + All Open Source
+- Performance : Native vs Web ? Which should you pick ?
+
+---
+
+## Let's get started!
+
+---
+
+### Who Am I ?
+
+- Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
+- Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
+- Lead for Three.js Team at [Daqri](http://daqri.com) in Dublin
+
+Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
+
+---
+
+# Challenge in Gaming and AR
+
+---
+
+### META
+
+- META: integrate the talk from john
+- His links
+- Say 5-10 slides max
+- With videos and screenshots via skitch
+
+---
+
+## How can this talk help ?
+
+## Provide to the technical solution for you to experiment
+
+---
+
+## How 
 
 ---
 
@@ -13,17 +79,6 @@ output: index.html
 - Doing Augmented Reality
 - Using Only Web Technology
 - Using Only Open Source
-
----
-
-### Who Am I ?
-
-- Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
-- Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
-- Lead for
-Three.js Team at [Daqri](http://daqri.com) in Dublin
-
-Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
@@ -121,8 +176,6 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ### Being Awesome - [link](images/screenshots/being-awesome.jpg)
 
-<!-- <img src="images/screenshots/being-awesome.jpg" width='100%'> -->
-
 <iframe width="640" height="480" src="https://www.youtube.com/embed/fz9bmOfYvG0" frameborder="0" allowfullscreen></iframe>
 
 ---
@@ -195,7 +248,7 @@ Several possibilities, we focused on
 
 ### jsartoolkit
 
-- Javascript port of [artoolkit](artoolkit.org) - Rather Old - 3 years old
+- Javascript port of [artoolkit](http://artoolkit.org) - Rather Old - 3 years old
 - Written by [Ilmari Heikkinen](http://www.fhtr.net/)
 - Available on [github](https://github.com/kig/JSARToolKit)
 - To use it in this in the pipe
