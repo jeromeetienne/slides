@@ -170,7 +170,16 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## Let's See What We Can Do With Them
+## Now Some Examples to Copy From
+
+---
+
+### Being Awesome - [link](images/screenshots/being-awesome.jpg)
+
+- Attached a marker to my glass
+- Used it as a marker
+- May be the base for a shooting game
+- People shooting at each other 
 
 ---
 
@@ -182,7 +191,15 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ### Data Visualisation - [link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
 
-Dynamic Histogram in AR on Mobile
+- Dynamic Histogram in AR on Mobile
+- May be used to visualize property of a equipment e.g. microwave
+- Documentation, Animated How To
+- Give local info e.g. which tuning for a given recipe
+
+---
+
+### Data Visualisation - [link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
+
 
 <iframe src="https://vine.co/v/ei1TDWLrYiX/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
@@ -190,11 +207,28 @@ Dynamic Histogram in AR on Mobile
 
 ### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
 
-Display Info From a Database on per-marker basis
+- Display Info From a Database on per-marker basis
+- Everybody in a conf has its own Marker
+- They use the apps to recognize each other
+- More efficient than swapping bizcards
+
+---
+
+### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
+
 <!-- <img src="images/screenshots/contact-sharing.png" width='80%'> -->
 
 <iframe width="640" height="400" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
 
+---
+
+## A classic Hatsune Miku
+
+---
+
+### Funny Joke - Hatsune Miku - [link](https://vine.co/v/eApD5rPtKxT)
+
+- japanese META TO THAT HERE
 
 ---
 
