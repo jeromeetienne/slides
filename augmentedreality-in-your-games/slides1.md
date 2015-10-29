@@ -2,17 +2,15 @@ title: Augmented Reality in Three.js
 output: index.html
 --
 
-# WebAR
-##  a Augmented Reality Solution for the Web
+# Integrate AR in Your Game
 
-<<<<<<< HEAD
 ## By [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
 ### Wtf am i going to talk about ?
 
-1. Intro on gaming and Augmented Reality
+1. Intro on gaming and AR
 2. Present WebAR: an AR solution for the Web
 
 ---
@@ -28,9 +26,6 @@ output: index.html
 - No killer app game yet
 
 There is an opportunity there!
-=======
-## [@jerome_etienne](https://twitter.com/jerome_etienne)
->>>>>>> fcb876e2835b2627821b495ca24bf3040b7eae5b
 
 ---
 
@@ -42,14 +37,81 @@ There is an opportunity there!
 
 ---
 
+## Let's get started!
+
+---
+
 ### Who Am I ?
 
 - Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
 - Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
-- Lead for
-Three.js Team at [Daqri](http://daqri.com) in Dublin
+- Lead for Three.js Team at [Daqri](http://daqri.com) in Dublin
 
 Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
+
+---
+
+# Challenge in Gaming and AR
+
+---
+
+### META
+
+- META: integrate the talk from john
+- His links
+- Say 5-10 slides max
+- With videos and screenshots via skitch
+
+---
+
+### Ingress Game
+
+- Take place over a map of the real world
+- GPS-location based game
+- Hack and build up portals
+- ala [watch-dog](http://blog.ubi.com/watch-dogs-easter-eggs/) but with AR
+
+### New Interaction
+- Interaction with other human you dont know
+- Interaction with physical localisation
+
+---
+
+### Ingress Game
+
+<iframe width="640" height="400" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
+
+---
+
+### SpecTrek
+
+- Another GPS-location based game
+- Catch ghosts in AR
+- Ghostbuster in AR
+
+---
+
+### SpecTrek
+
+<iframe width="640" height="400" src="https://www.youtube.com/embed/MQXB2gKX1KM" frameborder="0" allowfullscreen></iframe>
+
+---
+
+## How can this talk help ?
+
+## Provide to the technical solution for you to experiment
+
+---
+
+## How 
+
+---
+
+### What Will I Talk About ?
+
+- Doing Augmented Reality
+- Using Only Web Technology
+- Using Only Open Source
 
 ---
 
@@ -141,13 +203,20 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-## Let's See What We Can Do With Them
+## Now Some Examples to Copy From
 
 ---
 
 ### Being Awesome - [link](images/screenshots/being-awesome.jpg)
 
-<!-- <img src="images/screenshots/being-awesome.jpg" width='100%'> -->
+- Attached a marker to my glass
+- Used it as a marker
+- May be the base for a shooting game
+- People shooting at each other 
+
+---
+
+### Being Awesome - [link](images/screenshots/being-awesome.jpg)
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/fz9bmOfYvG0" frameborder="0" allowfullscreen></iframe>
 
@@ -155,7 +224,15 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ### Data Visualisation - [link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
 
-Dynamic Histogram in AR on Mobile
+- Dynamic Histogram in AR on Mobile
+- May be used to visualize property of a equipment e.g. microwave
+- Documentation, Animated How To
+- Give local info e.g. which tuning for a given recipe
+
+---
+
+### Data Visualisation - [link](https://www.youtube.com/watch?v=wrMX_FH2hsc)
+
 
 <iframe src="https://vine.co/v/ei1TDWLrYiX/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
@@ -163,11 +240,28 @@ Dynamic Histogram in AR on Mobile
 
 ### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
 
-Display Info From a Database on per-marker basis
+- Display Info From a Database on per-marker basis
+- Everybody in a conf has its own Marker
+- They use the apps to recognize each other
+- More efficient than swapping bizcards
+
+---
+
+### Contact Sharing in AR - [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
+
 <!-- <img src="images/screenshots/contact-sharing.png" width='80%'> -->
 
 <iframe width="640" height="400" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
 
+---
+
+## A classic Hatsune Miku
+
+---
+
+### Funny Joke - Hatsune Miku - [link](https://vine.co/v/eApD5rPtKxT)
+
+- japanese META TO THAT HERE
 
 ---
 
@@ -221,10 +315,10 @@ Several possibilities, we focused on
 
 ### jsartoolkit
 
-- Javascript port of [artoolkit](artoolkit.org) - Rather Old - 3 years old
+- Javascript port of [artoolkit](http://artoolkit.org) - Rather Old - 3 years old
 - Written by [Ilmari Heikkinen](http://www.fhtr.net/)
 - Available on [github](https://github.com/kig/JSARToolKit)
-- To use it in the pipe
+- To use it in this in the pipe
 
 ---
 
@@ -305,7 +399,7 @@ Up to you
 ---
 
 # Markers
-## The Base of it all
+
 ---
 
 ### Looks Like That
