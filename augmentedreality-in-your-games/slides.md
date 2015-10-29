@@ -10,7 +10,7 @@ output: index.html
 
 ### Wtf am i going to talk about ?
 
-1. Intro on gaming and AR
+1. Intro on gaming and Augmented Reality
 2. Present WebAR: an AR solution for the Web
 
 ---
