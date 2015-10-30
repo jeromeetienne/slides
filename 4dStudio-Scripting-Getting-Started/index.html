@@ -401,7 +401,7 @@ pre .chunk {
   </div>
 
   <div class="slide" id="slide-1">
-    <section class="slide-content"><style>pre { font-size: 100%; }</style>
+    <section class="slide-content"><style>pre { font-size: 80%; }</style>
 <style>img { width: 100%; }</style>
 
 <h1 id="4d-studio-scripting">4D Studio Scripting</h1>
@@ -421,14 +421,14 @@ pre .chunk {
   <div class="slide hidden -" id="slide-3">
     <section class="slide-content"><h3 id="what-is-4d-studio">What is 4D Studio</h3>
 <ul>
-<li>authoring AR experience</li>
-<li>edit once, play everywhere</li>
+<li>Authoring AR experience</li>
+<li>Edit once, play everywhere</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden -" id="slide-4">
     <section class="slide-content"><h3 id="landing-page-link-http-test2-daqri-com-">Landing Page <a href="http://test2.daqri.com/">link</a></h3>
-<p><img src='images/4dstudio-screenshot-origin.png'></img></p>
+<p><img src='images/4dstudio-screenshot-landingpage.png'></img></p>
 </section>
   </div>
   <div class="slide hidden -" id="slide-5">
@@ -474,7 +474,7 @@ object3d.material.transparent = true</code></pre>
   </div>
   <div class="slide hidden -" id="slide-12">
     <section class="slide-content"><h3 id="how-to-change-the-visibility">How to Change the Visibility</h3>
-<pre><code>object3d.visible = true | false;</code></pre>
+<pre><code>object3d.visible = true; // false</code></pre>
 </section>
   </div>
   <div class="slide hidden -" id="slide-13">
@@ -499,7 +499,25 @@ var object3d = new THREE.Mesh(geometry, material);</code></pre>
 </section>
   </div>
   <div class="slide hidden -" id="slide-16">
+    <section class="slide-content"><h3 id="how-to-detect-a-click-on-an-object">How to detect a click on an object</h3>
+<pre><code>var scene = this;
+// listen to click event
+document.body.addEventListener(&#39;click&#39;, function(event){
+  // find all objects under the mouse click
+  var intersects = daqri.util.computeIntersects(event.x, event.y);
+  // test if one object is found
+  if(intersects.length&gt;0){
+    // get the selected object
+    var selected = intersects[0].object;
+    // here do what you like with it
+    console.log(&#39;object selected&#39;, selected);
+  }
+})</code></pre>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-17">
     <section class="slide-content"><h1 id="questions-">Questions ?</h1>
+<p>ping me anytime at @jerome_etienne</p>
 </section>
   </div>
 

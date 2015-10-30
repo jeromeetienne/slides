@@ -2,7 +2,7 @@ title: 4D Studio Scripting - Getting Started
 output: index.html
 --
 
-<style>pre { font-size: 100%; }</style>
+<style>pre { font-size: 80%; }</style>
 <style>img { width: 100%; }</style>
 
 # 4D Studio Scripting
@@ -21,14 +21,14 @@ output: index.html
 
 ### What is 4D Studio
 
-- authoring AR experience
-- edit once, play everywhere
+- Authoring AR experience
+- Edit once, play everywhere
 
 ---
 
 ### Landing Page [link](http://test2.daqri.com/)
 
-<img src='images/4dstudio-screenshot-origin.png'></img>
+<img src='images/4dstudio-screenshot-landingpage.png'></img>
 
 ---
 
@@ -97,7 +97,7 @@ object3d.material.transparent = true
 ### How to Change the Visibility
 
 ```
-object3d.visible = true | false;
+object3d.visible = true; // false
 ```
 
 ---
@@ -111,6 +111,7 @@ var geometry = new THREE.SphereGeometry(1);
 var material = new THREE.MeshNormalMaterial();
 var object3d = new THREE.Mesh(geometry, material);
 ```
+
 ---
 
 ### How to add an object into the scene
@@ -137,4 +138,26 @@ scene.remove(object3d);
 
 ---
 
+### How to detect a click on an object
+
+```
+var scene = this;
+// listen to click event
+document.body.addEventListener('click', function(event){
+  // find all objects under the mouse click
+  var intersects = daqri.util.computeIntersects(event.x, event.y);
+  // test if one object is found
+  if(intersects.length>0){
+    // get the selected object
+    var selected = intersects[0].object;
+    // here do what you like with it
+    console.log('object selected', selected);
+  }
+})
+```
+
+---
+
 # Questions ?
+
+ping me anytime at @jerome_etienne
