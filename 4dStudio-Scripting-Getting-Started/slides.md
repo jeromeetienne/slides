@@ -12,10 +12,21 @@ output: index.html
 
 ---
 
-### Recipes
-- 4D Studio Scripting
-- Getting Started
+### What are we gonna talk about ?
+- Scripting 3D inside 4D Studio
 - Recipes Style
+
+
+---
+
+### Who Am I ?
+
+- Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
+- Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
+- Lead for
+Three.js Team at [Daqri](http://daqri.com) in Dublin
+
+Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
@@ -160,4 +171,4 @@ document.body.addEventListener('click', function(event){
 
 # Questions ?
 
-ping me anytime at @jerome_etienne
+## Ping me anytime at [@jerome_etienne](http://twitter.com/jeromeetienne)

@@ -410,15 +410,25 @@ pre .chunk {
 </section>
   </div>
   <div class="slide hidden -" id="slide-2">
-    <section class="slide-content"><h3 id="recipes">Recipes</h3>
+    <section class="slide-content"><h3 id="what-are-we-gonna-talk-about-">What are we gonna talk about ?</h3>
 <ul>
-<li>4D Studio Scripting</li>
-<li>Getting Started</li>
+<li>Scripting 3D inside 4D Studio</li>
 <li>Recipes Style</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden -" id="slide-3">
+    <section class="slide-content"><h3 id="who-am-i-">Who Am I ?</h3>
+<ul>
+<li>Best Known as the author of <a href="http://learningthreejs.com/">Learning Three.js Blog</a></li>
+<li>Wrote more than <a href="http://www.threejsgames.com/extensions/">45 game extensions for three.js</a></li>
+<li>Lead for
+Three.js Team at <a href="http://daqri.com">Daqri</a> in Dublin</li>
+</ul>
+<p>Contact me on twitter <a href="https://twitter.com/jerome_etienne">@jerome_etienne</a></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-4">
     <section class="slide-content"><h3 id="what-is-4d-studio">What is 4D Studio</h3>
 <ul>
 <li>Authoring AR experience</li>
@@ -426,39 +436,39 @@ pre .chunk {
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-4">
+  <div class="slide hidden -" id="slide-5">
     <section class="slide-content"><h3 id="landing-page-link-http-test2-daqri-com-">Landing Page <a href="http://test2.daqri.com/">link</a></h3>
 <p><img src='images/4dstudio-screenshot-landingpage.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-5">
+  <div class="slide hidden -" id="slide-6">
     <section class="slide-content"><h3 id="where-in-js-console">Where ? in js console</h3>
 <p><img src='images/4dstudio-screenshot-htmltemplate.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-6">
+  <div class="slide hidden -" id="slide-7">
     <section class="slide-content"><h3 id="how-to-play-your-script">How To Play Your Script</h3>
 <p><img src='images/4dstudio-screenshot-playmode.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-7">
+  <div class="slide hidden -" id="slide-8">
     <section class="slide-content"><h3 id="how-to-select-a-3d-object">How to Select a 3D Object</h3>
 <p>With its names</p>
 <pre><code>var object3d = scene.getObjectByName(&#39;superObject&#39;)</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-8">
+  <div class="slide hidden -" id="slide-9">
     <section class="slide-content"><h3 id="where-to-get-the-object3d-names">Where to get the object3d names</h3>
 <p><img src='images/4dstudio-objectname.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-9">
+  <div class="slide hidden -" id="slide-10">
     <section class="slide-content"><h3 id="how-to-reach-the-scene-variable">How To Reach the Scene Variable</h3>
 <pre><code>// put that early in your script
 var scene = this;</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-10">
+  <div class="slide hidden -" id="slide-11">
     <section class="slide-content"><h3 id="how-to-change-an-object-position">How to Change An Object Position</h3>
 <p>Move object to the right</p>
 <pre><code>object3d.rotation.x += 50;</code></pre>
@@ -466,18 +476,18 @@ var scene = this;</code></pre>
 <pre><code>object3d.scale.set(2,2,2);</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-11">
+  <div class="slide hidden -" id="slide-12">
     <section class="slide-content"><h3 id="how-to-change-the-opacity">How to Change the Opacity</h3>
 <pre><code>object3d.material.opacity = 0.1;
 object3d.material.transparent = true</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-12">
+  <div class="slide hidden -" id="slide-13">
     <section class="slide-content"><h3 id="how-to-change-the-visibility">How to Change the Visibility</h3>
 <pre><code>object3d.visible = true; // false</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-13">
+  <div class="slide hidden -" id="slide-14">
     <section class="slide-content"><h3 id="how-to-create-a-new-object">How to Create a new Object</h3>
 <p>Let&#39;s create a sphere</p>
 <pre><code>var geometry = new THREE.SphereGeometry(1);
@@ -485,7 +495,7 @@ var material = new THREE.MeshNormalMaterial();
 var object3d = new THREE.Mesh(geometry, material);</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-14">
+  <div class="slide hidden -" id="slide-15">
     <section class="slide-content"><h3 id="how-to-add-an-object-into-the-scene">How to add an object into the scene</h3>
 <p>To add an object to a scene</p>
 <pre><code>scene.add(object3d)</code></pre>
@@ -493,12 +503,12 @@ var object3d = new THREE.Mesh(geometry, material);</code></pre>
 <pre><code>parent.add(object3d)</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-15">
+  <div class="slide hidden -" id="slide-16">
     <section class="slide-content"><h3 id="how-to-remove-from-the-scene">How to remove from the scene</h3>
 <pre><code>scene.remove(object3d);</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-16">
+  <div class="slide hidden -" id="slide-17">
     <section class="slide-content"><h3 id="how-to-detect-a-click-on-an-object">How to detect a click on an object</h3>
 <pre><code>var scene = this;
 // listen to click event
@@ -515,9 +525,9 @@ document.body.addEventListener(&#39;click&#39;, function(event){
 })</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-17">
+  <div class="slide hidden -" id="slide-18">
     <section class="slide-content"><h1 id="questions-">Questions ?</h1>
-<p>ping me anytime at @jerome_etienne</p>
+<h2 id="ping-me-anytime-at-jerome_etienne-http-twitter-com-jeromeetienne-">Ping me anytime at <a href="http://twitter.com/jeromeetienne">@jerome_etienne</a></h2>
 </section>
   </div>
 
