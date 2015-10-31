@@ -32,15 +32,25 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-### What is 4D Studio
+### What is 4D Studio ?
 
 - Authoring AR experience
+- Rich edit tools (models, animation, scripting)
 - Edit once, play everywhere
-- rich tools (models, animation, scripting)
 
 ---
 
-### What we gonna learn ?
+### Scripting 3D in 4D Studio
+
+- three.js under the hood
+- easy to reuse
+- [http://threejs.org/docs](http://threejs.org/docs/)
+- [http://threejs.org/examples/](http://threejs.org/examples/)
+- [stackoverflow three.js](http://stackoverflow.com/questions/tagged/three.js)
+
+---
+
+### What We Gonna Learn ?
 
 - How to script your 3d in 4D Studio
 - Create interactive experience
@@ -50,7 +60,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-### Landing Page [link](http://test2.daqri.com/)
+### Open 4D Studio [link](http://test2.daqri.com/)
 
 
 <img src='images/4dstudio-screenshot-landingpage.png'></img>
@@ -59,7 +69,7 @@ Contact me on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
-### Show Time
+### Set up the basic
 
 Let me show you - [demo here](http://test2.daqri.com/)
 
@@ -69,7 +79,7 @@ Let me show you - [demo here](http://test2.daqri.com/)
 
 ---
 
-### Where ? in js console
+### Where to Put Your Script ? in js console
 
 <img src='images/4dstudio-screenshot-htmltemplate.png'></img>
 
@@ -78,7 +88,6 @@ Let me show you - [demo here](http://test2.daqri.com/)
 ### How To Play Your Script
 
 <img src='images/4dstudio-screenshot-playmode.png'></img>
-
 
 ---
 
@@ -93,9 +102,7 @@ var scene = this;
 
 ---
 
-### How to Select a 3D Object
-
-With its names
+### How to Select a 3D Object by Name
 
 ```
 var object3d = scene.getObjectByName('superObject')
@@ -103,13 +110,13 @@ var object3d = scene.getObjectByName('superObject')
 
 ---
 
-### Where to get the object3d names
+### Where to Get the Object3d Names
 
 <img src='images/4dstudio-objectname.png'></img>
 
 ---
 
-### How to detect a click on an object
+### How to Detect a Click on an Object
 
 ```
 var scene = this;
