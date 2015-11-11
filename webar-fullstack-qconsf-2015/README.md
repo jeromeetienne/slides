@@ -15,7 +15,7 @@
   - https://github.com/borismus/webvr-boilerplate
   - http://smus.com/responsive-vr/
 
-- Talk about THREEX webar
+- Talk about THREEX webar/
   - use the previous slides (got plenty of material)
   - https://github.com/jeromeetienne/threex.webar
   - http://jeromeetienne.github.io/slides/hatsune-miku-dancing-in-ar
@@ -28,7 +28,9 @@
    * Occulus
    * Hololens
    * Google Glass 
+   
    * SteamVR Valve
+     - http://www.itpro.co.uk/desktop-hardware/24985/everything-you-need-to-know-about-htc-vive-and-steam-vr-release-date-price-4
    * Daqri eventually 
 * Talk about the money and the company doing it
 * Everybody is investing on it. This is big and serious
