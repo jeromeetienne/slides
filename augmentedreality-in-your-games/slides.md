@@ -5,7 +5,32 @@ output: index.html
 # WebAR
 ##  a Augmented Reality Solution for the Web
 
+<<<<<<< HEAD
+## By [@jerome_etienne](https://twitter.com/jerome_etienne)
+
+---
+
+### Wtf am i going to talk about ?
+
+1. Intro on gaming and Augmented Reality
+2. Present WebAR: an AR solution for the Web
+
+---
+
+## In Short...
+
+---
+
+### Challenges in Gaming and AR
+
+- Works well for board/card games
+- Everybody is looking
+- No killer app game yet
+
+There is an opportunity there!
+=======
 ## [@jerome_etienne](https://twitter.com/jerome_etienne)
+>>>>>>> fcb876e2835b2627821b495ca24bf3040b7eae5b
 
 ---
 
