@@ -5,7 +5,6 @@ output: index.html
 # WebAR
 ##  a Augmented Reality Solution for the Web
 
-<<<<<<< HEAD
 ## By [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
@@ -28,9 +27,6 @@ output: index.html
 - No killer app game yet
 
 There is an opportunity there!
-=======
-## [@jerome_etienne](https://twitter.com/jerome_etienne)
->>>>>>> fcb876e2835b2627821b495ca24bf3040b7eae5b
 
 ---
 

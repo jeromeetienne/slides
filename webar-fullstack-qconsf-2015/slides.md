@@ -153,6 +153,7 @@ It is a mix!
 
 - Old fashion 
 - Super low tech
+- Available in three.js
 
 
 ---
@@ -174,6 +175,7 @@ It is a mix!
 - Based on a device placed in front of an image source
 - No need for the viewer to wear 3D glasses
 - Similar to [lenticular printing](https://en.wikipedia.org/wiki/Lenticular_printing)
+- Available in three.js
 
 ---
 
@@ -204,6 +206,7 @@ It is a mix!
 - Work on mobile devices!
 - Made popular by [google cardboard](https://www.google.com/get/cardboard/)
 - Cheap to buy (as low as $2)
+- Available in three.js
 
 ---
 
@@ -223,6 +226,7 @@ It is a mix!
 
 - It is standard! [link](http://mozvr.github.io/webvr-spec/webvr.html) 
 - google and mozilla are working hard on it
+- Available in three.js 
 
 ---
 
@@ -232,24 +236,63 @@ It is a mix!
 
 ---
 
-### Misc 
-- show code sample + screenshot of three.js examples for various kind of devices
-- occulus
-  - https://va3c.github.io/three.js/examples/misc_controls_oculusrift.html
-  - https://github.com/mrdoob/three.js/blob/r73/examples/js/effects/VREffect.js
-  - 
-- google cardboard
-  - stereoscopic
+## Many possibilities...
 
 ---
 
-# How to Code For AR
+### Which One To Pick ?
+
+- Too many possibilities, can't code them all
+- Should focus on the experience
+- Not on coding support for each VR devices
+
+---
+
+### Which One To Pick ?
+
+- Discard the exotic ones
+- Focus on the popular ones
+- i.e. occulus, cardboard, and plain phone
+
+**All done in WebVR Boilerplate. GREAT!**
+
+---
+
+### What Is The WebVR Boilerplate ?
+
+- Support all popular VR devices
+- i.e. occulus, google cardboard, and plain phone
+- [WebVR Boilerplate](https://github.com/borismus/webvr-boilerplate) code available on github
+- Reuse it, so you can focus on your own stuff
+
+---
+
+### WebVR Boilerplate: a Safe Choice 
+
+- Described as "Responsive WebVR, headset optional"
+- Made by [Boris Smus](https://twitter.com/borismus) at google - [post](http://smus.com/responsive-vr/)
+- Apply [Responsive Web](https://en.wikipedia.org/wiki/Responsive_web_design) principle
+
+---
+
+## You got what you need to start coding VR
+
+---
+
+## Now let's talk about AR
+
+---
+
+# How to Code For AR ?
 
 ---
 
 ### Misc
 
-- threex.webar
+- introduce threex.webar
+- why daqri did it
+- how to use it
+- what is it
 
 ---
 
