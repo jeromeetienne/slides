@@ -540,4 +540,39 @@ It is a mix!
 
 ---
 
+# Conclusion
+
+---
+
+### Some Remarks
+
+- To code VR is easy: already done for you in three.js
+- To code AR is cool: WebAR is there to help 
+- It has a lot of opensource
+
+**It can be fun to play with :)**
+
+--- 
+
+### Alternate Reality is BIG
+
+- All Big Actors are pushing hard
+- Facebook, Microsoft, Google, Steam, Daqri
+- Devices aren't ready, but they are coming
+- Unclear which device will win
+
+**But it is definitly coming!**
+
+---
+
+### AR is Available Today
+
+- AR can run well on Phone today
+- Experience quite convincing already
+- Code is available and free - [WebAR](https://github.com/jeromeetienne/threex.webar)
+
+**You don't need to wait!**
+
+---
+
 # Questions ?
