@@ -4,10 +4,22 @@ output: index.html
 
 <style>section.slide-content img { width: 100% }</style>
 <style>pre { font-size: 100% }</style>
+<!-- <base target='_blank '> -->
 
 # Alternate Reality in the Web
 
 ## by [@jerome_etienne](https://twitter.com/jerome_etienne)
+
+---
+
+### What This Talk is About ?
+
+- What Is Alternate Reality ?
+- Which Devices Are Available
+- How to Code for VR and AR in the Web
+- WebAR - Open Source Solution for AR in the Web
+
+I hope you are in the good room :)
 
 ---
 
@@ -22,20 +34,22 @@ Contact me anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 
 ---
 
+## So first, Alternative Reality ?
+
+---
+
 ### What is Alternate Reality ?
 
-It is a mix!
+It is a mix of 2 things!
 
 - Virtual Reality
 - Augmented Reality
 
+**Let's look at it on more details.**
+
 ---
 
 # Devices Of Virtual Reality
-
----
-
-### Everybody is Doing It
 
 ---
 
@@ -47,7 +61,13 @@ It is a mix!
 
 ### Steam VR
 
-- Made by Steam/Valve
+- It is a VR devices by Steam/Valve
+- One of the leader in Game Industry
+- Great Distribution Plateform on PC/Mac/linux
+- Their own console - [Steam Maching](http://store.steampowered.com/hardware)
+- Major games e.g. [half life](https://en.wikipedia.org/wiki/Half-life)
+
+**Definitly A Big Player**
 
 ---
 
@@ -57,11 +77,12 @@ It is a mix!
 
 ---
 
-### Occulus
+### Occulus 
 
-- Started as [kickstarter](https://www.kickstarter.com/projects/1523379957/oculus-rift-step-into-the-game)
+- It is a VR device
 - Most well known devices
-- acquired by [facebook for $2 billion](http://techcrunch.com/2014/07/21/facebooks-acquisition-of-oculus-closes-now-official/) 
+- Started as [kickstarter](https://www.kickstarter.com/projects/1523379957/oculus-rift-step-into-the-game)
+- Acquired by [facebook for $2 billion](http://techcrunch.com/2014/07/21/facebooks-acquisition-of-oculus-closes-now-official/) 
 
 ---
 
@@ -73,8 +94,9 @@ It is a mix!
 
 ### Hololens
 
-- Made by microsoft
-- No Wire!
+- It is a AR device Made by microsoft
+- Not cheap... Announced SDK for $3000
+- No Wire! You can walk around
 
 ---
 
@@ -87,8 +109,10 @@ It is a mix!
 
 ### Google Glass
 
-- Made by Google
+- It is a AR device Made by Google
+- It costed $1.500 and required invitations
 - Got stopped in early 2015 
+- Reasons unclear
 
 ---
 
@@ -100,14 +124,70 @@ It is a mix!
 
 ### Google Cardboard
 
-- Made by Google
+- It is a VR device made by Google
 - Cheap, use your own phone
 - "can build it from a pizza cardboard"
+- May be converted into AR device ?
+
+---
+
+# Alternate Reality is BIG!
+
+---
+
+# Everybody is Doing It!
+
+---
+
+### Big Actors in AR
+
+- Microsoft - with hololens
+- Google with tango
+- Facebook with Occulus - $2 billions
+- Steam with Steam VR
+- Daqri with smart helmet
+
+---
+
+### Big Actors in VR
+
+- Microsoft with hololens
+- Google with cardboard + glass
+- Facebook with Occulus - $2 billions
+
+---
+
+### It is NOW
+
+- We talked about it for a long time, since 90's
+- Now technology is available
+- It got large traction
+
+**It will happen in a near future**
+
+---
+
+## So we know the tools for Alternate Reality
+
+---
+
+## Let's clarify the term Virtual Reality
+## and 
+## Augmented Reality
 
 ---
 
 # What is the Difference ?
 ## Between VR and AR
+
+---
+
+### Various Realities in VR and AR
+
+- VR is about putting the user in a imaginary reality
+- AR is about adding to the user reality
+
+**Both changes our perception of reality**
 
 ---
 
@@ -146,6 +226,10 @@ It is a mix!
 
 ---
 
+## First VR, then AR..
+
+---
+
 # How to Code for VR ?
 
 ---
@@ -162,8 +246,8 @@ It is a mix!
 
 ### Anaglyph - [wikipedia](https://en.wikipedia.org/wiki/Anaglyph_3D)
 
-- Old fashion 
-- Super low tech
+- Old fashion - so 60's 
+- Super low tech - may be given away in a event
 - Available in three.js
 
 
@@ -320,42 +404,47 @@ It is a mix!
 
 ---
 
-### What is Missing ?
-
-- Camera can be access via WebRTC/getUserMedia API - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
-- Localisation of AR Markers
-  - many small libraries
-  - no clear winner
-  - We decided to put ourselved to work
-
----
-
 ### AR Needs More Than VR
 
 - AR needs a camera to capture reality
 - AR needs to localize marker
 
-
 ---
 
-## First handling the camera
+### How to Use a Camera in the Web
 
----
-
-### Camera Feed
-
-- Simple color video like Webcam
-- webrtc/getUserMedia - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
+- A webcam is enougth. You got 2 in your own phone
+- Standard webrtc/getUserMedia - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
 - Supported on Desktop and Android mobile
 - Not IOS unfortunatly - [caniuse link](http://caniuse.com/#feat=stream)
 
+**We are covered from a camera POV**
 
 ---
 
-### Open source is important at Daqri
+### What About AR Markers Localisation ?
 
-- Feb 2015 - Daqri acquired AR Toolkit
-- Before it has a free and a pro version
+- Simple library to ease typical AR task
+- e.g. reading camera, marker localisation, multiple marker, displaying 3d
+- Camera can be access via WebRTC/getUserMedia API - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
+
+---
+
+### What About AR Markers Localisation ?
+
+- Localisation of AR Markers is KEY
+- Many small libraries. No clear winner.
+- winner should be accurate, good perf, open source, well maintained.
+
+**We decided to put ourselved to work**
+
+---
+
+### ARToolkit In Open source
+
+- [AR Toolkit](http://artoolkit.org/) - Popular tracking library for AR.
+- It had a opensource and a pro version
+- Feb 2015 - Daqri acquired them
 
 **We opened source it all!**
 
@@ -374,7 +463,7 @@ It is a mix!
 
 - Allow to easily do AR on top of three.js
 - Our experiment to do AR in a Web page
-- All open source, so you can use it.
+- All open source, so you can use it
 
 [WebAR on github](https://github.com/jeromeetienne/threex.webar)
 
