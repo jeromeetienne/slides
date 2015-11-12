@@ -487,7 +487,7 @@ It is a mix of 2 things!
 - They provide high quality hand free experience
 - But Phone available today, no need to wait 
 
-**Availability is a powerful arguments**
+**Availability is a powerful argument**
 
 ---
 
@@ -502,6 +502,7 @@ It is a mix of 2 things!
 ### WebAR's Examples
 
 - Various AR applications built with WebAR
+- All available in Github
 - Show possible usages and hopefully inspire more
 - Good places to get starting
 
@@ -716,10 +717,6 @@ A Spoon of opensource
 ## I hope i motivated you to 
 
 # Go Experiment With AR!
-
----
-
-### META todo a conclusion
 
 ---
 
