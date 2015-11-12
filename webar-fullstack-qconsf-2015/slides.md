@@ -11,6 +11,17 @@ output: index.html
 
 ---
 
+### Who Am I ?
+
+- Best Known as the author of [Learning Three.js Blog](http://learningthreejs.com/)
+- Wrote more than [45 game extensions for three.js](http://www.threejsgames.com/extensions/)
+- Lead for
+Three.js Team at [Daqri](http://daqri.com) in Dublin
+
+Contact me anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etienne)
+
+---
+
 ### What is Alternate Reality ?
 
 It is a mix!
@@ -287,12 +298,245 @@ It is a mix!
 
 ---
 
-### Misc
+### Coding AR is Not as simple as VR :(
 
-- introduce threex.webar
-- why daqri did it
-- how to use it
-- what is it
+- Most VR already in three.js
+- WebVR is a standard in progress
+
+**AR isn't there yet... Working hard tho**
+
+---
+
+## Lets review AR needs
+
+---
+
+### What is Needed For AR
+
+1. Get a camera
+1. Analyze it to localize AR Markers
+1. Generate 3d on top
+1. Finally display both, 3d and video, on the screen
+
+---
+
+### What is Missing ?
+
+- Camera can be access via WebRTC/getUserMedia API - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
+- Localisation of AR Markers
+  - many small libraries
+  - no clear winner
+  - We decided to put ourselved to work
+
+---
+
+### AR Needs More Than VR
+
+- AR needs a camera to capture reality
+- AR needs to localize marker
+
+
+---
+
+## First handling the camera
+
+---
+
+### Camera Feed
+
+- Simple color video like Webcam
+- webrtc/getUserMedia - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
+- Supported on Desktop and Android mobile
+- Not IOS unfortunatly - [caniuse link](http://caniuse.com/#feat=stream)
+
+
+---
+
+### Open source is important at Daqri
+
+- Feb 2015 - Daqri acquired AR Toolkit
+- Before it has a free and a pro version
+
+**We opened source it all!**
+
+---
+
+### More About Open Source at Daqri
+
+- Will opensource four.js, our core library to do AR
+- We keep improving ARToolkit
+- We will opensource result
+- e.g. more robust tracking algos, new features
+
+---
+
+### WebAR - Augmented Reality Solution for the Web
+
+- Allow to easily do AR on top of three.js
+- Our experiment to do AR in a Web page
+- All open source, so you can use it.
+
+[WebAR on github](https://github.com/jeromeetienne/threex.webar)
+
+---
+
+### WebAR - Results
+
+- It works!
+- It is usable today
+- free as a chery on top :)
+- It EVEN runs in mobile phones.
+
+**Augmented reality in browsers is for real**
+
+---
+
+### WebAR - What about Phones ?
+
+- WebAR is running on Phone (YES you read it well)
+- People already got mobile phones
+- So it can provide AR to your user today
+
+---
+
+### WebAR - More about Phones
+
+- Not the perfect experience
+- Not as good as Specific devices: e.g. hololens or daqri smart helmet 
+- They provide high quality hand free experience
+- But Phone available today, no need to wait 
+
+**Availability is a powerful arguments**
+
+---
+
+## WebAR is cool, let's see what we can do
+
+---
+
+# WebAR's Examples
+
+---
+
+### WebAR's Examples
+
+- Various AR applications built with WebAR
+- Show possible usages and hopefully inspire more
+- Good places to get starting
+
+---
+
+### Being Awesome - Basic Example
+
+<img src="images/screenshots/being-awesome.jpg">
+
+---
+
+### Being Awesome - Description
+
+- Display a trivial 3D on top of a marker
+- Basic Example
+- Written to be simple to understand
+
+---
+
+### Being Awesome - in Action
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/fz9bmOfYvG0" frameborder="0" allowfullscreen></iframe>
+
+---
+
+### Being Awesome - Improvements ?
+
+- May be the base for a FPS Game in AR
+- People are identified by markers
+- They shoot each other in AR
+- You display special effect on top
+
+
+---
+
+## Now a more 'serious' one
+
+---
+
+### Data Visualisation - Serious applications
+
+<img src="images/screenshots/data-visualization-histogram3d.png">
+
+---
+
+### Data Visualisation - Description
+
+- Put a marker near a piece of equipment
+- e.g. stoge, fridge, your car, up to you
+- Display live information about it
+
+**Provide useful info right when you need them**
+
+---
+
+### Data Visualisation - on Nexus 9
+
+<iframe src="https://vine.co/v/ei1TDWLrYiX/embed/simple" width="480" height="480" frameborder="0"></iframe>
+
+---
+
+### Data Visualisation - Improvements ?
+
+- You could put many makers in your office/house
+- I added one near my microwave
+- It shows me instructions in AR
+- e.g. cooking timing, which button to push
+
+**Actually useful in Real Life**
+
+---
+
+### Contact Sharing in AR
+
+<img src="images/screenshots/contact-sharing.png">
+
+---
+
+### Contact Sharing - Description
+
+- Everybody walk around in a conference with marker
+- Each personn got a different marker, It identifies him
+- Display Info From a Database on per-marker basis
+- No more need to dictate your email and so on
+
+**You can share contact fast and without error**
+
+---
+
+### Contact Sharing - in Action [link](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/examples/contact-sharing-in-ar.html)
+
+<iframe width="640" height="400" src="https://www.youtube.com/embed/wrMX_FH2hsc" frameborder="0" allowfullscreen></iframe>
+
+---
+
+## Last by not least, Hatsune Miku in AR! :)
+
+---
+
+### Hatsune Miku Dancing in AR
+
+<img src="images/screenshots/hatsune-miku-dancing-in-ar.png">
+
+---
+
+### Hatsune Miku - Description
+
+- Hatsune Miku is a mascotte in AR
+- You have to do it :)
+- model by [@superhoge](https://twitter.com/superhoge)
+
+---
+
+### Hatsune Miku - in Action
+
+<iframe src="https://vine.co/v/eApD5rPtKxT/embed/simple" width="480" height="480" frameborder="0"></iframe>
 
 ---
 
