@@ -540,4 +540,57 @@ It is a mix!
 
 ---
 
+
+## Now what if you want to use it yourself ?
+
+---
+
+### How we implemented it
+
+- [three.js](http://threejs.org/) to ease webgl display
+- [jsartoolkit](https://github.com/artoolkit5) to find AR markers within video streams
+
+A Spoon of opensource
+
+---
+
+### Display WebGL with three.js
+
+- Three.js javascript library from [mrdoob](https://twitter.com/mrdoob)
+- Leading library to display Webgl
+- MIT license, so easy to integrate
+- Runs on desktop and mobile.
+
+---
+
+### JSARToolKit - AR Marker Recognition
+
+- Javascript port of [artoolkit](artoolkit.org)
+- Compiled with EMScripten (c++ to js compiler)
+- Opensource it all obviously
+
+---
+
+# Code Overview
+
+---
+
+### WebAR - Extensions For Augmented Reality
+
+- Follow the threex models for three.js Extensions
+- wrote 50 of them already, proven to work
+- Simple, standalone, accurate
+
+---
+
+### WebAR - Extensions For Augmented Reality
+
+- [threex.jsartoolkitmarker.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.jsarucomarker.js) - marker recognition
+- [threex.webcamgrabbing.js](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/src/threex.webcamgrabbing.js) - video grabbing
+- See [README.md](https://github.com/jeromeetienne/arplayerforthreejs/blob/master/README.md) for Details
+
+**Simple, easy to access, dont hesitate to try**
+
+---
+
 # Questions ?
