@@ -1,32 +1,10 @@
-title: Augmented Reality in Three.js
+title: Alternate Reality in the Web
 output: index.html
 --
 
-# WebAR
-##  a Augmented Reality Solution for the Web
+# Alternate Reality in the Web
 
-## By [@jerome_etienne](https://twitter.com/jerome_etienne)
-
----
-
-### Wtf am i going to talk about ?
-
-1. Intro on gaming and Augmented Reality
-2. Present WebAR: an AR solution for the Web
-
----
-
-## In Short...
-
----
-
-### Challenges in Gaming and AR
-
-- Works well for board/card games
-- Everybody is looking
-- No killer app game yet
-
-There is an opportunity there!
+## by [@jerome_etienne](https://twitter.com/jerome_etienne)
 
 ---
 
