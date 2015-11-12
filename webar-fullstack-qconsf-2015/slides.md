@@ -621,7 +621,6 @@ It is a mix of 2 things!
 
 ---
 
-
 ## Now what if you want to use it yourself ?
 
 ---
@@ -659,8 +658,9 @@ A Spoon of opensource
 ### WebAR - Extensions For Augmented Reality
 
 - Follow the threex models for three.js Extensions
-- wrote 50 of them already, proven to work
+- wrote 50 threex already, proven to work
 - Simple, standalone, accurate
+- Well Documented README.md
 
 ---
 
@@ -672,6 +672,51 @@ A Spoon of opensource
 
 **Simple, easy to access, dont hesitate to try**
 
+
+
+---
+
+# Conclusion
+
+
+--- 
+
+### Alternate Reality is BIG
+
+- All Big Actors are pushing hard
+- Facebook, Microsoft, Google, Steam, Daqri
+- Devices aren't ready, but they are coming
+- Unclear which device will win
+
+**But it is definitly coming!**
+
+---
+
+### AR is Available Today
+
+- AR can run well on Phone today
+- Experience quite convincing already
+- Code is available and free - [WebAR](https://github.com/jeromeetienne/threex.webar)
+
+**You don't need to wait!**
+
+---
+
+### Last Remarks
+
+- To code VR is easy: already done for you in three.js
+- To code AR is cool: WebAR is there to help 
+- It has a lot of opensource
+
+**It can be fun to play with :)**
+
+
+---
+
+## I hope i motivated you to 
+
+# Go Experiment With AR!
+
 ---
 
 ### META todo a conclusion
@@ -679,3 +724,4 @@ A Spoon of opensource
 ---
 
 # Questions ?
+## [@jerome_etienne](https://twitter.com/jerome_etienne)
