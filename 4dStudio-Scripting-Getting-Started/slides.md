@@ -79,6 +79,18 @@ Let me show you - [demo here](http://test2.daqri.com/)
 
 ---
 
+### Create An Object
+
+<img src='images/4DStudio-create-cube.png'></img>
+
+---
+
+### Change Its Name
+
+<img src='images/4DStudio-change-name.png'></img>
+
+---
+
 ### Where to Put Your Script ? in js console
 
 <img src='images/4dstudio-screenshot-htmltemplate.png'></img>

@@ -478,16 +478,26 @@ Three.js Team at <a href="http://daqri.com">Daqri</a> in Dublin</li>
 </section>
   </div>
   <div class="slide hidden -" id="slide-9">
+    <section class="slide-content"><h3 id="create-an-object">Create An Object</h3>
+<p><img src='images/4DStudio-create-cube.png'></img></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-10">
+    <section class="slide-content"><h3 id="change-its-name">Change Its Name</h3>
+<p><img src='images/4DStudio-change-name.png'></img></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-11">
     <section class="slide-content"><h3 id="where-to-put-your-script-in-js-console">Where to Put Your Script ? in js console</h3>
 <p><img src='images/4dstudio-screenshot-htmltemplate.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-10">
+  <div class="slide hidden -" id="slide-12">
     <section class="slide-content"><h3 id="how-to-play-your-script">How To Play Your Script</h3>
 <p><img src='images/4dstudio-screenshot-playmode.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-11">
+  <div class="slide hidden -" id="slide-13">
     <section class="slide-content"><h3 id="how-to-reach-the-scene-variable">How To Reach the Scene Variable</h3>
 <pre><code>// put that early in your script
 var scene = this;</code></pre>
@@ -496,17 +506,17 @@ var scene = this;</code></pre>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-12">
+  <div class="slide hidden -" id="slide-14">
     <section class="slide-content"><h3 id="how-to-select-a-3d-object-by-name">How to Select a 3D Object by Name</h3>
 <pre><code>var object3d = scene.getObjectByName(&#39;superObject&#39;)</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-13">
+  <div class="slide hidden -" id="slide-15">
     <section class="slide-content"><h3 id="where-to-get-the-object3d-names">Where to Get the Object3d Names</h3>
 <p><img src='images/4dstudio-objectname.png'></img></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-14">
+  <div class="slide hidden -" id="slide-16">
     <section class="slide-content"><h3 id="how-to-detect-a-click-on-an-object">How to Detect a Click on an Object</h3>
 <pre><code>var scene = this;
 // listen to click event
@@ -523,7 +533,7 @@ document.body.addEventListener(&#39;click&#39;, function(event){
 })</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-15">
+  <div class="slide hidden -" id="slide-17">
     <section class="slide-content"><h3 id="how-to-change-an-object-position">How to Change An Object Position</h3>
 <p>Move object to the right</p>
 <pre><code>// object3d is the variable containing the 3d javascript object
@@ -533,7 +543,7 @@ object3d.position.x += 50;</code></pre>
 object3d.scale.set(2,2,2);</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-16">
+  <div class="slide hidden -" id="slide-18">
     <section class="slide-content"><h3 id="how-to-change-the-opacity">How to Change the Opacity</h3>
 <pre><code>// here we change the object material
 // material is the way the object is reflecting lights
@@ -543,13 +553,13 @@ object3d.material.opacity = 0.1;
 object3d.material.transparent = true</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-17">
+  <div class="slide hidden -" id="slide-19">
     <section class="slide-content"><h3 id="how-to-change-the-visibility">How to Change the Visibility</h3>
 <p>Here we change the visibility of the 3d object</p>
 <pre><code>object3d.visible = true; // false</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-18">
+  <div class="slide hidden -" id="slide-20">
     <section class="slide-content"><h3 id="how-to-create-a-new-object">How to Create a new Object</h3>
 <p>Let&#39;s create a sphere</p>
 <pre><code>var geometry = new THREE.SphereGeometry(1);
@@ -559,7 +569,7 @@ var material = new THREE.MeshPhongMaterial({
 var object3d = new THREE.Mesh(geometry, material);</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-19">
+  <div class="slide hidden -" id="slide-21">
     <section class="slide-content"><h3 id="how-to-add-an-object-into-the-scene">How to add an object into the scene</h3>
 <p>To add an object to a scene</p>
 <pre><code>scene.add(object3d)</code></pre>
@@ -567,12 +577,12 @@ var object3d = new THREE.Mesh(geometry, material);</code></pre>
 <pre><code>parent.add(object3d)</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-20">
+  <div class="slide hidden -" id="slide-22">
     <section class="slide-content"><h3 id="how-to-remove-from-the-scene">How to remove from the scene</h3>
 <pre><code>scene.remove(object3d);</code></pre>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-21">
+  <div class="slide hidden -" id="slide-23">
     <section class="slide-content"><h1 id="questions-">Questions ?</h1>
 <h2 id="ping-me-anytime-at-jerome_etienne-http-twitter-com-jeromeetienne-">Ping me anytime at <a href="http://twitter.com/jeromeetienne">@jerome_etienne</a></h2>
 </section>
