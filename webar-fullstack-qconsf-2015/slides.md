@@ -15,7 +15,7 @@ output: index.html
 ### What This Talk is About ?
 
 - What Is Alternate Reality ?
-- Which Devices Are Available
+- Which tools are available ?
 - How to Code for VR and AR in the Web
 - WebAR - Open Source Solution for AR in the Web
 
@@ -49,7 +49,11 @@ It is a mix of 2 things!
 
 ---
 
-# Devices Of Virtual Reality
+## The Tools of the trade...
+
+---
+
+# Devices for Alternate Reality
 
 ---
 
