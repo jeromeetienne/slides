@@ -428,14 +428,6 @@ It is a mix of 2 things!
 
 ### What About AR Markers Localisation ?
 
-- Simple library to ease typical AR task
-- e.g. reading camera, marker localisation, multiple marker, displaying 3d
-- Camera can be access via WebRTC/getUserMedia API - [spec](http://www.w3.org/TR/mediacapture-streams/) - [example](http://simpl.info/getusermedia/)
-
----
-
-### What About AR Markers Localisation ?
-
 - Localisation of AR Markers is KEY
 - Many small libraries. No clear winner.
 - winner should be accurate, good perf, open source, well maintained.
