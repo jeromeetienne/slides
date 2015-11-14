@@ -53,7 +53,7 @@ It is a mix of 2 things!
 
 ---
 
-# Devices for Alternate Reality
+# Tools for Alternate Reality
 
 ---
 
@@ -468,7 +468,7 @@ It is a mix of 2 things!
 ### WebAR - Results
 
 - It works!
-- It is usable today
+- It is usable today - [WebAR on github](https://github.com/jeromeetienne/threex.webar)
 - free as a chery on top :)
 - It EVEN runs in mobile phones.
 
@@ -491,13 +491,13 @@ It is a mix of 2 things!
 - They provide high quality hand free experience
 - But Phone available today, no need to wait 
 
-**Phone is available**
-
 **Availability is a powerful argument**
+
+**Phone is available**
 
 ---
 
-## WebAR is cool, let's see what we can do
+## WebAR is cool, let's see what we can do with it
 
 ---
 
@@ -508,6 +508,7 @@ It is a mix of 2 things!
 ### WebAR's Examples
 
 - Various AR applications built with WebAR
+- All available in Github
 - Show possible usages and hopefully inspire more
 - All available in github repo
 - Good places to get starting
