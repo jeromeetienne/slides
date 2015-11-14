@@ -143,25 +143,23 @@ It is a mix of 2 things!
 
 ---
 
-### Big Actors in AR
+### Big Actors in VR
 
-- Microsoft - with hololens
-- Google with tango
+- Google with cardboard
 - Facebook with Occulus - $2 billions
 - Steam with Steam VR
+
+---
+
+### Big Actors in AR
+
+- Microsoft with hololens
+- Google with tango project + glass
 - Daqri with smart helmet
 
 ---
 
-### Big Actors in VR
-
-- Microsoft with hololens
-- Google with cardboard + glass
-- Facebook with Occulus - $2 billions
-
----
-
-### It is NOW
+### Alternate Reality is NOW
 
 - We talked about it for a long time, since 90's
 - Now technology is available
@@ -172,6 +170,9 @@ It is a mix of 2 things!
 ---
 
 ## So we know the tools for Alternate Reality
+---
+
+## We know it gonna happen
 
 ---
 
@@ -191,7 +192,7 @@ It is a mix of 2 things!
 - VR is about putting the user in a imaginary reality
 - AR is about adding to the user reality
 
-**Both changes our perception of reality**
+**Both change our perception of reality**
 
 ---
 
@@ -208,6 +209,8 @@ It is a mix of 2 things!
 
 **You are teleported in another reality**
 
+**Clearly Entertainement Orientated**
+
 ---
 
 ### Augmented Reality
@@ -223,6 +226,8 @@ It is a mix of 2 things!
 - like special effect for the real world
 
 **You Augment Your Reality**
+
+**Lot More Real, Practical than VR**
 
 ---
 
@@ -426,21 +431,21 @@ It is a mix of 2 things!
 
 ---
 
-### What About AR Markers Localisation ?
+### What About Markers Localisation ?
 
 - Localisation of AR Markers is KEY
 - Many small libraries. No clear winner.
 - winner should be accurate, good perf, open source, well maintained.
 
-**We decided to put ourselved to work**
+**At Daqri, We decided to put ourselved to work**
 
 ---
 
 ### ARToolkit In Open source
 
 - [AR Toolkit](http://artoolkit.org/) - Popular tracking library for AR.
-- It had a opensource and a pro version
 - Feb 2015 - Daqri acquired them
+- It had a opensource and a pro version
 
 **We opened source it all!**
 
@@ -452,6 +457,8 @@ It is a mix of 2 things!
 - We keep improving ARToolkit
 - We will opensource result
 - e.g. more robust tracking algos, new features
+
+**Open Source is important for Daqri**
 
 ---
 
@@ -488,12 +495,12 @@ It is a mix of 2 things!
 
 - Not the perfect experience
 - Not as good as Specific devices: e.g. hololens or daqri smart helmet 
-- They provide high quality hand free experience
+- Those provide high quality hand free experience
 - But Phone available today, no need to wait 
 
 **Availability is a powerful argument**
 
-**Phone is available**
+**Phones are available today**
 
 ---
 
@@ -510,8 +517,7 @@ It is a mix of 2 things!
 - Various AR applications built with WebAR
 - All available in Github
 - Show possible usages and hopefully inspire more
-- All available in github repo
-- Good places to get starting
+- Good places to get started
 
 ---
 
@@ -561,7 +567,7 @@ It is a mix of 2 things!
 - e.g. stoge, fridge, your car, up to you
 - Display live information about it
 
-**Provide useful info right when you need them**
+**Provide useful info right when/where you need them**
 
 ---
 
@@ -668,7 +674,7 @@ All opensource :)
 - Follow the threex models for three.js Extensions
 - wrote 50 threex already, proven to work
 - Simple, standalone, accurate
-- Well Documented README.md
+- Well documented in README.md
 
 ---
 
