@@ -4,7 +4,7 @@ output: index.html
 
 <style>section.slide-content img { width: 100% }</style>
 <style>pre { font-size: 100% }</style>
-<!-- <base target='_blank '> -->
+<!-- <base target='_blank '> --> 
 
 # Alternate Reality in the Web
 
