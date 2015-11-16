@@ -57,6 +57,21 @@ It is a mix of 2 things!
 
 ---
 
+### Occulus
+
+<img src="images/devices/occulus-picture-user.jpg">
+
+---
+
+### Occulus 
+
+- It is a VR device
+- Most well known devices
+- Started as [kickstarter](https://www.kickstarter.com/projects/1523379957/oculus-rift-step-into-the-game)
+- Acquired by [facebook for $2 billion](http://techcrunch.com/2014/07/21/facebooks-acquisition-of-oculus-closes-now-official/) 
+
+---
+
 ### Steam VR
 
 <img src="images/devices/htc-vive.jpg">
@@ -72,21 +87,6 @@ It is a mix of 2 things!
 - Major games e.g. [half life](https://en.wikipedia.org/wiki/Half-life)
 
 **Definitly A Big Player**
-
----
-
-### Occulus
-
-<img src="images/devices/occulus-picture-user.jpg">
-
----
-
-### Occulus 
-
-- It is a VR device
-- Most well known devices
-- Started as [kickstarter](https://www.kickstarter.com/projects/1523379957/oculus-rift-step-into-the-game)
-- Acquired by [facebook for $2 billion](http://techcrunch.com/2014/07/21/facebooks-acquisition-of-oculus-closes-now-official/) 
 
 ---
 
@@ -231,6 +231,10 @@ It is a mix of 2 things!
 
 ---
 
+## What if you want to build your own application ?
+
+---
+
 # How To Code For Alternate Reality
 
 ---
@@ -268,7 +272,11 @@ It is a mix of 2 things!
 
 ---
 
-### Parallax Barrier
+## Not too efficient, but cool and retro
+
+---
+
+### Parallax Barrier - retro 2 :)
 
 <img src="images/how-to-code/lenticularprinting-realworld-example.jpg">
 
@@ -295,7 +303,7 @@ It is a mix of 2 things!
 
 ---
 
-## More concrete ones
+## More concrete, more modern ones
 
 ---
 
@@ -307,7 +315,7 @@ It is a mix of 2 things!
 
 ### Stereo Effect
 
-- Work on mobile devices!
+- Work on mobile phones!
 - Made popular by [google cardboard](https://www.google.com/get/cardboard/)
 - Cheap to buy (as low as $2)
 - Available in three.js
