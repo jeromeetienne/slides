@@ -4,7 +4,7 @@ output: index.html
 
 <style>section.slide-content img { width: 100% }</style>
 <style>pre { font-size: 100% }</style>
-<!-- <base target='_blank '> --> 
+<base target="blank" > 
 
 # Alternate Reality in the Web
 
@@ -495,16 +495,16 @@ It is a mix of 2 things!
 
 - WebAR is running on Phone (YES you read it well)
 - People already got mobile phones
-- So it can provide AR to your user today
+- So it can provide AR to your users today
 
 ---
 
 ### WebAR - More about Phones
 
 - Not the perfect experience
-- Not as good as Specific devices: e.g. hololens or daqri smart helmet 
+- Not as good as specific devices: e.g. hololens or daqri smart helmet 
 - Those provide high quality hand free experience
-- But Phone available today, no need to wait 
+- But phone available today, no need to wait 
 
 **Availability is a powerful argument**
 
@@ -572,7 +572,7 @@ It is a mix of 2 things!
 ### Data Visualisation - Description
 
 - Put a marker near a piece of equipment
-- e.g. stoge, fridge, your car, up to you
+- e.g. stove, fridge, your car, up to you
 - Display live information about it
 
 **Provide useful info right when/where you need them**
