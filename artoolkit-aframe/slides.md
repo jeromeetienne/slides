@@ -2,7 +2,7 @@ title: Web based Augmented Reality
 output: index.html
 --
 
-# WebAR with Artoolkit
+# WebAR with ARToolKit
 
 ## Web Based Augmented Reality
 
@@ -92,7 +92,7 @@ Simple enougth :)
 
 ---
 
-### Step 2: Add Artoolkit to you scene
+### Step 2: Add ARToolKit to you scene
 
 Now we add artoolkit in the scene and create a marker
 
@@ -139,7 +139,7 @@ Directly extracted from artoolkit
 
 --- 
 
-### Artoolkit Parameters Example
+### ARToolKit Parameters Example
 
 ```html
 <!-- We define a scene -->
