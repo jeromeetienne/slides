@@ -1,7 +1,0 @@
-- what is three.js
-- what is jsartoolkit
-  - emscripten
-  - multi tracker
-- possible improvement
-  - use of webworker
-  - use of 

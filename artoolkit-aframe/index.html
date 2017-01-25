@@ -365,8 +365,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </div>
 
   <div class="slide" id="slide-1">
-    <section class="slide-content"><h1 id="web-based-augmented-reality">Web Based Augmented Reality</h1>
-<h2 id="artoolkit-in-aframe">artoolkit in aframe</h2>
+    <section class="slide-content"><h1 id="webar-with-artoolkit">WebAR with Artoolkit</h1>
+<h2 id="web-based-augmented-reality">Web Based Augmented Reality</h2>
 </section>
   </div>
   <div class="slide hidden -" id="slide-2">
@@ -374,8 +374,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <ul>
 <li>Best Known as the author of <a href="http://learningthreejs.com/">Learning Three.js Blog</a></li>
 <li>Wrote more than <a href="http://www.threejsgames.com/extensions/">50 game extensions for three.js</a></li>
-<li>Lead for
-Three.js Team at <a href="http://daqri.com">Daqri</a> in Dublin</li>
+<li>Lead for Three.js Team at <a href="http://daqri.com">Daqri</a> in Dublin</li>
 </ul>
 <p>Contact me Anytime on twitter <a href="https://twitter.com/jerome_etienne">@jerome_etienne</a></p>
 </section>
@@ -383,55 +382,186 @@ Three.js Team at <a href="http://daqri.com">Daqri</a> in Dublin</li>
   <div class="slide hidden -" id="slide-3">
     <section class="slide-content"><h3 id="what-we-are-gonna-talk-about-">What we are gonna talk about ?</h3>
 <ul>
-<li>Augmented Reality obviously</li>
-<li>jsartoolkit - javascript version of artoolkit</li>
+<li>Augmented Reality on the Web</li>
+<li>javascript version of artoolkit - jsartoolkit</li>
 <li>All that in javascript in your browser</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-4">
-    <section class="slide-content"><h3 id="web-based-vs-native-code">Web based vs Native code</h3>
+  <div class="slide hidden - " id="slide-4">
+    <section class="slide-content"><h3 id="jsartoolkit-js-version-of-artoolkit">jsartoolkit - js version of artoolkit</h3>
 <ul>
-<li>Native code is faster</li>
-<li>It is harder and longer to write</li>
-<li>It requires multiple versions for multiple plateforms</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden -" id="slide-5">
-    <section class="slide-content"><h3 id="pro-web-based">Pro Web Based</h3>
-<ul>
-<li>Single code for all plateforms
--</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden - " id="slide-6">
-    <section class="slide-content"><h3 id="jsartoolkit-history">jsartoolkit history</h3>
-<ul>
+<li>javascript version of artoolkit</li>
 <li><a href="https://github.com/artoolkit/jsartoolkit5">github repository</a></li>
 <li>license <a href="https://github.com/artoolkit/jsartoolkit5/blob/master/LICENSE.txt">LGPLv3</a> : the same
 as artoolkit</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-7">
-    <section class="slide-content"><h1 id="performances">Performances</h1>
+  <div class="slide hidden - " id="slide-5">
+    <section class="slide-content"><h3 id="jsartoolkit-origin">jsartoolkit origin</h3>
+<ul>
+<li>Written by <a href="https://github.com/kig">Ilmari Heikkinen</a></li>
+<li>Compile directly to javascript from the C version of ARToolkit</li>
+<li>Used <a href="https://github.com/kripken/emscripten">emscripten</a> for that</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-6">
+    <section class="slide-content"><h3 id="a-frame-3d-in-your-browser">A-Frame - 3d in your browser</h3>
+<ul>
+<li><a href="http://aframe.io">aframe.io</a> - effort by mozila</li>
+<li>targeted to AR/VR since the begining</li>
+<li>aims to be easy to learn by webdevs</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-7">
+    <section class="slide-content"><h3 id="a-frame-an-example">A-Frame - an example</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://aframe.io/releases/0.4.0/aframe.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">a-scene</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-box</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"#6173F4"</span> <span class="hljs-attr">opacity</span>=<span class="hljs-string">"0.8"</span> <span class="hljs-attr">depth</span>=<span class="hljs-string">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-box</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-sphere</span> <span class="hljs-attr">radius</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"texture.png"</span> <span class="hljs-attr">position</span>=<span class="hljs-string">"1 1 0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-sphere</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a-sky</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"#ECECEC"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-sky</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">a-scene</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
 </section>
   </div>
   <div class="slide hidden -" id="slide-8">
+    <section class="slide-content"><h1 id="let-s-get-started">Let&#39;s Get Started</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-9">
+    <section class="slide-content"><h3 id="step-1-our-basic-scene">Step 1: Our basic scene</h3>
+<p>Here is a basic scene in A-Frame</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- We define a scene --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a-scene</span>&gt;</span>  
+        <span class="hljs-comment">&lt;!-- add a box in the scene --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-box</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-box</span>&gt;</span> 
+        <span class="hljs-comment">&lt;!-- add a basic camera --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-entity</span> <span class="hljs-attr">camera</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-entity</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-scene</span>&gt;</span></code></pre>
+<p>Simple enougth :)</p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-10">
+    <section class="slide-content"><h3 id="step-2-add-artoolkit-to-you-scene">Step 2: Add Artoolkit to you scene</h3>
+<p>Now we add artoolkit in the scene and create a marker</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- We define a scene --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a-scene</span> <span class="hljs-attr">artoolkit</span>&gt;</span>  
+        <span class="hljs-comment">&lt;!-- we put the content into a markers --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-marker</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">a-box</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-box</span>&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-marker</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- add a basic camera --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-entity</span> <span class="hljs-attr">camera</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a-entity</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-scene</span>&gt;</span></code></pre>
+<p>That&#39;s it!</p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-11">
+    <section class="slide-content"><h1 id="tune-artoolkit">Tune ARToolkit</h1>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-12">
+    <section class="slide-content"><h3 id="parameters-for-artoolkit-detection">Parameters for artoolkit detection</h3>
+<ul>
+<li><strong>sourceType</strong> : [image, video, webcam]</li>
+<li><strong>sourceUrl</strong> : url for image/video</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-13">
+    <section class="slide-content"><h3 id="parameters-for-artoolkit-detection">Parameters for artoolkit detection</h3>
+<ul>
+<li><strong>cameraParametersUrl</strong>: to load the camera parameters for calibration</li>
+<li><strong>detectionMode</strong>: color, color_matrix, mono, mono_matrix</li>
+<li><strong>matrixCodeType</strong>: 3x3, 4x4, 3x3_HAMMING63 etc...</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-14">
+    <section class="slide-content"><h3 id="example">Example</h3>
+<ul>
+<li>Detect matrix marker from your own webcam</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- We define a scene --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a-scene</span> <span class="hljs-attr">artoolkit</span>=<span class="hljs-string">'detectionMode: mono_matrix; sourceType: webcam;'</span>&gt;</span>  
+        <span class="hljs-comment">&lt;!-- here, put the content of your scene --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-scene</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-15">
+    <section class="slide-content"><h3 id="parameters-for-a-marker">Parameters for a-marker</h3>
+<ul>
+<li><strong>type</strong>: &#39;barcode&#39; or &#39;pattern&#39; </li>
+<li><strong>size</strong>: physical size of the marker in meters</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-16">
+    <section class="slide-content"><h3 id="parameters-for-pattern">Parameters for pattern</h3>
+<ul>
+<li><strong>url</strong>: the url of the pattern to detect</li>
+</ul>
+<p>Require to have matrix in the detection mode</p>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-17">
+    <section class="slide-content"><h3 id="examples-of-a-hiro-pattern">Examples of a hiro pattern</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a-marker</span> <span class="hljs-attr">type</span>=<span class="hljs-string">'pattern'</span> <span class="hljs-attr">url</span>=<span class="hljs-string">'data/patt.hiro'</span> &gt;</span>
+        <span class="hljs-comment">&lt;!-- here put your content --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-marker</span>&gt;</span></code></pre>
+<p><img src="images/hiro.png" width='40%'></p>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-18">
+    <section class="slide-content"><h3 id="parameters-for-barcode">Parameters for barcode</h3>
+<ul>
+<li><strong>value</strong>: the value encoded in the barcode</li>
+</ul>
+<p>Require to have matrix in the detection mode</p>
+</section>
+  </div>
+  <div class="slide hidden - " id="slide-19">
+    <section class="slide-content"><h3 id="examples-of-barcode-20">Examples of barcode 20</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a-marker</span> <span class="hljs-attr">type</span>=<span class="hljs-string">'barcode'</span> <span class="hljs-attr">value</span>=<span class="hljs-string">'20'</span> &gt;</span>
+        <span class="hljs-comment">&lt;!-- here put your content --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a-marker</span>&gt;</span></code></pre>
+<p><img src="images/matrix_3x3_20.png" width='40%'></p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-20">
+    <section class="slide-content"><h1 id="performances">Performances</h1>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-21">
     <section class="slide-content"><h3 id="current-measures">Current measures</h3>
 <ul>
 <li>30 fps on a desktop (macbook pro)</li>
 <li>3 fps on a mobile (gasp :( )</li>
 </ul>
+<p>Your mileage may vary</p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-9">
+  <div class="slide hidden -" id="slide-22">
+    <section class="slide-content"><h3 id="web-code-vs-native-code">Web Code vs Native Code</h3>
+<ul>
+<li>Native code is faster to run</li>
+<li>Javascript is easier and faster to write<ul>
+<li>single version run everywhere</li>
+</ul>
+</li>
+</ul>
+<p>Up to you to choose according to your own needs :)</p>
+</section>
+  </div>
+  <div class="slide hidden -" id="slide-23">
     <section class="slide-content"><h1 id="possible-improvements">Possible Improvements</h1>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-10">
+  <div class="slide hidden -" id="slide-24">
     <section class="slide-content"><h3 id="use-webworkers">Use WebWorkers</h3>
 <ul>
 <li>WebWorkers are threads for web pages</li>
@@ -440,7 +570,7 @@ as artoolkit</li>
 <p><strong>More power available for artoolkit to detect markers</strong></p>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-11">
+  <div class="slide hidden -" id="slide-25">
     <section class="slide-content"><h3 id="compile-in-webassembly">Compile in WebAssembly</h3>
 <ul>
 <li>jsartoolkit currently in asm.js</li>
@@ -448,7 +578,7 @@ as artoolkit</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-12">
+  <div class="slide hidden -" id="slide-26">
     <section class="slide-content"><h3 id="compile-in-webassembly">Compile in WebAssembly</h3>
 <ul>
 <li>WebAssembly will be faster</li>
@@ -458,15 +588,19 @@ as artoolkit</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-13">
+  <div class="slide hidden -" id="slide-27">
     <section class="slide-content"><h3 id="futures-of-jsartoolkit">Futures of jsartoolkit</h3>
 <ul>
-<li>try to improve performances</li>
-<li>support of textures tracking</li>
+<li>Support of textures tracking</li>
+<li>try to improve performances<ul>
+<li>WebAssembly</li>
+<li>WebWorker</li>
+</ul>
+</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-14">
+  <div class="slide hidden -" id="slide-28">
     <section class="slide-content"><h3 id="links">Links</h3>
 <ul>
 <li><a href="https://github.com/jeromeetienne/aframe-artoolkit">aframe-artoolkit</a></li>
@@ -476,7 +610,7 @@ as artoolkit</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden -" id="slide-15">
+  <div class="slide hidden -" id="slide-29">
     <section class="slide-content"><h1 id="questions-">Questions ?</h1>
 </section>
   </div>
