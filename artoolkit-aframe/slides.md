@@ -21,12 +21,13 @@ Contact me Anytime on twitter [@jerome_etienne](https://twitter.com/jerome_etien
 ### What we are gonna talk about ?
 
 - Augmented Reality on the Web
-- javascript version of artoolkit - jsartoolkit
-- All that in javascript in your browser
+- javascript version of artoolkit - [jsartoolkit](https://github.com/artoolkit/jsartoolkit5)
+
+All that in javascript in your browser :)
 
 --- 
 
-### jsartoolkit - js version of artoolkit
+### What is js-artoolkit ?
 
 - javascript version of artoolkit
 - [github repository](https://github.com/artoolkit/jsartoolkit5)
@@ -38,8 +39,8 @@ as artoolkit
 ### jsartoolkit origin
 
 - Written by [Ilmari Heikkinen](https://github.com/kig)
-- Compile directly to javascript from the C version of ARToolkit
-- Used [emscripten](https://github.com/kripken/emscripten) for that
+- Based on the C version of ARToolkit
+- Compiled to javascript with [emscripten](https://github.com/kripken/emscripten) in asm.js
 
 --- 
 
@@ -63,6 +64,10 @@ as artoolkit
    </a-scene>
 </body>
 ```
+
+
+<img src="images/basic-aframe-scene.png" width='40%'>
+
 ---
 
 # Let's Get Started
@@ -107,7 +112,14 @@ That's it!
 
 ---
 
-# Tune ARToolkit
+# Demo time 
+
+## [link](https://jeromeetienne.github.io/aframe-artoolkit/examples/demo.html)
+
+
+---
+
+# Tune aframe-artoolkit
 
 --- 
 
@@ -123,11 +135,11 @@ That's it!
 - **detectionMode**: color, color_matrix, mono, mono_matrix
 - **matrixCodeType**: 3x3, 4x4, 3x3_HAMMING63 etc...
 
+Directly extracted from artoolkit
+
 --- 
 
-### Example
-
-- Detect matrix marker from your own webcam
+### Artoolkit Parameters Example
 
 ```html
 <!-- We define a scene -->
@@ -136,15 +148,18 @@ That's it!
 </a-scene>
 ```
 
+Detect matrix markers from your webcam.
+
+
 --- 
 
-### Parameters for a-marker
+### Parameters for markers
 
 - **type**: 'barcode' or 'pattern' 
 - **size**: physical size of the marker in meters
 --- 
 
-### Parameters for pattern
+### Parameters specific for patterns
 
 - **url**: the url of the pattern to detect
 
@@ -164,7 +179,7 @@ Require to have matrix in the detection mode
 
 --- 
 
-### Parameters for barcode
+### Parameters for specific barcode
 
 - **value**: the value encoded in the barcode
 
@@ -181,7 +196,6 @@ Require to have matrix in the detection mode
 ```
 
 <img src="images/matrix_3x3_20.png" width='40%'>
-
 
 ---
 
@@ -202,13 +216,15 @@ Your mileage may vary
 
 - Native code is faster to run
 - Javascript is easier and faster to write
-  - single version run everywhere
+- web code => single version run everywhere
 
 Up to you to choose according to your own needs :)
 
 ---
 
 # Possible Improvements
+
+## of js-artoolkit
 
 ---
 
